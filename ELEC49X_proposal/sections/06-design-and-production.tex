@@ -1,6 +1,6 @@
 \CourseSection{Design and Production Approach}\label{sec:design}
 \CourseSubsection{Retroencabulator development}
-\Guidance{Describe the sequence of design, analysis or simulation, prototyping, construction, integration, and refinement. Explain the team's preparation and the rationale for the approach. This is the 'development process' section.}
+The autonomous golf pushcart will be developed incrementally through system design, subsystem prototyping, integration, testing, and refinement. To reduce mechanical complexity and cost, the team already have obtained some technical department resources and attempt to purchase a used motorized golf cart and modify it by mounting the computer vision system, sensors, and control electronics onto the existing platform. The vision, motor-control, and obstacle-detection subsystems will be developed and tested independently before being integrated onto the cart. Initial testing will occur in a controlled environment before progressing to outdoor testing with different lighting, walking speeds, obstacles, and terrain. Test results will be used to refine the control algorithms and safety systems while prioritizing the MVP requirements.
 
 \CourseSubsection{Milestones and division of labor}
 \Guidance{Plan at least five technical milestones. Give each milestone a date, an observable completion condition, and one responsible member as the primary lead. Course report and presentation deadlines do \textbf{not} belong here. This table tracks technical progress!}
@@ -17,15 +17,17 @@
 \bottomrule
 \endfoot
 % Add or replace data rows below.
-M1 & All six hydrocoptic marzelvanes functioning with the ambifacient lunar waneshaft  & \TemplateField{Date} & \TemplateField{Name} \\
+M1 & Motorized control of the golf cart & October 30th, 2026 & Connor \\
 \addlinespace[3pt]
-M2 & Sidefumbling test complete & \TemplateField{Date} & \TemplateField{Name} \\
+M2 & Raspberry Pi integration and hardware intergration of the necessary sensors & November 20th, 2026 & Vince \\
 \addlinespace[3pt]
-M3 & Tremie-pipe functioning with differential girdlespring  & \TemplateField{Date} & \TemplateField{Name} \\
+M3 & Computer vision and  golfer dectection  & December 18th, 2026 & Jp \\
 \addlinespace[3pt]
-M4 &  Fluorescence score motion tested with dinglearm & \TemplateField{Date} & \TemplateField{Name} \\
+M4 &  Obstacle detection/avoidance/emergency stop functionality & January 22nd, 2027 & Vince \\
 \addlinespace[3pt]
-M5 & Testing and validation of retroencabulator complete & March 15, 2027 & all members \\
+M5 &  Integration of subsystems and system refinement complete & February 19th, 2027 & All members \\
+\addlinespace[3pt]
+M6 & Testing and validation of retroencabulator complete & March 15, 2027 & All members \\
 \end{longtable}
 \end{singlespace}
 
@@ -33,4 +35,5 @@ M5 & Testing and validation of retroencabulator complete & March 15, 2027 & all 
 
 \CourseSubsection{Contingencies}
 \Guidance{Identify likely technical or scheduling obstacles, the trigger for taking corrective action, any alternative approaches, and the expected effect on time and cost.}
+The main project risks include difficulty obtaining a suitable motorized cart, unreliable golfer detection, changing outdoor conditions, motor-control issues, and delays during system integration. If a component fails to meet requirements during testing, the team will adjust the software or use an alternative sensor, motor-control method, or camera configuration. If a motorized cart cannot be obtained, a different cart or drive platform will be considered. Outdoor testing may also be moved to a controlled environment if weather or terrain prevents reliable testing. If the project falls behind schedule, the team will prioritize the MVP features of golfer following, obstacle detection, and emergency stopping while postponing optional features such as mobile-app control and advanced obstacle avoidance. These alternatives may add some cost or development time, but will help ensure the core system is completed by early March.
 \clearpage
