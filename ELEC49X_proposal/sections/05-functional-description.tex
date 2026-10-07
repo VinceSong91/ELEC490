@@ -54,4 +54,48 @@ PF-05 & Obstacle Detection Response Delay & 200 ms & $\le$ 300 ms \\
 
 \CourseSubsection{Risks and safety hazards}
 \Guidance{Identify relevant technical risks, health risks, and / or safety hazards, and indicate how you will manage these risks, and / or explain how system features and operating conditions are low-risk.}
+
+The main hazard of a self-driving cart is loss of control, where the cart moves outside its safe motion limits. Figure~\ref{fig:safety-hazards} shows the causes that could lead to this event, the preventative controls that make it less likely, and the protective controls that limit the consequences if it still happens.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/safety-hazards.png}
+\caption{Bow-tie diagram for loss of control of the cart, showing causes and preventative controls on the left and protective controls and consequences on the right.}
+\label{fig:safety-hazards}
+\end{figure}
+
+Table~\ref{tab:risks} lists the remaining safety hazards and the main project risks, with the mitigation proposed for each.
+
+\begin{singlespace}
+\small
+\setlength{\LTcapwidth}{\linewidth}
+\begin{longtable}{@{}L{0.09\linewidth} L{0.25\linewidth} L{0.24\linewidth} L{\dimexpr0.42\linewidth-6\tabcolsep\relax}@{}}
+\caption{Safety hazards and project risks with proposed mitigations.}\label{tab:risks}\\
+\rowcolor{MidGray}
+\TableHeader{Type} & \TableHeader{Hazard / risk} & \TableHeader{Possible consequence} & \TableHeader{Proposed mitigation} \\
+\midrule
+\endfirsthead
+\rowcolor{MidGray}
+\TableHeader{Type} & \TableHeader{Hazard / risk} & \TableHeader{Possible consequence} & \TableHeader{Proposed mitigation} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Safety & Tracking error or obstacle missed & Cart collides with a person or equipment & Limit speed; stop on tracking loss; obstacle detection; accessible emergency stop \\
+\addlinespace[3pt]
+Safety & Cart rolls or tips on a slope & Injury or equipment damage & Restrict terrain and payload; use a stable bag mounting; verify stopping and holding behaviour \\
+\addlinespace[3pt]
+Safety & Contact with wheels or drive mechanisms & Pinching or entanglement & Guard accessible moving parts; disable drive during adjustments \\
+\addlinespace[3pt]
+Safety & Battery fault, short circuit, or motor overload & Overheating, burns, or fire & Suitable battery protection, fuse, wiring, charger, and current limits \\
+\addlinespace[3pt]
+Safety & Water reaches electronics & Electrical faults or unintended behaviour & Dry-weather operation; protected electronics; stop testing if conditions deteriorate \\
+\addlinespace[3pt]
+Project & Club tags cannot be read reliably inside the bag & Club inventory fails to meet its accuracy target & Test the reader/tag arrangement early; simplify bag configuration or change sensing method \\
+\addlinespace[3pt]
+Project & GPS accuracy is insufficient & Incorrect green-distance information & Compare with reference distances; indicate unavailable data; define an achievable accuracy target \\
+\addlinespace[3pt]
+Project & Subsystems take too long to integrate & Incomplete MVP demonstration & Agree on interfaces early; integrate incrementally; keep red features optional \\
+\end{longtable}
+\end{singlespace}
 \clearpage

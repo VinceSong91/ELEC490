@@ -14,7 +14,10 @@ and how the results connect to the project requirements.}
 \label{fig:test-approach}
 \end{figure}
 
+Testing is staged: each subsystem is tested on its own first, and the cart is tested as a whole once all of them work. Table~\ref{tab:test-plan} links each stage to the specification IDs in Table~\ref{tab:proposal-specs}, and a stage that exercises several specifications at once lists all of their IDs. These tests verify the requirements, and they need only a controlled grass area, a tape measure, a laser rangefinder for reference distances, and video for timing. Validation is a final trial in which a golfer plays a hole using only the cart, with no phone. A safety operator holding the emergency stop is present for every test in which the cart moves.
+
 \begin{singlespace}
+\captionof{table}{Proposed tests and the specifications each one verifies.}\label{tab:test-plan}
 \begin{tabularx}{\linewidth}{@{}L{0.18\linewidth}YY@{}}
 \rowcolor{MidGray}
 \TableHeader{Requirement} &
@@ -22,9 +25,24 @@ and how the results connect to the project requirements.}
 \TableHeader{Expected evidence of success} \\
 \midrule
 
-\TemplateField{ID} &
-\TemplateField{Briefly describe the planned test.} &
-\TemplateField{State the expected result or pass criterion.} \\
+IF-01, PF-02, PF-03, PF-05 &
+\textbf{Mobility and safety.} On a controlled grass area, the cart follows a walking golfer through straight lines and turns, meets soft obstacles, loses tracking, and receives an emergency stop. &
+Following-distance error, tracking range, and speed stay within their specified tolerances. The cart stops for every obstacle, tracking loss, and stop command, with stopping time and distance recorded. \\
+\addlinespace[3pt]
+
+IF-04 &
+\textbf{Club identification and presence.} With the bag stationary, tagged clubs are removed and returned one at a time and several at once. &
+Every club is identified within the specified detection range. Identification accuracy, detection delay, and missed and false events are recorded. \\
+\addlinespace[3pt]
+
+IF-02 &
+\textbf{GPS and onboard display.} At outdoor reference locations with predefined green coordinates, the displayed distance is compared with the reference distance. &
+Position and distance error are recorded, and the display shows the correct information at each location. \\
+\addlinespace[3pt]
+
+IF-03, PF-01, PF-04 &
+\textbf{Load, incline, and range.} The cart carries a loaded bag up a measured slope and over an extended run on one charge. &
+The cart carries the specified load, climbs the specified grade, and covers the specified range. \\
 
 \bottomrule
 \end{tabularx}
