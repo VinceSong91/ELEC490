@@ -4,31 +4,32 @@
 \Guidance{Use a set of diagrams to explain the system boundary, internal functions, operating behavior, inputs and outputs, signal types, protocols, direction of information flow, computing architecture, and / or anything else that applies. Write a short paragraph here that explains design decisions and references each figure, like Figure~\ref{fig:system}. Maintain labeling consistency (such as IDs, components, units, etc.) across tables and figures in this document. It's a good idea to reference these later in Section~\ref{sec:testing}.}
 The system architecture is organized into functional, physical, and logical domains to validate core autonomous mobility, safety, and equipment auditing without unnecessary complexity. Figure~\ref{fig:functional-architecture} outlines the primary operational blocks, showing energy and signal paths between tracking, obstacle detection, club monitoring, and motor drive systems. Figure~\ref{fig:physical-layout} defines the physical component distribution and interface boundaries across the chassis, emphasizing sensor clearance and immediate access to safety overrides (\textbf{IF-02}). Finally, Figure~\ref{fig:logical-architecture} details the logical execution stack and hardware communication protocols (UART, SPI, I2C, and GPIO interrupts), prioritizing deterministic low-latency handling for emergency stop triggers (\textbf{PF-05}).
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.9\linewidth]{figures/functional.jpeg}
+\includegraphics[width=0.62\linewidth]{figures/functional.jpeg}
 \caption{Functional architecture diagram showing inputs, processing interlocks, and control outputs for the MVP smart caddy system.}
 \label{fig:functional-architecture}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
 \centering
-\includegraphics[width=0.9\linewidth]{figures/physical.jpeg}
+\begin{minipage}[t]{0.63\linewidth}
+\centering
+\includegraphics[width=1\linewidth]{figures/physical.jpeg}
 \caption{Physical layout diagram detailing component placement, structural enclosures, bag cradle sensors, and safety controls on the chassis.}
 \label{fig:physical-layout}
-\end{figure}
-
-\begin{figure}[htbp]
+\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}
 \centering
-\includegraphics[width=0.9\linewidth]{figures/logical.jpeg}
-\caption{Logical computing architecture outlining the hardware abstraction layer, driver protocols, logical processing loops, and low-latency safety interrupts.}
+\includegraphics[width=1\linewidth]{figures/logical.jpeg}
+\caption{Logical computing architecture, from hardware abstraction to application layer.}
 \label{fig:logical-architecture}
+\end{minipage}
 \end{figure}
 
-\clearpage
 \CourseSubsection{Interface and performance specifications}
 \Guidance{Give quantitative targets and tolerances with proper units. You can also use IDs to connect specifications with the tests in Section~\ref{sec:testing}. Write a short paragraph here giving context for these requirements, citing the IDs as necessary.}
-The interface and performance specifications defined in Table~\ref{tab:proposal-specs} establish the measurable quantitative targets required to ensure the smart caddy effectively alleviates physical strain and cognitive load for senior golfers. Physical and hardware interfaces focus on ergonomic accessibility, payload capacity, and reliable user tracking (\textbf{IF-01} through \textbf{IF-04}). Performance metrics guarantee that the mechatronic chassis maintains safe following distances, handles standard 18-hole course topographies, and reliably detects active club removal and return (\textbf{PF-01} through \textbf{PF-05}). Each specification is tagged with a unique identifier to facilitate downstream verification and validation in Section~\ref{sec:testing}.
+The interface and performance specifications in Table~\ref{tab:proposal-specs} set the measurable targets for the prototype. The interface specifications cover golfer tracking, distance accuracy, club sensing, the emergency-stop link, and the display (\textbf{IF-01} through \textbf{IF-05}). The performance specifications cover obstacle and emergency stopping, speed, following distance, and range (\textbf{PF-01} through \textbf{PF-05}). Each specification has a unique identifier that the tests in Section~\ref{sec:testing} refer to.
 
 \begin{singlespace}
 \setlength{\LTcapwidth}{\linewidth}
@@ -74,47 +75,16 @@ PF-05 & Emergency Stop Override Latency & 50 ms & $\le$ 100 ms \\
 \CourseSubsection{Risks and safety hazards}
 \Guidance{Identify relevant technical risks, health risks, and / or safety hazards, and indicate how you will manage these risks, and / or explain how system features and operating conditions are low-risk.}
 
-The main hazard of a self-driving cart is loss of control, where the cart moves outside its safe motion limits. Figure~\ref{fig:safety-hazards} shows the causes that could lead to this event, the preventative controls that make it less likely, and the protective controls that limit the consequences if it still happens.
+The main hazard of a self-driving cart is loss of control, where the cart moves outside its safe motion limits. Figure~\ref{fig:safety-hazards} in Appendix~\ref{app:risks} maps the causes of this event, the preventative controls that make it less likely, and the protective controls that limit its consequences. Table~\ref{tab:risks} summarizes the remaining safety hazards and the main project risks, and Table~\ref{tab:risks-full} in the same appendix gives the consequence and proposed mitigation for each.
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\linewidth]{figures/safety-hazards.png}
-\caption{Bow-tie diagram for loss of control of the cart, showing causes and preventative controls on the left and protective controls and consequences on the right.}
-\label{fig:safety-hazards}
-\end{figure}
-
-Table~\ref{tab:risks} lists the remaining safety hazards and the main project risks, with the mitigation proposed for each.
-
-\begin{singlespace}
+\begin{TableBlock}
 \small
-\setlength{\LTcapwidth}{\linewidth}
-\begin{longtable}{@{}L{0.09\linewidth} L{0.25\linewidth} L{0.24\linewidth} L{\dimexpr0.42\linewidth-6\tabcolsep\relax}@{}}
-\caption{Safety hazards and project risks with proposed mitigations.}\label{tab:risks}\\
+\captionof{table}{Summary of safety hazards, project risks, and mitigations.}\label{tab:risks}
+\begin{tabularx}{\linewidth}{@{}YYY@{}}
 \rowcolor{MidGray}
-\TableHeader{Type} & \TableHeader{Hazard / risk} & \TableHeader{Possible consequence} & \TableHeader{Proposed mitigation} \\
+\TableHeader{Safety hazards} & \TableHeader{Project risks} & \TableHeader{Mitigation approach} \\
 \midrule
-\endfirsthead
-\rowcolor{MidGray}
-\TableHeader{Type} & \TableHeader{Hazard / risk} & \TableHeader{Possible consequence} & \TableHeader{Proposed mitigation} \\
-\midrule
-\endhead
+Collision, tipping on a slope, contact with moving parts, battery faults, and water reaching the electronics & Unreliable club-tag reads, insufficient GPS accuracy, and slow subsystem integration & Limited speed and stop behaviours, guarding and electrical protection, early subsystem tests, and optional extension features \\
 \bottomrule
-\endfoot
-Safety & Tracking error or obstacle missed & Cart collides with a person or equipment & Limit speed; stop on tracking loss; obstacle detection; accessible emergency stop \\
-\addlinespace[3pt]
-Safety & Cart rolls or tips on a slope & Injury or equipment damage & Restrict terrain and payload; use a stable bag mounting; verify stopping and holding behaviour \\
-\addlinespace[3pt]
-Safety & Contact with wheels or drive mechanisms & Pinching or entanglement & Guard accessible moving parts; disable drive during adjustments \\
-\addlinespace[3pt]
-Safety & Battery fault, short circuit, or motor overload & Overheating, burns, or fire & Suitable battery protection, fuse, wiring, charger, and current limits \\
-\addlinespace[3pt]
-Safety & Water reaches electronics & Electrical faults or unintended behaviour & Dry-weather operation; protected electronics; stop testing if conditions deteriorate \\
-\addlinespace[3pt]
-Project & Club tags cannot be read reliably inside the bag & Club inventory fails to meet its accuracy target & Test the reader/tag arrangement early; simplify bag configuration or change sensing method \\
-\addlinespace[3pt]
-Project & GPS accuracy is insufficient & Incorrect green-distance information & Compare with reference distances; indicate unavailable data; define an achievable accuracy target \\
-\addlinespace[3pt]
-Project & Subsystems take too long to integrate & Incomplete MVP demonstration & Agree on interfaces early; integrate incrementally; keep red features optional \\
-\end{longtable}
-\end{singlespace}
-\clearpage
+\end{tabularx}
+\end{TableBlock}

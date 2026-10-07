@@ -2,76 +2,29 @@
 \CourseSubsection{Scheduling access to resources}
 \Guidance{Connect the technical milestones to laboratory space, equipment, fabrication, software, subscriptions, repositories, and other resources. Discuss access with the supervisor and include booking or lead-time requirements.}
 
-\begin{singlespace}
-\setlength{\LTcapwidth}{\linewidth}
-\begin{longtable}{@{}L{0.14\linewidth} L{\dimexpr0.6100000\linewidth-4.0000000\tabcolsep\relax} L{0.25\linewidth}@{}}
-\caption{Resource access by milestone.}\label{tab:resource-access}\\
-\rowcolor{MidGray}
-\TableHeader{Milestone} & \TableHeader{Resource / source} & \TableHeader{Access date / lead time} \\
-\midrule
-\endfirsthead
-\rowcolor{MidGray}
-\TableHeader{Milestone} & \TableHeader{Resource / source} & \TableHeader{Access date / lead time} \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-% Add or replace data rows below. Keep the matching column separators.
-M1 & Motors, Controller, Golf Cart & Nov 1st, 2026; ASAP \\
-\addlinespace[3pt]
-M2 & Raspbery Pi, Ultrasonic/Lidar Sensors, & Nov 1st, 2026; ASAP \\
-\addlinespace[3pt]
-M3 & RFID readers/tags, User Interface Display & Dec 1st, 2026; 2-3 weeks in advance \\
-\addlinespace[3pt]
-M4 & Outdoor testing area & Feb 1st, 2027; 1 week in advance \\
-\end{longtable}
-\end{singlespace}
+Purchased parts for the early milestones will be ordered as soon as possible, and the outdoor testing area will be booked a week ahead. Table~\ref{tab:resource-access} in Appendix~\ref{app:resources} lists the resources, access dates, and lead times for each milestone.
 
 \Guidance{You can also relate each resource to the verification tests, or any other aspect of your report. Try to make use of labels / IDs so that they can be referenced consistently across the report.}
 
 \CourseSubsection{Materials and other resources}
 \Guidance{Estimate costs in \BudgetCurrency. Include quantities and the basis for estimates; identify resources supplied through existing access. Include tax, shipping, and contingency where applicable.}
 
-\begin{singlespace}
-\setlength{\LTcapwidth}{\linewidth}
-\begin{longtable}{@{}L{\dimexpr0.5300000\linewidth-6.0000000\tabcolsep\relax} C{0.09\linewidth} L{0.18\linewidth} L{0.20\linewidth}@{}}
-\caption{Preliminary cost estimate (\BudgetCurrency).}\label{tab:proposal-budget}\\
+\begin{TableBlock}
+\small
+\captionof{table}{Preliminary cost estimate by subsystem (\BudgetCurrency).}\label{tab:proposal-budget}
+\begin{tabularx}{\linewidth}{@{}L{0.27\linewidth} Y L{0.13\linewidth}@{}}
 \rowcolor{MidGray}
-\TableHeader{Item / source} & \TableHeader{Qty.} & \TableHeader{Unit cost} & \TableHeader{Total} \\
+\TableHeader{Subsystem} & \TableHeader{Items} & \TableHeader{Subtotal} \\
 \midrule
-\endfirsthead
-\rowcolor{MidGray}
-\TableHeader{Item / source} & \TableHeader{Qty.} & \TableHeader{Unit cost} & \TableHeader{Total} \\
+Drive and power & Used motorized golf cart, motor controller, battery/power supply & 375 CAD \\
+Following and sensing & Raspberry Pi 5 and ultrasonic sensors (existing), lidar sensor & 50 CAD \\
+Club tracking & RFID read tags & 20 CAD \\
+Integration hardware & Mounting hardware, wiring, connectors, and switches & 60 CAD \\
+Other & Tax, shipping, and contingency & 90 CAD \\
 \midrule
-\endhead
+\textbf{Estimated total} & & 595 CAD \\
 \bottomrule
-\endfoot
-% Add or replace data rows below. Keep the matching column separators.
-Raspberry Pi 5 - 4G & 1 & Existing & 0 CAD \\
-\addlinespace[3pt]
-Ultrasonic Sensors & 2 & Existing & 0 CAD \\
-\addlinespace[3pt]
-RFID Read Tags & 2 & 10 CAD (5) & 20 CAD \\ 
-\addlinespace[3pt]
-Lidar Sensor & 1 & 50 CAD & 50 CAD \\
-\addlinespace[3pt]
-Used Motorized Golf Cart & 1 & 250 CAD & 250 CAD \\
-\addlinespace[3pt]
-Motor controller & 1 & 50 CAD & 50 CAD \\
-\addlinespace[3pt]
-Battery/Power Supply & 1 & 75 CAD & 75 CAD \\
-\addlinespace[3pt]
-Mounting Hardware & 1 & 30 CAD & 30 CAD \\
-\addlinespace[3pt]
-Wiring, Connectors, and Switches & 1 & 30 CAD & 30 CAD \\
-\addlinespace[3pt]
-Tax and Shipping & - & - & 75 CAD \\
-\addlinespace[3pt]
-Contingency & - & - & 15 CAD \\ 
-\addlinespace[3pt]
-\textbf{Estimated total} &  &  & 595 CAD \\
+\end{tabularx}
+\end{TableBlock}
 
-\end{longtable}
-\end{singlespace}
-
-The project will target a budget of approximately 600 CAD, based on estimated component prices and a used motorized golf cart sourced through Facebook Marketplace. The team already has a Raspberry Pi 5 and ultrasonic sensors, while university laboratory, fabrication, and software resources will be used as needed.
+Table~\ref{tab:proposal-budget} groups the estimate by subsystem, and Table~\ref{tab:proposal-budget-full} in Appendix~\ref{app:budget} itemizes it. The project will target a budget of approximately 600 CAD, based on estimated component prices and a used motorized golf cart sourced through Facebook Marketplace. The team already has a Raspberry Pi 5 and ultrasonic sensors, while university laboratory, fabrication, and software resources will be used as needed.

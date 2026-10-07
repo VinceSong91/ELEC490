@@ -8,6 +8,7 @@
 \usepackage{enumitem,fancyhdr,lastpage,titlesec,setspace}
 \usepackage[printonlyused]{acronym}
 \usepackage{graphicx,caption,needspace,amsmath,amssymb,etoolbox}
+\usepackage{float} % [H] keeps a figure exactly where it is written
 \usepackage[
   backend=biber,
   style=ieee,
@@ -39,6 +40,17 @@
 \raggedbottom
 \widowpenalty=10000
 \clubpenalty=10000
+% Let figures share pages with text instead of taking a page of their own.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.9}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{2}
 
@@ -56,8 +68,10 @@
 \titlespacing*{\subsubsection}{0pt}{10pt}{3pt}
 
 
-\newcommand{\CourseSection}[1]{\section{#1}}
-\newcommand{\CourseSubsection}[1]{\subsection{#1}}
+% \Needspace (exact form) keeps a heading from being stranded at the bottom
+% of a page. The lowercase \needspace is approximate and breaks pages early.
+\newcommand{\CourseSection}[1]{\Needspace{6\baselineskip}\section{#1}}
+\newcommand{\CourseSubsection}[1]{\Needspace{4\baselineskip}\subsection{#1}}
 \newcommand{\UnnumberedSection}[1]{%
   \section*{#1}\phantomsection\addcontentsline{toc}{section}{#1}}
 \newcommand{\TemplateField}[1]{\textcolor{QueensBurgundy}{\textbf{[#1]}}}
@@ -116,7 +130,7 @@
   \fancyhf{}%
   \fancyhead[L]{\small\CourseShortCode\ / \DocumentType}%
   \fancyhead[R]{\small\AcademicYear}%
-  \fancyfoot[C]{\small Page \thepage\ of \pageref*{LastPage}}%
+  \fancyfoot[C]{\small Page \thepage\ of \pageref*{ProposalBodyEnd}}%
   \renewcommand{\headrulewidth}{0.35pt}}
 \fancypagestyle{plain}{%
   \fancyhf{}\fancyfoot[C]{\small\thepage}%
