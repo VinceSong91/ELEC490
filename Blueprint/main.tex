@@ -1,0 +1,32 @@
+\documentclass[12pt,letterpaper]{article}
+\input{preamble}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+\newcommand{\CourseShortCode}{ELEC 490/498}
+\newcommand{\DocumentType}{Blueprint}
+\newcommand{\AcademicYear}{2026--2027}
+\newcommand{\FacultyName}{Smith Engineering}
+\newcommand{\InstitutionName}{Queen's University}
+\newcommand{\ProjectLogo}{}
+\newif\ifshowguidance
+\showguidancefalse
+\begin{document}
+\input{sections/00-cover}
+\pagenumbering{roman}
+\input{sections/01-executive}
+\tableofcontents\clearpage
+\listoffigures\listoftables\clearpage
+\section*{Acronyms}\addcontentsline{toc}{section}{Acronyms}
+ASCC: Autonomous Smart Caddy Cart\\ GPS: Global Positioning System\\ RFID: Radio Frequency Identification\\ V\&V: Verification and Validation\\ MVP: Minimum Viable Product\\ UWB: Ultra-Wideband\\ GPIO: General-Purpose Input/Output
+\clearpage\pagenumbering{arabic}
+\input{sections/02-introduction}
+\input{sections/03-functional}
+\input{sections/04-requirements}
+\input{sections/05-risks}
+\input{sections/06-approach}
+\input{sections/07-vv}
+\input{sections/08-resources}
+\input{sections/09-conclusion}
+\clearpage\printbibliography[heading=bibintoc]
+\appendix\input{sections/10-appendix}
+\end{document}
