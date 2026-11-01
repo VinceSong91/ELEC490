@@ -1,0 +1,282 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{incose2015handbook}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=847e19d487ed6b11976a9dcb3628a7f6}{%
+           family={{International Council on Systems Engineering}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=0a7f351b67dff540aa6dab102e7da089}{%
+           family={Walden},
+           familyi={W\bibinitperiod},
+           given={David\bibnamedelima D.},
+           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=87014ea659f2185c9a358cf7b728c145}{%
+           family={Roedler},
+           familyi={R\bibinitperiod},
+           given={Garry\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=6677c1ea2977621c42fb1d4e5d008946}{%
+           family={Forsberg},
+           familyi={F\bibinitperiod},
+           given={Kevin\bibnamedelima J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=93a12f7fb9434d1db6b3e67e9d9ace24}{%
+           family={Hamelin},
+           familyi={H\bibinitperiod},
+           given={R.\bibnamedelimi Douglas},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=e56e1f3ec2460f7172e8dffba3f2571c}{%
+           family={Shortell},
+           familyi={S\bibinitperiod},
+           given={Thomas\bibnamedelima M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Hoboken, NJ}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{847e19d487ed6b11976a9dcb3628a7f6}
+      \strng{fullhash}{847e19d487ed6b11976a9dcb3628a7f6}
+      \strng{fullhashraw}{847e19d487ed6b11976a9dcb3628a7f6}
+      \strng{bibnamehash}{847e19d487ed6b11976a9dcb3628a7f6}
+      \strng{authorbibnamehash}{847e19d487ed6b11976a9dcb3628a7f6}
+      \strng{authornamehash}{847e19d487ed6b11976a9dcb3628a7f6}
+      \strng{authorfullhash}{847e19d487ed6b11976a9dcb3628a7f6}
+      \strng{authorfullhashraw}{847e19d487ed6b11976a9dcb3628a7f6}
+      \strng{editorbibnamehash}{ed461c06b02f993aeb33f6d573fd4f35}
+      \strng{editornamehash}{e5cad046b99e76118c787d18f4583a91}
+      \strng{editorfullhash}{ed461c06b02f993aeb33f6d573fd4f35}
+      \strng{editorfullhashraw}{ed461c06b02f993aeb33f6d573fd4f35}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4}
+      \field{isbn}{978-1-118-99940-0}
+      \field{title}{{INCOSE Systems Engineering Handbook: A Guide for System Life Cycle Processes and Activities}}
+      \field{year}{2015}
+      \field{dateera}{ce}
+    \endentry
+    \entry{stewartQFollow}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=cfabc971ca0260d08ab5e3006493a9fe}{%
+           family={{Stewart Golf}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{fullhash}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{fullhashraw}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{bibnamehash}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{authorbibnamehash}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{authornamehash}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{authorfullhash}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{authorfullhashraw}{cfabc971ca0260d08ab5e3006493a9fe}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Q Follow} Electric Golf Trolley}
+      \field{urlday}{15}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.stewartgolf.co.uk/products/stewart-golf-q-follow
+      \endverb
+      \verb{url}
+      \verb https://www.stewartgolf.co.uk/products/stewart-golf-q-follow
+      \endverb
+    \endentry
+    \entry{arccosSmartSensors}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=01b594b4ff40b6bb699e6ff90bfb36f7}{%
+           family={{Arccos Golf}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{fullhash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{fullhashraw}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{bibnamehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authorbibnamehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authornamehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authorfullhash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authorfullhashraw}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Arccos Smart Sensors}}
+      \field{urlday}{17}
+      \field{urlmonth}{2}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://arccosgolf.com/products/smart-sensors
+      \endverb
+      \verb{url}
+      \verb https://arccosgolf.com/products/smart-sensors
+      \endverb
+    \endentry
+    \entry{arccosAppleWatch}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=01b594b4ff40b6bb699e6ff90bfb36f7}{%
+           family={{Arccos Golf}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{fullhash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{fullhashraw}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{bibnamehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authorbibnamehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authornamehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authorfullhash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authorfullhashraw}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Arccos} for {Apple Watch}}
+      \field{urlday}{27}
+      \field{urlmonth}{7}
+      \field{urlyear}{2021}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://arccosgolf.com/pages/apple-watch
+      \endverb
+      \verb{url}
+      \verb https://arccosgolf.com/pages/apple-watch
+      \endverb
+    \endentry
+    \entry{hall2025golfGps}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=a958d3280ceae6d3ad9d012bf492d811}{%
+           family={Hall},
+           familyi={H\bibinitperiod},
+           given={Thomas\bibnamedelimb E.\bibnamedelimi D.},
+           giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=d30b7b007b4ba3ba1753185f01adcdd7}{%
+           family={Willmott},
+           familyi={W\bibinitperiod},
+           given={Ashley\bibnamedelimb G.\bibnamedelimi B.},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=3a9f6fe009acc3937ed4501a81a6d236}{%
+           family={Hynes},
+           familyi={H\bibinitperiod},
+           given={Niall\bibnamedelima J.},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=dd160951b2099ecaaba1db65ad51e623}{%
+           family={Wells},
+           familyi={W\bibinitperiod},
+           given={Jack\bibnamedelimb E.\bibnamedelimi T.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=935bbf0a91b359e82995fd080ee643f0}{%
+           family={Allen},
+           familyi={A\bibinitperiod},
+           given={Peter\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{37a61383aa0c6ba32e0800335654d669}
+      \strng{fullhash}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
+      \strng{fullhashraw}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
+      \strng{bibnamehash}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
+      \strng{authorbibnamehash}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
+      \strng{authornamehash}{37a61383aa0c6ba32e0800335654d669}
+      \strng{authorfullhash}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
+      \strng{authorfullhashraw}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Golf Science}
+      \field{number}{1}
+      \field{title}{The Validity and Reliability of Two Golf Performance-Tracking {Global Positioning System} ({GPS}) Devices}
+      \field{volume}{13}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{pages}{103\bibrangedash 121}
+      \range{pages}{19}
+      \verb{urlraw}
+      \verb https://www.golfsciencejournal.org/article/144587
+      \endverb
+      \verb{url}
+      \verb https://www.golfsciencejournal.org/article/144587
+      \endverb
+    \endentry
+    \entry{islam2019personFollowing}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=b17f5c28731742963ac153bbd03b6753}{%
+           family={Islam},
+           familyi={I\bibinitperiod},
+           given={Md\bibnamedelima Jahidul},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=22be56678554f025b67e180d689c9d52}{%
+           family={Hong},
+           familyi={H\bibinitperiod},
+           given={Jungseok},
+           giveni={J\bibinitperiod}}}%
+        {{hash=57f3d65edf65578d5be03190d6170c56}{%
+           family={Sattar},
+           familyi={S\bibinitperiod},
+           given={Junaed},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b581b9b32a3b467085b0e60bb9d7cf3c}
+      \strng{fullhash}{8dfb2702960a173751b7026d32f24d2c}
+      \strng{fullhashraw}{8dfb2702960a173751b7026d32f24d2c}
+      \strng{bibnamehash}{8dfb2702960a173751b7026d32f24d2c}
+      \strng{authorbibnamehash}{8dfb2702960a173751b7026d32f24d2c}
+      \strng{authornamehash}{b581b9b32a3b467085b0e60bb9d7cf3c}
+      \strng{authorfullhash}{8dfb2702960a173751b7026d32f24d2c}
+      \strng{authorfullhashraw}{8dfb2702960a173751b7026d32f24d2c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The International Journal of Robotics Research}
+      \field{month}{12}
+      \field{number}{14}
+      \field{title}{Person-following by autonomous robots: A categorical overview}
+      \field{volume}{38}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{pages}{1581\bibrangedash 1618}
+      \range{pages}{38}
+      \verb{doi}
+      \verb 10.1177/0278364919881683
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

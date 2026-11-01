@@ -1,6 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  30 OCT 2026 12:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  1 NOV 2026 16:44
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
@@ -2024,334 +2025,38 @@ nored
 Package hyperref Info: Option `colorlinks' set `true' on input line 120.
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 120.
 
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
-x
-\pgfutil@everybye=\toks36
-\pgfutil@tempdima=\dimen263
-\pgfutil@tempdimb=\dimen264
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box66
-) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
-))
-Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+) (./metadata.tex)
+\@quotelevel=\count456
+\@quotereset=\count457
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 4.
 
-(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks37
-\pgfkeys@temptoks=\toks38
-
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfil
-tered.code.tex
-\pgfkeys@tmptoks=\toks39
-))
-\pgf@x=\dimen265
-\pgf@y=\dimen266
-\pgf@xa=\dimen267
-\pgf@ya=\dimen268
-\pgf@xb=\dimen269
-\pgf@yb=\dimen270
-\pgf@xc=\dimen271
-\pgf@yc=\dimen272
-\pgf@xd=\dimen273
-\pgf@yd=\dimen274
-\w@pgf@writea=\write4
-\r@pgf@reada=\read3
-\c@pgf@counta=\count456
-\c@pgf@countb=\count457
-\c@pgf@countc=\count458
-\c@pgf@countd=\count459
-\t@pgf@toka=\toks40
-\t@pgf@tokb=\toks41
-\t@pgf@tokc=\toks42
-\pgf@sys@id@count=\count460
-
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
-File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
-)
-Driver file for pgf: pgfsys-pdftex.def
-
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
-ef
-File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
-
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
-df.def
-File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
-)))
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
-code.tex
-File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfsyssoftpath@smallbuffer@items=\count461
-\pgfsyssoftpath@bigbuffer@items=\count462
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
-code.tex
-File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen275
-\pgfmath@count=\count463
-\pgfmath@box=\box67
-\pgfmath@toks=\toks43
-\pgfmath@stack@operand=\toks44
-\pgfmath@stack@operation=\toks45
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
-tex)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
-.code.tex)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
-nometric.code.tex)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
-m.code.tex)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
-rison.code.tex)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
-code.tex)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
-.code.tex)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
-code.tex)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
-erarithmetics.code.tex)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count464
-)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
-de.tex
-File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@picminx=\dimen276
-\pgf@picmaxx=\dimen277
-\pgf@picminy=\dimen278
-\pgf@picmaxy=\dimen279
-\pgf@pathminx=\dimen280
-\pgf@pathmaxx=\dimen281
-\pgf@pathminy=\dimen282
-\pgf@pathmaxy=\dimen283
-\pgf@xx=\dimen284
-\pgf@xy=\dimen285
-\pgf@yx=\dimen286
-\pgf@yy=\dimen287
-\pgf@zx=\dimen288
-\pgf@zy=\dimen289
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
-ruct.code.tex
-File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@path@lastx=\dimen290
-\pgf@path@lasty=\dimen291
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
-.code.tex
-File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@shorten@end@additional=\dimen292
-\pgf@shorten@start@additional=\dimen293
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
-de.tex
-File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfpic=\box68
-\pgf@hbox=\box69
-\pgf@layerbox@main=\box70
-\pgf@picture@serial@count=\count465
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
-ate.code.tex
-File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgflinewidth=\dimen294
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
-ations.code.tex
-File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@pt@x=\dimen295
-\pgf@pt@y=\dimen296
-\pgf@pt@temp=\dimen297
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
-e.tex
-File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
-ode.tex
-File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
-ssing.code.tex
-File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
-de.tex
-File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowsep=\dimen298
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
-e.tex
-File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@max=\dimen299
-\pgf@sys@shading@range@num=\count466
-\pgf@shadingcount=\count467
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
-e.tex
-File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
-code.tex
-File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfexternal@startupbox=\box71
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
-de.tex
-File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
-ncy.code.tex
-File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
-code.tex
-File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
-tex
-File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)))
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
-e.tex
-File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfnodeparttextbox=\box72
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
-tex
-File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--0-65.sty
-Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@nodesepstart=\dimen300
-\pgf@nodesepend=\dimen301
-)
-(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--1-18.sty
-Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
-))
-(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
-\pgffor@iter=\dimen302
-\pgffor@skip=\dimen303
-\pgffor@stack=\toks46
-\pgffor@toks=\toks47
-))
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
-e.tex
-Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
-
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
-dlers.code.tex
-File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@plot@mark@count=\count468
-\pgfplotmarksize=\dimen304
-)
-\tikz@lastx=\dimen305
-\tikz@lasty=\dimen306
-\tikz@lastxsaved=\dimen307
-\tikz@lastysaved=\dimen308
-\tikz@lastmovetox=\dimen309
-\tikz@lastmovetoy=\dimen310
-\tikzleveldistance=\dimen311
-\tikzsiblingdistance=\dimen312
-\tikz@figbox=\box73
-\tikz@figbox@bg=\box74
-\tikz@tempbox=\box75
-\tikz@tempbox@bg=\box76
-\tikztreelevel=\count469
-\tikznumberofchildren=\count470
-\tikznumberofcurrentchild=\count471
-\tikz@fig@count=\count472
-
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
-e.tex
-File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfmatrixcurrentrow=\count473
-\pgfmatrixcurrentcolumn=\count474
-\pgf@matrix@numberofcolumns=\count475
-)
-\tikz@expandcount=\count476
-
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)))
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
-meta.code.tex
-File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowinset=\dimen313
-\pgfarrowlength=\dimen314
-\pgfarrowwidth=\dimen315
-\pgfarrowlinewidth=\dimen316
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryshapes.geometric.code.tex
-File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-shapes.geometric.code.tex
-File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))
-\@quotelevel=\count477
-\@quotereset=\count478
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 13
-.
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 12.0pt on input line 13.
+(Font)              scaled to size 12.0pt on input line 4.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -2389,17 +2094,17 @@ LaTeX Font Info:    ... okay on input line 13.
 
 (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count479
-\scratchdimen=\dimen317
-\scratchbox=\box77
-\nofMPsegments=\count480
-\nofMParguments=\count481
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count482
-\MPscratchDim=\dimen318
-\MPnumerator=\count483
-\makeMPintoPDFobject=\count484
-\everyMPtoPDFconversion=\toks49
+\scratchcounter=\count458
+\scratchdimen=\dimen263
+\scratchbox=\box66
+\nofMPsegments=\count459
+\nofMParguments=\count460
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count461
+\MPscratchDim=\dimen264
+\MPnumerator=\count462
+\makeMPintoPDFobject=\count463
+\everyMPtoPDFconversion=\toks37
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -2427,138 +2132,149 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 
-(./main.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                arccos
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                arccoswatch
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                stewart
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
-Package biblatex Info: Reference section=0 on input line 13.
-Package biblatex Info: Reference segment=0 on input line 13.
-Package hyperref Info: Link coloring ON on input line 13.
+(./main.bbl)
+Package biblatex Info: Reference section=0 on input line 4.
+Package biblatex Info: Reference segment=0 on input line 4.
+Package hyperref Info: Link coloring ON on input line 4.
  (./main.out) (./main.out)
-\@outlinefile=\write5
-\openout5 = `main.out'.
+\@outlinefile=\write4
+\openout4 = `main.out'.
 
- (./sections/00-cover.tex
+ (./sections/01-title-and-context.tex
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 24.88pt on input line 1.
+(Font)              scaled to size 14.4pt on input line 3.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 24.88pt on input line 1.
+(Font)              scaled to size 14.4pt on input line 3.
+<figures/logo.png, id=104, 1258.7025pt x 1258.7025pt>
+File: figures/logo.png Graphic file (type png)
+<use figures/logo.png>
+Package pdftex.def Info: figures/logo.png  used on input line 8.
+(pdftex.def)             Requested size: 57.81075pt x 57.81075pt.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 17.28pt on input line 1.
+(Font)              scaled to size 17.28pt on input line 9.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 17.28pt on input line 9.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.95pt on input line 1.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
-
-(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
-
-(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc}])
-(./sections/01-executive.tex
+(Font)              scaled to size 20.74pt on input line 11.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 17.28pt on input line 1.
- [1]) (./main.toc
+(Font)              scaled to size 20.74pt on input line 11.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 12.0pt on input line 1.
- [2
+(Font)              scaled to size 12.0pt on input line 17.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd) [1
+
+{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc} <./figures/log
+o.png (PNG copy)>]) (./sections/02-executive-summary.tex
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 10.95pt on input line 10.
+ [1
 
 ])
-\tf@toc=\write6
-\openout6 = `main.toc'.
+(./sections/03-table-of-contents.tex (./main.toc [2
+
+])
+\tf@toc=\write5
+\openout5 = `main.toc'.
 
  [3] (./main.lof)
-\tf@lof=\write7
-\openout7 = `main.lof'.
-
- (./main.lot)
-\tf@lot=\write8
-\openout8 = `main.lot'.
+\tf@lof=\write6
+\openout6 = `main.lof'.
 
  [4
 
-] [5
-
-] (./sections/02-introduction.tex
-
-LaTeX Warning: Citation 'stewart' on page 1 undefined on input line 3.
-
-
-LaTeX Warning: Citation 'arccos' on page 1 undefined on input line 3.
-
-
-LaTeX Warning: Citation 'arccoswatch' on page 1 undefined on input line 3.
-
-) (./sections/03-functional.tex
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1 ...n{Functional Description and System Design}
-                                                   [1
-
 ]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.0pt on input line 5.
+(./main.lot)
+\tf@lot=\write7
+\openout7 = `main.lot'.
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-[]|\T1/phv/m/n/10.95 Compute mo-tion re-
+ [5
+
+]) (./sections/03a-acronyms.tex [6
+
+
+])
+(./sections/04-introduction.tex
+Package acronym Info: Label `acro:ASCC' newly defined as it shall be overridden
+
+although it is yet undefined on input line 7.
+Package acronym Info: Label `acro:GPS' newly defined as it shall be overridden
+although it is yet undefined on input line 12.
+<figures/intro-system-diagram.png, id=243, 521.7894pt x 362.7954pt>
+File: figures/intro-system-diagram.png Graphic file (type png)
+<use figures/intro-system-diagram.png>
+Package pdftex.def Info: figures/intro-system-diagram.png  used on input line 1
+6.
+(pdftex.def)             Requested size: 328.82707pt x 228.62874pt.
+ [1
+
+ <./figures/intro-system-diagram.png>])
+(./sections/05-functional-description.tex [2]
+Package acronym Info: Label `acro:UART' newly defined as it shall be overridden
+
+although it is yet undefined on input line 5.
+Package acronym Info: Label `acro:SPI' newly defined as it shall be overridden
+although it is yet undefined on input line 5.
+Package acronym Info: Label `acro:I2C' newly defined as it shall be overridden
+although it is yet undefined on input line 5.
+Package acronym Info: Label `acro:GPIO' newly defined as it shall be overridden
+
+although it is yet undefined on input line 5.
+<figures/functional.jpeg, id=288, 2914.89pt x 2252.415pt>
+File: figures/functional.jpeg Graphic file (type jpg)
+<use figures/functional.jpeg>
+Package pdftex.def Info: figures/functional.jpeg  used on input line 9.
+(pdftex.def)             Requested size: 291.2458pt x 225.04848pt.
+<figures/physical.jpeg, id=289, 2914.89pt x 2252.415pt>
+File: figures/physical.jpeg Graphic file (type jpg)
+<use figures/physical.jpeg>
+Package pdftex.def Info: figures/physical.jpeg  used on input line 18.
+(pdftex.def)             Requested size: 295.94795pt x 228.65723pt.
+<figures/logical.jpeg, id=290, 1223.57124pt x 2252.415pt>
+File: figures/logical.jpeg Graphic file (type jpg)
+<use figures/logical.jpeg>
+Package pdftex.def Info: figures/logical.jpeg  used on input line 24.
+(pdftex.def)             Requested size: 150.32504pt x 276.70515pt.
+ [3 <./figures/functional.jpeg>]
+Underfull \hbox (badness 2042) in paragraph at lines 55--56
+[]|\T1/phv/m/n/12 Binary 
  []
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 10--10
-[]|\T1/phv/m/n/10.95 RFID reader / in-ven-tory
- []
-
-[2]) (./sections/04-requirements.tex [3]) (./sections/05-risks.tex [4])
-(./sections/06-approach.tex) (./sections/07-vv.tex
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
-[]|\T1/phv/m/n/8 Safe stop within
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
-\T1/phv/m/n/8 doc-u-mented time-
- []
-
-
-Underfull \hbox (badness 4036) in paragraph at lines 15--15
-[]|$\OMS/cmsy/m/n/8 ^^T$\T1/phv/m/n/8 CAD 600; core
- []
-
-[5]) (./sections/08-resources.tex [6]) (./sections/09-conclusion.tex) [7]
+ignored: Infinite glue shrinkage found in box being split [4 <./figures/physical.jpeg> <
+./figures/logical.jpeg>])
+(./sections/06-design-and-production.tex [5])
+(./sections/07-testing-and-evaluation.tex
+<figures/testing-and-evaluation.png, id=311, 333.8874pt x 282.5757pt>
+File: figures/testing-and-evaluation.png Graphic file (type png)
+<use figures/testing-and-evaluation.png>
+Package pdftex.def Info: figures/testing-and-evaluation.png  used on input line
+ 10.
+(pdftex.def)             Requested size: 211.38832pt x 178.90753pt.
+ [6])
+(./sections/08-resource-requirements.tex [7 <./figures/testing-and-evaluation.p
+ng>]) (./sections/09-conclusion.tex [8]) (./sections/10-references.tex
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 30.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 5.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 12.0pt on input line 30.
+(Font)              scaled to size 12.0pt on input line 5.
+LaTeX Font Info:    Font shape `T1/phv/m/sc' will be
+(Font)              scaled to size 12.0pt on input line 5.
+ [9
 
-(./sections/10-appendix.tex) [8
+])
+(./sections/11-appendices.tex
+ignored: Infinite glue shrinkage found in box being split [
+10
 
 ]
-
+<figures/safety-hazards.png, id=364, 709.6914pt x 408.3255pt>
+File: figures/safety-hazards.png Graphic file (type png)
+<use figures/safety-hazards.png>
+Package pdftex.def Info: figures/safety-hazards.png  used on input line 63.
+(pdftex.def)             Requested size: 469.75502pt x 270.27448pt.
+ [11 <./figures/safety-hazards.png>] [12]
+[13]) [14] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./main.aux)
  ***********
@@ -2566,30 +2282,27 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2C8B7CCA6B5936B3599C588691BA8F6A;5753.
+(rerunfilecheck)             Checksum: 16F97A867E69A8AB199C40A44A1DE06C;5171.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33092 strings out of 467525
- 624570 string characters out of 5418982
- 1462787 words of memory out of 5000000
- 61398 multiletter control sequences out of 15000+600000
- 662555 words of font info for 87 fonts, out of 8000000 for 9000
+ 22369 strings out of 467525
+ 386314 string characters out of 5418982
+ 1245520 words of memory out of 5000000
+ 50862 multiletter control sequences out of 15000+600000
+ 667500 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,13n,94p,1197b,1297s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb>
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
-sr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
-local/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/t
-exlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/
-2026/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (14 pages, 95608 bytes).
+ 68i,12n,86p,1197b,1289s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/
+local/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/t
+exlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (21 pages, 3061012 bytes).
 PDF statistics:
- 288 PDF objects out of 1000 (max. 8388607)
- 255 compressed objects within 3 object streams
- 57 named destinations out of 1000 (max. 500000)
- 229 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 430 PDF objects out of 1000 (max. 8388607)
+ 376 compressed objects within 4 object streams
+ 82 named destinations out of 1000 (max. 500000)
+ 236 words of extra memory for PDF output out of 10000 (max. 10000000)
 
