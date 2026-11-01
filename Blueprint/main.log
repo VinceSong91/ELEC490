@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  1 NOV 2026 17:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  1 NOV 2026 17:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2145,7 +2145,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 14.4pt on input line 3.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 14.4pt on input line 3.
-<figures/logo.png, id=172, 1258.7025pt x 1258.7025pt>
+<figures/logo.png, id=184, 1258.7025pt x 1258.7025pt>
 File: figures/logo.png Graphic file (type png)
 <use figures/logo.png>
 Package pdftex.def Info: figures/logo.png  used on input line 8.
@@ -2195,36 +2195,90 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 
 ])
-(./sections/04-introduction.tex) (./sections/05-functional-description.tex)
-(./sections/06-requirements-specifications.tex)
-(./sections/07-risks-and-safety-hazards.tex
+(./sections/04-introduction.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.95pt on input line 2.
+(Font)              scaled to size 10.95pt on input line 21.
 
 
-LaTeX Warning: Reference `ProposalBodyEnd' on page 1 undefined on input line 2.
-
+LaTeX Warning: Reference `ProposalBodyEnd' on page 1 undefined on input line 21
+.
 
 [1
 
-]) (./sections/08-approach.tex)
-(./sections/09-verification-and-validation.tex)
-(./sections/10-resource-requirements.tex) (./sections/11-conclusion.tex)
-(./sections/12-references.tex
+]
 
-LaTeX Warning: Reference `ProposalBodyEnd' on page 2 undefined on input line 1.
-
-
-[2]) (./sections/13-appendices.tex)
-
-Package caption Warning: Unused \captionsetup[table] on input line 95.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `ProposalBodyEnd' on page 3 undefined on input line 28
+LaTeX Warning: Reference `ProposalBodyEnd' on page 2 undefined on input line 38
 .
 
-[3] 
+[2]) (./sections/05-functional-description.tex)
+(./sections/06-requirements-specifications.tex
+
+LaTeX Warning: Reference `ProposalBodyEnd' on page 3 undefined on input line 4.
+
+
+[3]) (./sections/07-risks-and-safety-hazards.tex) (./sections/08-approach.tex)
+(./sections/09-verification-and-validation.tex)
+(./sections/10-resource-requirements.tex
+
+LaTeX Warning: Reference `ProposalBodyEnd' on page 4 undefined on input line 2.
+
+
+[4]
+
+LaTeX Warning: Reference `ProposalBodyEnd' on page 5 undefined on input line 41
+.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+[]|\T1/phv/m/n/10.95 Mechanical plat-form
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--63
+[]|\T1/phv/m/n/10.95 Controller, com-put-ing plat-form,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+[]|\T1/phv/m/n/10.95 Motor-control pro-to-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|\T1/phv/m/n/10.95 Obstacle avoid-ance and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
+[]|\T1/phv/m/n/10.95 Sensor and motor-
+ []
+
+
+Underfull \hbox (badness 4391) in paragraph at lines 73--74
+[]|\T1/phv/m/n/10.95 Individual sub-sys-tem
+ []
+
+
+Underfull \hbox (badness 1184) in paragraph at lines 75--75
+[]|\T1/phv/m/n/10.95 Completed cart, test equip-ment,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+[]|\T1/phv/m/n/10.95 Integrated pro-to-type
+ []
+
+
+LaTeX Warning: Reference `ProposalBodyEnd' on page 6 undefined on input line 88
+.
+
+[6]) (./sections/11-conclusion.tex) (./sections/12-references.tex)
+(./sections/13-appendices.tex)
+
+LaTeX Warning: Reference `ProposalBodyEnd' on page 7 undefined on input line 28
+.
+
+[7] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./main.aux)
  ***********
@@ -2236,25 +2290,25 @@ L3 programming layer <2026-01-19>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CB4CF577ECD395F5C4564D00BBACFE32;8943.
+(rerunfilecheck)             Checksum: E755F92997D276263F58BF421DF4CA43;9500.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21982 strings out of 467525
- 378662 string characters out of 5418982
- 1230556 words of memory out of 5000000
- 50502 multiletter control sequences out of 15000+600000
- 657768 words of font info for 76 fonts, out of 8000000 for 9000
+ 22011 strings out of 467525
+ 379140 string characters out of 5418982
+ 1232686 words of memory out of 5000000
+ 50522 multiletter control sequences out of 15000+600000
+ 659316 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,12n,86p,1197b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 68i,13n,86p,1197b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
 /local/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (10 pages, 1391527 bytes).
+Output written on main.pdf (14 pages, 1403834 bytes).
 PDF statistics:
- 287 PDF objects out of 1000 (max. 8388607)
- 267 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
- 342 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 328 PDF objects out of 1000 (max. 8388607)
+ 303 compressed objects within 4 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 366 words of extra memory for PDF output out of 10000 (max. 10000000)
 

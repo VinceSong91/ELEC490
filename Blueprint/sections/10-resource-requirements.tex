@@ -1,7 +1,93 @@
-\CourseSection{Resource Requirements}\label{sec:resources}
-\CourseSubsection{Hardware, Software, and Facilities}
-% List required resources and their relation to prototypes and milestones.
-\CourseSubsection{Budget and Supplier Sources}
-% Include quantities, item prices, source citations and total cost.
-\CourseSubsection{Procurement and Schedule Dependencies}
-% Explain lead times, availability and resource-related contingencies.
+
+\CourseSection{Resource Requirements}
+\label{sec:resources}
+
+The Autonomous Smart Caddy Cart (ASCC) will be developed using a combination of existing laboratory equipment, previously acquired components, and purchased hardware. Resource selection is guided by the system requirements, subsystem dependencies, and the project budget of CAD \$600. The team will prioritize components needed for motor control, golfer following, obstacle detection, emergency stopping, and RFID-based club identification before acquiring hardware for additional features.
+
+\CourseSubsection{Hardware and Equipment}
+
+The Raspberry Pi 5 will serve as the primary computing platform for sensor processing and high-level control. A motor controller will interface with the drive system of a used motorized golf push cart, which provides the mechanical platform for the prototype. Ultrasonic sensors and a TF-Luna LiDAR sensor will support obstacle detection and distance measurement, while RFID readers and tags will support club identification.
+
+Table~\ref{tab:resource-budget} summarizes the estimated hardware requirements. Components already available to the team are assigned no additional purchase cost.
+
+\begin{table}[htbp]
+\centering
+\caption{Estimated ASCC bill of materials (CAD).}
+\label{tab:resource-budget}
+\small
+\begin{tabular}{p{0.43\linewidth} c r}
+\hline
+\textbf{Component} & \textbf{Quantity} & \textbf{Cost (CAD)} \\
+\hline
+Raspberry Pi 5 (existing) & 1 & \$0 \\
+Ultrasonic sensors (existing) & Multiple & \$0 \\
+RFID readers and tags & 2 sets & \$20 \\
+TF-Luna LiDAR sensor & 1 & \$50 \\
+Used motorized golf push cart & 1 & \$250 \\
+Motor controller & 1 & \$50 \\
+Battery and power supply & 1 set & \$75 \\
+Mounting hardware & Assorted & \$30 \\
+Wiring, connectors, and switches & Assorted & \$30 \\
+Estimated tax and shipping & -- & \$75 \\
+Contingency allowance & -- & \$15 \\
+\hline
+\textbf{Total estimated cost} & & \textbf{\$595} \\
+\hline
+\end{tabular}
+\end{table}
+
+The motorized push cart represents the largest anticipated expenditure and will be sourced second-hand to reduce the cost of mechanical fabrication. The selected cart must be compatible with the proposed motor-control architecture and provide sufficient space for the battery, computing hardware, sensors, and club-tracking electronics. The final bill of materials will be updated with manufacturer or supplier references, confirmed quantities, and actual purchase prices.
+
+\CourseSubsection{Resource Allocation and Milestone Dependencies}
+
+Resources will be acquired and integrated according to the order of subsystem development. Table~\ref{tab:resource-milestones} identifies the major resource dependencies and the development activities they support. Milestone identifiers will be aligned with the final project schedule.
+
+\begin{table}[htbp]
+\centering
+\caption{Resource requirements and development dependencies.}
+\label{tab:resource-milestones}
+\small
+\begin{tabular}{p{0.31\linewidth} p{0.36\linewidth} p{0.23\linewidth}}
+\hline
+\textbf{Development activity} &
+\textbf{Required resources} &
+\textbf{Dependency} \\
+\hline
+Motor control prototype &
+Cart, motor controller, battery &
+Mechanical platform and power compatibility \\
+Sensor integration &
+Raspberry Pi, ultrasonic sensors, LiDAR &
+Stable power and sensor interfaces \\
+Golfer-following prototype &
+Controller, computing platform, drive system &
+Motor-control prototype \\
+Club identification prototype &
+RFID readers, tagged clubs &
+Reliable tag detection and reader placement \\
+Obstacle avoidance and emergency stop &
+Distance sensors, motor controller, stop switch &
+Sensor and motor-control integration \\
+System integration &
+Mounting hardware, wiring, connectors &
+Individual subsystem verification \\
+Outdoor validation &
+Completed cart, test equipment, suitable test area &
+Integrated prototype and safety checks \\
+\hline
+\end{tabular}
+\end{table}
+
+The team will verify electrical compatibility, mechanical fit, and interface requirements before finalizing purchases. Components with longer procurement times, particularly the used cart and specialized sensors, will be prioritized to avoid delaying dependent milestones.
+
+\CourseSubsection{Development Facilities and Software}
+
+The project will require access to electronics workspaces, soldering equipment, multimeters, power supplies, and mechanical assembly tools for subsystem prototyping and integration. Software development will use Python and the Raspberry Pi development environment, with version control used to coordinate changes across team members.
+
+Initial testing will take place in a controlled indoor environment where obstacle placement, operating speed, and emergency-stop behaviour can be evaluated safely. Outdoor testing will require a suitable area with permission for operation, sufficient space for the cart, and representative terrain conditions. Access to facilities and test equipment will be confirmed before the corresponding validation milestones.
+
+\CourseSubsection{Budget and Procurement Contingencies}
+
+The estimated total project cost is CAD \$595, leaving CAD \$5 below the project budget limit of CAD \$600. The estimate includes a \$15 contingency allowance, but the small remaining margin makes the project sensitive to changes in cart pricing, shipping costs, and component availability.
+
+If the selected cart exceeds the budget or is unavailable, the team will evaluate alternative second-hand platforms before committing to additional purchases. Existing components and laboratory equipment will be reused wherever practical. Optional features will be deferred if necessary to preserve resources for the core following, obstacle detection, emergency-stop, and club-tracking functions.

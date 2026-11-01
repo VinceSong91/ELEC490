@@ -332,6 +332,9 @@ INPUT ./sections/04-introduction.tex
 INPUT ./sections/04-introduction.tex
 INPUT ./sections/04-introduction.tex
 INPUT sections/04-introduction.tex
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT ./sections/05-functional-description.tex
 INPUT ./sections/05-functional-description.tex
 INPUT ./sections/05-functional-description.tex
@@ -347,9 +350,6 @@ INPUT ./sections/07-risks-and-safety-hazards.tex
 INPUT ./sections/07-risks-and-safety-hazards.tex
 INPUT ./sections/07-risks-and-safety-hazards.tex
 INPUT sections/07-risks-and-safety-hazards.tex
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT ./sections/08-approach.tex
 INPUT ./sections/08-approach.tex
 INPUT ./sections/08-approach.tex
@@ -365,6 +365,12 @@ INPUT ./sections/10-resource-requirements.tex
 INPUT ./sections/10-resource-requirements.tex
 INPUT ./sections/10-resource-requirements.tex
 INPUT sections/10-resource-requirements.tex
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT ./sections/11-conclusion.tex
 INPUT ./sections/11-conclusion.tex
 INPUT ./sections/11-conclusion.tex
