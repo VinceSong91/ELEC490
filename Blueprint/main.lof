@@ -1,6 +1,0 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces System context diagram for the Smart Caddy control system, showing the external entities it interacts with and the information exchanged with each.}}{1}{figure.caption.5}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Functional architecture diagram showing inputs, processing interlocks, and control outputs for the MVP smart caddy system.}}{3}{figure.caption.10}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Physical layout diagram detailing component placement, structural enclosures, bag cradle sensors, and safety controls on the chassis.}}{4}{figure.caption.11}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Logical computing architecture, from hardware abstraction to application layer.}}{4}{figure.caption.11}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Proposed testing approach: stationary bag testing and motion testing are completed separately, with their requirement IDs, before the integrated MVP test.}}{7}{figure.caption.12}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Bow-tie diagram for loss of control of the cart, showing causes and preventative controls on the left and protective controls and consequences on the right.}}{11}{figure.caption.13}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  1 NOV 2026 16:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  1 NOV 2026 17:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2145,7 +2145,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 14.4pt on input line 3.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 14.4pt on input line 3.
-<figures/logo.png, id=104, 1258.7025pt x 1258.7025pt>
+<figures/logo.png, id=172, 1258.7025pt x 1258.7025pt>
 File: figures/logo.png Graphic file (type png)
 <use figures/logo.png>
 Package pdftex.def Info: figures/logo.png  used on input line 8.
@@ -2167,8 +2167,9 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 {/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc} <./figures/log
 o.png (PNG copy)>]) (./sections/02-executive-summary.tex
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.95pt on input line 10.
+(Font)              scaled to size 10.95pt on input line 3.
  [1
+
 
 ])
 (./sections/03-table-of-contents.tex (./main.toc [2
@@ -2194,115 +2195,66 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 
 ])
-(./sections/04-introduction.tex
-Package acronym Info: Label `acro:ASCC' newly defined as it shall be overridden
-
-although it is yet undefined on input line 7.
-Package acronym Info: Label `acro:GPS' newly defined as it shall be overridden
-although it is yet undefined on input line 12.
-<figures/intro-system-diagram.png, id=243, 521.7894pt x 362.7954pt>
-File: figures/intro-system-diagram.png Graphic file (type png)
-<use figures/intro-system-diagram.png>
-Package pdftex.def Info: figures/intro-system-diagram.png  used on input line 1
-6.
-(pdftex.def)             Requested size: 328.82707pt x 228.62874pt.
- [1
-
- <./figures/intro-system-diagram.png>])
-(./sections/05-functional-description.tex [2]
-Package acronym Info: Label `acro:UART' newly defined as it shall be overridden
-
-although it is yet undefined on input line 5.
-Package acronym Info: Label `acro:SPI' newly defined as it shall be overridden
-although it is yet undefined on input line 5.
-Package acronym Info: Label `acro:I2C' newly defined as it shall be overridden
-although it is yet undefined on input line 5.
-Package acronym Info: Label `acro:GPIO' newly defined as it shall be overridden
-
-although it is yet undefined on input line 5.
-<figures/functional.jpeg, id=288, 2914.89pt x 2252.415pt>
-File: figures/functional.jpeg Graphic file (type jpg)
-<use figures/functional.jpeg>
-Package pdftex.def Info: figures/functional.jpeg  used on input line 9.
-(pdftex.def)             Requested size: 291.2458pt x 225.04848pt.
-<figures/physical.jpeg, id=289, 2914.89pt x 2252.415pt>
-File: figures/physical.jpeg Graphic file (type jpg)
-<use figures/physical.jpeg>
-Package pdftex.def Info: figures/physical.jpeg  used on input line 18.
-(pdftex.def)             Requested size: 295.94795pt x 228.65723pt.
-<figures/logical.jpeg, id=290, 1223.57124pt x 2252.415pt>
-File: figures/logical.jpeg Graphic file (type jpg)
-<use figures/logical.jpeg>
-Package pdftex.def Info: figures/logical.jpeg  used on input line 24.
-(pdftex.def)             Requested size: 150.32504pt x 276.70515pt.
- [3 <./figures/functional.jpeg>]
-Underfull \hbox (badness 2042) in paragraph at lines 55--56
-[]|\T1/phv/m/n/12 Binary 
- []
+(./sections/04-introduction.tex) (./sections/05-functional-description.tex)
+(./sections/06-requirements-specifications.tex)
+(./sections/07-risks-and-safety-hazards.tex
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.95pt on input line 2.
 
 
-ignored: Infinite glue shrinkage found in box being split [4 <./figures/physical.jpeg> <
-./figures/logical.jpeg>])
-(./sections/06-design-and-production.tex [5])
-(./sections/07-testing-and-evaluation.tex
-<figures/testing-and-evaluation.png, id=311, 333.8874pt x 282.5757pt>
-File: figures/testing-and-evaluation.png Graphic file (type png)
-<use figures/testing-and-evaluation.png>
-Package pdftex.def Info: figures/testing-and-evaluation.png  used on input line
- 10.
-(pdftex.def)             Requested size: 211.38832pt x 178.90753pt.
- [6])
-(./sections/08-resource-requirements.tex [7 <./figures/testing-and-evaluation.p
-ng>]) (./sections/09-conclusion.tex [8]) (./sections/10-references.tex
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 5.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 12.0pt on input line 5.
-LaTeX Font Info:    Font shape `T1/phv/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 5.
- [9
+LaTeX Warning: Reference `ProposalBodyEnd' on page 1 undefined on input line 2.
 
-])
-(./sections/11-appendices.tex
-ignored: Infinite glue shrinkage found in box being split [
-10
 
-]
-<figures/safety-hazards.png, id=364, 709.6914pt x 408.3255pt>
-File: figures/safety-hazards.png Graphic file (type png)
-<use figures/safety-hazards.png>
-Package pdftex.def Info: figures/safety-hazards.png  used on input line 63.
-(pdftex.def)             Requested size: 469.75502pt x 270.27448pt.
- [11 <./figures/safety-hazards.png>] [12]
-[13]) [14] 
+[1
+
+]) (./sections/08-approach.tex)
+(./sections/09-verification-and-validation.tex)
+(./sections/10-resource-requirements.tex) (./sections/11-conclusion.tex)
+(./sections/12-references.tex
+
+LaTeX Warning: Reference `ProposalBodyEnd' on page 2 undefined on input line 1.
+
+
+[2]) (./sections/13-appendices.tex)
+
+Package caption Warning: Unused \captionsetup[table] on input line 95.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `ProposalBodyEnd' on page 3 undefined on input line 28
+.
+
+[3] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 16F97A867E69A8AB199C40A44A1DE06C;5171.
+(rerunfilecheck)             Checksum: CB4CF577ECD395F5C4564D00BBACFE32;8943.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22369 strings out of 467525
- 386314 string characters out of 5418982
- 1245520 words of memory out of 5000000
- 50862 multiletter control sequences out of 15000+600000
- 667500 words of font info for 86 fonts, out of 8000000 for 9000
+ 21982 strings out of 467525
+ 378662 string characters out of 5418982
+ 1230556 words of memory out of 5000000
+ 50502 multiletter control sequences out of 15000+600000
+ 657768 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,12n,86p,1197b,1289s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/
-local/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/t
-exlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (21 pages, 3061012 bytes).
+ 68i,12n,86p,1197b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
+/local/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on main.pdf (10 pages, 1391527 bytes).
 PDF statistics:
- 430 PDF objects out of 1000 (max. 8388607)
- 376 compressed objects within 4 object streams
- 82 named destinations out of 1000 (max. 500000)
- 236 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 287 PDF objects out of 1000 (max. 8388607)
+ 267 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 342 words of extra memory for PDF output out of 10000 (max. 10000000)
 

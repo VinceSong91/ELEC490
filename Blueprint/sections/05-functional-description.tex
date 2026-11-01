@@ -1,90 +1,11 @@
-\CourseSection{Functional Description}\label{sec:functional-description}
-\CourseSubsection{System overview}
-
-\Guidance{Use a set of diagrams to explain the system boundary, internal functions, operating behavior, inputs and outputs, signal types, protocols, direction of information flow, computing architecture, and / or anything else that applies. Write a short paragraph here that explains design decisions and references each figure, like Figure~\ref{fig:system}. Maintain labeling consistency (such as IDs, components, units, etc.) across tables and figures in this document. It's a good idea to reference these later in Section~\ref{sec:testing}.}
-The system architecture is organized into functional, physical, and logical domains to validate core autonomous mobility, safety, and equipment auditing without unnecessary complexity. Figure~\ref{fig:functional-architecture} outlines the primary operational blocks, showing energy and signal paths between tracking, obstacle detection, club monitoring, and motor drive systems. Figure~\ref{fig:physical-layout} defines the physical component distribution and interface boundaries across the chassis, emphasizing sensor clearance and immediate access to safety overrides (\textbf{IF-04}). Finally, Figure~\ref{fig:logical-architecture} shows how the software is layered between the hardware and the display, including the hardware communication protocols (\acs{UART}, \acs{SPI}, \acs{I2C}, and \acs{GPIO}), so that the cart stops safely when the emergency button is pressed (\textbf{PF-05}).
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.62\linewidth]{figures/functional.jpeg}
-\caption{Functional architecture diagram showing inputs, processing interlocks, and control outputs for the MVP smart caddy system.}
-\label{fig:functional-architecture}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\begin{minipage}[t]{0.63\linewidth}
-\centering
-\includegraphics[width=1\linewidth]{figures/physical.jpeg}
-\caption{Physical layout diagram detailing component placement, structural enclosures, bag cradle sensors, and safety controls on the chassis.}
-\label{fig:physical-layout}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\linewidth}
-\centering
-\includegraphics[width=1\linewidth]{figures/logical.jpeg}
-\caption{Logical computing architecture, from hardware abstraction to application layer.}
-\label{fig:logical-architecture}
-\end{minipage}
-\end{figure}
-
-\CourseSubsection{Interface and performance specifications}
-\Guidance{Give quantitative targets and tolerances with proper units. You can also use IDs to connect specifications with the tests in Section~\ref{sec:testing}. Write a short paragraph here giving context for these requirements, citing the IDs as necessary.}
-The interface and performance specifications in Table~\ref{tab:proposal-specs} set the measurable targets for the prototype. The interface specifications cover golfer tracking, distance accuracy, club sensing, the emergency-stop link, and the display (\textbf{IF-01} through \textbf{IF-05}). The performance specifications cover obstacle and emergency stopping, speed, following distance, and range (\textbf{PF-01} through \textbf{PF-05}). Each specification has a unique identifier that the tests in Section~\ref{sec:testing} refer to.
-
-\begin{singlespace}
-\setlength{\LTcapwidth}{\linewidth}
-\begin{longtable}{@{}L{0.10\linewidth} L{\dimexpr0.4700000\linewidth-6.0000000\tabcolsep\relax} L{0.22\linewidth} L{0.21\linewidth}@{}}
-\caption{Preliminary system specifications.}\label{tab:proposal-specs}\\
-\rowcolor{MidGray}
-\TableHeader{ID} & \TableHeader{Requirement} & \TableHeader{Target} & \TableHeader{Tolerance} \\
-\midrule
-\endfirsthead
-\rowcolor{MidGray}
-\TableHeader{ID} & \TableHeader{Requirement} & \TableHeader{Target} & \TableHeader{Tolerance} \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-% Add and replace data rows below.
-% Interface Specifications
-% Interface Specifications
-IF-01 & User Tracking Beacon Range & 15.0 m & $\pm$ 2.0 m \\
-\addlinespace[3pt]
-IF-02 & Distance-to-Flag GPS Accuracy & 3.0 m & $\le$ 5.0 m \\
-\addlinespace[3pt]
-IF-03 & Bag Slot Sensor Audit Resolution & 14 slots & Binary (Present/Absent) \\
-\addlinespace[3pt]
-IF-04 & Emergency Stop Wireless Link Range & 30.0 m & Minimum 20.0 m \\
-\addlinespace[3pt]
-IF-05 & Onboard Status Display Diagonal Size & 7.0 in & Minimum 5.0 in \\
-\addlinespace[3pt]
-
-% Performance Specifications
-PF-01 & Obstacle Auto-Stop Reaction Time & 200 ms & $\le$ 300 ms \\
-\addlinespace[3pt]
-PF-02 & Maximum Autonomous Cruise Speed & 5.0 km/h & $\pm$ 0.5 km/h \\
-\addlinespace[3pt]
-PF-03 & Target Following Distance & 1.5 m & $\pm$ 0.3 m \\
-\addlinespace[3pt]
-PF-04 & Continuous Operating Distance (Single Charge) & 10.0 km & $\pm$ 1.5 km \\
-\addlinespace[3pt]
-PF-05 & Emergency Stop Override Latency & 50 ms & $\le$ 100 ms \\
-\end{longtable}
-\end{singlespace}
-
-\CourseSubsection{Risks and safety hazards}
-\Guidance{Identify relevant technical risks, health risks, and / or safety hazards, and indicate how you will manage these risks, and / or explain how system features and operating conditions are low-risk.}
-
-The main hazard of a self-driving cart is loss of control, where the cart moves outside its safe motion limits. Figure~\ref{fig:safety-hazards} in Appendix~\ref{app:risks} maps the causes of this event, the preventative controls that make it less likely, and the protective controls that limit its consequences. Table~\ref{tab:risks} summarizes the remaining safety hazards and the main project risks, and Table~\ref{tab:risks-full} in the same appendix gives the consequence and proposed mitigation for each.
-
-\begin{TableBlock}
-\small
-\captionof{table}{Summary of safety hazards, project risks, and mitigations.}\label{tab:risks}
-\begin{tabularx}{\linewidth}{@{}YYY@{}}
-\rowcolor{MidGray}
-\TableHeader{Safety hazards} & \TableHeader{Project risks} & \TableHeader{Mitigation approach} \\
-\midrule
-Collision, tipping on a slope, contact with moving parts, battery faults, and water reaching the electronics & Unreliable club-tag reads, insufficient GPS accuracy, and slow subsystem integration & Limited speed and stop behaviours, guarding and electrical protection, early subsystem tests, and optional extension features \\
-\bottomrule
-\end{tabularx}
-\end{TableBlock}
+\CourseSection{Functional Description}\label{sec:functional}
+\CourseSubsection{System Overview and Design Alternatives}
+% Write here. Justify design decisions and discuss rejected alternatives.
+\CourseSubsection{Functional Decomposition}
+% Insert project-specific vector diagrams, including one fully decomposed example.
+\CourseSubsection{Logical Decomposition and Interfaces}
+% Link logical elements and interface actions to functional decomposition.
+\CourseSubsection{Physical Architecture}
+% Describe component layout and integration boundaries; add a diagram.
+\CourseSubsection{Prototype Definitions}
+% Give each prototype an ID, purpose, scope, success criteria, and traceability.
