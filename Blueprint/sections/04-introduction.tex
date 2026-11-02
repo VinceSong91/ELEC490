@@ -4,46 +4,47 @@
 
 \CourseSubsection{Motivation and Problem}
 
-Golfers who prefer walking the course must transport their clubs and equipment between shots, either by carrying a golf bag or manually operating a push cart. While conventional electric push carts reduce the physical effort required to move equipment, many still require direct user control. Commercial autonomous carts provide golfer-following capabilities, but these systems primarily address equipment transportation rather than the broader challenges of managing golf clubs and accessing useful information during a round.
+Golfers who walk the course must transport their equipment by carrying a bag or operating a push cart. Although electric and autonomous carts reduce this effort, they primarily focus on transportation rather than equipment management. Golfers must also keep track of clubs removed during play, which can be misplaced or left behind.
 
-An additional challenge is ensuring that all clubs are accounted for throughout play. Golfers frequently remove clubs from their bags at different locations, creating opportunities for equipment to be misplaced or left behind. Existing solutions for autonomous transportation and golf equipment management are often implemented separately, requiring golfers to rely on multiple devices or manual checks.
-
-The Autonomous Smart Caddy Cart (ASCC) aims to address these limitations by combining autonomous equipment transportation with club identification and tracking in a single system. The project focuses on developing a practical prototype that reduces the need for manual cart operation while helping golfers manage their equipment.
+The Autonomous Smart Caddy Cart (ASCC) aims to address both challenges by combining autonomous golfer following with club identification and tracking. As golfers ourselves, the team understands the need for a solution that addresses both transportation and equipment management. The goal is to reduce manual cart operation while helping golfers manage their equipment throughout a round.
 
 \CourseSubsection{Project Objectives}
 
-The primary objective of the ASCC is to develop a motorized golf push cart capable of following a golfer while maintaining safe operation in a controlled outdoor environment. The system will use a controller-based following mechanism rather than computer vision, reducing the computational complexity associated with visual target detection and tracking.
+The ASCC will be developed as a motorized golf push cart capable of following a golfer using a controller-based tracking system rather than computer vision. Distance sensors will support obstacle detection and avoidance, while an emergency-stop mechanism will allow the cart to be stopped when necessary.
 
-The cart will incorporate distance sensors to detect obstacles and support automatic stopping or avoidance. An independent emergency-stop mechanism will provide an additional means of preventing unintended motion. In parallel, an RFID-based club-tracking subsystem will identify tagged golf clubs and determine whether expected clubs are present in the bag.
+An RFID-based subsystem will identify tagged golf clubs and monitor their presence in the bag, notifying the golfer when a club is missing. The objective is to integrate these functions into a reliable and safe prototype.
 
-The completed prototype is intended to demonstrate the integration of these functions into a single platform, with emphasis on reliable subsystem operation, safe movement, and clear communication of equipment status to the user.
+The ASCC will also aim to incorporate golf course data, including hole layouts, distances, and course information, to assist golfers with shot planning. This information helps golfers estimate distances to targets and hazards, supporting more informed club selection and on-course decisions.
 
 \CourseSubsection{Project Scope}
 
-The project will prioritize motorized movement, golfer following, obstacle detection, emergency stopping, and RFID-based club identification. These functions form the minimum viable system and will guide the design requirements, subsystem prototypes, and verification and validation procedures.
+The minimum viable prototype will focus on motor control, golfer following, obstacle detection, emergency stopping, RFID-based club tracking, and basic golf course data integration. Additional features, including shot data collection, club recommendations, and speech functionalities, may be implemented if time and resources permit.
 
-Additional functionality, such as collecting shot data, recommending clubs, or providing a mobile application, may be considered if time and resources permit. These features are excluded from the core project scope because they introduce additional sensing, software, and interface requirements that are not essential to demonstrating the primary system objectives.
+Testing will begin indoors before progressing to controlled outdoor environments. The prototype is not intended for commercial deployment or operation on public roads, crowded areas, or extreme terrain.
 
-The ASCC is intended as a prototype rather than a commercially deployable product. Testing will focus on controlled indoor environments followed by representative outdoor conditions. Operation on public roads, highly congested areas, and extreme terrain is outside the intended scope.
+
 
 \CourseSubsection{System Overview and Operating Scenario}
 
-The ASCC consists of a motorized push-cart platform, an onboard computing system, motor-control electronics, distance sensors, a golfer-following interface, and an RFID-based club-tracking subsystem. The Raspberry Pi will coordinate high-level system functions, while the motor-control electronics will regulate movement and respond to safety-related inputs.
+Figure~\ref{fig:ascc-system-overview} illustrates the ASCC's main
+subsystems and their interactions with the golfer and surrounding
+environment. The Raspberry Pi coordinates sensor inputs, motor
+control, and club tracking.
 
-During normal operation, the golfer activates the system and begins walking along the course. The cart receives information from the following mechanism and adjusts its movement to maintain an appropriate distance from the golfer. Distance sensors monitor the surrounding area for obstacles, allowing the control system to stop or modify movement when an obstruction is detected. The golfer can also activate an emergency stop when immediate intervention is required.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[
+        width=0.85\linewidth,
+        height=0.28\textheight,
+        keepaspectratio
+    ]{figures/System Diagram.png}
+    \caption{ASCC system overview and external interactions.}
+    \label{fig:ascc-system-overview}
+\end{figure}
 
-When clubs are returned to or removed from the bag, the RFID subsystem attempts to identify their presence. The system maintains a record of detected clubs and can notify the golfer when an expected club is missing.
-
-The system boundary includes the cart, its onboard electronics, sensors, power supply, and club-tracking hardware. External elements include the golfer, the following controller, tagged clubs, obstacles, and the operating terrain. The design assumes a suitable walking surface, adequate battery charge, and environmental conditions within the operating limits of the selected hardware.
-
-% Insert the system context or physical overview diagram here.
-% The diagram should identify the system boundary,
-% external actors, and interfaces.
 
 \CourseSubsection{Design Constraints}
 
-The ASCC must be developed within the project budget of CAD \$600 and the available capstone development schedule. The design therefore emphasizes reuse of existing components, including the Raspberry Pi and ultrasonic sensors, together with a second-hand motorized push-cart platform.
+The ASCC must be completed within the CAD \$600 budget and capstone development schedule. Existing components, including the Raspberry Pi, ultrasonic sensors, and golf push cart, will be reused to reduce costs.
 
-Hardware compatibility, sensor reliability, battery capacity, and safe motor operation will influence the final design. Particular attention will be given to detecting obstacles, preventing unintended movement, and ensuring that the cart can be stopped reliably.
-
-These constraints establish the basis for the functional decomposition, requirements specifications, development approach, and verification and validation procedures presented in the following sections.
+Key constraints include hardware compatibility, sensor reliability, battery capacity, and safe motor operation. These considerations will guide the system requirements, development approach, and verification procedures.

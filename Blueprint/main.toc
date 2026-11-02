@@ -3,10 +3,10 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Motivation and Problem}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Project Objectives}{1}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Project Scope}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.3}Project Scope}{1}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}System Overview and Operating Scenario}{2}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Design Constraints}{3}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Functional Description}{3}{section.2}%
+\contentsline {subsection}{\numberline {1.5}Design Constraints}{2}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Functional Description}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}System Overview and Design Alternatives}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Functional Decomposition}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Logical Decomposition and Interfaces}{3}{subsection.2.3}%
@@ -14,32 +14,30 @@
 \contentsline {subsection}{\numberline {2.5}Prototype Definitions}{3}{subsection.2.5}%
 \contentsline {section}{\numberline {3}Requirements Specifications}{3}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Stakeholder Needs and Requirements Hierarchy}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Functional Requirements}{4}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Non-Functional and Interface Requirements}{4}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Safety and Fault Requirements}{4}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Critical Requirements and Traceability}{4}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Stretch Goals}{4}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Risks and Safety Hazards}{4}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Hazard Identification and Risk Assessment}{4}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Risk Mitigation and Residual Risk}{4}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Approach}{4}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Development Strategy and Division of Labour}{4}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Prototype Development Plan}{4}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Milestones and Dependencies}{4}{subsection.5.3}%
+\contentsline {subsection}{\numberline {3.2}Functional Requirements}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Non-Functional and Interface Requirements}{3}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Safety and Fault Requirements}{3}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Critical Requirements and Traceability}{3}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Stretch Goals}{3}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Risks and Safety Hazards}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Hazard Identification and Risk Assessment}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Risk Mitigation and Residual Risk}{3}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Approach}{3}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Development Strategy and Division of Labour}{3}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Prototype Development Plan}{3}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Milestones and Dependencies}{3}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Contingency Plans}{4}{subsection.5.4}%
 \contentsline {section}{\numberline {6}Verification and Validation}{4}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Verification Strategy and Traceability}{4}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Subsystem and Prototype Tests}{4}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Experimental Test Setups}{4}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}System Validation}{4}{subsection.6.4}%
-\contentsline {section}{\numberline {7}Resource Requirements}{5}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Hardware and Equipment}{5}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Resource Allocation and Milestone Dependencies}{6}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Development Facilities and Software}{6}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Budget and Procurement Contingencies}{7}{subsection.7.4}%
-\contentsline {section}{\numberline {8}Conclusion}{7}{section.8}%
-\contentsline {section}{\numberline {9}References}{7}{section.9}%
-\contentsline {section}{\numberline {A}Detailed Requirements and Traceability}{7}{appendix.A}%
-\contentsline {section}{\numberline {B}Supporting Technical Calculations}{7}{appendix.B}%
-\contentsline {section}{\numberline {C}Detailed Test Procedures}{7}{appendix.C}%
-\contentsline {section}{\numberline {D}Detailed Resource and Budget Information}{7}{appendix.D}%
+\contentsline {section}{\numberline {7}Resource Requirements}{4}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Hardware and Equipment}{4}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Facilities and Contingencies}{4}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Conclusion}{5}{section.8}%
+\contentsline {section}{\numberline {9}References}{5}{section.9}%
+\contentsline {section}{\numberline {A}Detailed Requirements and Traceability}{5}{appendix.A}%
+\contentsline {section}{\numberline {B}Supporting Technical Calculations}{5}{appendix.B}%
+\contentsline {section}{\numberline {C}Detailed Test Procedures}{5}{appendix.C}%
+\contentsline {section}{\numberline {D}Detailed Resource and Budget Information}{5}{appendix.D}%

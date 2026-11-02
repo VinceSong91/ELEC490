@@ -332,9 +332,11 @@ INPUT ./sections/04-introduction.tex
 INPUT ./sections/04-introduction.tex
 INPUT ./sections/04-introduction.tex
 INPUT sections/04-introduction.tex
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
+INPUT ./figures/System Diagram.png
+INPUT ./figures/System Diagram.png
+INPUT ./figures/System Diagram.png
+INPUT ./figures/System Diagram.png
+INPUT ./figures/System Diagram.png
 INPUT ./sections/05-functional-description.tex
 INPUT ./sections/05-functional-description.tex
 INPUT ./sections/05-functional-description.tex
@@ -371,6 +373,7 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
 INPUT ./sections/11-conclusion.tex
 INPUT ./sections/11-conclusion.tex
 INPUT ./sections/11-conclusion.tex
@@ -386,6 +389,8 @@ INPUT ./sections/13-appendices.tex
 INPUT ./sections/13-appendices.tex
 INPUT ./sections/13-appendices.tex
 INPUT sections/13-appendices.tex
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
