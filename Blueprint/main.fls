@@ -172,6 +172,8 @@ INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
@@ -384,13 +386,13 @@ INPUT ./sections/12-references.tex
 INPUT ./sections/12-references.tex
 INPUT ./sections/12-references.tex
 INPUT sections/12-references.tex
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT ./sections/13-appendices.tex
 INPUT ./sections/13-appendices.tex
 INPUT ./sections/13-appendices.tex
 INPUT ./sections/13-appendices.tex
 INPUT sections/13-appendices.tex
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out

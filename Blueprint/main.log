@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  2 NOV 2026 11:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  2 NOV 2026 11:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -650,6 +650,9 @@ Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
 ))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
 (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
 
@@ -2022,8 +2025,8 @@ pdfTeX warning: pdflatex (file /usr/local/texlive/2026/texmf-dist/fonts/map/dvi
 ps/helvetic/uhv.map): fontmap entry for `uhvro8r' already exists, duplicates ig
 nored
 }
-Package hyperref Info: Option `colorlinks' set `true' on input line 120.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 120.
+Package hyperref Info: Option `colorlinks' set `true' on input line 122.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 122.
 
 ) (./metadata.tex)
 \@quotelevel=\count456
@@ -2211,8 +2214,8 @@ Package pdftex.def Info: figures/System Diagram.png  used on input line 40.
 (./sections/10-resource-requirements.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 10.95pt on input line 16.
-) (./sections/11-conclusion.tex
-[4]) (./sections/12-references.tex) (./sections/13-appendices.tex) [5]
+ [4]) (./sections/11-conclusion.tex)
+(./sections/12-references.tex [5]) (./sections/13-appendices.tex) [6]
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./main.aux)
@@ -2227,19 +2230,19 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22016 strings out of 467525
- 379401 string characters out of 5418982
- 1230724 words of memory out of 5000000
- 50531 multiletter control sequences out of 15000+600000
+ 22048 strings out of 467525
+ 380147 string characters out of 5418982
+ 1230984 words of memory out of 5000000
+ 50558 multiletter control sequences out of 15000+600000
  659316 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,13n,86p,1197b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
 /local/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (12 pages, 2719157 bytes).
+Output written on main.pdf (13 pages, 2719656 bytes).
 PDF statistics:
- 308 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
+ 313 PDF objects out of 1000 (max. 8388607)
+ 289 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
  355 words of extra memory for PDF output out of 10000 (max. 10000000)
 

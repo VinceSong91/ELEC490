@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber main"] 1793637323.86933 "main.bcf" "main.bbl" "main" 1793637740.58007 0
-  "main.bcf" 1793637740.43556 107397 eac68fe4208c075a452fcd075ab1fc2b "pdflatex"
+["biber main"] 1793637323.86933 "main.bcf" "main.bbl" "main" 1793638455.27715 0
+  "main.bcf" 1793638455.13419 107397 eac68fe4208c075a452fcd075ab1fc2b "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1793637739.60614 "main.tex" "main.pdf" "main" 1793637740.5803 0
+["pdflatex"] 1793638454.38189 "main.tex" "main.pdf" "main" 1793638455.27744 0
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/dvips/helvetic/uhv.map" 1136849702 312 af026be5553d9caacba9c0a27604991d ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/dvips/tetex/pdftex35.map" 1381192210 20304 df8a75fe404aa41bfedda42a84949fdd ""
@@ -120,6 +120,7 @@
   "/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.def" 1284153563 1620 fb1c32b818f2058eca187e5c41dfae77 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.sty" 1284153563 6187 b27afc771af565d3a9ff1ca7d16d0d46 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/needspace/needspace.sty" 1742067607 1297 95e05b694b6d7375c39c5145fe24b731 ""
+  "/usr/local/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty" 1137110565 4087 636308456f60d2b31cbf97867db5708d ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/helvet.sty" 1586716065 1499 de0ad166b701b820e03588a29bb30798 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/t1phv.fd" 1586716065 1483 47067fbe7c3ffed1ede7aaa7b8549d7a ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/ragged2e/ragged2e.sty" 1687466457 10085 3dececaeed388e31285c366e124c0c4e ""
@@ -138,16 +139,16 @@
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "figures/System Diagram.png" 1793637647.89406 1344981 a66a35465aee55ad4864d65e62250d58 ""
   "figures/logo.png" 1791424208 1374305 a6d2d185a50b15d5ca3b7b1e644b230e ""
-  "main.aux" 1793637740.43397 7535 6a25710c261e0f5e1649526480ae2dcd "pdflatex"
+  "main.aux" 1793638455.13249 7535 8784e715be709d20551a3b30e5a2d853 "pdflatex"
   "main.bbl" 1793637331.18729 466 76d65a242ec496c9b4361af646ff12cb "biber main"
-  "main.lof" 1793637740.43622 125 5cc8e6a1115516c77d89fe5cf0ff6eb1 "pdflatex"
-  "main.lot" 1793637740.43625 107 b8b29a5fe8c9e3574fbfc52093866e7c "pdflatex"
-  "main.out" 1793637740.43481 8869 d59160278e248216ba84da74a0419ec7 "pdflatex"
-  "main.run.xml" 1793637740.43614 2402 05765085d18e81025e591027ecbce8c4 "pdflatex"
+  "main.lof" 1793638455.13526 125 5cc8e6a1115516c77d89fe5cf0ff6eb1 "pdflatex"
+  "main.lot" 1793638455.13528 107 b8b29a5fe8c9e3574fbfc52093866e7c "pdflatex"
+  "main.out" 1793638455.13345 8869 d59160278e248216ba84da74a0419ec7 "pdflatex"
+  "main.run.xml" 1793638455.13519 2402 05765085d18e81025e591027ecbce8c4 "pdflatex"
   "main.tex" 1793636753.46975 902 bea6524fcb5622f4a0f76c7763a8385e ""
-  "main.toc" 1793637740.4362 3769 81b9f4ef289250a2960c5f76ebbe408e "pdflatex"
+  "main.toc" 1793638455.13524 3769 e36c8baa1f46efeb8da5b8622d4478d1 "pdflatex"
   "metadata.tex" 1793588982 1455 aed6225a22f69a1abff258dda61373ad ""
-  "preamble.tex" 1793637303.67001 5330 19fc2393ab28da98a02c500b0ba95a7f ""
+  "preamble.tex" 1793638423.42109 5380 1edf426eb55b7d78ab21bd65c6c33974 ""
   "sections/01-title-and-context.tex" 1793587624 1398 497fd5412915be8c0ea774f98e3ccce0 ""
   "sections/02-executive-summary.tex" 1793588982 175 02684f20e5b79c11f7db68c8b94eee77 ""
   "sections/03-table-of-contents.tex" 1788831880 279 49dcc3d2add8dcb44378f53da2197b9f ""
@@ -158,7 +159,7 @@
   "sections/07-risks-and-safety-hazards.tex" 1793588982 335 346884fe128fe39b947bc8f7be72dc40 ""
   "sections/08-approach.tex" 1793588982 589 24a9d53f796d0414e182629a047711b1 ""
   "sections/09-verification-and-validation.tex" 1793588982 565 b2b5b7c738a3a7e89c5d76f9f76e2f41 ""
-  "sections/10-resource-requirements.tex" 1793636631.93231 1981 33b17f111c59402a441b745402468675 ""
+  "sections/10-resource-requirements.tex" 1793638451.9296 1993 ea866ab35fa7fe798f80ba08b1b2f6d0 ""
   "sections/11-conclusion.tex" 1793588982 237 23e78f716933032f29799c0f0fa65619 ""
   "sections/12-references.tex" 1793588982 157 51d94fdc8ed4a0c099a47a1148325fb8 ""
   "sections/13-appendices.tex" 1793588982 567 429af227df4c54552a3881587f7652ce ""
