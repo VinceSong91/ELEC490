@@ -1,13 +1,31 @@
-\CourseSection{Requirements Specifications}\label{sec:requirements}
+
+\CourseSection{Requirements Specifications}
+\label{sec:requirements}
+
 \CourseSubsection{Stakeholder Needs and Requirements Hierarchy}
-% Assign IDs to stakeholder needs and show the hierarchy/traceability.
+
+The ASCC requirements originate from five stakeholder needs: equipment transportation (SN-01), safety (SN-02), club management (SN-03), course information (SN-04), and reliable operation (SN-05). These are decomposed into system-level (SYS) and subsystem requirements covering golfer following (FL), obstacle detection (OB), motor control (MC), club tracking (CT), course data (CD), and power management (PW). This hierarchy links stakeholder needs to verifiable specifications and tests. Tables~\ref{tab:app-stakeholder} and~\ref{tab:app-system} detail the hierarchy.
+
 \CourseSubsection{Functional Requirements}
-% Write atomic, verifiable SHALL statements with IDs and rationale.
+
+Functional requirements define the ASCC's core operations: golfer following, obstacle detection, emergency stopping, RFID club identification, and course information display. Broad functions are decomposed into independently verifiable ``shall'' statements. For example, golfer following requires interpreting tracking information and updating motor commands, while club tracking requires RFID identification and missing-club alerts. Table~\ref{tab:app-functional} lists the functional requirements.
+
 \CourseSubsection{Non-Functional and Interface Requirements}
-% Include performance, interface, and other measurable specifications.
+
+Performance targets include a 1--3 m following distance, 1.5 m/s walking speed, 1 m obstacle detection range, 90\% RFID identification accuracy, and 30-minute battery runtime. These preliminary values balance user accessibility, walking-speed operation, and prototype feasibility. The detection range must be validated against stopping distance and sensor uncertainty, while RFID accuracy and runtime will be assessed experimentally. Table~\ref{tab:app-performance} details these specifications.
+
+Interface requirements define the exchange of tracking data, sensor measurements, motor commands, RFID identifiers, user feedback, and electrical power. These correspond to the labelled information and energy flows in the functional decomposition and are listed in Table~\ref{tab:app-interface}.
+
 \CourseSubsection{Safety and Fault Requirements}
-% Include SHALL NOT requirements linked to verification tests.
+
+Safety requirements use explicit ``shall not'' statements to prohibit unsafe movement during emergency-stop activation, tracking-signal loss, obstacle proximity, or invalid sensor readings. The proposed 1 s tracking timeout and obstacle stopping zone will be validated through controlled fault-injection and braking tests. Emergency stopping takes priority over autonomous commands and requires manual reset. Tables~\ref{tab:app-safety} and~\ref{tab:app-verification} define these requirements and their verification procedures.
+
 \CourseSubsection{Critical Requirements and Traceability}
-% Show critical/major/minor requirements and links to needs, diagrams and tests.
+
+Requirements are classified as critical (safety and loss of control), major (essential functionality), or minor (supporting features). Each requirement traces to a stakeholder need, parent requirement, subsystem, prototype, and V\&V test.
+
+For example, critical requirement MC-04 prohibits motor actuation while the emergency stop is engaged. Derived from SN-02 and SYS-03, it is allocated to the motor-control safety interlock and verified through VT-07. Similar relationships are established for tracking loss (FL-04) and obstacle faults (OB-04, OB-05). Tables~\ref{tab:app-trace-functional}, \ref{tab:app-trace-interface}, and~\ref{tab:app-critical-relations} provide detailed traceability.
+
 \CourseSubsection{Stretch Goals}
-% Use MAY statements only for optional stretch goals.
+
+Optional features include shot data collection (SG-01), club recommendations (SG-02), and speech interaction (SG-03). These use ``may'' statements and are excluded from mandatory prototype acceptance criteria. Table~\ref{tab:app-stretch} lists the stretch goals.
