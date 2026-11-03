@@ -1,5 +1,97 @@
 \CourseSection{Risks and Safety Hazards}\label{sec:risks}
-\CourseSubsection{Hazard Identification and Risk Assessment}
-% Identify precise hazards, causes, quantitative likelihood/severity and cited standards.
-\CourseSubsection{Risk Mitigation and Residual Risk}
-% Link mitigation to requirements, tests, and development contingencies.
+% TODO (handoffs from Section 4):
+% - Requirements: add the derived safety requirements in Table tab:mitigations
+%   (min approach distance, speed cap, tag/UART loss stop, no auto restart,
+%   e-stop latency/range, braking deceleration, club-out interlock, fuse
+%   rating, IP rating, slope limit).
+% - V&V: add inspection tests T-INS-1 (guard gaps), T-INS-2 (fusing/wiring),
+%   T-INS-3 (enclosure).
+% - Functional Description: e-stop architecture (Category 1 stop, Sec. 4.2).
+% - Resources: relay, e-stop receiver, inline fuse, wheel guards, rated enclosure.
+% - Conclusion: residual risks in Sec. 4.2 become limitations.
+% - Team: agree on the proposed initial/residual ratings.
+
+\CourseSubsection{Hazard Identification and Risk Assessment}\label{sec:risks-assessment}
+
+Hazards are assessed with the ISO~12100 process~\cite{iso12100}: identification, risk estimation and evaluation, then risk reduction by inherently safe design (D), safeguarding and complementary protective measures (S), and information for use (I). Risk is scored with the MIL-STD-882E matrix~\cite{milstd882e}, with severity from 1 (catastrophic) to 4 (negligible) and probability from A (frequent) to E (improbable), giving a level of High, Serious, Medium, or Low. The scope is the cart during testing and the demonstration. Technical and schedule risks are handled as contingencies in Table~\ref{tab:contingencies}. Table~\ref{tab:hazards} rates each hazard before mitigation, and Figure~\ref{fig:bowtie} in Appendix~\ref{app:bowtie} shows the causes and controls for loss of motion control.
+% TODO: verify the matrix cell mapping against MIL-STD-882E Table III.
+
+\begin{table}[!htbp]
+\centering
+\caption{Safety hazards and initial risk (before mitigation), scored as severity/probability with MIL-STD-882E.}
+\label{tab:hazards}
+\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}L{0.35in} >{\RaggedRight\arraybackslash}X L{0.95in} >{\RaggedRight\arraybackslash}X L{0.55in}@{}}
+\toprule
+\TableHeader{ID} & \TableHeader{Hazard and \acs{ASCC}-specific cause} & \TableHeader{Standard} & \TableHeader{Magnitude} & \TableHeader{Initial} \\
+\midrule
+H-01 & \textbf{Cart strikes the golfer.} Golfer stops suddenly, or walks back to the bag to pull a club and ends up inside the following distance & ISO~13482~\cite{iso13482}; ISO~3691-4~\cite{iso3691-4} & Stopping distance $v t_r + v^2/2a$ vs.\ gap; impact energy $\tfrac{1}{2}mv^2$ (worked below) & 3C Medium \\
+\addlinespace[2pt]
+H-02 & \textbf{Cart strikes an undetected person or object.} Ultrasonic beam angle and mounting height leave a blind zone for low objects (sprinkler heads, curbs, a crouching person); grass causes false returns & ISO~13482 & Blind zone from beam angle and height \measTODO{sensor height}; detection range must exceed stopping distance plus margin & 3C Medium \\
+\addlinespace[2pt]
+H-03 & \textbf{Uncommanded or runaway motion.} \acs{UWB} tag dropped or handed to someone else; corrupted \acs{UART} command or Pi crash; firmware speed limit misconfigured on a board capable of well above walking pace & ISO~13482 & Travel before stop $= v_{\max} t_{\text{timeout}}$ (\reqTODO{max speed}, \reqTODO{timeout}); uncapped speed \measTODO{stock top speed} & 2C Serious \\
+\addlinespace[2pt]
+H-04 & \textbf{E-stop fails or is too slow.} Radio link drops; stop routed through a hung Pi; cart restarts on reset & ISO~13850~\cite{iso13850}; IEC~60204-1~\cite{iec60204-1} & Travel $= v \times$ latency (\reqTODO{e-stop latency}, \reqTODO{link-loss timeout}) & 2D Medium \\
+\addlinespace[2pt]
+H-05 & \textbf{Rollaway or tip-over.} Power cut on a slope lets the unpowered hub motors freewheel; turning on a side slope with a tall loaded bag & ISO~13482 & Rollaway force $mg\sin\theta$; tip angle $\arctan(w/2h)$ for track \measTODO{$w$}, centre of gravity \measTODO{$h$}, vs.\ site slope \measTODO{slope} & 3C Medium \\
+\addlinespace[2pt]
+H-06 & \textbf{Pinch or entanglement.} Exposed hub wheels beside the frame and caster catch hands, grips, or bag straps & ISO~13857~\cite{iso13857}; ISO~13854~\cite{iso13854} & Measured gaps \measTODO{gaps} vs.\ minimum gaps for fingers and hands & 3D Medium \\
+\addlinespace[2pt]
+H-07 & \textbf{Battery fire, burn, or shock.} 36\,V lithium-ion pack; new wiring to the \acs{DC-DC} converter and relay; short circuit, overload, charging & UL~2272~\cite{ul2272}; IEC~62133-2~\cite{iec62133-2} & Stored energy $\approx 158$\,Wh for a 36\,V, 4.4\,Ah pack \measTODO{pack label}; fuse rating vs.\ wire ampacity & 1E Medium \\
+\addlinespace[2pt]
+H-08 & \textbf{Water reaches the electronics.} Morning dew on grass; light rain during an outdoor test & IEC~60529~\cite{iec60529} & Enclosure \acs{IP} rating vs.\ required \reqTODO{IP rating} & 3D Medium \\
+\addlinespace[2pt]
+H-09 & \textbf{Golfer's swing and the cart.} A golfer with a club out is about to swing; a cart within reach is struck or moves into the golfer mid-swing & Equipment Rules~\cite{usgaEquipmentRules} & Reach $\approx$ arm $+$ club $\approx 0.7 + 1.22 \approx 1.9$\,m & 3C Medium \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+H-09 needs some golf context. A golfer takes a club out of the bag only to hit a shot, then stands beside the ball and swings the club in an arc around their body. The arc's radius is about arm length plus club length, and clubs other than putters may be up to 48\,in (1.22\,m) long~\cite{usgaEquipmentRules}. With an arm length of about 0.7\,m, the reach is about 1.9\,m, so the proposal's 1.5\,m following distance put the cart inside the arc.
+% TODO: cite an anthropometric source for the 0.7 m arm length.
+
+Speed sets the size of H-01 and H-03. For the cart to stop within a gap $d_{\min}$ after a reaction time $t_r$, it must decelerate at
+\begin{equation}
+a_{\text{req}} = \frac{v^2}{2\,(d_{\min} - v\,t_r)} .
+\label{eq:stopping}
+\end{equation}
+The proposal's worst case ($v = 5.5$\,km/h, $t_r = 300$\,ms, $d_{\min} = 1.2$\,m) needs $a_{\text{req}} \approx 1.6$\,m/s$^2$, and an estimated 30\,kg \measTODO{loaded mass} cart then carries $E = \tfrac{1}{2}mv^2 \approx 35$\,J. Stopping distance and impact energy both grow with $v^2$, so the speed cap is the first mitigation. The new values (\reqTODO{max speed}, \reqTODO{reaction time}, \reqTODO{d\_min}) set a braking-deceleration requirement verified at T-DRV-4 (contingency C-9).
+
+\CourseSubsection{Risk Mitigation and Residual Risk}\label{sec:risks-mitigation}
+
+Table~\ref{tab:mitigations} lists the mitigations for each hazard by ISO~12100 step, the requirement each one produces, and the test that verifies it. Each \emph{shall not} statement addresses a specific fault.
+
+\begin{table}[!htbp]
+\centering
+\caption{Mitigations (D: inherently safe design; S: safeguarding; I: information for use), derived requirements, verification tests, and residual risk.}
+\label{tab:mitigations}
+\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}L{0.35in} Y Y L{0.68in} L{0.6in}@{}}
+\toprule
+\TableHeader{ID} & \TableHeader{Mitigations} & \TableHeader{Derived requirement} & \TableHeader{Test} & \TableHeader{Residual} \\
+\midrule
+H-01 & D: firmware speed cap; following distance set from Eq.~\eqref{eq:stopping}. S: no approach when range $< d_{\min}$; firmware brake to standstill & Shall not command motion toward the golfer when range $<$ \reqTODO{d\_min}; shall decelerate at $\ge$ \reqTODO{a\_req} & T-DRV-4, T-TRK-3 & 3E Medium \\
+\addlinespace[2pt]
+H-02 & D: \acs{LiDAR} plus downward-angled ultrasonic sensors covering low objects. S: obstacle stop. I: soft obstacles only in testing & Shall stop within \reqTODO{reaction time} of an obstacle at $\ge$ \reqTODO{detection range} & T-SAF-1, T-SAF-2 & 3D Medium \\
+\addlinespace[2pt]
+H-03 & D: speed and current caps on the mainboard, independent of the Pi. S: serial-timeout stop; tag-loss timeout; reject implausible range jumps; Pi watchdog & Shall not exceed \reqTODO{max speed} under any command; shall not move more than \reqTODO{timeout} after loss of the tag or \acs{UART} link & T-DRV-2, T-TRK-3, T-TRK-4 & 3E Medium \\
+\addlinespace[2pt]
+H-04 & S: Category~1 stop (below); link loss counts as a stop; reset does not restart motion~\cite{iso13850}; manually actuated device held by the safety operator & Shall not resume motion automatically after reset; shall stop within \reqTODO{e-stop latency} at up to \reqTODO{e-stop range} & T-SAF-3 & 2E Medium \\
+\addlinespace[2pt]
+H-05 & D: low bag cradle; widest track the chassis allows. S: firmware standstill hold while powered. I: slopes $\le$ \reqTODO{max slope} (tilt sensing is STR-11) & Shall not be operated on slopes above \reqTODO{max slope} & T-DRV-4 (hold on slope); tip calculation & 3D Medium \\
+\addlinespace[2pt]
+H-06 & D: guards over the hub wheels. I: kill switch off before any adjustment & Guard gaps shall meet ISO~13857 & T-INS-1 & 4D Low \\
+\addlinespace[2pt]
+H-07 & D: stock pack and \acs{BMS} unmodified; inline fuse sized to the wiring; strain relief. I: original charger, off the cart, supervised & Accessory circuit shall be fused at \reqTODO{fuse rating} & T-INS-2; current at INT-1 & 1E Medium \\
+\addlinespace[2pt]
+H-08 & D: rated enclosure. I: dry weather only; stop testing if rain starts & Enclosure shall meet \reqTODO{IP rating} & T-INS-3 & 3E Medium \\
+\addlinespace[2pt]
+H-09 & S: club-out interlock blocks motion toward the golfer until the club returns. I: park the cart outside swing reach & Shall not move toward the golfer while a club is out of the bag & T-SAF-4 & 3E Medium \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The e-stop uses a Category~1 stop~\cite{iec60204-1}: the e-stop signal commands the firmware brake and, after a short delay, a relay removes motor power independent of the Pi. Cutting power immediately (Category~0) would let the hub motors freewheel, and a firmware-only stop depends on the Pi and the \acs{UART} link. With both, a hung Pi still results in power removal, and on flat ground the cart has braked before power is cut.
+% TODO: team to confirm the e-stop architecture; affects budget (relay,
+% receiver), SAF-3, and the Functional Description.
+
+The remaining risk is accepted for a supervised prototype because every test in which the cart moves has a safety operator holding the e-stop, and operation is limited to dry weather and flat ground. Four residual risks remain and are stated as limitations in Section~\ref{sec:conclusion}. Unpowered hub motors freewheel, so the cart can roll on a slope after power is cut (H-05); shorting the motor phases through a relay would add braking if time allows. The sensors can still miss thin or very low objects (H-02). A battery fire stays catastrophic; only its probability is reduced (H-07), as the 2016 hoverboard recalls for fire hazard show~\cite{cpsc2016hoverboards}. The golfer can ignore the parking guidance and swing near a stopped cart (H-09).

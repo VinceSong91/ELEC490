@@ -139,6 +139,15 @@
   \renewcommand{\headrulewidth}{0pt}}
 
 
+% Placeholder for requirement IDs/values that are still being rewritten.
+% Remove once Section 3 is final; search for \reqTODO to find every use.
+\newcommand{\reqTODO}[1]{\textcolor{red}{[REQ: #1]}}
+% Placeholder for values that come from measurement/tests, not requirements.
+\newcommand{\measTODO}[1]{\textcolor{blue}{[MEAS: #1]}}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+
 % Engineering notation: imaginary unit j.
 \newcommand{\jj}{\mathrm{j}}
 \AtBeginDocument{%

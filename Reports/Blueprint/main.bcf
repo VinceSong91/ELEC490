@@ -2374,6 +2374,24 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1" intorder="1">iso12100</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">milstd882e</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">iso13482</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">iso3691-4</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">iso13850</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">iec60204-1</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">iso13857</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">iso13854</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">ul2272</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">iec62133-2</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">iec60529</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">usgaEquipmentRules</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">usgaEquipmentRules</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">iso13850</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">iec60204-1</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">cpsc2016hoverboards</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">iso13850</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">hall2025golfGps</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

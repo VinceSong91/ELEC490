@@ -265,3 +265,79 @@ SG-03 & The ASCC may provide speech-based status updates and user interaction. \
 \hline
 \end{tabular}
 \end{table}
+
+\CourseSection{Bow-Tie Diagram}\label{app:bowtie}
+
+Figure~\ref{fig:bowtie} links the causes of H-01, H-03, H-04, and H-09 (Table~\ref{tab:hazards}) to the top event through preventive controls, and the top event to its consequences through protective controls.
+
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[
+  font=\scriptsize,
+  box/.style={draw, rounded corners=2pt, align=left, inner sep=3pt},
+  cause/.style={box, fill=LightGray, text width=1.25in},
+  ctrl/.style={box, fill=white, draw=SmithBlue, text width=1.2in},
+  top/.style={box, fill=QueensBurgundy, text=white, align=center, text width=0.85in, font=\scriptsize\bfseries, minimum height=0.9in},
+  cons/.style={box, fill=LightGray, text width=1.0in},
+  arr/.style={-{Stealth[length=4pt]}, draw=TextGray},
+  node distance=4pt and 10pt
+]
+% Causes and preventive controls (left)
+\node[cause] (c1) {Golfer stops or walks back inside the following distance (H-01)};
+\node[cause, below=of c1] (c2) {Undetected person or low object (H-02)};
+\node[cause, below=of c2] (c3) {\acs{UWB} tag dropped or handed to someone else (H-03)};
+\node[cause, below=of c3] (c4) {\acs{UART} command loss or Pi crash (H-03)};
+\node[cause, below=of c4] (c5) {Firmware speed limit misconfigured (H-03)};
+\node[cause, below=of c5] (c6) {Club out, golfer within swing reach (H-09)};
+\node[ctrl, right=of c1] (p1) {Minimum-distance stop; speed cap};
+\node[ctrl, right=of c2] (p2) {Ultrasonic and \acs{LiDAR} obstacle stop};
+\node[ctrl, right=of c3] (p3) {Tag-loss timeout; range-jump rejection};
+\node[ctrl, right=of c4] (p4) {Firmware serial-timeout stop};
+\node[ctrl, right=of c5] (p5) {Speed and current caps verified at T-DRV-2};
+\node[ctrl, right=of c6] (p6) {Club-out interlock};
+% Top event
+\path (p1.east) -- (p6.east) coordinate[midway] (mid);
+\node[top, right=12pt of mid] (te) {Cart moves outside its safe motion limits};
+% Protective controls and consequences (right)
+\node[ctrl, right=12pt of te, text width=1.15in] (r2) {Category~1 e-stop: firmware brake, then relay removes power (H-04)};
+\node[ctrl, above=of r2, text width=1.15in] (r1) {Safety operator holds the e-stop; hardwired kill switch};
+\node[ctrl, below=of r2, text width=1.15in] (r3) {Standstill hold; slope limit; manual handle};
+\node[cons, right=of r1] (k1) {Golfer or bystander struck};
+\node[cons, right=of r2] (k2) {Cart, bag, or course damaged};
+\node[cons, right=of r3] (k3) {Rollaway or tip-over (H-05)};
+\foreach \i in {1,...,6} {\draw[arr] (c\i) -- (p\i); \draw[arr] (p\i.east) -- (te.west);}
+\foreach \i in {1,2,3} {\draw[arr] (te.east) -- (r\i.west); \draw[arr] (r\i) -- (k\i);}
+\end{tikzpicture}
+\caption{Bow-tie diagram for loss of motion control: causes and preventive controls (left), top event (centre), protective controls and consequences (right).}
+\label{fig:bowtie}
+\end{figure}
+
+\CourseSection{Stretch Milestones}\label{app:stretch}
+
+Stretch milestones correspond to MAY requirements (Section~\ref{sec:requirements}). Each starts only after the milestones it depends on have passed (Section~\ref{sec:approach-milestones}).
+% TODO: align STR-n with Vince's SG-01..SG-03 in Appendix A (tab:app-stretch).
+
+\begin{table}[!htbp]
+\centering
+\caption{Stretch milestones.}
+\label{tab:stretch}
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}L{0.48in} L{1.85in} L{0.95in} Y@{}}
+\toprule
+\TableHeader{ID} & \TableHeader{Stretch milestone} & \TableHeader{Depends on} & \TableHeader{What makes it hard} \\
+\midrule
+STR-1 & Voice commands: stop, follow, wait & TRK-3 & Wind noise outdoors causes missed commands. Voice ``stop'' is an additional stop, never part of the safety function, since ISO~13850 expects a manually actuated e-stop~\cite{iso13850}. ``Stop'' acts immediately; ``follow'' asks for confirmation \\
+STR-2 & Spoken distance callout on request & GPS-2, STR-1 & Needs a speaker and microphone on the cart \\
+STR-3 & Shot logging: per-club distance from successive club-removal positions & BAG-2, GPS-1 & Cart position is not ball position; club-tag trackers also miss shots~\cite{hall2025golfGps} \\
+STR-4 & Club recommendation from logged distances & STR-3 & Needs enough logged shots per club to be meaningful \\
+STR-5 & Distance from the golfer rather than the cart (cart \acs{GPS} plus \acs{UWB} offset) & TRK-2, GPS-2 & Removes the measured-from-the-cart limitation using existing hardware \\
+STR-6 & Front/middle/back green distances; multi-hole course map & GPS-2 & Needs surveyed green outlines, not single points \\
+STR-7 & Summon: cart drives to the golfer on a remote press & TRK-4 & Starts beyond following range with nobody near the cart, so the obstacle stop carries all the safety \\
+STR-8 & Steer around obstacles instead of stopping & SAF-2, TRK-4 & Ultrasonic sensors give a distance, not the shape of free space; needs the \acs{LiDAR} \\
+STR-9 & Stay off greens and tee boxes using stored boundaries & GPS-2 & Boundary margin must be at least the \acs{GPS} error; wheels damage the closely mown putting surface % TODO: cite a source for turf damage
+\\
+STR-10 & Drive to the next tee from stored waypoints & GPS-2, SAF-2, STR-8 & A few metres of \acs{GPS} error is too much near water hazards or bunkers; likely needs \acs{RTK} \acs{GPS}, which is a budget question \\
+STR-11 & Slow down or stop on steep slopes using a tilt sensor & DRV-4 & Addresses the rollaway and tip-over hazard (H-05); could become \acs{MVP} if the team rates H-05 higher \\
+\bottomrule
+\end{tabularx}
+\end{table}
