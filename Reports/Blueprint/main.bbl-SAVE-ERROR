@@ -16,5 +16,274 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{iso12100}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Organization for Standardization}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{number}{ISO 12100:2010}
+      \field{title}{Safety of Machinery -- General Principles for Design -- Risk Assessment and Risk Reduction}
+      \warn{\item standard entry 'iso12100' (references.bib): Invalid format '2010' of date field 'date' - ignoring}
+    \endentry
+    \entry{milstd882e}{standard}{}{}
+      \list{location}{1}{%
+        {Washington, DC, USA}%
+      }
+      \list{organization}{1}{%
+        {U.S. Department of Defense}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{number}{MIL-STD-882E w/Change 1}
+      \field{title}{Department of Defense Standard Practice: System Safety}
+      \warn{\item standard entry 'milstd882e' (references.bib): Invalid format '2023' of date field 'date' - ignoring}
+    \endentry
+    \entry{iso13482}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Organization for Standardization}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{number}{ISO 13482:2014}
+      \field{title}{Robots and Robotic Devices -- Safety Requirements for Personal Care Robots}
+      \warn{\item standard entry 'iso13482' (references.bib): Invalid format '2014' of date field 'date' - ignoring}
+    \endentry
+    \entry{iso3691-4}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Organization for Standardization}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{number}{ISO 3691-4:2023}
+      \field{title}{Industrial Trucks -- Safety Requirements and Verification -- Part 4: Driverless Industrial Trucks and Their Systems}
+      \warn{\item standard entry 'iso3691-4' (references.bib): Invalid format '2023' of date field 'date' - ignoring}
+    \endentry
+    \entry{iso13850}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Organization for Standardization}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{number}{ISO 13850:2015}
+      \field{title}{Safety of Machinery -- Emergency Stop Function -- Principles for Design}
+      \warn{\item standard entry 'iso13850' (references.bib): Invalid format '2015' of date field 'date' - ignoring}
+    \endentry
+    \entry{iec60204-1}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Electrotechnical Commission}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{number}{IEC 60204-1:2016+AMD1:2021}
+      \field{title}{Safety of Machinery -- Electrical Equipment of Machines -- Part 1: General Requirements}
+      \warn{\item standard entry 'iec60204-1' (references.bib): Invalid format '2021' of date field 'date' - ignoring}
+    \endentry
+    \entry{iso13857}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Organization for Standardization}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{number}{ISO 13857:2019}
+      \field{title}{Safety of Machinery -- Safety Distances to Prevent Hazard Zones Being Reached by Upper and Lower Limbs}
+      \warn{\item standard entry 'iso13857' (references.bib): Invalid format '2019' of date field 'date' - ignoring}
+    \endentry
+    \entry{iso13854}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Organization for Standardization}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{number}{ISO 13854:2017}
+      \field{title}{Safety of Machinery -- Minimum Gaps to Avoid Crushing of Parts of the Human Body}
+      \warn{\item standard entry 'iso13854' (references.bib): Invalid format '2017' of date field 'date' - ignoring}
+    \endentry
+    \entry{ul2272}{standard}{}{}
+      \list{location}{1}{%
+        {Northbrook, IL, USA}%
+      }
+      \list{organization}{1}{%
+        {UL Standards \& Engagement}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{number}{UL 2272}
+      \field{title}{Standard for Electrical Systems for Personal E-Mobility Devices}
+      \warn{\item standard entry 'ul2272' (references.bib): Invalid format '2016' of date field 'date' - ignoring}
+    \endentry
+    \entry{iec62133-2}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Electrotechnical Commission}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{number}{IEC 62133-2:2017+AMD1:2021}
+      \field{title}{Secondary Cells and Batteries Containing Alkaline or Other Non-Acid Electrolytes -- Safety Requirements for Portable Sealed Secondary Lithium Cells, and for Batteries Made from Them, for Use in Portable Applications -- Part 2: Lithium Systems}
+      \warn{\item standard entry 'iec62133-2' (references.bib): Invalid format '2021' of date field 'date' - ignoring}
+    \endentry
+    \entry{iec60529}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Electrotechnical Commission}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{number}{IEC 60529:1989+AMD1:1999+AMD2:2013}
+      \field{title}{Degrees of Protection Provided by Enclosures (IP Code)}
+      \warn{\item standard entry 'iec60529' (references.bib): Invalid format '2013' of date field 'date' - ignoring}
+    \endentry
+    \entry{usgaEquipmentRules}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=2f2778653e2ac12fe8f73982698074df}{%
+           family={{USGA and R\&A}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{2f2778653e2ac12fe8f73982698074df}
+      \strng{fullhash}{2f2778653e2ac12fe8f73982698074df}
+      \strng{fullhashraw}{2f2778653e2ac12fe8f73982698074df}
+      \strng{bibnamehash}{2f2778653e2ac12fe8f73982698074df}
+      \strng{authorbibnamehash}{2f2778653e2ac12fe8f73982698074df}
+      \strng{authornamehash}{2f2778653e2ac12fe8f73982698074df}
+      \strng{authorfullhash}{2f2778653e2ac12fe8f73982698074df}
+      \strng{authorfullhashraw}{2f2778653e2ac12fe8f73982698074df}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Equipment Rules}
+      \verb{urlraw}
+      \verb https://www.usga.org/equipment-standards/equipment-rules-2019.html
+      \endverb
+      \verb{url}
+      \verb https://www.usga.org/equipment-standards/equipment-rules-2019.html
+      \endverb
+      \warn{\item online entry 'usgaEquipmentRules' (references.bib): Invalid format '2023' of date field 'date' - ignoring}
+      \warn{\item online entry 'usgaEquipmentRules' (references.bib): Invalid format '2026-11-03' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{cpsc2016hoverboards}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=bdb9c7cd10c0de4bb3bf7908067b0c03}{%
+           family={{U.S. Consumer Product Safety Commission}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{fullhash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{fullhashraw}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{bibnamehash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{authorbibnamehash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{authornamehash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{authorfullhash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{authorfullhashraw}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Self-Balancing Scooters/Hoverboards Recalled by 10 Firms Due to Fire Hazard}
+      \verb{urlraw}
+      \verb https://www.cpsc.gov/Recalls/2016/Self-Balancing-Scooters-Hoverboards-Recalled-by-10-Firms
+      \endverb
+      \verb{url}
+      \verb https://www.cpsc.gov/Recalls/2016/Self-Balancing-Scooters-Hoverboards-Recalled-by-10-Firms
+      \endverb
+      \warn{\item online entry 'cpsc2016hoverboards' (references.bib): Invalid format '2016-07-06' of date field 'date' - ignoring}
+      \warn{\item online entry 'cpsc2016hoverboards' (references.bib): Invalid format '2026-11-03' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{hall2025golfGps}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=a958d3280ceae6d3ad9d012bf492d811}{%
+           family={Hall},
+           familyi={H\bibinitperiod},
+           given={Thomas\bibnamedelimb E.\bibnamedelimi D.},
+           giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=d30b7b007b4ba3ba1753185f01adcdd7}{%
+           family={Willmott},
+           familyi={W\bibinitperiod},
+           given={Ashley\bibnamedelimb G.\bibnamedelimi B.},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=3a9f6fe009acc3937ed4501a81a6d236}{%
+           family={Hynes},
+           familyi={H\bibinitperiod},
+           given={Niall\bibnamedelima J.},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=dd160951b2099ecaaba1db65ad51e623}{%
+           family={Wells},
+           familyi={W\bibinitperiod},
+           given={Jack\bibnamedelimb E.\bibnamedelimi T.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=935bbf0a91b359e82995fd080ee643f0}{%
+           family={Allen},
+           familyi={A\bibinitperiod},
+           given={Peter\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{37a61383aa0c6ba32e0800335654d669}
+      \strng{fullhash}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
+      \strng{fullhashraw}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
+      \strng{bibnamehash}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
+      \strng{authorbibnamehash}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
+      \strng{authornamehash}{37a61383aa0c6ba32e0800335654d669}
+      \strng{authorfullhash}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
+      \strng{authorfullhashraw}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Golf Science}
+      \field{number}{1}
+      \field{title}{The Validity and Reliability of Two Golf Performance-Tracking {Global Positioning System} ({GPS}) Devices}
+      \field{volume}{13}
+      \field{pages}{103\bibrangedash 121}
+      \range{pages}{19}
+      \verb{urlraw}
+      \verb https://www.golfsciencejournal.org/article/144587
+      \endverb
+      \verb{url}
+      \verb https://www.golfsciencejournal.org/article/144587
+      \endverb
+      \warn{\item article entry 'hall2025golfGps' (references.bib): Invalid format '2025' of date field 'date' - ignoring}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 

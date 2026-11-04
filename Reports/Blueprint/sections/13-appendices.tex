@@ -16,7 +16,7 @@ This appendix provides the complete ASCC requirements hierarchy, subsystem speci
 \textbf{ID} & \textbf{Stakeholder Need} & \textbf{System Requirements} \\
 \hline
 SN-01 & Transport golf equipment without manually pushing the cart. & SYS-01 \\
-SN-02 & Prevent collisions and unintended movement. & SYS-02, SYS-03 \\
+SN-02 & Prevent collisions and unintended movement. & SYS-02\\
 SN-03 & Identify clubs and notify users of missing equipment. & SYS-04 \\
 SN-04 & Access course information and distances. & SYS-05 \\
 SN-05 & Maintain reliable operation within project constraints. & SYS-06 \\
@@ -80,21 +80,16 @@ CD-02 & The course-data subsystem shall display an estimated distance to a selec
 \textbf{ID} & \textbf{Requirement} & \textbf{Parent} \\
 \hline
 FL-03 & The ASCC shall maintain a following distance between 1 and 3 m during controlled walking trials. & SYS-01 \\
-MC-03 & The ASCC shall achieve a forward speed of at least 1.5 m/s on level terrain under the specified test load. & SYS-01 \\
+MC-03 & The ASCC shall achieve a forward speed of at least 2 m/s on level terrain under the specified test load. & SYS-01 \\
 OB-03 & The obstacle subsystem shall detect the designated test obstacle at a distance of at least 1 m. & SYS-02 \\
 CT-03 & The RFID subsystem shall correctly identify at least 90\% of registered clubs during repeated detection trials. & SYS-04 \\
-PW-01 & The power subsystem shall support at least 30 minutes of continuous operation under representative test conditions. & SYS-06 \\
+PW-01 & The power subsystem shall support at least 1 hourof continuous operation under representative test conditions. & SYS-06 \\
 \hline
 \end{tabular}
 \end{table}
 
-The following distance of 1--3 m provides an initial separation target while keeping equipment accessible. The 1.5 m/s speed requirement approximates walking speed. The obstacle detection distance will be evaluated against measured stopping distance and control latency.
-
-The RFID accuracy target provides a measurable baseline for evaluating reader placement, while the runtime requirement supports repeated prototype demonstrations. These are preliminary targets requiring validation through hardware testing and supporting calculations.
 
 \CourseSubsection{Interface Requirements}
-
-Interface requirements define the exchange of information, commands, and electrical power between logical subsystems.
 
 \begin{table}[H]
 \centering
@@ -117,8 +112,6 @@ IR-06 & The power subsystem shall provide the required operating voltages to the
 
 \CourseSubsection{Safety and Fault Requirements}
 
-Safety requirements define prohibited operating conditions and expected responses to faults. These requirements must be verified before integrated outdoor testing.
-
 \begin{table}[H]
 \centering
 \caption{Detailed safety and fault requirements.}
@@ -137,11 +130,9 @@ OB-05 & The ASCC shall not initiate autonomous movement when required obstacle s
 \end{tabular}
 \end{table}
 
-The proposed 1 s tracking timeout is an initial safety target. The stopping-zone threshold will be determined from measured response latency, braking distance, and sensor uncertainty. Invalid sensor data and loss of tracking will result in a stopped state rather than continued autonomous movement.
 
 \CourseSubsection{Complete Requirements Traceability Matrix}
 
-The traceability matrix links each subsystem requirement to its parent system requirement, stakeholder need, assigned prototype, priority, and planned verification test.
 
 \begin{table}[H]
 \centering
@@ -223,8 +214,6 @@ VT-11 & Sensor fault & Verify safe response to missing or invalid obstacle measu
 
 \CourseSubsection{Critical Requirement Relationships}
 
-Critical requirements are linked to stakeholder needs, parent requirements, functions, logical elements, physical components, and verification tests.
-
 \begin{table}[H]
 \centering
 \caption{Critical requirement relationships.}
@@ -242,13 +231,8 @@ OB-05 & Detect invalid sensor information & Sensor validation logic & VT-11 \\
 \end{tabular}
 \end{table}
 
-For MC-04, the emergency-stop control must prevent motor actuation independently of normal movement commands. This requirement is derived from SYS-03 and SN-02. Verification will involve activating the emergency stop during controlled motor operation and confirming that motor actuation is disabled.
-
-For FL-04, loss of the tracking signal must cause the cart to stop rather than continue using outdated commands. For OB-04 and OB-05, the obstacle-detection subsystem must prevent movement when an obstacle enters the stopping zone or required sensor information becomes invalid.
 
 \CourseSubsection{Stretch Goal Requirements}
-
-Stretch goals are optional and are not included in the minimum viable prototype acceptance criteria.
 
 \begin{table}[H]
 \centering
@@ -262,6 +246,8 @@ Stretch goals are optional and are not included in the minimum viable prototype 
 SG-01 & The ASCC may record shot locations and distances for later review. \\
 SG-02 & The ASCC may recommend golf clubs using course information and recorded shot data. \\
 SG-03 & The ASCC may provide speech-based status updates and user interaction. \\
+SG-04 & The ASCC may provide a voice functionality to provide information through sound.\\
+SG-05 & The ASCC may provide a voice speech recognition feature for commands. \\
 \hline
 \end{tabular}
 \end{table}
