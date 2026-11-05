@@ -1,55 +1,42 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'main.blg'
-[29] biber-darwin:342> INFO - === Wed Nov  4, 2026, 23:16:15
+[29] biber-darwin:342> INFO - === Wed Nov  4, 2026, 23:30:21
 [36] Biber.pm:421> INFO - Reading 'main.bcf'
-[72] Biber.pm:1002> INFO - Found 35 citekeys in bib section 0
-[79] Biber.pm:4487> INFO - Processing section 0
-[83] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
-[84] bibtex.pm:1713> INFO - LaTeX decoding ...
-[95] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[156] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[156] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[156] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[156] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[166] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[170] bbl.pm:779> INFO - Output to main.bbl
-[171] Biber.pm:132> WARN - standard entry 'iso12100' (references.bib): Invalid format '2010' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - standard entry 'ieee802154z' (references.bib): Invalid format '2020' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - standard entry 'iso13850' (references.bib): Invalid format '2015' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - standard entry 'milstd882e' (references.bib): Invalid format '2023' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - online entry 'usgaEquipmentRules' (references.bib): Invalid format '2023' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - online entry 'usgaEquipmentRules' (references.bib): Invalid format '2026-11-03' of date field 'urldate' - ignoring
-[171] Biber.pm:132> WARN - standard entry 'iec60204-1' (references.bib): Invalid format '2021' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - online entry 'cpsc2016hoverboards' (references.bib): Invalid format '2016-07-06' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - online entry 'cpsc2016hoverboards' (references.bib): Invalid format '2026-11-03' of date field 'urldate' - ignoring
-[171] Biber.pm:132> WARN - manual entry 'nasaHandbook' (references.bib): Invalid format '2017' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - article entry 'bohannon2011walking' (references.bib): Invalid format '2011-09' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - standard entry 'iso3691-4' (references.bib): Invalid format '2023' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - online entry 'feruFoc' (references.bib): Invalid format '2026-07-04' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - online entry 'feruFoc' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring
-[171] Biber.pm:132> WARN - standard entry 'iso13482' (references.bib): Invalid format '2014' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - standard entry 'iso13857' (references.bib): Invalid format '2019' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - standard entry 'iso13854' (references.bib): Invalid format '2017' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - standard entry 'ul2272' (references.bib): Invalid format '2016' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - standard entry 'iec62133-2' (references.bib): Invalid format '2021' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - standard entry 'iec60529' (references.bib): Invalid format '2013' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - article entry 'hall2025golfGps' (references.bib): Invalid format '2025' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - inproceedings entry 'bu2023trash' (references.bib): Invalid format '2023-03' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - online entry 'cornellHoverboard' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring
-[171] Biber.pm:132> WARN - article entry 'zhang2024stroller' (references.bib): Invalid format '2024-07' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - article entry 'bae2022uwb' (references.bib): Invalid format '2022-02' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - article entry 'islam2019personFollowing' (references.bib): Invalid format '2019-12' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - online entry 'stewartQFollow' (references.bib): Invalid format '2025' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - online entry 'stewartQFollow' (references.bib): Invalid format '2025-07-15' of date field 'urldate' - ignoring
-[171] Biber.pm:132> WARN - article entry 'zafari2019survey' (references.bib): Invalid format '2019' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - manual entry 'dwm3000ds' (references.bib): Invalid format '2021-05' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - article entry 'barreto2022fusion' (references.bib): Invalid format '2022' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - online entry 'arccosSmartSensors' (references.bib): Invalid format '2025' of date field 'date' - ignoring
-[171] Biber.pm:132> WARN - online entry 'arccosSmartSensors' (references.bib): Invalid format '2025-02-17' of date field 'urldate' - ignoring
-[171] Biber.pm:132> WARN - inproceedings entry 'dobkin2005rfid' (references.bib): Invalid format '2005-06' of date field 'date' - ignoring
-[172] Biber.pm:132> WARN - manual entry 'mfrc522ds' (references.bib): Invalid format '2016-04-27' of date field 'date' - ignoring
-[172] Biber.pm:132> WARN - online entry 'arccosAppleWatch' (references.bib): Invalid format '2021' of date field 'date' - ignoring
-[172] Biber.pm:132> WARN - online entry 'arccosAppleWatch' (references.bib): Invalid format '2021-07-27' of date field 'urldate' - ignoring
-[172] Biber.pm:132> WARN - manual entry 'rpi5brief' (references.bib): Invalid format '2026-11' of date field 'date' - ignoring
-[172] Biber.pm:132> WARN - I didn't find a database entry for 'rfidmetal' (section 0)
-[172] Biber.pm:134> INFO - WARNINGS: 39
+[71] Biber.pm:1002> INFO - Found 27 citekeys in bib section 0
+[77] Biber.pm:4487> INFO - Processing section 0
+[82] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[83] bibtex.pm:1713> INFO - LaTeX decoding ...
+[98] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[147] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[147] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[147] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[147] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[157] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[161] bbl.pm:779> INFO - Output to main.bbl
+[161] Biber.pm:132> WARN - manual entry 'nasaHandbook' (references.bib): Invalid format '2017' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - standard entry 'iso12100' (references.bib): Invalid format '2010' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - article entry 'bae2022uwb' (references.bib): Invalid format '2022-02' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - article entry 'bohannon2011walking' (references.bib): Invalid format '2011-09' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - inproceedings entry 'dobkin2005rfid' (references.bib): Invalid format '2005-06' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - standard entry 'iso13850' (references.bib): Invalid format '2015' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - standard entry 'milstd882e' (references.bib): Invalid format '2023' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - standard entry 'iec60204-1' (references.bib): Invalid format '2021' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - online entry 'feruFoc' (references.bib): Invalid format '2026-07-04' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - online entry 'feruFoc' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring
+[161] Biber.pm:132> WARN - online entry 'robotshopTfluna' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring
+[161] Biber.pm:132> WARN - online entry 'universalSolderRfid' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring
+[161] Biber.pm:132> WARN - online entry 'rotorgeeksGps' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring
+[161] Biber.pm:132> WARN - online entry 'digikeyCanada' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring
+[161] Biber.pm:132> WARN - article entry 'zhang2024stroller' (references.bib): Invalid format '2024-07' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - manual entry 'mfrc522ds' (references.bib): Invalid format '2016-04-27' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - article entry 'hall2025golfGps' (references.bib): Invalid format '2025' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - standard entry 'iso13857' (references.bib): Invalid format '2019' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - standard entry 'iso13854' (references.bib): Invalid format '2017' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - standard entry 'ul2272' (references.bib): Invalid format '2026' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - standard entry 'iec62133-2' (references.bib): Invalid format '2021' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - standard entry 'iec60529' (references.bib): Invalid format '2013' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - inproceedings entry 'bu2023trash' (references.bib): Invalid format '2023-03' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - online entry 'cornellHoverboard' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring
+[161] Biber.pm:132> WARN - article entry 'islam2019personFollowing' (references.bib): Invalid format '2019-12' of date field 'date' - ignoring
+[161] Biber.pm:132> WARN - manual entry 'rpi5brief' (references.bib): Invalid format '2026-11' of date field 'date' - ignoring
+[161] Biber.pm:134> INFO - WARNINGS: 26

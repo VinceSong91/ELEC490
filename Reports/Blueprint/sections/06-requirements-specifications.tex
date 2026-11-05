@@ -4,25 +4,25 @@
 
 \CourseSubsection{Stakeholder Needs and Requirements Hierarchy}
 
-The ASCC requirements address five stakeholder needs: equipment transportation, safety, club management, course information, and reliable operation. These were decomposed into system and subsystem requirements to connect user needs with measurable technical objectives. Safety and autonomous movement were prioritized due to operational risks and project constraints, consistent with risk-based design principles~\cite{iso12100}. The hierarchy is detailed in Tables~\ref{tab:app-stakeholder} and~\ref{tab:app-system}.
+The ASCC requirements address five stakeholder needs: equipment transportation, safety, club management, course information, and reliable operation. These were decomposed into system and subsystem requirements to connect user needs with measurable technical objectives. Safety and autonomous movement were prioritized due to operational risks and project constraints~\cite{iso12100}. The hierarchy is detailed in Tables~\ref{tab:app-stakeholder} and~\ref{tab:app-system}.
 
 \CourseSubsection{Functional Requirements}
 
-Autonomous golfer following eliminates continuous manual control, using UWB tracking to estimate relative position without relying on computer vision~\cite{ieee802154z}. Obstacle detection and emergency stopping reduce collision risks, while RFID club tracking helps prevent forgotten equipment. GPS-based course information provides additional convenience. These functions were separated into independently testable subsystems to simplify development and integration (Table~\ref{tab:app-functional}).
+Autonomous golfer following eliminates continuous manual control, using UWB tracking to estimate relative position without relying on computer vision~\cite{bae2022uwb}. Obstacle detection and emergency stopping reduce collision risks, while RFID club tracking helps prevent forgotten equipment. GPS-based course information provides additional convenience. These functions were separated into independently testable subsystems to simplify development and integration (Table~\ref{tab:app-functional}).
 
 \CourseSubsection{Non-Functional and Interface Requirements}
 
-Performance targets balance usability, safety, and feasibility. A 1--3 m following distance keeps the cart accessible, while a maximum target speed of 2 m/s accommodates brisk walking. The initial 1 m obstacle detection range provides a testing baseline, although safe stopping distances must account for braking performance and system latency~\cite{iso12100}. The 90\% RFID accuracy target allows for detection variability associated with tag orientation and reader placement~\cite{rfidmetal}, while a 1-hour battery runtime supports extended prototype testing. These targets require experimental validation (Table~\ref{tab:app-performance}).
+Performance targets balance usability, safety, and feasibility. A 1--3 m following distance keeps the cart accessible, while a target speed of 2 m/s accommodates brisk walking~\cite{bohannon2011walking}. The initial 1 m obstacle detection range provides a testing baseline, although safe stopping distances must account for braking performance and system latency. The 90\% RFID accuracy target allows for detection variability~\cite{dobkin2005rfid}, while a 1-hour battery runtime supports extended prototype testing. These targets require experimental validation (Table~\ref{tab:app-performance}).
 
 Interface requirements define communication and power exchange between subsystems, supporting independent development and reliable integration (Table~\ref{tab:app-interface}).
 
 \CourseSubsection{Safety and Fault Requirements}
 
-Safety requirements prevent uncontrolled movement during emergency stops, tracking loss, or sensor failures. Emergency stopping overrides autonomous commands and requires manual reset to prevent unexpected restarting~\cite{iso13850}. A preliminary 1 s tracking timeout limits operation using outdated position data, while invalid obstacle measurements prevent movement. These responses will be validated through braking and fault-injection tests (Tables~\ref{tab:app-safety} and~\ref{tab:app-verification}).
+Safety requirements prevent uncontrolled movement during emergency stops, tracking loss, or sensor failures. Emergency stopping overrides autonomous commands and requires manual reset~\cite{iso13850}. A preliminary 1 s tracking timeout limits operation using outdated position data, while invalid obstacle measurements prevent movement. These responses will be validated through braking and fault-injection tests (Tables~\ref{tab:app-safety} and~\ref{tab:app-verification}).
 
 \CourseSubsection{Critical Requirements and Traceability}
 
-Requirements are classified as critical, major, or minor to guide development priorities. Critical safety functions must be verified before integrated autonomous testing. Traceability connects stakeholder needs to subsystem requirements and verification tests, ensuring measurable acceptance criteria. For example, MC-04 requires motor inhibition during emergency stopping and is verified through VT-07. Detailed relationships are provided in Tables~\ref{tab:app-trace-functional}, \ref{tab:app-trace-interface}, and~\ref{tab:app-critical-relations}.
+Requirements are classified as critical, major, or minor to guide development priorities. Critical safety functions must be verified before integrated autonomous testing. Traceability connects stakeholder needs to subsystem requirements and verification tests, ensuring measurable acceptance criteria~\cite{nasaHandbook}. For example, MC-04 requires motor inhibition during emergency stopping and is verified through VT-07. Detailed relationships are provided in Tables~\ref{tab:app-trace-functional}, \ref{tab:app-trace-interface}, and~\ref{tab:app-critical-relations}.
 
 \CourseSubsection{Stretch Goals}
 
