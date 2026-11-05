@@ -84,6 +84,8 @@ MC-03 & The ASCC shall achieve a forward speed of at least 2 m/s on level terrai
 OB-03 & The obstacle subsystem shall detect the designated test obstacle at a distance of at least 1 m. & SYS-02 \\
 CT-03 & The RFID subsystem shall correctly identify at least 90\% of registered clubs during repeated detection trials. & SYS-04 \\
 PW-01 & The power subsystem shall support at least 1 hourof continuous operation under representative test conditions. & SYS-06 \\
+MC-06 & The ASCC shall decelerate at no less than 2 m/s$^2$ on level grass under the specified test load. & SYS-02 \\
+CD-03 & The course-data subsystem shall display the distance to the green within 5 m of a surveyed reference distance. & SYS-05 \\
 \hline
 \end{tabular}
 \end{table}
@@ -126,6 +128,8 @@ MC-05 & The ASCC shall not resume autonomous movement following an emergency sto
 FL-04 & The ASCC shall not continue autonomous movement when the tracking signal has been unavailable for more than 1 s. & SYS-03 \\
 OB-04 & The ASCC shall not continue forward movement when an obstacle is within the validated stopping zone. & SYS-02 \\
 OB-05 & The ASCC shall not initiate autonomous movement when required obstacle sensor data is unavailable or invalid. & SYS-02 \\
+OB-06 & The ASCC shall not move toward the golfer while a registered club is absent from the bag. & SYS-02 \\
+MC-07 & The ASCC shall begin braking within 100 ms of an emergency-stop command or loss of the emergency-stop link. & SYS-03 \\
 \hline
 \end{tabular}
 \end{table}
@@ -152,16 +156,20 @@ OB-02 & SYS-02 & SN-02 & Critical & P-03 & VT-04 \\
 OB-03 & SYS-02 & SN-02 & Critical & P-03 & VT-03 \\
 OB-04 & SYS-02 & SN-02 & Critical & P-03 & VT-04 \\
 OB-05 & SYS-02 & SN-02 & Critical & P-03 & VT-11 \\
+OB-06 & SYS-02 & SN-02 & Critical & P-03 & VT-13 \\
 MC-01 & SYS-01 & SN-01 & Major & P-01 & VT-01 \\
 MC-02 & SYS-03 & SN-02 & Critical & P-01 & VT-07 \\
 MC-03 & SYS-01 & SN-01 & Major & P-01 & VT-01 \\
 MC-04 & SYS-03 & SN-02 & Critical & P-01 & VT-07 \\
 MC-05 & SYS-03 & SN-02 & Critical & P-01 & VT-07 \\
+MC-06 & SYS-02 & SN-02 & Critical & P-01 & VT-12 \\
+MC-07 & SYS-03 & SN-02 & Critical & P-01 & VT-07 \\
 CT-01 & SYS-04 & SN-03 & Major & P-04 & VT-05 \\
 CT-02 & SYS-04 & SN-03 & Major & P-04 & VT-05 \\
 CT-03 & SYS-04 & SN-03 & Major & P-04 & VT-05 \\
 CD-01 & SYS-05 & SN-04 & Minor & P-05 & VT-06 \\
 CD-02 & SYS-05 & SN-04 & Minor & P-05 & VT-06 \\
+CD-03 & SYS-05 & SN-04 & Minor & P-05 & VT-06 \\
 PW-01 & SYS-06 & SN-05 & Major & P-06 & VT-09 \\
 \hline
 \end{tabular}
@@ -208,6 +216,8 @@ VT-08 & Signal loss & Verify stopping behaviour following tracking-signal loss. 
 VT-09 & Battery runtime & Measure continuous operating duration. \\
 VT-10 & Interface integration & Verify information and power exchange between subsystems. \\
 VT-11 & Sensor fault & Verify safe response to missing or invalid obstacle measurements. \\
+VT-12 & Braking & Measure deceleration and stopping distance on level grass under the test load. \\
+VT-13 & Club-out interlock & Verify the cart does not move toward the golfer while a club is out of the bag. \\
 \hline
 \end{tabular}
 \end{table}
@@ -295,13 +305,13 @@ H-09 & \textbf{Golfer's swing and the cart.} The golfer swings at a cart within 
 \rowcolor{MidGray}
 \TableHeader{ID} & \TableHeader{Mitigations} & \TableHeader{Derived requirement} & \TableHeader{Verification} \\
 \midrule
-H-01 & \textit{Design:} speed limit in the firmware, and a minimum following distance chosen using Eq.~\eqref{eq:stopping}. \textit{Safeguard:} the cart does not move toward the golfer inside that distance, and the firmware brakes it to a stop & Shall not move toward the golfer when closer than 1\,m (FL-03); shall brake at \reqTODO{braking} or more & VT-02; DRV-4, TRK-3 \\
+H-01 & \textit{Design:} speed limit in the firmware, and a minimum following distance chosen using Eq.~\eqref{eq:stopping}. \textit{Safeguard:} the cart does not move toward the golfer inside that distance, and the firmware brakes it to a stop & Shall not move toward the golfer when closer than 1\,m (FL-03); shall decelerate at 2\,m/s$^2$ or more (MC-06) & VT-02, VT-12; DRV-4, TRK-3 \\
 \addlinespace[2pt]
 H-02 & \textit{Design:} \acs{LiDAR} and downward-angled ultrasonic sensors that cover low objects. \textit{Safeguard:} obstacle stop. \textit{Information:} only soft obstacles are used in testing & Shall not move forward with an obstacle in the stopping zone (OB-04); shall detect the test obstacle at 1\,m (OB-03) & VT-03, VT-04; SAF-1, SAF-2 \\
 \addlinespace[2pt]
 H-03 & \textit{Design:} speed and current limits on the mainboard, independent of the Pi. \textit{Safeguard:} serial-timeout stop, tag-loss timeout, rejection of sudden jumps in range, and a watchdog on the Pi & Shall not keep moving more than 1\,s after tracking is lost (FL-04); shall not exceed \reqTODO{speed cap} under any command & VT-01, VT-08; DRV-2, TRK-3 \\
 \addlinespace[2pt]
-H-04 & \textit{Safeguard:} Category~1 stop (Section~\ref{sec:risks-mitigation}), with link loss treated as a stop, and a manually pressed button held by the safety operator & Shall not resume motion until manually reset (MC-05); shall stop within \reqTODO{e-stop latency} & VT-07; SAF-3 \\
+H-04 & \textit{Safeguard:} Category~1 stop (Section~\ref{sec:risks-mitigation}), with link loss treated as a stop, and a manually pressed button held by the safety operator & Shall not resume motion until manually reset (MC-05); shall begin braking within 100\,ms (MC-07) & VT-07; SAF-3 \\
 \addlinespace[2pt]
 H-05 & \textit{Design:} low bag cradle and the widest track the chassis allows. \textit{Safeguard:} the firmware holds the wheels still while powered. \textit{Information:} no operation on steep slopes & Shall not be operated on slopes above \reqTODO{slope limit} & DRV-4 (hold on a slope); tip calculation \\
 \addlinespace[2pt]
@@ -311,7 +321,7 @@ H-07 & \textit{Design:} stock pack and \acs{BMS} left unmodified, inline fuse si
 \addlinespace[2pt]
 H-08 & \textit{Design:} rated enclosure. \textit{Information:} dry weather only, and testing stops if it rains & The enclosure shall meet \reqTODO{IP rating} & T-INS-3 (inspection) \\
 \addlinespace[2pt]
-H-09 & \textit{Safeguard:} club-out interlock that blocks motion toward the golfer until the club is returned. \textit{Information:} park the cart outside swing reach & Shall not move toward the golfer while a club is out of the bag \reqTODO{club-out} & SAF-4 \\
+H-09 & \textit{Safeguard:} club-out interlock that blocks motion toward the golfer until the club is returned. \textit{Information:} park the cart outside swing reach & Shall not move toward the golfer while a club is out of the bag (OB-06) & VT-13; SAF-4 \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -358,7 +368,7 @@ H-09 & \textit{Safeguard:} club-out interlock that blocks motion toward the golf
 \label{fig:bowtie}
 \end{figure}
 
-\CourseSection{Milestone Schedule}\label{app:approach}
+\CourseSection{Milestone Schedule and Contingencies}\label{app:approach}
 
 Table~\ref{tab:milestones} gives the dates, owners, dependencies, and verification tests for each stage in Table~\ref{tab:prototypes}. A milestone is complete when the matching stage of its test in Table~\ref{tab:app-verification} passes. Table~\ref{tab:stretch} lists the stretch milestones, which map to the stretch goals in Table~\ref{tab:app-stretch}.
 
@@ -374,7 +384,7 @@ Table~\ref{tab:milestones} gives the dates, owners, dependencies, and verificati
 \multicolumn{6}{@{}l}{\textit{P-01 Drive base}} \\
 DRV-1 & Firmware flashed, and the Pi spins both wheels over \acs{UART} with the wheels raised & -- & Jp & 13 Nov & VT-01 \\
 DRV-2 & Speed and current limits, serial-timeout stop, and kill switch checked on the bench & DRV-1 & Jp & 20 Nov & VT-01 \\
-DRV-4 & Speed and braking measured on the floor and on grass, with a weight equal to a loaded bag & DRV-2 & Jp & 27 Nov & VT-01 % TODO: braking test
+DRV-4 & Speed and braking measured on the floor and on grass, with a weight equal to a loaded bag & DRV-2 & Jp & 27 Nov & VT-01, VT-12 %
 \\
 DRV-3 & Chassis finished, with the hub motors, bag cradle, handle, caster, and enclosure mounted & DRV-1 & Jp % TODO: suggest Vince
   & 4 Dec & -- \\
@@ -383,7 +393,7 @@ DRV-3 & Chassis finished, with the hub motors, bag cradle, handle, caster, and e
 SAF-1 & Obstacles detected with the cart static, including low objects & -- & Vince & 27 Nov & VT-03 \\
 SAF-3 & Wireless e-stop stops the cart on a press or when its link drops, and needs a manual reset & DRV-2 & Vince & 11 Dec & VT-07 \\
 SAF-2 & Cart stops for obstacles and for faulty sensor data while moving & DRV-3, DRV-4, SAF-1 & Vince & 22 Jan & VT-04, VT-11 \\
-SAF-4 & Cart does not move toward the golfer while a club is out of the bag & BAG-2, TRK-3, INT-1 & Vince & 19 Feb & \reqTODO{new} \\
+SAF-4 & Cart does not move toward the golfer while a club is out of the bag & BAG-2, TRK-3, INT-1 & Vince & 19 Feb & VT-13 \\
 \midrule
 \multicolumn{6}{@{}l}{\textit{P-04 Smart bag}} \\
 BAG-1 & One tagged club read reliably inside the real bag, near metal shafts & -- & Connor & 27 Nov & VT-05 \\
@@ -391,7 +401,7 @@ BAG-2 & Every club in a full, stationary bag reported as present or absent & BAG
 BAG-3 & Warning given when the cart moves away without a removed club & BAG-2, GPS-1 & Connor & 29 Jan & VT-05 \\
 \midrule
 \multicolumn{6}{@{}l}{\textit{P-05 Distance display}} \\
-GPS-1 & Position error measured at surveyed outdoor points & -- & Connor & 27 Nov & \reqTODO{new} \\
+GPS-1 & Position error measured at surveyed outdoor points & -- & Connor & 27 Nov & VT-06 \\
 GPS-2 & Distance to the green compared with reference distances & GPS-1 & Connor & 15 Jan & VT-06 \\
 GPS-3 & Display shows the distance, club inventory, and warnings & GPS-2, BAG-2 & Connor & 5 Feb & VT-06 \\
 \midrule
@@ -606,6 +616,38 @@ SN-02 No collisions or unintended movement & Soft obstacle placed in the path; o
 SN-03 Missing clubs & A club is deliberately left at the second shot & Display names that club before the third shot \\
 SN-04 Course information & Golfer states the distance at each shot from the display only & Stated distance within 5\,m of the laser reference \\
 SN-05 Reliable operation & All three runs on one charge & No software restart or unscripted reset \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\caption{Contingency plans.}
+\label{tab:contingencies}
+\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}L{0.32in} L{1.6in} Y L{1.25in}@{}}
+\rowcolor{MidGray}
+\TableHeader{ID} & \TableHeader{Trigger} & \TableHeader{Change to the system or plan} & \TableHeader{Milestones} \\
+\midrule
+C-1 & Mainboard unsupported, or flashing fails (DRV-1) & Use the community firmware fork for that board, or buy another used hoverboard for parts with a supported mainboard & DRV-1 up to 2 weeks late; DRV-4 nears snow (C-6) \\
+\addlinespace[2pt]
+C-2 & Under 90\% of clubs read near metal shafts (CT-03, BAG-1) & On-metal \acs{NFC} tags with one antenna per slot on an \acs{SPI} multiplexer. Last resort: per-slot presence sensing, which loses club identity (CT-01) & BAG-2 up to 2 weeks late; BAG-3, GPS-3, INT-1 follow \\
+\addlinespace[2pt]
+C-3 & Bearing error too large to hold 1--3\,m (FL-03, TRK-2) & Switch between two-anchor ranging and an \acs{AoA} module & TRK-3, TRK-4, INT-2 \\
+\addlinespace[2pt]
+C-4 & Distance error above 5\,m (CD-03, GPS-1) & Average readings while the cart is stopped, and add an active antenna on the handle & GPS-2 \\
+\addlinespace[2pt]
+C-5 & Readings fail or the Pi browns out with the motors running (INT-1) & Read the bag only when stopped, give the Pi its own \acs{DC-DC} supply, add ferrites, and move antennas away from the motors & INT-1; INT-2 buffer absorbs 2 weeks \\
+\addlinespace[2pt]
+C-6 & Snow before DRV-4, INT-3, or INT-4 & Grass tests in November; INT-3 and INT-4 on a cleared lot or after snowmelt, reported as a deviation & DRV-4, INT-3, INT-4 \\
+\addlinespace[2pt]
+C-7 & Wheels slip or stall on grass (DRV-4) & Limit operation to short, flat grass, or switch to the larger hub motors from an off-road hoverboard & DRV-4, INT-3 \\
+\addlinespace[2pt]
+C-8 & A track falls 2 or more weeks behind & A member whose track is ahead joins it, and stretch work stops & INT-2, INT-3; buffer absorbs 2 weeks \\
+\addlinespace[2pt]
+C-9 & Braking below 2\,m/s$^2$ (MC-06, DRV-4) & Lower the speed cap and raise the minimum distance until Eq.~\eqref{eq:stopping} holds; revise MC-03 and FL-03 & DRV-4; TRK-3 uses the new limits \\
+\addlinespace[2pt]
+C-10 & E-stop slower than 100\,ms (MC-07), or link drops (SAF-3) & Dedicated industrial e-stop receiver wired directly to the power relay & SAF-3; TRK-3 waits for it \\
 \bottomrule
 \end{tabularx}
 \end{table}
