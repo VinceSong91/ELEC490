@@ -1,0 +1,15 @@
+% Shared styles for the Functional Description and V&V diagrams.
+\tikzset{
+  fnbox/.style={draw=SmithBlue, rounded corners=2pt, fill=white, align=center,
+    inner sep=1pt, text width=0.84in, minimum height=0.40in, font=\scriptsize,
+    execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+  extbox/.style={fnbox, dashed, draw=TextGray, fill=LightGray},
+  enarr/.style={-{Stealth[length=4.5pt]}, line width=1pt, draw=QueensBurgundy},
+  infarr/.style={-{Stealth[length=3.5pt]}, line width=0.55pt, draw=SmithBlue},
+  proarr/.style={-{Stealth[length=4pt]}, line width=0.9pt, dashed, draw=SmithBlue},
+  sigarr/.style={-{Stealth[length=3.5pt]}, line width=0.55pt, draw=TextGray},
+  iflab/.style={font=\tiny\bfseries, inner sep=0.8pt, text=SmithBlue},
+  elab/.style={iflab, text=QueensBurgundy},
+  slab/.style={iflab, text=TextGray},
+  actlab/.style={font=\tiny, inner sep=1pt, align=center, text=TextGray},
+}

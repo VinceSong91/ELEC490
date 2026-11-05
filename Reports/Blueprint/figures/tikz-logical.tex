@@ -1,0 +1,51 @@
+% Logical decomposition: each element lists its allocated functions, and each
+% arrow states the action between elements.
+\begin{tikzpicture}[x=1in,y=1in,
+  lg/.style={draw=SmithBlue, rounded corners=2pt, fill=white, align=center, inner sep=1pt,
+    text width=1.12in, minimum height=0.36in, font=\scriptsize},
+  lx/.style={lg, dashed, draw=TextGray, fill=LightGray, text width=0.60in}]
+\fill[LightGray!55, rounded corners=4pt] (0.93,0.24) rectangle (5.45,-2.80);
+\node[font=\scriptsize\bfseries, text=SmithBlue, anchor=west, inner sep=1pt] at (0.98,-2.62) {\acs{ASCC}};
+\def\xa{0.33}\def\xb{1.60}\def\xc{3.15}\def\xd{4.75}\def\xe{6.12}
+% External
+\node[lx] (sat) at (\xa,0) {Satellites};
+\node[lx] (clb) at (\xa,-0.50) {Clubs};
+\node[lx] (glf) at (\xa,-1.00) {Golfer};
+\node[lx] (obs) at (\xa,-1.50) {Obstacles};
+\node[lx] (opr) at (\xa,-2.00) {Operator};
+\node[lx] (rd) at (\xe,0) {Golfer};
+\node[lx] (trr) at (\xe,-2.00) {Cart on terrain};
+% Elements
+\node[lg] (crs) at (\xb,0) {\textbf{Course distance}\\F5.1--F5.2};
+\node[lg] (inv) at (\xb,-0.50) {\textbf{Club inventory}\\F4.1--F4.3};
+\node[lg] (trk) at (\xb,-1.00) {\textbf{Golfer tracker}\\F2.1--F2.3};
+\node[lg] (obm) at (\xb,-1.50) {\textbf{Obstacle monitor}\\F3.1--F3.3};
+\node[lg] (ilk) at (\xb,-2.00) {\textbf{Safety interlock}\\F3.5--F3.8};
+\node[lg] (hmi) at (\xd,0) {\textbf{Display}\\F5.3--F5.4};
+\node[lg] (fol) at (\xc,-1.00) {\textbf{Following controller}\\F2.4};
+\node[lg] (sfc) at (\xd,-1.00) {\textbf{Safety controller}\\F3.4};
+\node[lg] (drv) at (\xd,-2.00) {\textbf{Drive unit}\\F1.1--F1.4};
+\node[lg] (pwr) at (\xc,-2.55) {\textbf{Power unit}\\F6.1--F6.2};
+% External to element
+\draw[sigarr] (sat) -- node[actlab,above]{signals} (crs);
+\draw[sigarr] (clb) -- node[actlab,above]{tags} (inv);
+\draw[sigarr] (glf) -- node[actlab,above]{carries} (trk);
+\draw[sigarr] (obs) -- node[actlab,above]{reflect} (obm);
+\draw[sigarr] (opr) -- node[actlab,above]{presses} (ilk);
+% Information
+\draw[infarr] (crs) -- node[actlab,above]{reports distance} (hmi);
+\draw[infarr] (inv.east |- 0,-0.44) -- node[actlab,above,pos=0.5]{reports inventory, alerts} (\xd-0.25,-0.44) -- (\xd-0.25,-0.18);
+\draw[infarr] (inv.east |- 0,-0.56) -- node[actlab,below,pos=0.5]{reports club out} (\xd+0.25,-0.56) -- (\xd+0.25,-0.82);
+\draw[infarr] (hmi) -- node[actlab,above]{shows} (rd);
+\draw[infarr] (trk) -- node[actlab,above]{reports\\$r,\theta$} (fol);
+\draw[infarr] (fol) -- node[actlab,above]{requests\\$v,\omega$} (sfc);
+\draw[proarr] (obm.east) -- node[actlab,above,pos=0.5]{requests stop} (\xd-0.42,-1.50) -- (\xd-0.42,-1.18);
+\draw[proarr] (ilk.east |- 0,-1.91) -- node[actlab,above,pos=0.5]{requests brake} (3.95,-1.91) -- (3.95,-1.72) -- (\xd-0.15,-1.72) -- (\xd-0.15,-1.18);
+\draw[proarr] (ilk.east |- 0,-2.09) -- node[actlab,below,pos=0.5]{can cut motor power} (drv.west |- 0,-2.09);
+\draw[infarr] (\xd+0.25,-1.18) -- node[actlab,right]{commands speed} (\xd+0.25,-1.82);
+\draw[enarr] (drv) -- node[actlab,above]{propels} (trr);
+% Energy
+\draw[enarr] (pwr.east) -- node[actlab,below,pos=0.5]{powers} (\xd,-2.55) -- (drv.south);
+\node[actlab, anchor=east] (nt) at (2.28,-2.55) {powers all electronics};
+\draw[enarr] (pwr.west) -- (nt.east);
+\end{tikzpicture}

@@ -1,0 +1,57 @@
+% Experimental set-ups: (a) stop lane, (b) e-stop bench, (c) tracking grid.
+\begin{tikzpicture}[x=1in,y=1in, font=\tiny,
+  bx/.style={draw=SmithBlue, rounded corners=1.5pt, fill=white, align=center, inner sep=1.5pt},
+  gx/.style={bx, dashed, draw=TextGray, fill=LightGray}]
+% (a) Stop lane -------------------------------------------------------------
+\node[font=\scriptsize\bfseries, anchor=west, text=SmithBlue, inner sep=0pt] at (0,1.84) {(a) Stop lane: T-DRV-4, T-SAF-2};
+\fill[LightGray!60] (0,0.62) rectangle (2.10,1.20);
+\draw[TextGray] (0,0.60) -- (2.10,0.60);
+\foreach \x in {0,0.2,...,2.1} \draw[TextGray] (\x,0.60) -- (\x,0.55);
+\node[anchor=north] at (1.05,0.54) {tape along lane; distance read from video};
+\draw[draw=SmithBlue, fill=SmithBlue!18, rounded corners=1.5pt] (0.15,0.78) rectangle (0.55,1.06);
+\node at (0.35,0.92) {cart};
+\draw[-{Stealth[length=4pt]}, line width=0.9pt, QueensBurgundy] (0.58,0.92) -- node[above, text=QueensBurgundy]{$v$} (1.02,0.92);
+\draw[dashed, TextGray] (1.05,0.62) -- (1.05,1.20);
+\node[anchor=south, align=center] at (1.05,1.20) {stop-zone\\ edge};
+\draw[fill=QueensBurgundy!35, draw=QueensBurgundy] (1.78,0.92) circle (0.10);
+\node[anchor=south, align=center] at (1.78,1.20) {foam test\\ object};
+\draw[TextGray, <->] (1.05,0.70) -- node[fill=LightGray!60,inner sep=0.5pt]{stop distance} (1.68,0.70);
+\node[gx] (cam) at (0.55,0.22) {Camera, 240\,fps};
+\draw[TextGray, -{Stealth[length=3pt]}] (cam.north) -- (0.70,0.40);
+\node[gx] (op) at (1.62,0.22) {Operator, e-stop};
+% (b) Bench -----------------------------------------------------------------
+\begin{scope}[shift={(2.20,0)}]
+\node[font=\scriptsize\bfseries, anchor=west, text=SmithBlue, inner sep=0pt] at (0,1.84) {(b) E-stop bench: T-SAF-3};
+\node[gx, text width=0.46in] (hh) at (0.28,1.42) {Handheld, button tap};
+\node[bx, text width=0.46in] (rx) at (1.02,1.42) {Receiver, stop line};
+\node[bx, text width=0.46in] (pi) at (1.02,0.84) {Pi (halted in fault case)};
+\node[bx, text width=0.50in] (mb) at (1.02,0.26) {Mainboard, wheels raised};
+\node[bx, text width=0.44in] (rl) at (1.78,0.84) {Delay, relay};
+\draw[sigarr] (hh) -- (rx);
+\draw[proarr] (rx) -- (pi);
+\draw[proarr] (rx.east) -| (rl.north);
+\draw[infarr] (pi) -- (mb);
+\draw[enarr] (rl.south) |- (mb.east);
+\node[bx, fill=LightGray, text width=0.48in] (sc) at (0.28,0.62) {Scope, 4 channels};
+\draw[TextGray, densely dotted] (hh.south) -- node[left, pos=0.5]{CH1} (sc.north);
+\draw[TextGray, densely dotted] (rx.south west) -- node[right, pos=0.35]{CH2} ($(sc.north east)+(0,-0.03)$);
+\draw[TextGray, densely dotted] (mb.west) -- node[below left, pos=0.5, inner sep=0.5pt]{CH3, 4} (sc.south);
+\node[anchor=north west, align=left, inner sep=0pt] at (1.42,0.14) {CH3: \acs{UART}, CH4: Hall};
+\end{scope}
+% (c) Tracking grid ---------------------------------------------------------
+\begin{scope}[shift={(4.45,0)}]
+\node[font=\scriptsize\bfseries, anchor=west, text=SmithBlue, inner sep=0pt] at (0,1.84) {(c) Tracking grid: T-TRK-1--3};
+\coordinate (o) at (0.92,0.32);
+\foreach \r in {0.40,0.80,1.20} \draw[TextGray, line width=0.3pt] ($(o)+(30:\r)$) arc (30:150:\r);
+\foreach \a in {30,60,90,120,150} \draw[TextGray, line width=0.3pt] (o) -- ($(o)+(\a:1.20)$);
+\node[fill=white, inner sep=0.5pt] at ($(o)+(75:0.40)$) {1\,m};
+\node[fill=white, inner sep=0.5pt] at ($(o)+(75:0.80)$) {2\,m};
+\node[fill=white, inner sep=0.5pt] at ($(o)+(75:1.20)$) {3\,m};
+\draw[line width=1.2pt, TextGray] (0.62,0.32) -- (1.22,0.32);
+\fill[QueensBurgundy] (0.62,0.32) circle (0.035); \fill[QueensBurgundy] (1.22,0.32) circle (0.035);
+\node[anchor=north, align=center] at (0.92,0.27) {anchors on stationary cart, baseline $b$;\\ reference by tape and laser rangefinder};
+\foreach \a/\r in {60/0.80,120/1.20,90/0.40} \fill[SmithBlue] ($(o)+(\a:\r)$) circle (0.03);
+\node[anchor=west, align=left, fill=white, inner sep=0.5pt] at (1.46,1.28) {tag on\\ golfer};
+\draw[TextGray, -{Stealth[length=3pt]}] (1.46,1.24) -- ($(o)+(60:0.80)+(0.04,0.02)$);
+\end{scope}
+\end{tikzpicture}

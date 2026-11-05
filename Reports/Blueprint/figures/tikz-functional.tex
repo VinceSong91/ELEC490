@@ -1,0 +1,98 @@
+% Fully decomposed functional diagram. Interface labels trace to tab:interfaces.
+\begin{tikzpicture}[x=1in,y=1in]
+\def\ca{0.43}\def\cb{1.54}\def\cc{2.65}\def\cd{3.76}\def\ce{4.87}\def\cf{5.98}
+\def\ra{0}\def\rb{-0.60}\def\rc{-1.20}\def\rd{-1.80}\def\re{-2.40}\def\rf{-3.00}\def\rg{-3.60}
+% Row 1: distance
+\node[extbox] (sat) at (\ca,\ra) {\acs{GPS} satellites};
+\node[fnbox] (f51) at (\cb,\ra) {\textbf{F5.1} Compute position fix};
+\node[fnbox] (f52) at (\cc,\ra) {\textbf{F5.2} Compute green distance};
+\node[fnbox] (f53) at (\cd,\ra) {\textbf{F5.3} Compose screen};
+\node[fnbox] (f54) at (\ce,\ra) {\textbf{F5.4} Convert frame to light};
+\node[extbox] (read) at (\cf,\ra) {Golfer reads display};
+% Row 2: clubs
+\node[extbox] (club) at (\ca,\rb) {Clubs with tags};
+\node[fnbox] (f41) at (\cb,\rb) {\textbf{F4.1} Read tag \acsp{UID}};
+\node[fnbox] (f42) at (\cc,\rb) {\textbf{F4.2} Update inventory};
+\node[fnbox] (f43) at (\cd,\rb) {\textbf{F4.3} Decide alert, club-out};
+% Row 3: tracking
+\node[extbox] (glf) at (\ca,\rc) {Golfer carrying tag};
+\node[fnbox] (f21) at (\cb,\rc) {\textbf{F2.1} Emit \acs{UWB} pulses};
+\node[fnbox] (f22) at (\cc,\rc) {\textbf{F2.2} Time pulses to ranges};
+\node[fnbox] (f23) at (\cd,\rc) {\textbf{F2.3} Solve range, bearing};
+\node[fnbox] (f24) at (\ce,\rc) {\textbf{F2.4} Compute $v,\omega$; zero if stale};
+% Row 4: obstacles
+\node[extbox] (obs) at (\ca,\rd) {Obstacles};
+\node[fnbox] (f31) at (\cb,\rd) {\textbf{F3.1} Measure distance};
+\node[fnbox] (f32) at (\cc,\rd) {\textbf{F3.2} Validate readings};
+\node[fnbox] (f33) at (\cd,\rd) {\textbf{F3.3} Compare to stop zone};
+% Row 5: e-stop
+\node[extbox] (op) at (\ca,\re) {Safety operator};
+\node[fnbox] (f35) at (\cb,\re) {\textbf{F3.5} Encode press as radio};
+\node[fnbox] (f36) at (\cc,\re) {\textbf{F3.6} Decode; watch link};
+% Arbiter spans rows 3 to 5
+\node[fnbox, minimum height=1.60in, fill=LightGray!40] (f34) at (\cf,\rd) {\textbf{F3.4} Gate $v,\omega$; command brake on any stop request};
+% Row 6: control
+\node[fnbox] (f62) at (\ca,\rf) {\textbf{F6.2} Step down 36\,V to 5\,V};
+\node[font=\tiny, text width=0.72in, align=left, inner sep=0pt] (rails) at (\cb+0.08,\rf) {to Pi, sensors, reader, display};
+\node[fnbox] (f37) at (\cc,\rf) {\textbf{F3.7} Delay stop signal};
+\node[fnbox] (f11) at (\cd,\rf) {\textbf{F1.1} Compute duty (\acs{FOC})};
+\node[fnbox] (f14) at (\ce,\rf) {\textbf{F1.4} Sense rotor angle};
+% Row 7: energy
+\node[fnbox] (f61) at (\ca,\rg) {\textbf{F6.1} Store energy: 36\,V};
+\node[fnbox] (f38) at (\cc,\rg) {\textbf{F3.8} Cut 36\,V: relay, kill switch};
+\node[fnbox] (f12) at (\cd,\rg) {\textbf{F1.2} Invert \acs{DC} to 3-phase};
+\node[fnbox] (f13) at (\ce,\rg) {\textbf{F1.3} Make torque: hub motors};
+\node[extbox] (cart) at (\cf,\rg) {Cart and bag on terrain};
+% Row 1 flows
+\draw[sigarr] (sat) -- node[slab,above]{S1} (f51);
+\draw[infarr] (f51) -- node[iflab,above]{I1} (f52);
+\draw[infarr] (f52) -- node[iflab,above]{I2} (f53);
+\draw[infarr] (f53) -- node[iflab,above]{I3} (f54);
+\draw[sigarr] (f54) -- node[slab,above]{S2} (read);
+% Position to club logic
+\draw[infarr] ($(f51.south)+(0.25,0)$) -- ($(f51.south)+(0.25,-0.10)$) -- node[iflab,above,pos=0.5]{I4} ($(f43.north)+(-0.25,0.10)$) -- ($(f43.north)+(-0.25,0)$);
+% Row 2 flows
+\draw[sigarr] (club) -- node[slab,above]{S3} (f41);
+\draw[infarr] (f41) -- node[iflab,above]{I5} (f42);
+\draw[infarr] (f42) -- node[iflab,above]{I6} (f43);
+\draw[infarr] (f43) -- node[iflab,right]{I7} (f53);
+\draw[infarr] (f43.east) -- node[iflab,above]{I8} (\cf,\rb) -- (f34.north);
+% Row 3 flows
+\draw[sigarr] (glf) -- node[slab,above]{S4} (f21);
+\draw[sigarr] (f21) -- node[slab,above]{S5} (f22);
+\draw[infarr] (f22) -- node[iflab,above]{I9} (f23);
+\draw[infarr] (f23) -- node[iflab,above]{I10} (f24);
+\draw[infarr] (f24.east) -- node[iflab,above]{I11} (f24.east -| f34.west);
+% Row 4 flows
+\draw[sigarr] (obs) -- node[slab,above]{S6} (f31);
+\draw[infarr] (f31) -- node[iflab,above]{I12} (f32);
+\draw[infarr] (f32) -- node[iflab,above]{I13} (f33);
+\draw[proarr] (f33.east) -- node[iflab,above]{I14} (f33.east -| f34.west);
+% Row 5 flows
+\draw[sigarr] (op) -- node[slab,above]{S7} (f35);
+\draw[sigarr] (f35) -- node[slab,above]{S8} (f36);
+\draw[proarr] (f36.east) -- node[iflab,above]{I15} (f36.east -| f34.west);
+\draw[proarr] (f36) -- node[iflab,right]{I16} (f37);
+\draw[proarr] (f37) -- node[iflab,right]{I17} (f38);
+% Command to the drive
+\draw[infarr] (f34.south) -- (\cf,-2.70) -- node[iflab,above,pos=0.3]{I18} (\cd,-2.70) -- (f11.north);
+\draw[infarr] (f11) -- node[iflab,left]{I19} (f12);
+\draw[infarr] (f14) -- node[iflab,above]{I20} (f11);
+\draw[sigarr] (f13) -- node[slab,right]{S9} (f14);
+% Energy chain
+\draw[enarr] (f61) -- node[elab,above,pos=0.35]{E1} (f38);
+\draw[enarr] (f38) -- node[elab,above]{E2} (f12);
+\draw[enarr] (f12) -- node[elab,above]{E3} (f13);
+\draw[enarr] (f13) -- node[elab,above]{E4} (cart);
+\draw[enarr] (f61) -- node[elab,right]{E5} (f62);
+\draw[enarr] (f62) -- node[elab,above]{E6} (rails);
+% Legend
+\begin{scope}[shift={(0,-4.08)}]
+  \draw[enarr] (0,0) -- (0.32,0); \node[font=\tiny,anchor=west] at (0.34,0) {energy};
+  \draw[infarr] (0.92,0) -- (1.24,0); \node[font=\tiny,anchor=west] at (1.26,0) {information};
+  \draw[proarr] (2.03,0) -- (2.35,0); \node[font=\tiny,anchor=west] at (2.37,0) {protection};
+  \draw[sigarr] (3.05,0) -- (3.37,0); \node[font=\tiny,anchor=west] at (3.39,0) {physical signal};
+  \node[extbox, text width=0.22in, minimum height=0.13in] at (4.42,0) {};
+  \node[font=\tiny,anchor=west] at (4.59,0) {outside the system};
+\end{scope}
+\end{tikzpicture}

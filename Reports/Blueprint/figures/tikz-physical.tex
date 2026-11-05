@@ -1,0 +1,74 @@
+% Physical layout: side elevation and plan view. Not to scale.
+\begin{tikzpicture}[x=1in,y=1in, font=\scriptsize,
+  co/.style={draw=TextGray, line width=0.35pt},
+  ct/.style={font=\tiny, align=left, inner sep=1pt, text=TextGray}]
+% --- Side view ---------------------------------------------------------------
+\draw[line width=0.8pt, draw=TextGray] (0.75,0) -- (3.75,0);
+\node[font=\tiny, text=TextGray] at (1.55,-0.08) {front (toward golfer) $\leftarrow$};
+% Bag and clubs
+\begin{scope}[rotate around={-16:(2.10,0.55)}]
+  \draw[fill=SmithBlue!18, draw=SmithBlue, rounded corners=4pt] (1.84,0.52) rectangle (2.36,1.95);
+  \draw[draw=SmithBlue, line width=1.2pt] (1.84,1.82) -- (2.36,1.82);
+  \foreach \x/\h in {1.92/2.28,2.02/2.36,2.12/2.30,2.22/2.25,2.30/2.18} {
+    \draw[line width=0.9pt, TextGray] (\x,1.95) -- (\x,\h);
+    \fill[TextGray] (\x-0.035,\h-0.02) rectangle (\x+0.035,\h+0.035);
+  }
+\end{scope}
+% Frame
+\draw[line width=2pt, TextGray] (1.10,0.25) -- (1.45,0.42) -- (3.15,0.42);
+\draw[line width=2pt, TextGray] (3.05,0.42) -- (3.28,2.20) -- (3.55,2.27);
+\draw[line width=1.4pt, TextGray] (2.55,1.60) -- (3.17,1.45);
+% Rear hub wheel, deck, front caster
+\fill[TextGray] (3.05,0.33) circle (0.33); \fill[white] (3.05,0.33) circle (0.15);
+\fill[QueensBurgundy] (3.05,0.33) circle (0.09);
+\draw[fill=SmithBlue!45, draw=SmithBlue, rounded corners=1.5pt] (2.28,0.20) rectangle (2.76,0.40);
+\draw[fill=white, draw=SmithBlue, rounded corners=1.5pt] (1.45,0.44) rectangle (1.88,0.72);
+\draw[line width=1.4pt, TextGray] (1.10,0.25) -- (0.97,0.12);
+\fill[TextGray] (0.97,0.10) circle (0.10); \fill[white] (0.97,0.10) circle (0.04);
+% Front sensors
+\fill[QueensBurgundy] (1.14,0.27) rectangle (1.25,0.40);
+\draw[QueensBurgundy, dashed, line width=0.4pt] (1.14,0.33) -- (0.78,0.45) (1.14,0.33) -- (0.78,0.18);
+% Console, anchors
+\draw[fill=white, draw=SmithBlue] (3.16,2.13) rectangle (3.42,2.31);
+\fill[SmithBlue] (3.26,2.34) rectangle (3.34,2.40);
+\fill[QueensBurgundy] (2.95,1.53) circle (0.045);
+\fill[SmithBlue] (3.50,2.26) circle (0.03);
+% Callouts: left
+\node[ct, anchor=east] (l1) at (1.72,2.42) {Reader antenna at club divider};
+\draw[co] (l1.east) -- (2.48,1.95);
+\node[ct, anchor=east] (l2) at (1.48,1.72) {Bag in cradle\\ (ballast in early tests)};
+\draw[co] (l2.east) -- (2.25,1.30);
+\node[ct, anchor=east] (l4) at (1.30,1.15) {Enclosure: Pi 5, \acs{DC-DC},\\ relay, e-stop receiver, fuse};
+\draw[co] (l4.east) -- (1.50,0.72);
+\node[ct, anchor=east] (l3) at (1.05,0.72) {Ultrasonic array, \acs{LiDAR}:\\ low, for low objects};
+\draw[co] (l3.south east) -- (1.17,0.40);
+% Callouts: right
+\node[ct, anchor=west] (r1) at (3.62,2.42) {\acs{GPS} antenna (high, C-4)};
+\draw[co] (r1.west) -- (3.34,2.38);
+\node[ct, anchor=west] (r2) at (3.62,2.10) {Console: display;\\ kill switch at grip};
+\draw[co] (r2.west) -- (3.42,2.20);
+\node[ct, anchor=west] (r3) at (3.40,1.55) {\acs{UWB} anchors on\\ cross-bar};
+\draw[co] (r3.west) -- (3.00,1.53);
+\node[ct, anchor=west] (r4) at (3.40,0.93) {Locked pivot: mainboard,\\ 36\,V pack in deck, low};
+\draw[co] (r4.west) -- (2.65,0.40);
+\node[ct, anchor=west] (r5) at (3.45,0.40) {Hub-motor wheel (2)};
+\draw[co] (r5.west) -- (3.33,0.40);
+% --- Plan view ---------------------------------------------------------------
+\begin{scope}[shift={(4.95,0)}]
+  \node[font=\tiny\bfseries, text=SmithBlue] at (0.68,2.55) {Plan view};
+  \fill[TextGray] (0.17,0.10) rectangle (0.31,0.48); \fill[TextGray] (1.05,0.10) rectangle (1.19,0.48);
+  \draw[draw=SmithBlue, fill=SmithBlue!18, rounded corners=2pt] (0.33,0.19) rectangle (1.03,0.39);
+  \draw[line width=1.2pt, TextGray] (0.68,0.39) -- (0.68,1.08);
+  \draw[draw=SmithBlue, fill=SmithBlue!18] (0.68,0.80) circle (0.15);
+  \draw[line width=1.2pt, TextGray] (0.33,0.56) -- (1.03,0.56);
+  \fill[QueensBurgundy] (0.33,0.56) circle (0.04); \fill[QueensBurgundy] (1.03,0.56) circle (0.04);
+  \node[font=\tiny, anchor=north, inner sep=1pt] at (0.85,0.54) {$b$};
+  \fill[QueensBurgundy] (0.50,1.05) rectangle (0.86,1.11);
+  \draw[QueensBurgundy, line width=0.4pt, dashed] (0.50,1.11) -- (0.17,1.72) (0.86,1.11) -- (1.19,1.72);
+  \draw[TextGray, line width=0.5pt] (0.665,1.11) -- (0.66,2.30) (0.695,1.11) -- (0.70,2.30);
+  \node[ct, anchor=west] at (0.75,1.95) {2$^\circ$ \acs{LiDAR}};
+  \node[ct, anchor=east] at (0.42,1.78) {ultrasonic\\fan};
+  \fill[SmithBlue] (0.68,2.32) circle (0.035);
+  \node[ct, anchor=west] at (0.74,2.32) {tag on golfer};
+\end{scope}
+\end{tikzpicture}

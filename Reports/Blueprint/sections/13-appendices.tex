@@ -429,3 +429,183 @@ STR-4 & Club recommendations from logged distances & SG-02 & STR-3 & Needs enoug
 \bottomrule
 \end{tabularx}
 \end{table}
+
+\CourseSection{Functional Description Details}\label{app:functional}
+
+Table~\ref{tab:design-decisions} supports Section~\ref{sec:func-overview}. Table~\ref{tab:interfaces} traces the interfaces labelled in Figure~\ref{fig:functional} to their requirements. Figures~\ref{fig:logical} and~\ref{fig:physical} support Sections~\ref{sec:func-logical} and~\ref{sec:func-physical}, and Table~\ref{tab:prototype-ids} supports Section~\ref{sec:func-prototypes}.
+
+\begin{table}[H]
+\setstretch{1}\centering
+\caption{Design decisions, their drivers, and the alternatives rejected.}
+\label{tab:design-decisions}
+\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}L{1.62in} Y@{}}
+\toprule
+\TableHeader{Decision and drivers} & \TableHeader{Why, and why not the alternatives} \\
+\midrule
+\textbf{DD-1} Used hoverboard, mainboard reflashed with open-source \acs{FOC} firmware~\cite{feruFoc} \newline \emph{\mbox{SN-01}, \mbox{SN-05}; \mbox{MC-01}, \mbox{MC-03}; budget} &
+One unit supplies two Hall-sensed hub motors for differential steering, the inverter, and a 36\,V pack with \acs{BMS}. Closed-loop speed mode holds speed under load, and speed and current limits run on the mainboard rather than the Pi (H-03). Hoverboard parts have carried robots outdoors in public~\cite{bu2023trash}, on an ODrive controller rather than the stock board~\cite{cornellHoverboard}. \emph{Used motorized golf cart:} the proposal's \$375 for cart, controller, and battery takes 63\% of the budget. \emph{Separate motors and controller:} adds the wheels, mounts, and control tuning that the hoverboard includes. Accepted cost: small wheels on grass (C-7). \\
+\addlinespace[3pt]
+\textbf{DD-2} \acs{UWB} tag on the golfer, anchors on the cart \newline \emph{\mbox{SN-01}; \mbox{FL-01} to \mbox{FL-04}} &
+Ranges to one identified tag and is minimally affected by light~\cite{zhang2024stroller}. Anchors on a robot reached 162\,mm mean position error after correction (703\,mm before)~\cite{bae2022uwb}, and one \acs{AoA} anchor on a stroller reached 15\,cm and 5$^\circ$ at 2\,m~\cite{zhang2024stroller}. Both were indoors, so grass and a tag blocked by the golfer's body are tested at \mbox{T-TRK-2}. \emph{Camera following}~\cite{islam2019personFollowing}: must re-identify the golfer when a second person is near, and competes with the stop loops for the Pi. \emph{Bluetooth handset}~\cite{stewartQFollow}: signal-strength ranging suffers from multipath~\cite{zafari2019survey}. \emph{\acs{GPS}:} 2.5\,m \acs{CEP}~\cite{neom8ds} is as large as the 1--3\,m following band. Two-anchor ranging or \acs{AoA} is decided at \mbox{T-TRK-2}: error falls with anchor spacing~\cite{bae2022uwb}, so $\pm$10\,cm ranging~\cite{dwm3000ds} over a 0.5\,m baseline $b$ gives about $\sqrt{2}\sigma_r/b \approx 16^\circ$. \\
+\addlinespace[3pt]
+\textbf{DD-3} Category~1 e-stop with a hardware path that bypasses the Pi \newline \emph{\mbox{SN-02}; \mbox{SYS-03}; \mbox{MC-02}, \mbox{MC-05}; \mbox{H-03}, \mbox{H-04}} &
+Section~\ref{sec:risks-mitigation} sets the sequence of brake, then relay. \emph{Firmware-only stop:} a hung Pi defeats it, and the firmware's own serial timeout only removes motor power, so the wheels coast~\cite{feruFoc}. \emph{Category~0 stop:} hub motors freewheel. \emph{Voice stop:} ISO~13850 expects a manually actuated device~\cite{iso13850}. \\
+\addlinespace[3pt]
+\textbf{DD-4} Ultrasonic array plus TF-Luna \acs{LiDAR} \newline \emph{\mbox{SN-02}; \mbox{OB-01} to \mbox{OB-05}; \mbox{H-02}} &
+The \acs{MVP} stops rather than steers, so it needs distance in the forward path, not a map. The TF-Luna ranges 0.2--8\,m at 90\% reflectivity and 0.2--2.5\,m at 10\%, but its 2$^\circ$ beam sees one point~\cite{tflunads}; the existing ultrasonic sensors cover the cart's width and low objects. Combining sonar with \acs{LiDAR} has detected obstacles such as glass that \acs{LiDAR} alone misses~\cite{barreto2022fusion}, indoors and with a 360$^\circ$ \acs{LiDAR}. \emph{One sensor type:} narrow coverage, or false returns from grass. \emph{Camera:} as in DD-2. \emph{Scanning \acs{LiDAR}:} free-space shape is needed only for STR-8. \\
+\addlinespace[3pt]
+\textbf{DD-5} Passive \acs{RFID} tags on clubs, reader in the bag \newline \emph{\mbox{SN-03}; \mbox{CT-01} to \mbox{CT-03}} &
+Identifies each club with no battery or golfer input. \emph{Per-slot presence sensors:} lose club identity (C-2). \emph{Club-mounted trackers}~\cite{arccosSmartSensors}: need a phone and can miss shots~\cite{hall2025golfGps}. Known weakness: nearby metal detunes tag antennas, as shown at \acs{UHF}~\cite{dobkin2005rfid}, and a low-cost \acs{HF} reader typically operates only up to 50\,mm~\cite{mfrc522ds}, so tag position and antenna layout are set by \mbox{T-BAG-1}, not assumed. \\
+\addlinespace[3pt]
+\textbf{DD-6} \acs{GPS} on the cart, green coordinates stored \newline \emph{\mbox{SN-04}; \mbox{CD-01}, \mbox{CD-02}} &
+Receiver accuracy of 2.5\,m \acs{CEP}~\cite{neom8ds} and golf devices at about three yards~\cite{hall2025golfGps} support a 5\,m target. \emph{Watch or phone}~\cite{arccosAppleWatch}: the dependence the \acs{ASCC} removes. \emph{\acs{RTK}:} cost not justified at this accuracy. Accepted cost: distance is measured from the cart, not the ball. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\setstretch{1}\centering
+\caption{Interfaces crossing a hardware boundary, with the requirement each traces to.}
+\label{tab:interfaces}
+\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}L{0.5in} L{1.0in} Y L{0.46in}@{}}
+\toprule
+\TableHeader{Label} & \TableHeader{From $\rightarrow$ to} & \TableHeader{Specification} & \TableHeader{Req.} \\
+\midrule
+S5, I9 & F2.1 $\rightarrow$ F2.3 & \acs{UWB} channel 5 (6.5\,GHz) or 9 (8\,GHz); ranges to the host over \acs{SPI}~\cite{dwm3000ds} & IR-01 \\
+I12 & F3.1 $\rightarrow$ F3.2 & TF-Luna: \acs{UART} at 115200 baud or \acs{I2C}, 3.3\,V logic, 100\,Hz default~\cite{tflunads}; ultrasonic trigger and echo on \acs{GPIO} & IR-02 \\
+I15--I17 & F3.6 $\rightarrow$ F3.4, F3.8 & Fail-safe stop line: high is run; low, a broken wire, or link loss is stop. Reaches the relay without passing through the Pi & \reqTODO{add ID} \\
+I18 & F3.4 $\rightarrow$ F1.1 & \leavevmode\acs{UART} at 115200 baud, 3.3\,V logic; the 15\,V wire in the same cable stays unconnected~\cite{feruFoc} & IR-03 \\
+I5 & F4.1 $\rightarrow$ F4.2 & Tag \acsp{UID} over \acs{SPI}, up to 10\,Mbit/s~\cite{mfrc522ds} & IR-04 \\
+I1 & F5.1 $\rightarrow$ F5.2 & \leavevmode\acs{NMEA} position over \acs{UART}, at least 1\,Hz~\cite{neom8ds} & \reqTODO{add ID} \\
+I3, I7 & F5.3, F4.3 $\rightarrow$ F5.4 & Distance, inventory, and alerts on a display of at least 5\,in diagonal & IR-05 \\
+E1, E2 & F6.1 $\rightarrow$ F1.2 & 36\,V nominal, 10-cell pack (42\,V full); 15\,A per motor default limit~\cite{feruFoc} & IR-06 \\
+E6 & F6.2 $\rightarrow$ electronics & 5\,V; the Pi~5 alone draws up to 5\,A~\cite{rpi5brief} & IR-06 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\setstretch{1}\centering
+\input{figures/tikz-logical}
+\caption{Logical decomposition, with allocated functions in each element and the action on each link. Line styles match Figure~\ref{fig:functional}.}
+\label{fig:logical}
+\end{figure}
+
+\begin{figure}[H]
+\setstretch{1}\centering
+\input{figures/tikz-physical}
+\caption{Physical layout, side elevation and plan view (not to scale). The tag and the handheld e-stop are carried off the cart.}
+\label{fig:physical}
+\end{figure}
+
+\begin{table}[H]
+\setstretch{1}\centering
+\caption{Prototypes, with the functions, physical elements, and tests for each.}
+\label{tab:prototype-ids}
+\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}L{0.98in} L{0.72in} Y L{0.95in}@{}}
+\toprule
+\TableHeader{ID, name} & \TableHeader{Functions} & \TableHeader{Physical elements} & \TableHeader{Tests} \\
+\midrule
+\textbf{P-01} Drive base & F1, F6.1, kill switch & Hoverboard mainboard, hub motors, and pack; chassis, caster, handle & \mbox{T-DRV-1} to 4, \mbox{T-INS-1} \\
+\textbf{P-02} Tracking and following & F2 & \acs{UWB} tag and anchors; following software on the Pi & \mbox{T-TRK-1} to 4 \\
+\textbf{P-03} Safety layer & F3 & Ultrasonic array, TF-Luna; handheld e-stop, receiver, relay; safety software on the Pi & \mbox{T-SAF-1} to 4 \\
+\textbf{P-04} Smart bag & F4 & \leavevmode\acs{RFID} reader and club tags; inventory software on the Pi & \mbox{T-BAG-1} to 3 \\
+\textbf{P-05} Distance display & F5 & \acs{GPS} module, display; distance software on the Pi & \mbox{T-GPS-1} to 3 \\
+\textbf{P-06} Integrated \acs{ASCC} & All, F6.2 & P-01 to P-05 on one cart; \acs{DC-DC} converter, enclosure, fuse & \mbox{T-INT-1} to 4, \mbox{T-INS-2}, \mbox{T-INS-3} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\CourseSection{Detailed Test Plan}\label{app:tests}
+
+Figure~\ref{fig:setups} shows the set-ups for Table~\ref{tab:tests-body} and the tests below. Table~\ref{tab:tests-key} gives the remaining key tests for each prototype, and Table~\ref{tab:tests-appendix} gives the interface, proof-of-concept, and hazard-mitigation tests they rely on. A red value has no Section~\ref{sec:requirements} requirement yet. Table~\ref{tab:validation} gives the validation in Section~\ref{sec:vv-validation}.
+
+\begin{figure}[H]
+\setstretch{1}\centering
+\input{figures/tikz-testsetups}
+\caption{Experimental set-ups: (a) stop lane, (b) e-stop timing bench, (c) tracking grid.}
+\label{fig:setups}
+\end{figure}
+
+\begin{table}[H]
+\setstretch{1}\centering
+\caption{Other key verification tests. A failed criterion triggers the contingency listed in Table~\ref{tab:contingencies}.}
+\label{tab:tests-key}
+\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}L{0.56in} L{0.72in} Y Y@{}}
+\toprule
+\TableHeader{Test} & \TableHeader{Verifies} & \TableHeader{Set-up and procedure} & \TableHeader{Acceptance criteria} \\
+\midrule
+\mbox{T-DRV-2} (P-01) & VT-01; MC-01; H-03 & Wheels raised. Command twice the cap over \acs{UART} and log speed; stall a wheel and log current; stop sending frames; pull the kill switch & Speed $\le$ \reqTODO{cap: 2.2 m/s}; serial loss removes power within \reqTODO{0.25 s}; kill switch removes power, 10 of 10 \\
+\addlinespace[2pt]
+\mbox{T-TRK-2} (P-02) & VT-02; FL-01 & Figure~\ref{fig:setups}(c), cart stationary. Tag at each grid point for 60\,s, then again with the golfer's body between tag and anchors & Mean bearing error $\le$ \reqTODO{15$^\circ$} at 1--3\,m and $\pm$60$^\circ$. Fail: C-3 \\
+\addlinespace[2pt]
+\mbox{T-BAG-2} (P-04) & VT-05; CT-01, CT-03 & Full 14-club bag, stationary. Remove and return clubs singly and in groups, 5 cycles per club & $\ge$ 63 of 70 events correct (CT-03); no swapped identity; delay $\le$ \reqTODO{5 s}. Fail: C-2 \\
+\addlinespace[2pt]
+\mbox{T-GPS-2} (P-05) & VT-06; CD-02 & Outdoors at reference points 50--200\,m from stored coordinates, cart stationary. Compare with a laser rangefinder & Displayed distance within \reqTODO{5 m} at every point. Fail: C-4 \\
+\addlinespace[2pt]
+\mbox{T-INT-3} (P-06) & VT-09; PW-01; all \acs{MVP} & Short grass, loaded bag, from full charge. Follow on continuous laps with pack voltage logged; repeat \mbox{T-SAF-2}, \mbox{T-SAF-3}, and \mbox{T-TRK-3} faults, 10 trials each, with all processes running & $\ge$ 1\,h with no brownout (PW-01); all repeated trials pass. Fail: C-5, C-6 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\setstretch{1}\centering
+\caption{Remaining verification tests. Set-ups match Figure~\ref{fig:setups} where they apply.}
+\label{tab:tests-appendix}
+\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}L{0.56in} L{0.72in} Y Y@{}}
+\toprule
+\TableHeader{Test} & \TableHeader{Verifies} & \TableHeader{Set-up and procedure} & \TableHeader{Acceptance criteria} \\
+\midrule
+\mbox{T-DRV-1} (P-01) & VT-01, VT-10; MC-01, IR-03 & Wheels raised. Pi sends speed frames at three setpoints in both directions & Hall speed within $\pm$10\% of command; no firmware fault. Fail: C-1 \\
+\addlinespace[2pt]
+\mbox{T-DRV-3} (P-01) & H-05 & Inspection and analysis. Lock the pivot, load the cradle with ballast, measure track $w$ and centre of gravity height $h$ & No relative motion at the pivot; tip angle $\arctan(w/2h)$ exceeds \reqTODO{max slope} \\
+\addlinespace[2pt]
+\mbox{T-TRK-1} (P-02) & VT-02, VT-10; IR-01 & Figure~\ref{fig:setups}(c), then an open area out to 15\,m. Tag at each point for 60\,s against tape & Range error $\le$ \reqTODO{0.3 m} at 1--3\,m; valid ranges to \reqTODO{13 m}. Fail: C-3 \\
+\addlinespace[2pt]
+\mbox{T-TRK-4} (P-02) & VT-02; FL-02, FL-03 & Golfer turns $\pm$90$^\circ$ and varies pace; a second person with no tag crosses between golfer and cart, 10 runs & Range within 1--3\,m for $\ge$ 90\% of samples; cart never follows the second person \\
+\addlinespace[2pt]
+\mbox{T-SAF-1} (P-03) & VT-03, VT-10; OB-01, OB-03, IR-02 & Static. Place the test objects on a grid across the forward region, 0.2--3\,m, 20 readings per point; map the blind zone & Detected at $\ge$ 1\,m across the cart's width (OB-03); blind zone recorded for H-02 \\
+\addlinespace[2pt]
+\mbox{T-BAG-1} (P-04) & VT-05, VT-10; CT-01, IR-04 & Proof of concept. One tagged club among metal shafts in the real bag; measure read range; 50 reads per tag position & $\ge$ 45 of 50 correct in the installed position. Fail: C-2 \\
+\addlinespace[2pt]
+\mbox{T-BAG-3} (P-04) & VT-05; CT-02 & Move the cart away with one club out, 10 runs; then 10 runs with all clubs in & Alert within \reqTODO{20 m} of movement, 10 of 10; no false alert in 10 runs \\
+\addlinespace[2pt]
+\mbox{T-GPS-1} (P-05) & VT-06 & Log fixes for 10\,min at surveyed outdoor points & 95\% of fixes within \reqTODO{5 m}. Fail: C-4 \\
+\addlinespace[2pt]
+\mbox{T-GPS-3} (P-05) & VT-06, VT-10; CD-01, IR-05 & Daylight. A reader at 3\,m, the upper limit of FL-03, reads the distance, inventory, and alerts & Correct in 10 of 10 readings; diagonal $\ge$ \reqTODO{5 in} \\
+\addlinespace[2pt]
+\mbox{T-INT-1} (P-06) & VT-10; IR-01 to IR-06 & The four compatibility checks in Section~\ref{sec:approach-milestones}, with the 5\,V rail on an oscilloscope during motor acceleration and subsystem tests repeated with motors running & No undervoltage flag on the Pi; no bus conflict; \mbox{T-BAG-2}, \mbox{T-TRK-1}, and \mbox{T-GPS-1} still pass; loop periods hold. Fail: C-5 \\
+\addlinespace[2pt]
+\mbox{T-INT-2} (P-06) & All \acs{MVP} & Flat indoor course with following, an obstacle stop, an e-stop, and a club removal, all processes running & Correct response to every event; no watchdog reset \\
+\addlinespace[2pt]
+\mbox{T-INS-1} (P-01) & H-06 & Measure guard gaps with calipers & Gaps meet ISO~13857~\cite{iso13857} \\
+\addlinespace[2pt]
+\mbox{T-INS-2} (P-06) & H-07 & Inspect fuse, wiring, and strain relief; measure accessory current at INT-1 & Fuse rating below wire ampacity and above measured current \\
+\addlinespace[2pt]
+\mbox{T-INS-3} (P-06) & H-08 & Inspect enclosure and cable entries & Meets \reqTODO{IP rating: IP54}~\cite{iec60529} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\setstretch{1}\centering
+\caption{Validation of stakeholder needs at \mbox{T-INT-4}.}
+\label{tab:validation}
+\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}L{1.5in} Y Y@{}}
+\toprule
+\TableHeader{Stakeholder need} & \TableHeader{Scripted event or observation} & \TableHeader{Passes when} \\
+\midrule
+SN-01 Transport without pushing & Golfer walks between shots at their own pace & Golfer never touches the cart to move it \\
+SN-02 No collisions or unintended movement & Soft obstacle placed in the path; one scripted e-stop & No contact; no unscripted operator stop; no motion toward the golfer with a club out \\
+SN-03 Missing clubs & A club is deliberately left at the second shot & Display names that club before the third shot \\
+SN-04 Course information & Golfer states the distance at each shot from the display only & Stated distance within 5\,m of the laser reference \\
+SN-05 Reliable operation & All three runs on one charge & No software restart or unscripted reset \\
+\bottomrule
+\end{tabularx}
+\end{table}
