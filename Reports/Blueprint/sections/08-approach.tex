@@ -14,11 +14,11 @@
 
 \CourseSubsection{Development Strategy and Division of Labour}\label{sec:approach-strategy}
 
-The \ac{ASCC} will be developed incrementally, with each subsystem tested as its own prototype (P-01 to P-05) before it joins the full cart (P-06). The cart is driven by the hub motors, mainboard, and battery from a used hoverboard, with the mainboard reflashed to take speed commands from the Raspberry Pi.
+The \ac{ASCC} will be developed incrementally, with each subsystem tested as its own prototype (P-01 to P-05) before it joins the full cart (P-06).
 
-The drive base (P-01), safety layer (P-03), and following (P-02) are built in that order, since following cannot be tested until the cart can drive and stop. The smart bag (P-04) and display (P-05) need no motion and are developed in parallel on the bench. The riskiest items are tested first~\cite[\S 6.4]{nasaHandbook}, in November and December (DRV-1, BAG-1, TRK-1, TRK-2), and the e-stop (SAF-3) is verified before the first following test.
+The drive base (P-01), safety layer (P-03), and golfer following (P-02) are built in that order, since following cannot be tested until the cart can drive and stop. The smart bag (P-04) and distance display (P-05) need no motion, so they are developed in parallel on the bench. The parts most likely to fail are tested first~\cite[\S 6.4]{nasaHandbook}, in November and December: flashing the mainboard, reading tags near metal club shafts, and measuring the range and direction to the golfer's tag. The e-stop is working before the first following test.
 
-Jp leads P-01 and P-02, Connor leads P-04 and P-05, and Vince leads P-03 and the integration hardware. The whole team completes integration, and each member has milestones in every month (Table~\ref{tab:milestones}, Appendix~\ref{app:approach}).
+Jp leads the drive base and following, Connor the smart bag and display, and Vince the safety layer and the power, wiring, and mounting. The whole team completes integration, and each member has milestones every month (Table~\ref{tab:milestones}, Appendix~\ref{app:approach}).
 % TODO: confirm Vince's track (assumed P-03 + integration hardware).
 % TODO: DRV-3 (chassis) owner. Team assigned all DRV to Jp; suggest moving it to
 % Vince to balance Jp's Nov-Dec load. Vince also mounts the obstacle sensors on
@@ -26,58 +26,17 @@ Jp leads P-01 and P-02, Connor leads P-04 and P-05, and Vince leads P-03 and the
 
 \CourseSubsection{Prototype Development Plan}\label{sec:approach-prototypes}
 
-Table~\ref{tab:prototypes} defines each prototype. A milestone is complete when the matching stage of its test in Table~\ref{tab:app-verification} passes. P-03 includes a club-out interlock because a swing can reach the cart (H-09), and the smart bag already knows when a club is out.
+Table~\ref{tab:prototypes} (Appendix~\ref{app:approach}) gives each prototype's purpose, scope, development stages, requirements, and tests. Each stage ends at a milestone, which is complete when its test passes. The safety layer includes the club-out interlock because a golfer's swing reaches about 1.9\,m, inside the following distance (Table~\ref{tab:hazards}), and the smart bag already knows when a club is out.
 
-\begin{table}[!htbp]
-\centering
-\caption{Prototype definitions. Each stage ends at the milestone in brackets; Table~\ref{tab:milestones} gives dates, leads, and dependencies.}
-\label{tab:prototypes}
-\footnotesize\renewcommand{\arraystretch}{1.0}
-\begin{tabularx}{\linewidth}{@{}L{2.2in} Y L{1.0in} L{0.5in}@{}}
-\rowcolor{MidGray}
-\TableHeader{Prototype, purpose, and scope} & \TableHeader{Development stages} & \TableHeader{Requirements} & \TableHeader{Tests} \\
-\midrule
-\textbf{P-01 Drive base.} Speed-limited motion on Pi commands, stoppable without the Pi. Reflashed mainboard, firmware limits, serial-timeout stop, kill switch, chassis &
-Bench, wheels raised (DRV-1) $\rightarrow$ limits and stops (DRV-2) $\rightarrow$ floor and grass with ballast (DRV-4) $\rightarrow$ chassis (DRV-3) &
-MC-01, MC-03, MC-06, IR-03 &
-VT-01 \\
-\addlinespace[2pt]
-\textbf{P-02 Tracking and following.} Follows the golfer's \acs{UWB} tag, so it cannot switch to another person. Tag, two anchors or an \acs{AoA} module, following controller &
-Static range (TRK-1) and bearing (TRK-2) $\rightarrow$ straight-line following (TRK-3) $\rightarrow$ turns, pace changes, second person (TRK-4) &
-FL-01 to FL-04, IR-01 &
-VT-02, VT-08 \\
-\addlinespace[2pt]
-\textbf{P-03 Safety layer.} Stops for obstacles, the e-stop, or a club out of the bag. Ultrasonic sensors, \acs{LiDAR}, wireless e-stop, club-out interlock &
-Static detection (SAF-1) $\rightarrow$ e-stop, wheels raised (SAF-3) $\rightarrow$ stops while moving (SAF-2) $\rightarrow$ interlock (SAF-4) &
-OB-01 to OB-06, IR-02, MC-02, MC-04, MC-05, MC-07 &
-VT-03, VT-04, VT-07, VT-11, VT-13 \\
-\addlinespace[2pt]
-\textbf{P-04 Smart bag.} Tracks which clubs are in the bag and warns of one left behind. \acs{RFID} reader, club tags, inventory software &
-One club in the bag (BAG-1) $\rightarrow$ full bag, stationary (BAG-2) $\rightarrow$ warning on cart movement (BAG-3) &
-CT-01 to CT-03, IR-04 &
-VT-05 \\
-\addlinespace[2pt]
-\textbf{P-05 Distance display.} Shows the distance to the green. \acs{GPS} module, stored green coordinates, display &
-Surveyed points (GPS-1) $\rightarrow$ reference distances (GPS-2) $\rightarrow$ full display (GPS-3) &
-CD-01 to CD-03, IR-05 &
-VT-06 \\
-\addlinespace[2pt]
-\textbf{P-06 Integrated \acs{ASCC}.} All subsystems on one cart, powered from the 25.2\,V pack through a \acs{DC-DC} converter &
-Stationary (INT-1) $\rightarrow$ indoors (INT-2) $\rightarrow$ field verification (INT-3) $\rightarrow$ golfer validation (INT-4) &
-PW-01, IR-06, all \acs{MVP} requirements &
-VT-09, VT-10, all \\
-\bottomrule
-\end{tabularx}
-\end{table}
 
 \CourseSubsection{Milestones and Dependencies}\label{sec:approach-milestones}
 
-Table~\ref{tab:milestones} (Appendix~\ref{app:approach}) schedules the milestones from their dependencies and part lead times. Because Kingston grass is likely snow-covered from December to March, the grass test (DRV-4) runs on 27~November with a weight in place of the bag, and following and integration move indoors until March. Two weeks of buffer sit before INT-3 and one week before the final demonstration.
+Table~\ref{tab:milestones} (Appendix~\ref{app:approach}) schedules the milestones from their dependencies and part lead times. Grass in Kingston is likely under snow from December to March, so the grass driving test (DRV-4) runs on 27~November with weights in place of the bag, and following and integration move indoors until March. Two weeks of slack sit before field testing and one week before the final demonstration.
 % TODO: confirm final demo date (assumed late March 2027).
 
-Integration is staged so the cart can always be stopped before anything is added: the motion chain first, then the bag and display on the stationary cart (INT-1), then the full system indoors (INT-2), then the field (INT-3, INT-4). INT-1 also checks power draw from the 25.2\,V pack, Pi pin conflicts, motor noise on the \acs{RFID}, \acs{UWB}, and \acs{GPS} readings, and loop timing (VT-10). Stretch goals (Table~\ref{tab:stretch}) start only after the \acs{MVP} milestones they depend on have passed.
+Integration is staged so the cart can always be stopped before anything new is added. First come the drive, safety, and following; then the bag and display are mounted on the stationary cart, with checks that power, wiring, and radio interference are compatible; then the full system runs indoors, and finally in the field. Stretch goals (Table~\ref{tab:stretch}) start only after the milestones they depend on have passed.
 
 \CourseSubsection{Contingency Plans}\label{sec:approach-contingency}
 
-Table~\ref{tab:contingencies} in Appendix~\ref{app:approach} lists the technical, safety, and schedule contingencies, each with its trigger, the change to the system or plan, and the milestones affected. The ones most likely to move the schedule are an unsupported mainboard (C-1), poor \acs{RFID} reads near metal shafts (C-2), and early snow (C-6), which is why DRV-1, BAG-1, and DRV-4 are all due in November.
+Table~\ref{tab:contingencies} (Appendix~\ref{app:approach}) lists each technical, safety, and schedule contingency, what would trigger it, what would change, and which milestones it would delay. The three most likely to move the schedule are an unsupported mainboard, poor tag reads near metal shafts, and early snow, which is why those tests are all due in November.
 

@@ -24,13 +24,13 @@
 
 \CourseSubsection{Verification Strategy and Traceability}\label{sec:vv-strategy}
 
-Test T-X closes milestone X, and each objective VT-01 to VT-11 in Table~\ref{tab:app-verification} is carried out by the tests that name it in Table~\ref{tab:tests-body} and in Tables~\ref{tab:tests-key} and~\ref{tab:tests-appendix} (Appendix~\ref{app:tests}). Test order follows the hazards: \mbox{T-DRV-2} passes before the cart moves on its own wheels, and \mbox{T-SAF-3} passes before the first following trial, because during following the operator is away from the cart. Every \emph{shall not} requirement has a fault-injection step: MC-04 and MC-05 at \mbox{T-SAF-3}, FL-04 at \mbox{T-TRK-3}, and OB-04 and OB-05 at \mbox{T-SAF-2}. Hazard mitigations with no moving behaviour are verified by inspection (\mbox{T-INS-1} to \mbox{T-INS-3}) and tip-over by analysis at \mbox{T-DRV-3}~\cite[\S 5.3]{nasaHandbook}.
+Each milestone is closed by the test with the same name (for example, \mbox{T-DRV-2} closes DRV-2), and each test carries out one or more of the verification objectives in Table~\ref{tab:app-verification}. The order of testing follows the hazards. The speed limits and kill switch are checked with the wheels off the ground before the cart drives, and the e-stop is checked before the first following trial, since the operator is then away from the cart. Every \emph{shall not} requirement is tested by deliberately causing the fault, such as switching off the tag, unplugging an obstacle sensor, or halting the Pi. Guards, fusing, and the enclosure are checked by inspection, and tipping by calculation~\cite[\S 5.3]{nasaHandbook}.
 
-Stop functions must pass 30 of 30 trials. Zero failures in 30 bounds the failure probability below 10\% at 95\% confidence ($0.9^{30} = 0.04$). That is the most a test campaign of this size can show, and it is why a safety operator stays present for all motion. Bench timing uses an oscilloscope in the '65 ECE lab, field timing uses 240\,fps video (about 4\,ms per frame), and speed comes from mainboard Hall logs checked against video.
+Stop functions must pass 30 of 30 trials. Zero failures in 30 shows, with 95\% confidence, that the failure rate is below 10\% ($0.9^{30} = 0.04$). A test campaign of this size cannot show more, which is why a safety operator stays present for all motion. Timing uses an oscilloscope on the bench and 240\,fps video in the field (about 4\,ms per frame), and speed comes from the motors' own sensors, checked against the video.
 
 \CourseSubsection{Subsystem and Prototype Tests}\label{sec:vv-tests}
 
-Table~\ref{tab:tests-body} gives the tests that verify the critical stop functions, using the set-ups in Figure~\ref{fig:setups} (Appendix~\ref{app:tests}). Tables~\ref{tab:tests-key} and~\ref{tab:tests-appendix} in the same appendix give the rest, so that every prototype has its own tests. A red value has no Section~\ref{sec:requirements} requirement yet.
+Table~\ref{tab:tests-body} gives the tests that verify the critical stop functions, using the set-ups in Figure~\ref{fig:setups} (Appendix~\ref{app:tests}). Tables~\ref{tab:tests-key} and~\ref{tab:tests-appendix} in the same appendix give the rest, so that every prototype has its own tests.
 
 \begin{table}[!htbp]
 \centering
@@ -41,25 +41,25 @@ Table~\ref{tab:tests-body} gives the tests that verify the critical stop functio
 \toprule
 \TableHeader{Test} & \TableHeader{Verifies} & \TableHeader{Set-up and procedure} & \TableHeader{Acceptance criteria} \\
 \midrule
-\mbox{T-DRV-4} (P-01) & VT-01; MC-03; H-01, H-05 & Figure~\ref{fig:setups}(a), floor then short grass, ballast of \measTODO{loaded mass}. Accelerate to the cap, command zero speed, measure distance by video. Hold on \reqTODO{max slope} & $\ge$ 2.0\,m/s; deceleration meets Eq.~\eqref{eq:stopping} at the cap, \reqTODO{braking}; no roll on the slope. Fail: C-7, C-9 \\
+\mbox{T-DRV-4} (P-01) & VT-01; MC-03; H-01, H-05 & Figure~\ref{fig:setups}(a), floor then short grass, ballast equal to a loaded bag. Accelerate to the cap, command zero speed, measure distance by video. Hold on the steepest test-site slope & $\ge$ 1.4\,m/s (MC-03); deceleration $\ge$ 2\,m/s$^2$ (MC-06); no roll on the slope. Fail: C-7, C-9 \\
 \addlinespace[2pt]
-\mbox{T-TRK-3} (P-02) & VT-02, VT-08; FL-01 to FL-04 & Indoors, straight lane, golfer at 1.4\,m/s~\cite{bohannon2011walking}; log range. Fault: switch off or shield the tag during a run, 30 runs & Range within 1--3\,m for $\ge$ 95\% of samples; speed command zero within 1\,s of the last valid range, 30 of 30 \\
+\mbox{T-TRK-3} (P-02) & VT-02, VT-08; FL-01 to FL-04 & Indoors, straight lane, golfer at 1.4\,m/s~\cite{bohannon2011walking}; log range. Fault: switch off or shield the tag during a run, 30 runs & Range within 1--3\,m for $\ge$ 95\% of samples; speed command zero within 0.5\,s of the last valid range (FL-04), 30 of 30 \\
 \addlinespace[2pt]
-\mbox{T-SAF-2} (P-03) & VT-04, VT-11; OB-02, OB-04, OB-05 & Figure~\ref{fig:setups}(a) at the cap. Foam cylinders sized after the ISO~3691-4 test pieces, 200\,$\times$\,600\,mm and 70\,$\times$\,400\,mm, upright and lying. Fault: disconnect each sensor; inject out-of-range readings & Stops before contact, 30 of 30; detection to brake frame $\le$ \reqTODO{300 ms}; will not start with a sensor missing or invalid, 10 of 10 per sensor \\
+\mbox{T-SAF-2} (P-03) & VT-04, VT-11; OB-02, OB-04, OB-05 & Figure~\ref{fig:setups}(a) at the cap. Foam cylinders sized after the ISO~3691-4 test pieces, 200\,$\times$\,600\,mm and 70\,$\times$\,400\,mm, upright and lying. Fault: disconnect each sensor; inject out-of-range readings & Stops before contact, 30 of 30; detection to brake command $\le$ 0.3\,s, the reaction time in Eq.~\eqref{eq:stopping}; will not start with a sensor missing or invalid, 10 of 10 per sensor \\
 \addlinespace[2pt]
-\mbox{T-SAF-3} (P-03) & VT-07; MC-02, MC-04, MC-05; H-04 & Figure~\ref{fig:setups}(b), then on the moving cart. Press at \reqTODO{20 m}; repeat with the Pi halted and with the transmitter off; reset & Press to brake frame $\le$ 100\,ms (MC-07); relay opens with the Pi halted; link loss stops within \reqTODO{0.5 s}; no motion after reset until re-enabled; each 30 of 30. Fail: C-10 \\
+\mbox{T-SAF-3} (P-03) & VT-07; MC-02, MC-04, MC-05; H-04 & Figure~\ref{fig:setups}(b), then on the moving cart. Press at 20\,m, the proposal's e-stop range; repeat with the Pi halted and with the transmitter off; reset & Press to brake frame $\le$ 100\,ms (MC-07); relay opens with the Pi halted; link loss stops within 0.5\,s, as for tag loss; no motion after reset until re-enabled; each 30 of 30. Fail: C-10 \\
 \addlinespace[2pt]
 \mbox{T-SAF-4} (P-03) & VT-13; OB-06; H-09 & Following armed, floor. Remove a club and walk toward and away from the cart; log wheel commands; return the club & No motion toward the golfer while a club is out, 30 of 30; following resumes only after return \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\mbox{T-DRV-2} tests configured values because the firmware defaults do not suit this cart. The default limit of 1000\,rpm~\cite{feruFoc} is about 8.6\,m/s on a typical 165\,mm wheel, and the default timeout of 160 main-loop cycles at about 6\,ms is near 1\,s, or 2\,m of travel at 2\,m/s. \mbox{T-DRV-4} also supplies values that later tests depend on. Measured deceleration and reaction time give the stopping distance $v\,t_r + v^2/2a$, which sets the validated stopping zone in OB-02 and OB-04, with OB-03 serving as the sensor benchmark. Deceleration below the value Eq.~\eqref{eq:stopping} requires at the speed cap triggers C-9.
+The firmware's default settings do not suit this cart, so \mbox{T-DRV-2} tests the configured values. The default speed limit of 1000\,rpm~\cite{feruFoc} is about 8.6\,m/s on a 6.5\,in (165\,mm) hoverboard wheel, and the default command timeout is close to 1\,s, or 1.5\,m of travel at the speed cap. The drive test (\mbox{T-DRV-4}) also measures the braking and reaction time that set the obstacle stopping zone through Eq.~\eqref{eq:stopping}; if braking falls short of 2\,m/s$^2$, the speed cap is lowered (C-9).
 
 \CourseSubsection{Experimental Test Setups}\label{sec:vv-setups}
 
-Figure~\ref{fig:setups} (Appendix~\ref{app:tests}) shows the arrangements behind the safety and tracking tests. The stop lane uses soft objects only, as required by H-02, and the bench setup measures each stage of the stop separately, so a late stop can be traced to the radio, the Pi, or the mainboard.
+Figure~\ref{fig:setups} (Appendix~\ref{app:tests}) shows the set-ups for the safety and tracking tests. The stop lane uses soft objects only, and the bench set-up times each stage of a stop separately, so a late stop can be traced to the radio, the Pi, or the mainboard.
 
 \CourseSubsection{System Validation}\label{sec:vv-validation}
 
-The verification tests check the requirements; \mbox{T-INT-4} checks the stakeholder needs in intended use~\cite[\S 5.4]{nasaHandbook}. A golfer plays a simulated hole of three shots on open, dry grass using only the cart, with no phone, three times on one charge and with the safety operator present. Table~\ref{tab:validation} (Appendix~\ref{app:tests}) lists the observations for each need. If snow prevents this, C-6 applies and the deviation is stated.
+The verification tests check the requirements; the final validation (\mbox{T-INT-4}) checks the stakeholder needs in real use~\cite[\S 5.4]{nasaHandbook}. A golfer plays a simulated three-shot hole on dry grass using only the cart and no phone, three times on one charge, with the safety operator present. Table~\ref{tab:validation} (Appendix~\ref{app:tests}) lists what is observed for each need. If snow prevents this, the test moves to a cleared lot and the difference is reported.

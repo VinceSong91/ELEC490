@@ -1,39 +1,29 @@
-
 \CourseSection{Introduction}
 \label{sec:introduction}
 
 \CourseSubsection{Motivation and Problem}
 
-Golfers who walk the course must transport their equipment by carrying a bag or operating a push cart. Low-handicap golfers rated carrying the bag as the hardest of these options~\cite{kasper2023golf}. Although electric and autonomous carts reduce this effort~\cite{kasper2023golf}, they primarily focus on transportation rather than equipment management. Golfers must also keep track of clubs removed during play, which can be misplaced or left behind. Commercial club trackers address part of this problem but can miss shots~\cite{hall2025golfGps} and do not carry the bag.
-
-The Autonomous Smart Caddy Cart (ASCC) aims to address both challenges by combining autonomous golfer following with club identification and tracking. As golfers ourselves, the team understands the need for a solution that addresses both transportation and equipment management. The goal is to reduce manual cart operation while helping golfers manage their equipment throughout a round.
-Walking golfers must transport their equipment while keeping track of clubs used throughout a round. Although electric and autonomous carts reduce transportation effort, they offer limited equipment management capabilities. The Autonomous Smart Caddy Cart (ASCC) addresses both challenges by combining autonomous golfer following with club identification and tracking, reducing manual operation and the risk of forgotten equipment.
+Golfers who walk the course must carry their bag or push a cart, and low-handicap golfers rate carrying the bag as the hardest option~\cite{kasper2023golf}. Electric and follow-me carts reduce this effort~\cite{kasper2023golf} but only carry the bag. Golfers must still keep track of every club they take out, and a club left beside a green is easily lost. Club trackers cover part of this problem, but they rely on a phone, can miss shots~\cite{hall2025golfGps}, and do not carry the bag.
 
 \CourseSubsection{Project Objectives}
 
-The ASCC will be developed as a motorized golf push cart capable of following a golfer using a controller-based tracking system rather than computer vision~\cite{islam2019personFollowing}. Distance sensors will support obstacle detection and avoidance, while an emergency-stop mechanism will allow the cart to be stopped when necessary.
-The ASCC aims to develop a motorized golf push cart that follows a golfer using controller-based tracking rather than computer vision. Distance sensors will support obstacle detection and avoidance, while an emergency-stop mechanism provides an additional safety measure.
+The \ac{ASCC} is a motorized golf cart that solves both problems at once. It follows the golfer, keeps track of the clubs in the bag, and shows the distance to the green, all without the golfer using a phone. It follows a small \ac{UWB} radio tag carried by the golfer instead of using a camera~\cite{islam2019personFollowing}, so it cannot mistake another person for the golfer. Obstacle sensors and a handheld emergency stop (e-stop) stop the cart when needed.
 
-An RFID-based subsystem will identify tagged golf clubs and monitor their presence in the bag, notifying the golfer when a club is missing. The objective is to integrate these functions into a reliable and safe prototype.
-
-The ASCC will also aim to incorporate golf course data, including hole layouts, distances, and course information, to assist golfers with shot planning. This information helps golfers estimate distances to targets and hazards, supporting more informed club selection and on-course decisions~\cite{hall2025golfGps}.
-An RFID subsystem will identify tagged clubs, monitor their presence, and alert golfers when equipment is missing. Golf course data, including hole layouts, distances, and hazards, will also support shot planning and club selection.
+Each club carries an \ac{RFID} tag, and a reader in the bag, called the smart bag, notices when a club is removed and warns the golfer if the cart moves on without it. The smart bag also blocks the cart from moving toward the golfer while a club is out, since the golfer is about to swing. This is called the club-out interlock.
 
 \CourseSubsection{Project Scope}
 
-The minimum viable prototype includes motor control, golfer following, obstacle detection, emergency stopping, RFID club tracking, and basic course information. Stretch goals include shot tracking, club recommendations, and speech interaction, subject to available resources.
-
-Testing will progress from indoor environments to controlled outdoor conditions. The prototype is not intended for commercial deployment or operation in crowded areas, on public roads, or on extreme terrain.
+The \ac{MVP} covers driving, golfer following, obstacle and emergency stopping, club tracking, and the distance display. Shot tracking, club recommendations, and voice control would add value but are stretch goals, because they depend on the core functions working first. The deliverable is one cart, tested on dry, flat grass with one golfer and one bag. It is not intended for crowded areas, public roads, or rough terrain.
 
 \CourseSubsection{System Overview and Operating Scenario}
 
-Figure~\ref{fig:ascc-system-overview} illustrates the ASCC's main subsystems and their interactions with the golfer and environment. The Raspberry Pi coordinates sensor inputs, motor control, and club tracking.
+Figure~\ref{fig:ascc-system-overview} shows the subsystems and how they interact with the golfer and the course, with a Raspberry Pi coordinating them. The golfer clips on the tag and walks the hole while the cart follows 1 to 3\,m behind. When the golfer stops to hit, the cart stops, and once a club is out it will not move toward the golfer until the club is returned. The display shows the distance to the green and warns if a club is left behind. During testing, a safety operator walks nearby holding the e-stop.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[
         width=0.85\linewidth,
-        height=0.28\textheight,
+        height=0.2\textheight,
         keepaspectratio
     ]{figures/System Diagram.png}
     \caption{ASCC system overview and external interactions.}
@@ -42,4 +32,4 @@ Figure~\ref{fig:ascc-system-overview} illustrates the ASCC's main subsystems and
 
 \CourseSubsection{Design Constraints}
 
-Development is limited by the CAD \$600 budget and capstone schedule. Existing hardware, including the Raspberry Pi, ultrasonic sensors, and golf push cart, will be reused where possible. Hardware compatibility, sensor reliability, battery capacity, and safe motor operation will guide design and testing.
+The project must stay within the CAD \$600 budget and be finished for the March 2027 demonstration. To save cost, the cart reuses an owned Raspberry Pi, ultrasonic sensors, and golf push cart, and its drive comes from a used hoverboard. Snow in Kingston limits outdoor testing on grass to November and March.

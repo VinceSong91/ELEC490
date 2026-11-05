@@ -80,7 +80,7 @@ CD-02 & The course-data subsystem shall display an estimated distance to a selec
 \textbf{ID} & \textbf{Requirement} & \textbf{Parent} \\
 \hline
 FL-03 & The ASCC shall maintain a following distance between 1 and 3 m during controlled walking trials. & SYS-01 \\
-MC-03 & The ASCC shall achieve a forward speed of at least 2 m/s on level terrain under the specified test load. & SYS-01 \\
+MC-03 & The ASCC shall achieve a forward speed of at least 1.4 m/s on level terrain under the specified test load. & SYS-01 \\
 OB-03 & The obstacle subsystem shall detect the designated test obstacle at a distance of at least 1 m. & SYS-02 \\
 CT-03 & The RFID subsystem shall correctly identify at least 90\% of registered clubs during repeated detection trials. & SYS-04 \\
 PW-01 & The power subsystem shall support at least 1 hourof continuous operation under representative test conditions. & SYS-06 \\
@@ -90,7 +90,7 @@ CD-03 & The course-data subsystem shall display the distance to the green within
 \end{tabular}
 \end{table}
 
-FL-03 sits well above the \acs{UWB} errors measured on following robots~\cite{bae2022uwb,zhang2024stroller}. MC-03 exceeds mean adult walking speeds of 0.94 to 1.43\,m/s~\cite{bohannon2011walking}. OB-03 is within the TF-Luna range, even at 10\% reflectivity~\cite{tflunads}. CT-03 allows for metal detuning and short reader range~\cite{dobkin2005rfid,mfrc522ds}. CD-03 is wider than the receiver accuracy~\cite{neom8ds} and the error of commercial golf \acs{GPS} devices~\cite{hall2025golfGps}. MC-06 covers Eq.~\eqref{eq:stopping} at walking pace.
+FL-03 sits well above the \acs{UWB} errors measured on following robots~\cite{bae2022uwb,zhang2024stroller}. MC-03 matches the top of the mean adult walking speeds of 0.94 to 1.43\,m/s~\cite{bohannon2011walking}. MC-08 is the highest speed at which a 0.3\,s reaction and the 2\,m/s$^2$ braking of MC-06 stop the cart within the 1\,m of FL-03 and OB-03 (Eq.~\eqref{eq:stopping}), and FL-04 limits travel without tracking to 0.75\,m at that speed. OB-03 is within the TF-Luna range, even at 10\% reflectivity~\cite{tflunads}. CT-03 allows for metal shafts weakening the tags~\cite{dobkin2005rfid}. CD-03 is wider than the receiver accuracy~\cite{neom8ds} and the error of commercial golf \acs{GPS} devices~\cite{hall2025golfGps}, and about half the 10-yard gap between consecutive irons, so it rarely changes the club a golfer picks. The upper 3\,m of FL-03 keeps the bag within two or three steps of the golfer. CT-01 to CT-03 assume a full bag of 14 clubs, the most the Rules of Golf allow. PW-01 is set by pace of play: a walking round takes about four hours, about 13 minutes per hole, so one hour covers the three-hole validation but not a full round.
 
 
 \CourseSubsection{Interface Requirements}
@@ -127,12 +127,12 @@ IR-06 & The power subsystem shall provide the required operating voltages to the
 \hline
 MC-04 & The ASCC shall not energize its drive motors while the emergency-stop control is engaged. & SYS-03 \\
 MC-05 & The ASCC shall not resume autonomous movement following an emergency stop until a manual reset is performed. & SYS-03 \\
-FL-04 & The ASCC shall not continue autonomous movement when the tracking signal has been unavailable for more than 1 s. & SYS-03 \\
+FL-04 & The ASCC shall not continue autonomous movement when the tracking signal has been unavailable for more than 0.5 s. & SYS-03 \\
 OB-04 & The ASCC shall not continue forward movement when an obstacle is within the validated stopping zone. & SYS-02 \\
 OB-05 & The ASCC shall not initiate autonomous movement when required obstacle sensor data is unavailable or invalid. & SYS-02 \\
 OB-06 & The ASCC shall not move toward the golfer while a registered club is absent from the bag. & SYS-02 \\
 MC-07 & The ASCC shall begin braking within 100 ms of an emergency-stop command or loss of the emergency-stop link. & SYS-03 \\
-MC-08 & The ASCC shall not exceed 2.2 m/s under any command. & SYS-02 \\
+MC-08 & The ASCC shall not exceed 1.5 m/s under any command. & SYS-02 \\
 MC-09 & The ASCC shall not be operated on slopes steeper than half its measured static tip angle. & SYS-02 \\
 PW-02 & The accessory circuit shall be fused below the ampacity of its wiring and above its measured peak current. & SYS-06 \\
 PW-03 & The electronics enclosure shall meet IP54. & SYS-06 \\
@@ -288,23 +288,23 @@ Table~\ref{tab:hazards} lists the hazards assessed in Section~\ref{sec:risks-ass
 \rowcolor{MidGray}
 \TableHeader{ID} & \TableHeader{Hazard and cause} & \TableHeader{Standard} & \TableHeader{Size of the risk} & \TableHeader{Before} & \TableHeader{After} \\
 \midrule
-H-01 & \textbf{Cart hits the golfer.} The golfer stops suddenly, or walks back to the bag for a club and ends up closer than the following distance & ISO~13482, ISO~3691-4 & Stopping from 2\,m/s within 1\,m needs about 5\,m/s$^2$ of braking (Eq.~\ref{eq:stopping}); about 60\,J at impact & 3C Medium & 3E Medium \\
+H-01 & \textbf{Cart hits the golfer.} The golfer stops suddenly, or walks back to the bag for a club and ends up closer than the following distance & ISO~13482, ISO~3691-4 & Stops within 1.0\,m at the 1.5\,m/s cap with 2\,m/s$^2$ braking, but needs 1.6\,m from 2\,m/s (Eq.~\ref{eq:stopping}) & 3C Medium & 3E Medium \\
 \addlinespace[2pt]
 H-02 & \textbf{Cart hits something it did not detect.} The ultrasonic beams can miss low objects such as sprinkler heads and curbs, and grass can cause false readings & ISO~13482 & Objects must be detected beyond the stopping distance; OB-03 requires 1\,m. Blind zone below the sensor height, mapped at T-SAF-1 & 3C Medium & 3D Medium \\
 \addlinespace[2pt]
-H-03 & \textbf{Cart moves without a valid command.} The \acs{UWB} tag is dropped or handed to someone else, a \acs{UART} command is corrupted, the Pi crashes, or the firmware speed limit is set wrong & ISO~13482 & Up to 2\,m of travel at 2\,m/s during the 1\,s allowed by FL-04; stock top speed 6.2\,mph (2.8\,m/s), from the GOTRAX product label & 2C Serious & 3E Medium \\
+H-03 & \textbf{Cart moves without a valid command.} The \acs{UWB} tag is dropped or handed to someone else, a \acs{UART} command is corrupted, the Pi crashes, or the firmware speed limit is set wrong & ISO~13482 & Up to 0.75\,m of travel at the 1.5\,m/s cap during the 0.5\,s allowed by FL-04; stock top speed 6.2\,mph (2.8\,m/s), from the GOTRAX product label & 2C Serious & 3E Medium \\
 \addlinespace[2pt]
-H-04 & \textbf{E-stop fails or is too slow.} The radio link drops, the stop is routed through a frozen Pi, or the cart restarts after a reset & ISO~13850~\cite{iso13850}, IEC~60204-1~\cite{iec60204-1} & 0.2\,m of extra travel for every 100\,ms of latency at 2\,m/s & 2D Medium & 2E Medium \\
+H-04 & \textbf{E-stop fails or is too slow.} The radio link drops, the stop is routed through a frozen Pi, or the cart restarts after a reset & ISO~13850~\cite{iso13850}, IEC~60204-1~\cite{iec60204-1} & 0.15\,m of extra travel for every 100\,ms of latency at the 1.5\,m/s cap & 2D Medium & 2E Medium \\
 \addlinespace[2pt]
 H-05 & \textbf{Cart rolls away or tips over.} Power is cut on a slope and the hub motors freewheel, or the cart turns across a slope with a tall, loaded bag & ISO~13482 & Tips at $\arctan(w/2h)$ for track width $w$ and centre-of-gravity height $h$ measured at T-DRV-3, compared with the site slope & 3C Medium & 3D Medium \\
 \addlinespace[2pt]
-H-06 & \textbf{Fingers or straps caught.} The exposed hub wheels sit close to the frame and caster & ISO~13857, ISO~13854 & Measured gaps \measTODO{gaps} compared with the minimum gaps for fingers and hands & 3D Medium & 4D Low \\
+H-06 & \textbf{Fingers or straps caught.} The exposed hub wheels sit close to the frame and caster & ISO~13857, ISO~13854 & Guard gaps measured at T-INS-1 and compared with the minimum gaps for fingers and hands & 3D Medium & 4D Low \\
 H-06 & \textbf{Fingers or straps caught.} The exposed hub wheels sit close to the frame and caster & ISO~13857~\cite{iso13857}, ISO~13854~\cite{iso13854} & Guard gaps measured at T-INS-1 and compared with the minimum gaps for fingers and hands & 3D Medium & 4D Low \\
 \addlinespace[2pt]
-H-07 & \textbf{Battery fire, burn, or shock.} The 36\,V lithium-ion pack, new wiring to the \acs{DC-DC} converter, short circuits, and charging & UL~2272, IEC~62133-2 & About 158\,Wh stored in a typical 36\,V, 4.4\,Ah pack \measTODO{pack label} & 1E Medium & 1E Medium \\
+H-07 & \textbf{Battery fire, burn, or shock.} The 25.2\,V lithium-ion pack, new wiring to the \acs{DC-DC} converter, short circuits, and charging & UL~2272, IEC~62133-2 & About 66\,Wh stored (25.2\,V $\times$ 2.6\,Ah, from the GOTRAX pack label) & 1E Medium & 1E Medium \\
 H-07 & \textbf{Battery fire, burn, or shock.} The 25.2\,V lithium-ion pack, new wiring to the \acs{DC-DC} converter, short circuits, and charging & UL~2272~\cite{ul2272}, IEC~62133-2~\cite{iec62133-2} & About 66\,Wh stored (25.2\,V $\times$ 2.6\,Ah, from the GOTRAX pack label) & 1E Medium & 1E Medium \\
 \addlinespace[2pt]
-H-08 & \textbf{Water reaches the electronics.} Dew on the grass or rain during an outdoor test & IEC~60529 & Enclosure \acs{IP} rating compared with \reqTODO{IP rating} & 3D Medium & 3E Medium \\
+H-08 & \textbf{Water reaches the electronics.} Dew on the grass or rain during an outdoor test & IEC~60529 & Enclosure rating compared with IP54 (PW-03) & 3D Medium & 3E Medium \\
 H-08 & \textbf{Water reaches the electronics.} Dew on the grass or rain during an outdoor test & IEC~60529~\cite{iec60529} & Enclosure rating compared with IP54 (PW-03) & 3D Medium & 3E Medium \\
 \addlinespace[2pt]
 H-09 & \textbf{Golfer's swing and the cart.} The golfer swings at a cart within reach, or the cart moves into the golfer mid-swing & USGA Equipment Rules & A swing reaches about 1.9\,m, which covers most of the 1--3\,m following distance in FL-03 & 3C Medium & 3E Medium \\
@@ -325,7 +325,7 @@ H-01 & \textit{Design:} speed limit in the firmware, and a minimum following dis
 \addlinespace[2pt]
 H-02 & \textit{Design:} \acs{LiDAR} and downward-angled ultrasonic sensors that cover low objects. \textit{Safeguard:} obstacle stop. \textit{Information:} only soft obstacles are used in testing & Shall not move forward with an obstacle in the stopping zone (OB-04); shall detect the test obstacle at 1\,m (OB-03) & VT-03, VT-04; SAF-1, SAF-2 \\
 \addlinespace[2pt]
-H-03 & \textit{Design:} speed and current limits on the mainboard, independent of the Pi. \textit{Safeguard:} serial-timeout stop, tag-loss timeout, rejection of sudden jumps in range, and a watchdog on the Pi & Shall not keep moving more than 1\,s after tracking is lost (FL-04); shall not exceed 2.2\,m/s under any command (MC-08) & VT-01, VT-08; DRV-2, TRK-3 \\
+H-03 & \textit{Design:} speed and current limits on the mainboard, independent of the Pi. \textit{Safeguard:} serial-timeout stop, tag-loss timeout, rejection of sudden jumps in range, and a watchdog on the Pi & Shall not keep moving more than 0.5\,s after tracking is lost (FL-04); shall not exceed 1.5\,m/s under any command (MC-08) & VT-01, VT-08; DRV-2, TRK-3 \\
 \addlinespace[2pt]
 H-04 & \textit{Safeguard:} Category~1 stop (Section~\ref{sec:risks-mitigation}), with link loss treated as a stop, and a manually pressed button held by the safety operator & Shall not resume motion until manually reset (MC-05); shall begin braking within 100\,ms (MC-07) & VT-07; SAF-3 \\
 \addlinespace[2pt]
@@ -385,6 +385,49 @@ H-09 & \textit{Safeguard:} club-out interlock that blocks motion toward the golf
 \end{figure}
 
 \CourseSection{Milestone Schedule and Contingencies}\label{app:approach}
+
+\begin{table}[!htbp]
+\centering
+\caption{Prototype definitions. Each stage ends at the milestone in brackets; Table~\ref{tab:milestones} gives dates, leads, and dependencies.}
+\label{tab:prototypes}
+\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}L{2.2in} Y L{1.0in} L{0.5in}@{}}
+\rowcolor{MidGray}
+\TableHeader{Prototype, purpose, and scope} & \TableHeader{Development stages} & \TableHeader{Requirements} & \TableHeader{Tests} \\
+\midrule
+\textbf{P-01 Drive base.} Speed-limited motion on Pi commands, stoppable without the Pi. Reflashed mainboard, firmware limits, serial-timeout stop, kill switch, chassis &
+Bench, wheels raised (DRV-1) $\rightarrow$ limits and stops (DRV-2) $\rightarrow$ floor and grass with ballast (DRV-4) $\rightarrow$ chassis (DRV-3) &
+MC-01, MC-03, MC-06, IR-03 &
+VT-01 \\
+\addlinespace[2pt]
+\textbf{P-02 Tracking and following.} Follows the golfer's \acs{UWB} tag, so it cannot switch to another person. Tag, two anchors or an \acs{AoA} module, following controller &
+Static range (TRK-1) and bearing (TRK-2) $\rightarrow$ straight-line following (TRK-3) $\rightarrow$ turns, pace changes, second person (TRK-4) &
+FL-01 to FL-04, IR-01 &
+VT-02, VT-08 \\
+\addlinespace[2pt]
+\textbf{P-03 Safety layer.} Stops for obstacles, the e-stop, or a club out of the bag. Ultrasonic sensors, \acs{LiDAR}, wireless e-stop, club-out interlock &
+Static detection (SAF-1) $\rightarrow$ e-stop, wheels raised (SAF-3) $\rightarrow$ stops while moving (SAF-2) $\rightarrow$ interlock (SAF-4) &
+OB-01 to OB-06, IR-02, MC-02, MC-04, MC-05, MC-07 &
+VT-03, VT-04, VT-07, VT-11, VT-13 \\
+\addlinespace[2pt]
+\textbf{P-04 Smart bag.} Tracks which clubs are in the bag and warns of one left behind. \acs{RFID} reader, club tags, inventory software &
+One club in the bag (BAG-1) $\rightarrow$ full bag, stationary (BAG-2) $\rightarrow$ warning on cart movement (BAG-3) &
+CT-01 to CT-03, IR-04 &
+VT-05 \\
+\addlinespace[2pt]
+\textbf{P-05 Distance display.} Shows the distance to the green. \acs{GPS} module, stored green coordinates, display &
+Surveyed points (GPS-1) $\rightarrow$ reference distances (GPS-2) $\rightarrow$ full display (GPS-3) &
+CD-01 to CD-03, IR-05 &
+VT-06 \\
+\addlinespace[2pt]
+\textbf{P-06 Integrated \acs{ASCC}.} All subsystems on one cart, powered from the 25.2\,V pack through a \acs{DC-DC} converter &
+Stationary (INT-1) $\rightarrow$ indoors (INT-2) $\rightarrow$ field verification (INT-3) $\rightarrow$ golfer validation (INT-4) &
+PW-01, IR-06, all \acs{MVP} requirements &
+VT-09, VT-10, all \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 
 Table~\ref{tab:milestones} gives the dates, owners, dependencies, and verification tests for each stage in Table~\ref{tab:prototypes}. A milestone is complete when the matching stage of its test in Table~\ref{tab:app-verification} passes. Table~\ref{tab:stretch} lists the stretch milestones, which map to the stretch goals in Table~\ref{tab:app-stretch}.
 
@@ -502,7 +545,7 @@ Table~\ref{tab:design-decisions} supports Section~\ref{sec:func-overview}. Table
 \TableHeader{Decision and drivers} & \TableHeader{Why, and why not the alternatives} \\
 \midrule
 \textbf{DD-1} Used hoverboard, mainboard reflashed with open-source \acs{FOC} firmware~\cite{feruFoc} \newline \emph{\mbox{SN-01}, \mbox{SN-05}; \mbox{MC-01}, \mbox{MC-03}; budget} &
-One unit supplies two Hall-sensed hub motors for differential steering, the inverter, and a 36\,V pack with \acs{BMS}. Closed-loop speed mode holds speed under load, and speed and current limits run on the mainboard rather than the Pi (H-03). \emph{Used motorized golf cart:} the proposal's \$375 for cart, controller, and battery takes 63\% of the budget. \emph{Separate motors and controller:} adds the wheels, mounts, and control tuning that the hoverboard includes. Accepted cost: small wheels on grass (C-7). \\
+One unit supplies two Hall-sensed hub motors for differential steering, the inverter, and a 25.2\,V, 2.6\,Ah pack with \acs{BMS} (GOTRAX label). Closed-loop speed mode holds speed under load, and speed and current limits run on the mainboard rather than the Pi (H-03). \emph{Used motorized golf cart:} the proposal's \$375 for cart, controller, and battery takes 63\% of the budget. \emph{Separate motors and controller:} adds the wheels, mounts, and control tuning that the hoverboard includes. Accepted cost: small wheels on grass (C-7). \\
 One unit supplies two Hall-sensed hub motors for differential steering, the inverter, and a 25.2\,V, 2.6\,Ah pack with \acs{BMS} (GOTRAX label). Closed-loop speed mode holds speed under load, and speed and current limits run on the mainboard rather than the Pi (H-03). Hoverboard parts have carried robots outdoors in public~\cite{bu2023trash}, on an ODrive controller rather than the stock board~\cite{cornellHoverboard}. \emph{Used motorized golf cart:} the proposal's \$375 for cart, controller, and battery takes 63\% of the budget. \emph{Separate motors and controller:} adds the wheels, mounts, and control tuning that the hoverboard includes. Accepted cost: small wheels on grass (C-7). \\
 \addlinespace[3pt]
 \textbf{DD-2} \acs{UWB} tag on the golfer, anchors on the cart \newline \emph{\mbox{SN-01}; \mbox{FL-01} to \mbox{FL-04}} &
@@ -537,9 +580,9 @@ I12 & F3.1 $\rightarrow$ F3.2 & TF-Luna: \acs{UART} at 115200 baud or \acs{I2C},
 I15--I17 & F3.6 $\rightarrow$ F3.4, F3.8 & Fail-safe stop line: high is run; low, a broken wire, or link loss is stop. Reaches the relay without passing through the Pi & MC-07 \\
 I18 & F3.4 $\rightarrow$ F1.1 & \leavevmode\acs{UART} at 115200 baud, 3.3\,V logic; the 15\,V wire in the same cable stays unconnected~\cite{feruFoc} & IR-03 \\
 I5 & F4.1 $\rightarrow$ F4.2 & Tag \acsp{UID} over \acs{SPI}, up to 10\,Mbit/s~\cite{mfrc522ds} & IR-04 \\
-I1 & F5.1 $\rightarrow$ F5.2 & \leavevmode\acs{NMEA} position over \acs{UART}, at least 1\,Hz~\cite{neom8ds} & \reqTODO{add ID} \\
+I1 & F5.1 $\rightarrow$ F5.2 & \leavevmode\acs{NMEA} position over \acs{UART}, at least 1\,Hz~\cite{neom8ds} & CD-02 \\
 I3, I7 & F5.3, F4.3 $\rightarrow$ F5.4 & Distance, inventory, and alerts on a display of at least 5\,in diagonal & IR-05 \\
-E1, E2 & F6.1 $\rightarrow$ F1.2 & 36\,V nominal, 10-cell pack (42\,V full); 15\,A per motor default limit~\cite{feruFoc} & IR-06 \\
+E1, E2 & F6.1 $\rightarrow$ F1.2 & 25.2\,V nominal, 29.4\,V at full charge, 2.6\,Ah (GOTRAX pack label); 15\,A per motor default limit~\cite{feruFoc} & IR-06 \\
 E6 & F6.2 $\rightarrow$ electronics & 5\,V; the Pi~5 alone draws up to 5\,A & IR-06 \\
 E1, E2 & F6.1 $\rightarrow$ F1.2 & 25.2\,V nominal, 29.4\,V at full charge, 2.6\,Ah (GOTRAX pack label); 15\,A per motor default limit~\cite{feruFoc} & IR-06 \\
 E6 & F6.2 $\rightarrow$ electronics & 5\,V; the Pi~5 alone draws up to 5\,A~\cite{rpi5brief} & IR-06 \\
@@ -582,7 +625,7 @@ E6 & F6.2 $\rightarrow$ electronics & 5\,V; the Pi~5 alone draws up to 5\,A~\cit
 
 \CourseSection{Detailed Test Plan}\label{app:tests}
 
-Figure~\ref{fig:setups} shows the set-ups for Table~\ref{tab:tests-body} and the tests below. Table~\ref{tab:tests-key} gives the remaining key tests for each prototype, and Table~\ref{tab:tests-appendix} gives the interface, proof-of-concept, and hazard-mitigation tests they rely on. A red value has no Section~\ref{sec:requirements} requirement yet. Table~\ref{tab:validation} gives the validation in Section~\ref{sec:vv-validation}.
+Figure~\ref{fig:setups} shows the set-ups for Table~\ref{tab:tests-body} and the tests below. Table~\ref{tab:tests-key} gives the remaining key tests for each prototype, and Table~\ref{tab:tests-appendix} gives the interface, proof-of-concept, and hazard-mitigation tests they rely on. Values without their own requirement come from the proposal's targets (13\,m tracking range, 0.3\,m range tolerance, 20\,m e-stop range, 5\,in display) or from the stopping distance in Eq.~\eqref{eq:stopping}. The 15$^\circ$ bearing limit is the error expected from two anchors 0.5\,m apart (Table~\ref{tab:design-decisions}), the 5\,s club-event delay is shorter than the time a golfer takes to set up for a shot, and the 20\,m missing-club alert is reached in about 15\,s at walking pace, before the next shot. Table~\ref{tab:validation} gives the validation in Section~\ref{sec:vv-validation}.
 
 \begin{figure}[H]
 \setstretch{1}\centering
@@ -600,11 +643,11 @@ Figure~\ref{fig:setups} shows the set-ups for Table~\ref{tab:tests-body} and the
 \toprule
 \TableHeader{Test} & \TableHeader{Verifies} & \TableHeader{Set-up and procedure} & \TableHeader{Acceptance criteria} \\
 \midrule
-\mbox{T-DRV-2} (P-01) & VT-01; MC-01, MC-08; H-03 & Wheels raised. Command twice the cap over \acs{UART} and log speed; stall a wheel and log current; stop sending frames; pull the kill switch & Speed $\le$ 2.2\,m/s (MC-08); serial loss removes power within \reqTODO{0.25 s}; kill switch removes power, 10 of 10 \\
+\mbox{T-DRV-2} (P-01) & VT-01; MC-01, MC-08; H-03 & Wheels raised. Command twice the cap over \acs{UART} and log speed; stall a wheel and log current; stop sending frames; pull the kill switch & Speed $\le$ 1.5\,m/s (MC-08); serial loss removes power within 0.25\,s (0.4\,m at the cap); kill switch removes power, 10 of 10 \\
 \addlinespace[2pt]
-\mbox{T-TRK-2} (P-02) & VT-02; FL-01 & Figure~\ref{fig:setups}(c), cart stationary. Tag at each grid point for 60\,s, then again with the golfer's body between tag and anchors & Mean bearing error $\le$ \reqTODO{15$^\circ$} at 1--3\,m and $\pm$60$^\circ$. Fail: C-3 \\
+\mbox{T-TRK-2} (P-02) & VT-02; FL-01 & Figure~\ref{fig:setups}(c), cart stationary. Tag at each grid point for 60\,s, then again with the golfer's body between tag and anchors & Mean bearing error $\le$ 15$^\circ$ at 1--3\,m and $\pm$60$^\circ$. Fail: C-3 \\
 \addlinespace[2pt]
-\mbox{T-BAG-2} (P-04) & VT-05; CT-01, CT-03 & Full 14-club bag, stationary. Remove and return clubs singly and in groups, 5 cycles per club & $\ge$ 63 of 70 events correct (CT-03); no swapped identity; delay $\le$ \reqTODO{5 s}. Fail: C-2 \\
+\mbox{T-BAG-2} (P-04) & VT-05; CT-01, CT-03 & Full 14-club bag, stationary. Remove and return clubs singly and in groups, 5 cycles per club & $\ge$ 63 of 70 events correct (CT-03); no swapped identity; delay $\le$ 5 s. Fail: C-2 \\
 \addlinespace[2pt]
 \mbox{T-GPS-2} (P-05) & VT-06; CD-02 & Outdoors at reference points 50--200\,m from stored coordinates, cart stationary. Compare with a laser rangefinder & Displayed distance within 5\,m at every point (CD-03). Fail: C-4 \\
 \addlinespace[2pt]
@@ -624,9 +667,9 @@ Figure~\ref{fig:setups} shows the set-ups for Table~\ref{tab:tests-body} and the
 \midrule
 \mbox{T-DRV-1} (P-01) & VT-01, VT-10; MC-01, IR-03 & Wheels raised. Pi sends speed frames at three setpoints in both directions & Hall speed within $\pm$10\% of command; no firmware fault. Fail: C-1 \\
 \addlinespace[2pt]
-\mbox{T-DRV-3} (P-01) & H-05 & Inspection and analysis. Lock the pivot, load the cradle with ballast, measure track $w$ and centre of gravity height $h$ & No relative motion at the pivot; tip angle $\arctan(w/2h)$ is at least twice the steepest test-site slope (MC-09) \\
+\mbox{T-DRV-3} (P-01) & H-05 & Inspection and analysis. Mount the motors, load the cradle with ballast, measure track $w$ and centre of gravity height $h$ & No relative motion at the motor mounts; tip angle $\arctan(w/2h)$ is at least twice the steepest test-site slope (MC-09) \\
 \addlinespace[2pt]
-\mbox{T-TRK-1} (P-02) & VT-02, VT-10; IR-01 & Figure~\ref{fig:setups}(c), then an open area out to 15\,m. Tag at each point for 60\,s against tape & Range error $\le$ \reqTODO{0.3 m} at 1--3\,m; valid ranges to \reqTODO{13 m}. Fail: C-3 \\
+\mbox{T-TRK-1} (P-02) & VT-02, VT-10; IR-01 & Figure~\ref{fig:setups}(c), then an open area out to 15\,m. Tag at each point for 60\,s against tape & Range error $\le$ 0.3 m at 1--3\,m; valid ranges to 13 m. Fail: C-3 \\
 \addlinespace[2pt]
 \mbox{T-TRK-4} (P-02) & VT-02; FL-02, FL-03 & Golfer turns $\pm$90$^\circ$ and varies pace; a second person with no tag crosses between golfer and cart, 10 runs & Range within 1--3\,m for $\ge$ 90\% of samples; cart never follows the second person \\
 \addlinespace[2pt]
@@ -634,11 +677,11 @@ Figure~\ref{fig:setups} shows the set-ups for Table~\ref{tab:tests-body} and the
 \addlinespace[2pt]
 \mbox{T-BAG-1} (P-04) & VT-05, VT-10; CT-01, IR-04 & Proof of concept. One tagged club among metal shafts in the real bag; measure read range; 50 reads per tag position & $\ge$ 45 of 50 correct in the installed position. Fail: C-2 \\
 \addlinespace[2pt]
-\mbox{T-BAG-3} (P-04) & VT-05; CT-02 & Move the cart away with one club out, 10 runs; then 10 runs with all clubs in & Alert within \reqTODO{20 m} of movement, 10 of 10; no false alert in 10 runs \\
+\mbox{T-BAG-3} (P-04) & VT-05; CT-02 & Move the cart away with one club out, 10 runs; then 10 runs with all clubs in & Alert within 20 m of movement, 10 of 10; no false alert in 10 runs \\
 \addlinespace[2pt]
-\mbox{T-GPS-1} (P-05) & VT-06 & Log fixes for 10\,min at surveyed outdoor points & 95\% of fixes within \reqTODO{5 m}. Fail: C-4 \\
+\mbox{T-GPS-1} (P-05) & VT-06 & Log fixes for 10\,min at surveyed outdoor points & 95\% of fixes within 5 m. Fail: C-4 \\
 \addlinespace[2pt]
-\mbox{T-GPS-3} (P-05) & VT-06, VT-10; CD-01, IR-05 & Daylight. A reader at 3\,m, the upper limit of FL-03, reads the distance, inventory, and alerts & Correct in 10 of 10 readings; diagonal $\ge$ \reqTODO{5 in} \\
+\mbox{T-GPS-3} (P-05) & VT-06, VT-10; CD-01, IR-05 & Daylight. A reader at 3\,m, the upper limit of FL-03, reads the distance, inventory, and alerts & Correct in 10 of 10 readings; diagonal $\ge$ 5 in \\
 \addlinespace[2pt]
 \mbox{T-INT-1} (P-06) & VT-10; IR-01 to IR-06 & The four compatibility checks in Section~\ref{sec:approach-milestones}, with the 5\,V rail on an oscilloscope during motor acceleration and subsystem tests repeated with motors running & No undervoltage flag on the Pi; no bus conflict; \mbox{T-BAG-2}, \mbox{T-TRK-1}, and \mbox{T-GPS-1} still pass; loop periods hold. Fail: C-5 \\
 \addlinespace[2pt]
@@ -648,7 +691,7 @@ Figure~\ref{fig:setups} shows the set-ups for Table~\ref{tab:tests-body} and the
 \addlinespace[2pt]
 \mbox{T-INS-2} (P-06) & H-07 & Inspect fuse, wiring, and strain relief; measure accessory current at INT-1 & Fuse rating below wire ampacity and above measured current \\
 \addlinespace[2pt]
-\mbox{T-INS-3} (P-06) & H-08 & Inspect enclosure and cable entries & Meets \reqTODO{IP rating: IP54} \\
+\mbox{T-INS-3} (P-06) & H-08 & Inspect enclosure and cable entries & Meets IP54 (PW-03) \\
 \mbox{T-INS-3} (P-06) & H-08 & Inspect enclosure and cable entries & Meets IP54 (PW-03)~\cite{iec60529} \\
 \bottomrule
 \end{tabularx}
@@ -670,4 +713,34 @@ SN-04 Course information & Golfer states the distance at each shot from the disp
 SN-05 Reliable operation & All three runs on one charge & No software restart or unscripted reset \\
 \bottomrule
 \end{tabularx}
+\end{table}
+
+\CourseSection{Detailed Budget}\label{app:budget}
+
+\begin{table}[H]
+\centering
+\caption{Estimated ASCC bill of materials (CAD).}
+\label{tab:resource-budget}
+\small
+\begin{tabular}{p{0.42\linewidth} c r p{0.24\linewidth}}
+\hline
+\textbf{Component} & \textbf{Qty.} & \textbf{Cost} & \textbf{Source} \\
+\hline
+Raspberry Pi 5 (existing) & 1 & \$0 & Owned \\
+Raspberry Pi display & 1 & \$40 & ~\cite{waveshareDisplay} \\
+Ultrasonic sensors (existing) & Multiple & \$0 & Owned \\
+Used GOTRAX hoverboard: hub motors, mainboard, 25.2\,V pack, charger & 1 & \$75 & Purchased (used) \\
+\acs{RFID} club tags & 1 set & \$30 & Purchased \\
+ESP32 board & 1 & \$25 & Purchased \\
+PN5180 \acs{RFID} reader & 1 & \$20 & Purchased \\
+TF-Luna \acs{LiDAR} sensor & 1 & \$50 & ~\cite{robotshopTfluna} \\
+\acs{GPS} module & 1 & \$30 & ~\cite{rotorgeeksGps} \\
+Golf push cart (existing) & 1 & \$0 & Owned \\
+Mounting hardware & Assorted & \$30 & ~\cite{digikeyCanada} \\
+Wiring, connectors, switches & Assorted & \$30 & ~\cite{digikeyCanada} \\
+Tax and shipping & -- & \$75 & -- \\
+\hline
+\textbf{Total} & & \textbf{\$405} & \\
+\hline
+\end{tabular}
 \end{table}

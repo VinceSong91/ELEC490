@@ -1,29 +1,23 @@
 \Needspace{14\baselineskip}
 \CourseSection{Functional Description}\label{sec:functional}
 % TODO (handoffs from Section 2 to other sections):
-% - Requirements: no Section 3 requirement exists yet for the e-stop interface
-%   (I15-I17), the GPS interface (I1), or the UWB tag update rate. Both are
-%   marked with \reqTODO in tab:interfaces.
 % - Requirements: MC-04 ("shall not energize its drive motors while the
 %   emergency-stop control is engaged") conflicts with the Category 1 stop in
 %   Section 4.2, where the motors stay energized to brake until the relay opens.
-%   Suggested rewording in Section 6's handoff list.
 % - Requirements: the trace tables allocate MC-02/04/05 to P-01, but the e-stop
 %   is built in P-03.
-% - Resources and Introduction: still list the existing golf push cart, motors,
-%   motor controller, and battery. This section follows the Approach (hoverboard,
-%   chassis, UWB, relay, e-stop receiver).
+% - DD-5 and interface I5 still describe the MFRC522 reader; the team bought a
+%   PN5180 reader and an ESP32. Update once the reader-to-Pi link is chosen.
 % TODO (open questions): confirm the hoverboard wheel diameter and mainboard type;
-% select the e-stop radio; confirm whether the existing push-cart frame becomes
-% the chassis; choose two-anchor ranging or AoA at TRK-2.
+% select the e-stop radio; choose two-anchor ranging or AoA at TRK-2.
 
 \CourseSubsection{System Overview and Design Alternatives}\label{sec:func-overview}
 
-The \ac{ASCC} converts stored battery energy into motion toward one tagged golfer and decides, from radio, acoustic, and optical returns, whether that motion may continue. Club tracking and the distance display share the cart's power and processor but sit outside its motion path. The system boundary in Figure~\ref{fig:ascc-system-overview} includes the golfer's \ac{UWB} tag and the handheld e-stop. The golfer, safety operator, clubs, obstacles, satellites, and terrain are external. The main decisions are a used hoverboard with reflashed firmware as the drive base, a \ac{UWB} tag for tracking the golfer, a stop path that bypasses the Pi, ultrasonic sensors plus \ac{LiDAR} for obstacles, passive \ac{RFID} tags for clubs, and \ac{GPS} on the cart for distance. Table~\ref{tab:design-decisions} (Appendix~\ref{app:functional}) justifies each one against its alternatives and the needs that drive it.
+The \ac{ASCC} uses battery power to drive the cart toward one golfer, and uses radio, ultrasonic, and laser sensors to decide whether it is safe to keep moving. The system boundary in Figure~\ref{fig:ascc-system-overview} includes the golfer's tag and the handheld e-stop; the golfer, safety operator, clubs, obstacles, satellites, and ground are outside it. The main design choices are the motors, mainboard, and battery of a used hoverboard as the drive, a \ac{UWB} tag to locate the golfer, an e-stop that does not depend on the Pi, ultrasonic sensors plus a \ac{LiDAR} for obstacles, passive \ac{RFID} tags on the clubs, and \ac{GPS} on the cart. Table~\ref{tab:design-decisions} (Appendix~\ref{app:functional}) gives the reasons for each and the alternatives rejected.
 
 \CourseSubsection{Functional Decomposition}\label{sec:func-decomp}
 
-Figure~\ref{fig:functional} decomposes the system into six first-level functions: F1 move, F2 locate the golfer, F3 stop safely, F4 track clubs, F5 show distance, and F6 supply power, following the logical decomposition process in~\cite[\S 4.3]{nasaHandbook}. Each box performs one conversion of energy or information, and the labelled flows only carry its inputs and outputs. The separation of F3.4 from F3.7 and F3.8 is the central result. F3.4 runs on the Pi and brakes through I18, whereas F3.7 and F3.8 act on the energy path directly, so a hung Pi loses the brake but not the power cut. Table~\ref{tab:interfaces} (Appendix~\ref{app:functional}) specifies the flows that cross a hardware boundary and traces them to the interface requirements.
+Figure~\ref{fig:functional} breaks the system into six functions: move (F1), locate the golfer (F2), stop safely (F3), track clubs (F4), show distance (F5), and supply power (F6), following~\cite[\S 4.3]{nasaHandbook}. Each box performs one conversion of energy or information, and the arrows only carry its inputs and outputs. The most important result is in the stop function. The Pi commands the brake (F3.4), but the e-stop also cuts motor power through a relay (F3.7, F3.8) without passing through the Pi, so a frozen Pi cannot prevent a stop. Table~\ref{tab:interfaces} (Appendix~\ref{app:functional}) specifies the connections between hardware and links each to a requirement.
 
 \begin{figure}[!htbp]
 \centering
@@ -34,12 +28,12 @@ Figure~\ref{fig:functional} decomposes the system into six first-level functions
 
 \CourseSubsection{Logical Decomposition and Interfaces}\label{sec:func-logical}
 
-Figure~\ref{fig:logical} (Appendix~\ref{app:functional}) allocates each function in Figure~\ref{fig:functional} to one logical element and states the action between elements. The following controller, safety controller, club inventory logic, and display composition are separate logical elements but share one physical processor, so a Pi fault is a common cause across them. This is why the safety interlock must act on the drive unit without passing through the safety controller, and why the mainboard enforces its own limits.
+Figure~\ref{fig:logical} (Appendix~\ref{app:functional}) assigns each function to a software or hardware element and states what passes between them. Following, safety, club inventory, and the display all run on the one Pi, so a Pi fault affects all of them at once. This is why the e-stop relay and the mainboard's own speed limits do not rely on the Pi.
 
 \CourseSubsection{Physical Architecture}\label{sec:func-physical}
 
-Figure~\ref{fig:physical} (Appendix~\ref{app:functional}) places the components on the chassis. The hoverboard's two halves are locked at the pivot to form a rigid drive axle, with a front caster added. The pack and mainboard stay low to limit tip-over (H-05), and the obstacle sensors sit low at the front to see low objects (H-02). The \ac{UWB} anchors are as far apart as the cross-bar allows, because bearing error scales with $1/b$. The \ac{GPS} antenna is high on the handle and the sensitive antennas are kept away from the hub motors (C-4, C-5). Interfaces between the Pi and the rest of the cart use the buses in Table~\ref{tab:interfaces}, and the compatibility checks at INT-1 confirm they do not conflict.
+Figure~\ref{fig:physical} (Appendix~\ref{app:functional}) shows the layout. The hoverboard's hub motors are mounted on a rigid axle in the chassis, with a caster at the front. The battery and mainboard sit low to resist tipping, and the obstacle sensors sit low at the front to see low objects. The two \ac{UWB} anchors are spaced as far apart as the frame allows, since wider spacing gives a more accurate direction to the golfer. The \ac{GPS} antenna is high on the handle, and the radio antennas are kept away from the motors to avoid interference.
 
 \CourseSubsection{Prototype Definitions}\label{sec:func-prototypes}
 
-The prototypes are P-01 drive base, P-02 tracking and following, P-03 safety layer, P-04 smart bag, P-05 distance display, and P-06 integrated \ac{ASCC}. Table~\ref{tab:prototype-ids} (Appendix~\ref{app:functional}) links each to its functions, physical elements, and tests, and Table~\ref{tab:prototypes} gives its development stages.
+The prototypes are P-01 drive base, P-02 tracking and following, P-03 safety layer, P-04 smart bag, P-05 distance display, and P-06 integrated \ac{ASCC}. Table~\ref{tab:prototype-ids} (Appendix~\ref{app:functional}) links each to its functions, hardware, and tests, and Table~\ref{tab:prototypes} gives its development stages.

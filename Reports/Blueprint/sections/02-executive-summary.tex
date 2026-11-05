@@ -1,3 +1,8 @@
 \clearpage\UnnumberedSection{Executive Summary}
-% Write your concise executive summary below. Include the problem, design process, scope, approach, and total cost.
+
+Golfers who walk the course carry or push their clubs, and existing follow-me carts only solve that part of the problem. They cannot tell the golfer the distance to the green or notice a club left behind, so golfers still rely on a phone, watch, or rangefinder.
+
+The Autonomous Smart Caddy Cart (ASCC) is a motorized golf cart that follows one golfer, keeps an inventory of the clubs in the bag, warns when a club is left behind, and shows the GPS distance to the green, all without input from the golfer. The cart is driven by the hub motors, mainboard, and battery of a used hoverboard, commanded by a Raspberry Pi. It follows an ultra-wideband tag carried by the golfer, stops for obstacles, a handheld emergency stop, or a club out of the bag, and identifies clubs with RFID tags.
+
+The design moves from stakeholder needs to system and subsystem requirements, then to six prototypes. Development is incremental: the drive base, safety layer, and golfer following are built in sequence, while the smart bag and distance display are developed in parallel, and each prototype passes its own tests before integration. The riskiest proofs of concept run in November 2026, and the integrated cart is validated in March 2027 by a golfer playing a simulated hole using only the cart. The scope is one prototype on dry, flat grass with one golfer and one bag. The total cost is CAD \$405 against the \$600 budget.
 \clearpage

@@ -1,13 +1,8 @@
 \CourseSection{Risks and Safety Hazards}\label{sec:risks}
 % TODO (handoffs from Section 4):
-% - Requirements: MC-08 (2.2 m/s cap), MC-09 (slope), PW-02 (fuse), PW-03 (IP54) and VT-14 were added as proposals; team to confirm.
-% - CHECK with team: MC-03 (2 m/s) with FL-03 (1 m) needs ~5 m/s^2 braking
-%   (Eq. 1). Either cap the speed near walking pace when following closely, or
-%   raise the minimum following distance.
-% - V&V: add inspection tests for guard gaps, fusing/wiring, and the enclosure
-%   (currently T-INS-1 to T-INS-3 in tab:mitigations).
-% - Functional Description: e-stop architecture (Category 1 stop, Sec. 4.2).
-% - Resources: relay, e-stop receiver, inline fuse, wheel guards, rated enclosure.
+% - Speed chain (resolved): t_r = 0.3 s (proposal PF-01) and a = 2 m/s^2 (MC-06)
+%   give a 1.0 m stop at 1.5 m/s, so MC-08 = 1.5 m/s, FL-03 min = 1 m,
+%   OB-03 = 1 m, FL-04 = 0.5 s (0.75 m blind travel). MC-03 = 1.4 m/s (Bohannon).
 % - Team: agree on the proposed initial/residual ratings.
 % - TODO: verify the matrix cell mapping against MIL-STD-882E Table III.
 % - TODO: the 0.7 m arm length is an uncited estimate. gordon2014ansur (ANSUR II) is in
@@ -15,20 +10,17 @@
 
 \CourseSubsection{Hazard Identification and Risk Assessment}\label{sec:risks-assessment}
 
-Hazards were identified with the ISO~12100 process~\cite{iso12100} and rated with the MIL-STD-882E risk matrix~\cite{milstd882e}, where severity runs from 1 (catastrophic) to 4 (negligible) and probability from A (frequent) to E (improbable). Table~\ref{tab:hazards} in Appendix~\ref{app:hazards} lists each hazard with its cause, governing standard, size, and rating before and after mitigation. The highest initial risk is uncommanded motion (H-03, serious), and all but one hazard remain medium after mitigation. Technical and schedule risks are covered as contingencies in Section~\ref{sec:approach-contingency}.
+Hazards were identified and reduced using the process in ISO~12100~\cite{iso12100} and rated with the MIL-STD-882E risk matrix~\cite{milstd882e}, which scores severity from 1 (catastrophic) to 4 (negligible) and likelihood from A (frequent) to E (improbable). Table~\ref{tab:hazards} (Appendix~\ref{app:hazards}) lists each hazard, its cause, the standard that covers it, its size, and its rating before and after mitigation. The most serious is the cart moving without a valid command, for example after the Pi crashes. Most mitigations make a hazard less likely rather than less harmful, and the matrix rates a moderate-harm hazard as medium whether it is occasional or improbable, so most ratings stay medium. Technical and schedule risks are covered in Section~\ref{sec:approach-contingency}.
 
-
-The motion hazards depend mostly on speed. To stop within a gap $d_{\min}$ after a reaction time $t_r$, the cart must decelerate at
+Speed sets the size of the motion hazards. A cart moving at speed $v$ that reacts after time $t_r$ and brakes at $a$ needs a stopping distance of
 \begin{equation}
-a_{\text{req}} = \frac{v^2}{2\,(d_{\min} - v\,t_r)} .
+d = v\,t_r + \frac{v^2}{2a} .
 \label{eq:stopping}
 \end{equation}
-With $t_r = 0.3$\,s, stopping from 2\,m/s (MC-03) within 1\,m (FL-03) needs 5\,m/s$^2$, which the cart's hub motors are unlikely to reach on grass, while walking pace (1.4\,m/s) needs 1.7\,m/s$^2$. The firmware speed cap is therefore the first safety measure, and DRV-4 checks the actual braking against MC-06 (C-9).
-
-For H-09, a golfer only removes a club to swing it, and the swing reaches roughly arm length (about 0.7\,m) plus club length (up to 1.22\,m under the USGA Equipment Rules), so a cart at the following distance can be inside it.
+With a 0.3\,s reaction time and 2\,m/s$^2$ braking, the cart stops within 1.0\,m at 1.5\,m/s but needs 1.6\,m at 2\,m/s. This is why speed is capped at 1.5\,m/s and the cart keeps at least 1\,m from the golfer. The drive test (DRV-4) measures the actual braking on grass, and the speed cap is lowered if it falls short (C-9).
 
 \CourseSubsection{Risk Mitigation and Residual Risk}\label{sec:risks-mitigation}
 
-Table~\ref{tab:mitigations} and Figure~\ref{fig:bowtie} in Appendix~\ref{app:hazards} give the mitigation, derived requirement, and verification for each hazard. The key design choice is where the stops live. Speed and current limits and the serial-timeout stop run in the mainboard firmware, so they hold if the Pi crashes. The e-stop is a Category~1 stop~\cite{iec60204-1}: it commands the firmware brake, then a relay cuts motor power without going through the Pi, since cutting power alone lets the hub motors freewheel. The cart does not restart until manually reset (MC-05)~\cite{iso13850}.
+Table~\ref{tab:mitigations} and Figure~\ref{fig:bowtie} (Appendix~\ref{app:hazards}) give each mitigation, the requirement it creates, and how it is verified. The key choice is where the stops are enforced. The speed and current limits, and the stop when commands from the Pi stop arriving, run in the mainboard firmware, so they hold even if the Pi crashes. The e-stop first commands the motors to brake, then a relay cuts motor power without going through the Pi, because cutting power alone would let the motors coast. This is a Category~1 stop~\cite{iec60204-1}, and the cart does not restart until it is manually reset~\cite{iso13850}.
 
-The remaining medium risks are accepted because a safety operator holds the e-stop during every moving test, on flat ground in dry weather. Those that become limitations in Section~\ref{sec:conclusion} are rollaway on a slope after power is cut (H-05), very thin or low objects the sensors miss (H-02), a battery fire, which stays catastrophic in severity (H-07), and a golfer swinging near a parked cart (H-09).
+The remaining risks are accepted because a safety operator holds the e-stop during every test in which the cart moves, on flat ground in dry weather. Four become limitations in Section~\ref{sec:conclusion}: the cart can roll on a slope once power is cut, the sensors can miss very thin or low objects, a battery fire would still be severe, and the golfer may swing near a parked cart.
