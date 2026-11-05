@@ -32,14 +32,14 @@
 % Arbiter spans rows 3 to 5
 \node[fnbox, minimum height=1.60in, fill=LightGray!40] (f34) at (\cf,\rd) {\textbf{F3.4} Gate $v,\omega$; command brake on any stop request};
 % Row 6: control
-\node[fnbox] (f62) at (\ca,\rf) {\textbf{F6.2} Step down 36\,V to 5\,V};
+\node[fnbox] (f62) at (\ca,\rf) {\textbf{F6.2} Step down 25.2\,V to 5\,V};
 \node[font=\tiny, text width=0.72in, align=left, inner sep=0pt] (rails) at (\cb+0.08,\rf) {to Pi, sensors, reader, display};
 \node[fnbox] (f37) at (\cc,\rf) {\textbf{F3.7} Delay stop signal};
 \node[fnbox] (f11) at (\cd,\rf) {\textbf{F1.1} Compute duty (\acs{FOC})};
 \node[fnbox] (f14) at (\ce,\rf) {\textbf{F1.4} Sense rotor angle};
 % Row 7: energy
-\node[fnbox] (f61) at (\ca,\rg) {\textbf{F6.1} Store energy: 36\,V};
-\node[fnbox] (f38) at (\cc,\rg) {\textbf{F3.8} Cut 36\,V: relay, kill switch};
+\node[fnbox] (f61) at (\ca,\rg) {\textbf{F6.1} Store energy: 25.2\,V};
+\node[fnbox] (f38) at (\cc,\rg) {\textbf{F3.8} Cut 25.2\,V: relay, kill switch};
 \node[fnbox] (f12) at (\cd,\rg) {\textbf{F1.2} Invert \acs{DC} to 3-phase};
 \node[fnbox] (f13) at (\ce,\rg) {\textbf{F1.3} Make torque: hub motors};
 \node[extbox] (cart) at (\cf,\rg) {Cart and bag on terrain};
