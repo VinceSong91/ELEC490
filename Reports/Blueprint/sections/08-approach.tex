@@ -1,186 +1,115 @@
 \CourseSection{Approach}\label{sec:approach}
 % TODO (handoffs from Section 5 to other sections):
-% - Functional Description: introduce prototype IDs P1-P6 (Sec. 2.5) and justify
-%   the hoverboard drive base against the used motorized cart.
-% - V&V: test IDs are T-<milestone ID> (T-DRV-1, ..., T-INT-4); keep them aligned.
-% - Requirements: replace every \reqTODO with the new requirement ID/value.
-%   Old proposal IDs: tracking range IF-01, GPS/distance accuracy IF-02,
-%   inventory accuracy IF-03, e-stop range IF-04, display readability IF-05,
-%   obstacle reaction time PF-01, max speed PF-02, following distance PF-03,
-%   one-charge range PF-04, e-stop latency PF-05. New ones needed: braking
-%   distance, tag-loss stop, link-loss timeout, club-out interlock (SHALL NOT),
-%   missing-club warning distance.
-% - Resources: remove used cart, motor controller, battery; add ST-Link
-%   programmer, 36 V to 5 V DC-DC converter, chassis materials, front caster,
-%   UWB modules, and the GPS module and display.
-% - Risks: club-out swing hazard; kill switch lets hub motors freewheel, so the
-%   stop sequence is firmware brake first, power cut as backup.
+% - Functional Description: introduce prototype IDs P-01 to P-06 (Sec. 2.5) and
+%   justify the hoverboard drive base against the used motorized cart.
+% - Requirements: still missing for braking deceleration, e-stop latency,
+%   GPS distance accuracy, and the club-out interlock (a SHALL NOT). Each is
+%   marked \reqTODO below.
+% - Requirements/V&V: Appendix A traces MC-02/04/05 (e-stop) to P-01; here the
+%   e-stop is built in P-03 (SAF-3). Align one way or the other.
+% - V&V: no VT test yet covers braking (DRV-4), the chassis (DRV-3), GPS
+%   accuracy (GPS-1), or the club-out interlock (SAF-4).
 % TODO (open questions): confirm final demo date (assumed late March 2027);
 % confirm Vince's track and the DRV-3 owner; confirm an indoor space for winter
 % motion testing; confirm the hoverboard mainboard type (decides C-1).
 
 \CourseSubsection{Development Strategy and Division of Labour}\label{sec:approach-strategy}
 
-The \ac{ASCC} is developed incrementally on a used hoverboard whose mainboard is reflashed with open-source \ac{FOC} firmware and commanded by the Raspberry Pi over \ac{UART} (Section~\ref{sec:functional}). Each critical subsystem is a standalone prototype (P1--P5) that must pass its own tests before it is integrated into the complete cart (P6). Work runs in three parallel tracks. The motion chain is serial, drive base (P1) then safety layer (P3) then golfer following (P2), because following cannot be tested until the cart can drive and be stopped. The smart bag (P4) and distance display (P5) need no motion, so they are developed on the bench and hand-carried in parallel.
+The \ac{ASCC} will be developed incrementally, with each subsystem tested as its own prototype (P-01 to P-05) before it joins the full cart (P-06). The cart is driven by the hub motors, mainboard, and battery from a used hoverboard, with the mainboard reflashed to take speed commands from the Raspberry Pi.
 
-The riskiest proofs of concept run first, in November and December: flashing the mainboard (DRV-1), reading \ac{RFID} tags near metal club shafts (BAG-1), and measuring \ac{UWB} range and bearing to the golfer's tag (TRK-1, TRK-2). Safety also sets the order. Firmware speed and current limits, the serial-timeout stop, and a hardwired kill switch (DRV-2) are verified before the cart moves near anyone. The wireless e-stop (SAF-3) is verified before the first following test (TRK-3), because during following trials the safety operator is not standing at the cart.
+The drive base (P-01), safety layer (P-03), and following (P-02) are built in that order, since following cannot be tested until the cart can drive and stop. The smart bag (P-04) and display (P-05) need no motion and are developed in parallel on the bench. The riskiest items are tested first, in November and December (DRV-1, BAG-1, TRK-1, TRK-2), and the e-stop (SAF-3) is verified before the first following test.
 
-Jp Masotti owns the motion chain: the drive base (P1) and golfer tracking and following (P2). Connor Gorman owns the smart bag (P4) and distance display (P5). Vince Song owns the safety layer (P3) and the integration hardware (power, mounting, and wiring), and leads INT-1 with Connor. The whole team carries out INT-2 to INT-4. Every member has milestones in every month (Table~\ref{tab:milestones}), with fewer in December because of exams.
-% TODO: confirm Vince's track (assumed P3 + integration hardware).
+Jp leads P-01 and P-02, Connor leads P-04 and P-05, and Vince leads P-03 and the integration hardware. The whole team completes integration, and each member has milestones in every month (Table~\ref{tab:milestones}, Appendix~\ref{app:approach}).
+% TODO: confirm Vince's track (assumed P-03 + integration hardware).
 % TODO: DRV-3 (chassis) owner. Team assigned all DRV to Jp; suggest moving it to
 % Vince to balance Jp's Nov-Dec load. Vince also mounts the obstacle sensors on
-% the chassis for SAF-2. Update the owner column in tab:milestones if it moves.
+% the chassis for SAF-2.
 
 \CourseSubsection{Prototype Development Plan}\label{sec:approach-prototypes}
 
-Table~\ref{tab:prototypes} defines each prototype. Each one moves from a bench or static test to a test in its operating conditions, and P6 integration begins only after P1--P5 pass on their own. The proof-of-concept stages (DRV-1, BAG-1, TRK-1, TRK-2) come first because a failure there forces a hardware change (Section~\ref{sec:approach-contingency}).
+Table~\ref{tab:prototypes} defines each prototype. A milestone is complete when the matching stage of its test in Table~\ref{tab:app-verification} passes. P-03 includes a club-out interlock because a swing can reach the cart (H-09), and the smart bag already knows when a club is out.
 
-The club-out interlock in P3 is part of the \ac{MVP}. A golfer takes a club out of the bag to swing it, and a swung club reaches about 1.9\,m from the golfer, which covers the following distance (H-09, Section~\ref{sec:risks}). P4 already knows when a club is out, so blocking motion toward the golfer then adds no hardware.
-
-\begin{table}[htbp]
+\begin{table}[!htbp]
 \centering
-\caption{Prototype definitions. Milestone X is complete when test T-X passes (Section~\ref{sec:testing}).}
+\caption{Prototype definitions. Each stage ends at the milestone in brackets; Table~\ref{tab:milestones} gives dates, leads, and dependencies.}
 \label{tab:prototypes}
 \footnotesize\renewcommand{\arraystretch}{1.0}
-\begin{tabularx}{\linewidth}{@{}YYY@{}}
-\toprule
-\TableHeader{Scope} & \TableHeader{Development stages (low $\rightarrow$ high fidelity)} & \TableHeader{Success criteria} \\
+\begin{tabularx}{\linewidth}{@{}L{2.2in} Y L{1.0in} L{0.5in}@{}}
+\rowcolor{MidGray}
+\TableHeader{Prototype, purpose, and scope} & \TableHeader{Development stages} & \TableHeader{Requirements} & \TableHeader{Tests} \\
 \midrule
-\multicolumn{3}{@{}L{\linewidth}@{}}{\textbf{P1 Drive base} (DRV-1--4): speed-limited motion commanded by the Pi, with a stop independent of the Pi} \\
-Reflashed mainboard in speed mode on a \acs{UART} link; firmware speed/current limits; serial-timeout stop; kill switch; chassis with locked pivot, cradle, handle, caster &
-Wheels raised on bench $\rightarrow$ floor with ballast equal to a loaded bag $\rightarrow$ short grass &
-Speed $\le$ \reqTODO{max speed}; stops on serial timeout and on kill switch; braking distance on grass $\le$ \reqTODO{braking distance} \\
-\midrule
-\multicolumn{3}{@{}L{\linewidth}@{}}{\textbf{P2 Tracking and following} (TRK-1--4): follow the golfer's \acs{UWB} tag, not a person it sees; stop on tag loss} \\
-Golfer's tag; cart anchors (two-anchor ranging or \acs{AoA} module) for range and bearing; following controller on the Pi commanding P1 &
-Static range and bearing vs.\ tape measure (\acs{PoC}) $\rightarrow$ straight-line following $\rightarrow$ turns, pace changes, second person nearby &
-Range/bearing error $\le$ \reqTODO{tracking accuracy}; distance within \reqTODO{following distance}; stops within \reqTODO{tag-loss stop}; does not switch to a second person \\
-\midrule
-\multicolumn{3}{@{}L{\linewidth}@{}}{\textbf{P3 Safety layer} (SAF-1--4): stop for obstacles, a remote stop, link loss, or a club out of the bag} \\
-Front ultrasonic array plus \acs{LiDAR}, covering low objects; handheld wireless e-stop with link-loss timeout and no automatic restart; club-out interlock &
-Static detection map $\rightarrow$ e-stop with wheels raised $\rightarrow$ stop trials on the moving cart with soft obstacles &
-Detects \reqTODO{test objects} at $\ge$ \reqTODO{detection range}; stops within \reqTODO{reaction time}; e-stop latency $\le$ \reqTODO{e-stop latency} at $\ge$ \reqTODO{e-stop range}; stops within \reqTODO{link-loss timeout}; no motion toward the golfer while a club is out \\
-\midrule
-\multicolumn{3}{@{}L{\linewidth}@{}}{\textbf{P4 Smart bag} (BAG-1--3): know which clubs are in the bag with no golfer input; warn of a club left behind} \\
-\acs{RFID} reader and club tags (fallback in C-2); inventory state machine; missing-club warning logic &
-One tagged club in the real bag (\acs{PoC}) $\rightarrow$ full bag, stationary $\rightarrow$ warning triggered by cart movement &
-Present/absent correct $\ge$ \reqTODO{inventory accuracy} over \reqTODO{cycles} cycles; delay $\le$ \reqTODO{delay}; warns within \reqTODO{warning distance} \\
-\midrule
-\multicolumn{3}{@{}L{\linewidth}@{}}{\textbf{P5 Distance display} (GPS-1--3): show the distance to the green with no golfer input} \\
-\acs{GPS} module; stored green coordinates for the test site; distance calculation; display of distance, inventory, and warnings &
-Hand-carried \acs{GPS} at surveyed points $\rightarrow$ distance vs.\ reference $\rightarrow$ full display &
-Position error $\le$ \reqTODO{GPS error}; distance error $\le$ \reqTODO{distance accuracy}; readable at \reqTODO{viewing distance} \\
-\midrule
-\multicolumn{3}{@{}L{\linewidth}@{}}{\textbf{P6 Integrated \acs{ASCC}} (INT-1--4): all subsystems on one cart, powered by the hoverboard battery} \\
-36\,V pack $\rightarrow$ \acs{DC-DC} converter $\rightarrow$ Pi and peripherals; mounting; software integration on the Pi &
-Stationary integration $\rightarrow$ full system indoors $\rightarrow$ field verification $\rightarrow$ validation with a golfer &
-All \acs{MVP} requirements verified; a golfer completes a simulated hole using only the cart \\
+\textbf{P-01 Drive base.} Speed-limited motion on Pi commands, stoppable without the Pi. Reflashed mainboard, firmware limits, serial-timeout stop, kill switch, chassis &
+Bench, wheels raised (DRV-1) $\rightarrow$ limits and stops (DRV-2) $\rightarrow$ floor and grass with ballast (DRV-4) $\rightarrow$ chassis (DRV-3) &
+MC-01, MC-03, IR-03, \reqTODO{braking} &
+VT-01 \\
+\addlinespace[2pt]
+\textbf{P-02 Tracking and following.} Follows the golfer's \acs{UWB} tag, so it cannot switch to another person. Tag, two anchors or an \acs{AoA} module, following controller &
+Static range (TRK-1) and bearing (TRK-2) $\rightarrow$ straight-line following (TRK-3) $\rightarrow$ turns, pace changes, second person (TRK-4) &
+FL-01 to FL-04, IR-01 &
+VT-02, VT-08 \\
+\addlinespace[2pt]
+\textbf{P-03 Safety layer.} Stops for obstacles, the e-stop, or a club out of the bag. Ultrasonic sensors, \acs{LiDAR}, wireless e-stop, club-out interlock &
+Static detection (SAF-1) $\rightarrow$ e-stop, wheels raised (SAF-3) $\rightarrow$ stops while moving (SAF-2) $\rightarrow$ interlock (SAF-4) &
+OB-01 to OB-05, IR-02, MC-02, MC-04, MC-05, \reqTODO{club-out} &
+VT-03, VT-04, VT-07, VT-11 \\
+\addlinespace[2pt]
+\textbf{P-04 Smart bag.} Tracks which clubs are in the bag and warns of one left behind. \acs{RFID} reader, club tags, inventory software &
+One club in the bag (BAG-1) $\rightarrow$ full bag, stationary (BAG-2) $\rightarrow$ warning on cart movement (BAG-3) &
+CT-01 to CT-03, IR-04 &
+VT-05 \\
+\addlinespace[2pt]
+\textbf{P-05 Distance display.} Shows the distance to the green. \acs{GPS} module, stored green coordinates, display &
+Surveyed points (GPS-1) $\rightarrow$ reference distances (GPS-2) $\rightarrow$ full display (GPS-3) &
+CD-01, CD-02, IR-05, \reqTODO{GPS accuracy} &
+VT-06 \\
+\addlinespace[2pt]
+\textbf{P-06 Integrated \acs{ASCC}.} All subsystems on one cart, powered from the 36\,V pack through a \acs{DC-DC} converter &
+Stationary (INT-1) $\rightarrow$ indoors (INT-2) $\rightarrow$ field verification (INT-3) $\rightarrow$ golfer validation (INT-4) &
+PW-01, IR-06, all \acs{MVP} requirements &
+VT-09, VT-10, all \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \CourseSubsection{Milestones and Dependencies}\label{sec:approach-milestones}
 
-Table~\ref{tab:milestones} lists the \ac{MVP} milestones. Dates follow from dependencies and part lead times: the \ac{RFID}, \ac{UWB}, and \ac{GPS} modules are ordered the week of 2~November so that BAG-1, TRK-1, and GPS-1 can hold. Kingston grass is likely snow-covered from about December to late March, so DRV-4 runs before DRV-3, using ballast in place of the chassis, to finish grass testing in November. Following and INT-2 run indoors over the winter, and field tests return in March (C-6). Two weeks of buffer separate INT-2 from INT-3, and one week separates INT-4 from the final demonstration.
+Table~\ref{tab:milestones} (Appendix~\ref{app:approach}) schedules the milestones from their dependencies and part lead times. Because Kingston grass is likely snow-covered from December to March, the grass test (DRV-4) runs on 27~November with a weight in place of the bag, and following and integration move indoors until March. Two weeks of buffer sit before INT-3 and one week before the final demonstration.
 % TODO: confirm final demo date (assumed late March 2027).
 
-\begin{table}[htbp]
-\centering
-\caption{\acs{MVP} milestones. Each is complete when its test T-$\langle$ID$\rangle$ passes. Dates are Fridays (Nov--Dec 2026, Jan--Mar 2027).}
-\label{tab:milestones}
-\footnotesize\renewcommand{\arraystretch}{1.0}
-\begin{tabularx}{\linewidth}{@{}L{0.42in} Y L{1.3in} L{0.55in} L{0.5in}@{}}
-\toprule
-\TableHeader{ID} & \TableHeader{Milestone} & \TableHeader{Depends on} & \TableHeader{Owner} & \TableHeader{Due} \\
-\midrule
-DRV-1 & Firmware flashed; Pi spins both wheels over \acs{UART} (raised) & -- & Jp & 13 Nov \\
-DRV-2 & Speed/current limits, serial-timeout stop, kill switch on bench & DRV-1 & Jp & 20 Nov \\
-DRV-4 & Speed control and braking on floor and grass, with ballast & DRV-2 & Jp & 27 Nov \\
-DRV-3 & Chassis complete (locked pivot, cradle, handle, caster, enclosure) & DRV-1 & Jp % TODO: suggest Vince
-  & 4 Dec \\
-\midrule
-SAF-1 & Static obstacle sensing, including low objects & -- & Vince & 27 Nov \\
-SAF-3 & Wireless e-stop with link-loss timeout, no automatic restart & DRV-2 & Vince & 11 Dec \\
-SAF-2 & Obstacle stop on the moving cart & DRV-3, DRV-4, SAF-1 & Vince & 22 Jan \\
-SAF-4 & Club-out interlock: no motion toward golfer while a club is out & BAG-2, TRK-3, INT-1 & Vince & 19 Feb \\
-\midrule
-BAG-1 & One tagged club read in the real bag (\acs{PoC}, metal shafts) & -- & Connor & 27 Nov \\
-BAG-2 & Full-bag present/absent inventory, bag stationary & BAG-1 & Connor & 11 Dec \\
-BAG-3 & Missing-club warning as the cart moves away without a club & BAG-2, GPS-1 & Connor & 29 Jan \\
-\midrule
-GPS-1 & Position error at surveyed outdoor points & -- & Connor & 27 Nov \\
-GPS-2 & Distance to green from stored coordinates vs.\ reference & GPS-1 & Connor & 15 Jan \\
-GPS-3 & Display shows distance, inventory, and warnings & GPS-2, BAG-2 & Connor & 5 Feb \\
-\midrule
-TRK-1 & \acs{UWB} range to the golfer's tag, static (\acs{PoC}) & -- & Jp & 11 Dec \\
-TRK-2 & \acs{UWB} bearing to the golfer's tag, static (\acs{PoC}) & TRK-1 & Jp & 15 Jan \\
-TRK-3 & Straight-line following indoors; stops on tracking loss & DRV-3, DRV-4, TRK-2, SAF-3 & Jp & 29 Jan \\
-TRK-4 & Turns and pace changes; a second person does not take over & TRK-3 & Jp & 12 Feb \\
-\midrule
-INT-1 & Bag and display on the stationary cart, cart power; compatibility checks & DRV-3, BAG-3, GPS-3 & Vince, Connor & 12 Feb \\
-INT-2 & Full system running on flat indoor ground & INT-1, TRK-4, SAF-2, SAF-4 & All & 26 Feb \\
-INT-3 & Verification: field test of all \acs{MVP} requirements, incl.\ one-charge range & INT-2 & All & 12 Mar \\
-INT-4 & Validation: a golfer plays a simulated hole using only the cart & INT-3 & All & 19 Mar \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-\textbf{Integration order.} The motion chain (P1, P3, P2) is integrated first so the cart stops reliably before anything else is added. The bag and display (P4, P5) are then mounted on that cart (INT-1), and the full system runs on flat indoor ground (INT-2) before going to the field (INT-3, INT-4). At INT-1, four compatibility checks must pass. (1) Power: the Pi~5 (5\,V, 5\,A), reader, \ac{GPS}, display, and \ac{UWB} modules run from the 36\,V pack through a \ac{DC-DC} converter, with no brownout during motor acceleration. (2) Pi I/O: \ac{UART}s for the mainboard, \ac{GPS}, and possibly \ac{UWB}, \ac{SPI} for the reader, and \ac{I2C} and \ac{GPIO} for sensors and the e-stop receiver, with no pin or bus conflicts. (3) Motor noise: \ac{RFID} reads, \ac{UWB} ranging, and \ac{GPS} fix quality hold while the hub motors run. (4) Timing: the following and stop loops keep their period with all processes running.
-
-Stretch goals (Table~\ref{tab:stretch}, Appendix~\ref{app:stretch}) start only after the \ac{MVP} milestones they depend on have passed, and are taken up by whichever member's track is ahead.
+Integration is staged so the cart can always be stopped before anything is added: the motion chain first, then the bag and display on the stationary cart (INT-1), then the full system indoors (INT-2), then the field (INT-3, INT-4). INT-1 also checks power draw from the 36\,V pack, Pi pin conflicts, motor noise on the \acs{RFID}, \acs{UWB}, and \acs{GPS} readings, and loop timing (VT-10). Stretch goals (Table~\ref{tab:stretch}) start only after the \acs{MVP} milestones they depend on have passed.
 
 \CourseSubsection{Contingency Plans}\label{sec:approach-contingency}
 
-Table~\ref{tab:contingencies} lists the technical, safety, and schedule risks that could stop a requirement being met. Each has a measurable trigger tied to a milestone and names the substitute part or method. Dropping stretch goals is not a contingency, since the \ac{MVP} does not depend on them.
+Table~\ref{tab:contingencies} lists the technical, safety, and schedule contingencies, each with its trigger, the change to the system or plan, and the milestones affected.
 
 \begin{table}[!htbp]
 \centering
-\caption{Contingency plans. Added cost is given in parentheses.}
+\caption{Contingency plans.}
 \label{tab:contingencies}
 \footnotesize\renewcommand{\arraystretch}{1.0}
-\begin{tabularx}{\linewidth}{@{}L{0.3in} L{1.5in} Y L{1.25in}@{}}
-\toprule
-\TableHeader{ID} & \TableHeader{Trigger} & \TableHeader{Change to system or approach} & \TableHeader{Milestones affected} \\
+\begin{tabularx}{\linewidth}{@{}L{0.32in} L{1.6in} Y L{1.25in}@{}}
+\rowcolor{MidGray}
+\TableHeader{ID} & \TableHeader{Trigger} & \TableHeader{Change to the system or plan} & \TableHeader{Milestones} \\
 \midrule
-C-1 & Mainboard is a split or unsupported type, or flashing fails, at DRV-1 &
-Use the community firmware fork for that board (split-board and AT32-based forks exist), or buy a second used hoverboard after confirming a supported single mainboard (second hoverboard) &
-DRV-1 slips up to 2 weeks, pushing DRV-4 toward snow (C-6) \\
+C-1 & Mainboard unsupported, or flashing fails (DRV-1) & Use the community firmware fork for that board, or buy another used hoverboard for parts with a supported mainboard & DRV-1 up to 2 weeks late; DRV-4 nears snow (C-6) \\
 \addlinespace[2pt]
-C-2 & BAG-1 read rate below \reqTODO{inventory accuracy} near metal shafts &
-On-metal \acs{NFC} tags in the grip ends, one small antenna per slot through an \acs{SPI} multiplexer (antennas). Last resort: per-slot presence sensing, which keeps the missing-club warning but loses club identity and needs supervisor agreement (sensors) &
-BAG-2 slips up to 2 weeks; BAG-3, GPS-3, INT-1 follow \\
+C-2 & Under 90\% of clubs read near metal shafts (CT-03, BAG-1) & On-metal \acs{NFC} tags with one antenna per slot on an \acs{SPI} multiplexer. Last resort: per-slot presence sensing, which loses club identity (CT-01) & BAG-2 up to 2 weeks late; BAG-3, GPS-3, INT-1 follow \\
 \addlinespace[2pt]
-C-3 & TRK-2 bearing error too large to hold \reqTODO{following distance} &
-Switch bearing method between two-anchor ranging and an \acs{AoA} module (second \acs{UWB} or \acs{AoA} module) &
-TRK-3; TRK-4 and INT-2 follow \\
+C-3 & Bearing error too large to hold 1--3\,m (FL-03, TRK-2) & Switch between two-anchor ranging and an \acs{AoA} module & TRK-3, TRK-4, INT-2 \\
 \addlinespace[2pt]
-C-4 & GPS-1 position error above \reqTODO{GPS error} &
-Average fixes while the cart is stationary, which is when the golfer stops to hit and reads the distance; add an active antenna mounted high on the handle (antenna) &
-GPS-2 \\
+C-4 & Position error above \reqTODO{GPS accuracy} (GPS-1) & Average readings while the cart is stopped, and add an active antenna on the handle & GPS-2 \\
 \addlinespace[2pt]
-C-5 & \acs{RFID}, \acs{UWB}, or \acs{GPS} errors, or Pi brownouts, with motors running at INT-1 &
-Read the bag only while stationary, since clubs are only removed then; separate \acs{DC-DC} supply for the Pi and reader; ferrites and twisted motor leads; antennas moved away from the hub motors (converter, ferrites) &
-INT-1 slips; INT-2 buffer absorbs up to 2 weeks \\
+C-5 & Readings fail or the Pi browns out with the motors running (INT-1) & Read the bag only when stopped, give the Pi its own \acs{DC-DC} supply, add ferrites, and move antennas away from the motors & INT-1; INT-2 buffer absorbs 2 weeks \\
 \addlinespace[2pt]
-C-6 & Snow cover before DRV-4, INT-3, or INT-4 &
-Grass tests done in November; following and INT-2 run indoors; INT-3/INT-4 move to a cleared paved lot or after snowmelt, with pavement-only results stated as a deviation &
-DRV-4, INT-3, INT-4 \\
+C-6 & Snow before DRV-4, INT-3, or INT-4 & Grass tests in November; INT-3 and INT-4 on a cleared lot or after snowmelt, reported as a deviation & DRV-4, INT-3, INT-4 \\
 \addlinespace[2pt]
-C-7 & Wheels stall or slip on grass or slopes at DRV-4 &
-Restrict operation to short, flat grass and state it as a terrain limitation, or switch to a larger-wheel off-road hoverboard with a confirmed supported mainboard (off-road hoverboard) &
-DRV-4, INT-3 \\
+C-7 & Wheels slip or stall on grass (DRV-4) & Limit operation to short, flat grass, or switch to the larger hub motors from an off-road hoverboard & DRV-4, INT-3 \\
 \addlinespace[2pt]
-C-8 & Any track slips more than 2 weeks &
-The owner of a track that is ahead (expected: Connor after GPS-3) joins the late track; stretch work pauses &
-INT-2, INT-3; buffer absorbs up to 2 weeks \\
+C-8 & A track falls 2 or more weeks behind & A member whose track is ahead joins it, and stretch work stops & INT-2, INT-3; buffer absorbs 2 weeks \\
 \addlinespace[2pt]
-C-9 & T-DRV-4 deceleration below \reqTODO{a\_req} (H-01) &
-Lower the firmware speed cap and lengthen the minimum following distance until Eq.~\eqref{eq:stopping} holds, and update those requirements &
-DRV-4; TRK-3 runs with the new limits \\
+C-9 & Braking below \reqTODO{braking} (DRV-4, H-01) & Lower the speed cap and raise the minimum distance until Eq.~\eqref{eq:stopping} holds; revise MC-03 and FL-03 & DRV-4; TRK-3 uses the new limits \\
 \addlinespace[2pt]
-C-10 & T-SAF-3 latency above \reqTODO{e-stop latency} or link drops within \reqTODO{e-stop range} (H-04) &
-Replace the Pi-read receiver with a dedicated industrial remote e-stop receiver wired directly to the power relay (receiver) &
-SAF-3 slips; TRK-3 cannot start until it passes \\
+C-10 & E-stop slower than \reqTODO{e-stop latency}, or link drops (SAF-3, H-04) & Dedicated industrial e-stop receiver wired directly to the power relay & SAF-3; TRK-3 waits for it \\
 \bottomrule
 \end{tabularx}
 \end{table}
