@@ -19,6 +19,132 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
+    \entry{iso12100}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Organization for Standardization}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{number}{ISO 12100:2010}
+      \field{title}{Safety of Machinery -- General Principles for Design -- Risk Assessment and Risk Reduction}
+      \warn{\item standard entry 'iso12100' (references.bib): Invalid format '2010' of date field 'date' - ignoring}
+    \endentry
+    \entry{ieee802154z}{standard}{}{}
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{number}{IEEE Std 802.15.4z-2020}
+      \field{title}{{IEEE Standard for Low-Rate Wireless Networks -- Amendment 1: Enhanced Ultra Wideband (UWB) Physical Layers and Associated Ranging Techniques}}
+      \verb{doi}
+      \verb 10.1109/IEEESTD.2020.9179124
+      \endverb
+      \warn{\item standard entry 'ieee802154z' (references.bib): Invalid format '2020' of date field 'date' - ignoring}
+    \endentry
+    \entry{iso13850}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Organization for Standardization}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{number}{ISO 13850:2015}
+      \field{title}{Safety of Machinery -- Emergency Stop Function -- Principles for Design}
+      \warn{\item standard entry 'iso13850' (references.bib): Invalid format '2015' of date field 'date' - ignoring}
+    \endentry
+    \entry{milstd882e}{standard}{}{}
+      \list{location}{1}{%
+        {Washington, DC, USA}%
+      }
+      \list{organization}{1}{%
+        {U.S. Department of Defense}%
+      }
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labeltitlesource}{title}
+      \field{number}{MIL-STD-882E w/Change 1}
+      \field{title}{Department of Defense Standard Practice: System Safety}
+      \warn{\item standard entry 'milstd882e' (references.bib): Invalid format '2023' of date field 'date' - ignoring}
+    \endentry
+    \entry{usgaEquipmentRules}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=2f2778653e2ac12fe8f73982698074df}{%
+           family={{USGA and R\&A}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{2f2778653e2ac12fe8f73982698074df}
+      \strng{fullhash}{2f2778653e2ac12fe8f73982698074df}
+      \strng{fullhashraw}{2f2778653e2ac12fe8f73982698074df}
+      \strng{bibnamehash}{2f2778653e2ac12fe8f73982698074df}
+      \strng{authorbibnamehash}{2f2778653e2ac12fe8f73982698074df}
+      \strng{authornamehash}{2f2778653e2ac12fe8f73982698074df}
+      \strng{authorfullhash}{2f2778653e2ac12fe8f73982698074df}
+      \strng{authorfullhashraw}{2f2778653e2ac12fe8f73982698074df}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Equipment Rules}
+      \verb{urlraw}
+      \verb https://www.usga.org/equipment-standards/equipment-rules-2019.html
+      \endverb
+      \verb{url}
+      \verb https://www.usga.org/equipment-standards/equipment-rules-2019.html
+      \endverb
+      \warn{\item online entry 'usgaEquipmentRules' (references.bib): Invalid format '2023' of date field 'date' - ignoring}
+      \warn{\item online entry 'usgaEquipmentRules' (references.bib): Invalid format '2026-11-03' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{iec60204-1}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Electrotechnical Commission}%
+      }
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labeltitlesource}{title}
+      \field{number}{IEC 60204-1:2016+AMD1:2021}
+      \field{title}{Safety of Machinery -- Electrical Equipment of Machines -- Part 1: General Requirements}
+      \warn{\item standard entry 'iec60204-1' (references.bib): Invalid format '2021' of date field 'date' - ignoring}
+    \endentry
+    \entry{cpsc2016hoverboards}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=bdb9c7cd10c0de4bb3bf7908067b0c03}{%
+           family={{U.S. Consumer Product Safety Commission}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{fullhash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{fullhashraw}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{bibnamehash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{authorbibnamehash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{authornamehash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{authorfullhash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \strng{authorfullhashraw}{bdb9c7cd10c0de4bb3bf7908067b0c03}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Self-Balancing Scooters/Hoverboards Recalled by 10 Firms Due to Fire Hazard}
+      \verb{urlraw}
+      \verb https://www.cpsc.gov/Recalls/2016/Self-Balancing-Scooters-Hoverboards-Recalled-by-10-Firms
+      \endverb
+      \verb{url}
+      \verb https://www.cpsc.gov/Recalls/2016/Self-Balancing-Scooters-Hoverboards-Recalled-by-10-Firms
+      \endverb
+      \warn{\item online entry 'cpsc2016hoverboards' (references.bib): Invalid format '2016-07-06' of date field 'date' - ignoring}
+      \warn{\item online entry 'cpsc2016hoverboards' (references.bib): Invalid format '2026-11-03' of date field 'urldate' - ignoring}
+    \endentry
     \entry{nasaHandbook}{manual}{}{}
       \list{location}{1}{%
         {Washington, DC, USA}%
@@ -39,66 +165,6 @@
       \verb https://www.nasa.gov/sites/default/files/atoms/files/nasa_systems_engineering_handbook_0.pdf
       \endverb
       \warn{\item manual entry 'nasaHandbook' (references.bib): Invalid format '2017' of date field 'date' - ignoring}
-    \endentry
-    \entry{iso12100}{standard}{}{}
-      \list{location}{1}{%
-        {Geneva, Switzerland}%
-      }
-      \list{organization}{1}{%
-        {International Organization for Standardization}%
-      }
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labeltitlesource}{title}
-      \field{number}{ISO 12100:2010}
-      \field{title}{Safety of Machinery -- General Principles for Design -- Risk Assessment and Risk Reduction}
-      \warn{\item standard entry 'iso12100' (references.bib): Invalid format '2010' of date field 'date' - ignoring}
-    \endentry
-    \entry{bae2022uwb}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=9db3652e7b3b518ef88a124d875b6d49}{%
-           family={Bae},
-           familyi={B\bibinitperiod},
-           given={Kyungbin},
-           giveni={K\bibinitperiod}}}%
-        {{hash=d92d5864732ccff3481970f19dabd63d}{%
-           family={Son},
-           familyi={S\bibinitperiod},
-           given={Yooha},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=873191523ad7954e26546f160b63b625}{%
-           family={Song},
-           familyi={S\bibinitperiod},
-           given={Young-Eun},
-           giveni={Y\bibinithyphendelim E\bibinitperiod}}}%
-        {{hash=f53364c2f28ccb9b52a6ef267618bee4}{%
-           family={Jung},
-           familyi={J\bibinitperiod},
-           given={Hoeryong},
-           giveni={H\bibinitperiod}}}%
-      }
-      \strng{namehash}{99df01e85b15446208a612aefc258d19}
-      \strng{fullhash}{2432e2849a9ef6c6f81fea9adf5c92ce}
-      \strng{fullhashraw}{2432e2849a9ef6c6f81fea9adf5c92ce}
-      \strng{bibnamehash}{2432e2849a9ef6c6f81fea9adf5c92ce}
-      \strng{authorbibnamehash}{2432e2849a9ef6c6f81fea9adf5c92ce}
-      \strng{authornamehash}{99df01e85b15446208a612aefc258d19}
-      \strng{authorfullhash}{2432e2849a9ef6c6f81fea9adf5c92ce}
-      \strng{authorfullhashraw}{2432e2849a9ef6c6f81fea9adf5c92ce}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Sensors}
-      \field{number}{3}
-      \field{title}{Component-Wise Error Correction Method for {UWB}-Based Localization in Target-Following Mobile Robot}
-      \field{volume}{22}
-      \field{pages}{1180}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.3390/s22031180
-      \endverb
-      \warn{\item article entry 'bae2022uwb' (references.bib): Invalid format '2022-02' of date field 'date' - ignoring}
     \endentry
     \entry{bohannon2011walking}{article}{}{}
       \name{author}{2}{}{%
@@ -121,8 +187,8 @@
       \strng{authornamehash}{8794215d8c5eb6164fc1dedb6a64ab6e}
       \strng{authorfullhash}{8794215d8c5eb6164fc1dedb6a64ab6e}
       \strng{authorfullhashraw}{8794215d8c5eb6164fc1dedb6a64ab6e}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physiotherapy}
@@ -136,81 +202,19 @@
       \endverb
       \warn{\item article entry 'bohannon2011walking' (references.bib): Invalid format '2011-09' of date field 'date' - ignoring}
     \endentry
-    \entry{dobkin2005rfid}{inproceedings}{}{}
-      \name{author}{2}{}{%
-        {{hash=37c2c607e519e2f625f641afe09e0cbb}{%
-           family={Dobkin},
-           familyi={D\bibinitperiod},
-           given={Daniel\bibnamedelima M.},
-           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=d83f21a838087a7da2f1c3cdb313d771}{%
-           family={Weigand},
-           familyi={W\bibinitperiod},
-           given={Steven\bibnamedelima M.},
-           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-      }
-      \strng{namehash}{1274f8ddbc8a251545b7c3b8470ad44b}
-      \strng{fullhash}{1274f8ddbc8a251545b7c3b8470ad44b}
-      \strng{fullhashraw}{1274f8ddbc8a251545b7c3b8470ad44b}
-      \strng{bibnamehash}{1274f8ddbc8a251545b7c3b8470ad44b}
-      \strng{authorbibnamehash}{1274f8ddbc8a251545b7c3b8470ad44b}
-      \strng{authornamehash}{1274f8ddbc8a251545b7c3b8470ad44b}
-      \strng{authorfullhash}{1274f8ddbc8a251545b7c3b8470ad44b}
-      \strng{authorfullhashraw}{1274f8ddbc8a251545b7c3b8470ad44b}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{IEEE MTT-S International Microwave Symposium Digest}
-      \field{title}{Environmental Effects on {RFID} Tag Antennas}
-      \field{pages}{135\bibrangedash 138}
-      \range{pages}{4}
-      \verb{doi}
-      \verb 10.1109/MWSYM.2005.1516541
-      \endverb
-      \warn{\item inproceedings entry 'dobkin2005rfid' (references.bib): Invalid format '2005-06' of date field 'date' - ignoring}
-    \endentry
-    \entry{iso13850}{standard}{}{}
+    \entry{iso3691-4}{standard}{}{}
       \list{location}{1}{%
         {Geneva, Switzerland}%
       }
       \list{organization}{1}{%
         {International Organization for Standardization}%
       }
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labeltitlesource}{title}
-      \field{number}{ISO 13850:2015}
-      \field{title}{Safety of Machinery -- Emergency Stop Function -- Principles for Design}
-      \warn{\item standard entry 'iso13850' (references.bib): Invalid format '2015' of date field 'date' - ignoring}
-    \endentry
-    \entry{milstd882e}{standard}{}{}
-      \list{location}{1}{%
-        {Washington, DC, USA}%
-      }
-      \list{organization}{1}{%
-        {U.S. Department of Defense}%
-      }
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labeltitlesource}{title}
-      \field{number}{MIL-STD-882E w/Change 1}
-      \field{title}{Department of Defense Standard Practice: System Safety}
-      \warn{\item standard entry 'milstd882e' (references.bib): Invalid format '2023' of date field 'date' - ignoring}
-    \endentry
-    \entry{iec60204-1}{standard}{}{}
-      \list{location}{1}{%
-        {Geneva, Switzerland}%
-      }
-      \list{organization}{1}{%
-        {International Electrotechnical Commission}%
-      }
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
-      \field{number}{IEC 60204-1:2016+AMD1:2021}
-      \field{title}{Safety of Machinery -- Electrical Equipment of Machines -- Part 1: General Requirements}
-      \warn{\item standard entry 'iec60204-1' (references.bib): Invalid format '2021' of date field 'date' - ignoring}
+      \field{number}{ISO 3691-4:2023}
+      \field{title}{Industrial Trucks -- Safety Requirements and Verification -- Part 4: Driverless Industrial Trucks and Their Systems}
+      \warn{\item standard entry 'iso3691-4' (references.bib): Invalid format '2023' of date field 'date' - ignoring}
     \endentry
     \entry{feruFoc}{online}{}{}
       \name{author}{1}{}{%
@@ -243,203 +247,89 @@
       \warn{\item online entry 'feruFoc' (references.bib): Invalid format '2026-07-04' of date field 'date' - ignoring}
       \warn{\item online entry 'feruFoc' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring}
     \endentry
-    \entry{robotshopTfluna}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=6b92fe45c709a3df2ed520387eda9dfe}{%
-           family={{RobotShop}},
-           familyi={R\bibinitperiod}}}%
+    \entry{iso13482}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
       }
-      \strng{namehash}{6b92fe45c709a3df2ed520387eda9dfe}
-      \strng{fullhash}{6b92fe45c709a3df2ed520387eda9dfe}
-      \strng{fullhashraw}{6b92fe45c709a3df2ed520387eda9dfe}
-      \strng{bibnamehash}{6b92fe45c709a3df2ed520387eda9dfe}
-      \strng{authorbibnamehash}{6b92fe45c709a3df2ed520387eda9dfe}
-      \strng{authornamehash}{6b92fe45c709a3df2ed520387eda9dfe}
-      \strng{authorfullhash}{6b92fe45c709a3df2ed520387eda9dfe}
-      \strng{authorfullhashraw}{6b92fe45c709a3df2ed520387eda9dfe}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Display listing: \url{https://www.robotshop.com/products/5inch-capacitive-ips-touch-display-raspberry-pi-800x480-dsi-low-power}}
-      \field{title}{Benewake {TF-Luna} 8m {LiDAR} Distance Sensor; 5inch Capacitive {IPS} Touch Display for Raspberry Pi}
-      \verb{urlraw}
-      \verb https://www.robotshop.com/products/benewake-tf-luna-8m-lidar-distance-sensor
-      \endverb
-      \verb{url}
-      \verb https://www.robotshop.com/products/benewake-tf-luna-8m-lidar-distance-sensor
-      \endverb
-      \warn{\item online entry 'robotshopTfluna' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring}
-    \endentry
-    \entry{universalSolderRfid}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=3d84ab45772d81ab44789878ed220a5c}{%
-           family={{Universal-Solder Canada}},
-           familyi={U\bibinitperiod}}}%
-      }
-      \strng{namehash}{3d84ab45772d81ab44789878ed220a5c}
-      \strng{fullhash}{3d84ab45772d81ab44789878ed220a5c}
-      \strng{fullhashraw}{3d84ab45772d81ab44789878ed220a5c}
-      \strng{bibnamehash}{3d84ab45772d81ab44789878ed220a5c}
-      \strng{authorbibnamehash}{3d84ab45772d81ab44789878ed220a5c}
-      \strng{authornamehash}{3d84ab45772d81ab44789878ed220a5c}
-      \strng{authorfullhash}{3d84ab45772d81ab44789878ed220a5c}
-      \strng{authorfullhashraw}{3d84ab45772d81ab44789878ed220a5c}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{RFID} Starter Kit 13.56 {MHz}, Keyfob, Code Card, {RC522}}
-      \verb{urlraw}
-      \verb https://www.universal-solder.ca/product/rfid-13-56mhz-starter-kit-keyfob-code-card-rc522/
-      \endverb
-      \verb{url}
-      \verb https://www.universal-solder.ca/product/rfid-13-56mhz-starter-kit-keyfob-code-card-rc522/
-      \endverb
-      \warn{\item online entry 'universalSolderRfid' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring}
-    \endentry
-    \entry{rotorgeeksGps}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=c9b573c8b22207ed8a3fdc2cdf94b678}{%
-           family={{Rotorgeeks}},
-           familyi={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{c9b573c8b22207ed8a3fdc2cdf94b678}
-      \strng{fullhash}{c9b573c8b22207ed8a3fdc2cdf94b678}
-      \strng{fullhashraw}{c9b573c8b22207ed8a3fdc2cdf94b678}
-      \strng{bibnamehash}{c9b573c8b22207ed8a3fdc2cdf94b678}
-      \strng{authorbibnamehash}{c9b573c8b22207ed8a3fdc2cdf94b678}
-      \strng{authornamehash}{c9b573c8b22207ed8a3fdc2cdf94b678}
-      \strng{authorfullhash}{c9b573c8b22207ed8a3fdc2cdf94b678}
-      \strng{authorfullhashraw}{c9b573c8b22207ed8a3fdc2cdf94b678}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{NEO-M8N} Ublox {GPS} Module}
-      \verb{urlraw}
-      \verb https://rotorgeeks.com/neo-m8n-ublox-gps-module
-      \endverb
-      \verb{url}
-      \verb https://rotorgeeks.com/neo-m8n-ublox-gps-module
-      \endverb
-      \warn{\item online entry 'rotorgeeksGps' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring}
-    \endentry
-    \entry{digikeyCanada}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=1eda94cca37e33ce27e40cb95488a1ee}{%
-           family={{Digi-Key Electronics Canada}},
-           familyi={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{1eda94cca37e33ce27e40cb95488a1ee}
-      \strng{fullhash}{1eda94cca37e33ce27e40cb95488a1ee}
-      \strng{fullhashraw}{1eda94cca37e33ce27e40cb95488a1ee}
-      \strng{bibnamehash}{1eda94cca37e33ce27e40cb95488a1ee}
-      \strng{authorbibnamehash}{1eda94cca37e33ce27e40cb95488a1ee}
-      \strng{authornamehash}{1eda94cca37e33ce27e40cb95488a1ee}
-      \strng{authorfullhash}{1eda94cca37e33ce27e40cb95488a1ee}
-      \strng{authorfullhashraw}{1eda94cca37e33ce27e40cb95488a1ee}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Cables, Wires, Connectors, Switches, and Mounting Hardware}
-      \verb{urlraw}
-      \verb https://www.digikey.ca
-      \endverb
-      \verb{url}
-      \verb https://www.digikey.ca
-      \endverb
-      \warn{\item online entry 'digikeyCanada' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring}
-    \endentry
-    \entry{zhang2024stroller}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=329575ca5ed7cf3e119d772ab522f980}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Xiaoxi},
-           giveni={X\bibinitperiod}}}%
-        {{hash=f532a47a63f16b583c4455dea6a8018e}{%
-           family={Chen},
-           familyi={C\bibinitperiod},
-           given={Yang},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=63e4c5d73a87decab4099a1413e056bb}{%
-           family={Hassan},
-           familyi={H\bibinitperiod},
-           given={Modar},
-           giveni={M\bibinitperiod}}}%
-        {{hash=bfefbf3b827bbdebc3f660587233b2e8}{%
-           family={Suzuki},
-           familyi={S\bibinitperiod},
-           given={Kenji},
-           giveni={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{274b871a4b44e1fd3105f17c3ebbd4bf}
-      \strng{fullhash}{bd179a4b4a8138fdee11bea0f1266b94}
-      \strng{fullhashraw}{bd179a4b4a8138fdee11bea0f1266b94}
-      \strng{bibnamehash}{bd179a4b4a8138fdee11bea0f1266b94}
-      \strng{authorbibnamehash}{bd179a4b4a8138fdee11bea0f1266b94}
-      \strng{authornamehash}{274b871a4b44e1fd3105f17c3ebbd4bf}
-      \strng{authorfullhash}{bd179a4b4a8138fdee11bea0f1266b94}
-      \strng{authorfullhashraw}{bd179a4b4a8138fdee11bea0f1266b94}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Sensors}
-      \field{number}{15}
-      \field{title}{Peer-to-Peer Ultra-Wideband Localization for Hands-Free Control of a Human-Guided Smart Stroller}
-      \field{volume}{24}
-      \field{pages}{4828}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.3390/s24154828
-      \endverb
-      \warn{\item article entry 'zhang2024stroller' (references.bib): Invalid format '2024-07' of date field 'date' - ignoring}
-    \endentry
-    \entry{tflunads}{manual}{}{}
       \list{organization}{1}{%
-        {Benewake}%
+        {International Organization for Standardization}%
       }
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labeltitlesource}{title}
-      \field{title}{{TF-Luna} {LiDAR} Module (Short-Range Distance Sensor), Product Specification}
-      \field{version}{SJ-GU-TF-Luna A05}
-      \verb{urlraw}
-      \verb https://files.waveshare.com/upload/c/c3/SJ-GU-TF-Luna_A05_Datasheet.pdf
-      \endverb
-      \verb{url}
-      \verb https://files.waveshare.com/upload/c/c3/SJ-GU-TF-Luna_A05_Datasheet.pdf
-      \endverb
+      \field{number}{ISO 13482:2014}
+      \field{title}{Robots and Robotic Devices -- Safety Requirements for Personal Care Robots}
+      \warn{\item standard entry 'iso13482' (references.bib): Invalid format '2014' of date field 'date' - ignoring}
     \endentry
-    \entry{mfrc522ds}{manual}{}{}
-      \list{organization}{1}{%
-        {NXP Semiconductors}%
+    \entry{iso13857}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
       }
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \list{organization}{1}{%
+        {International Organization for Standardization}%
+      }
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labeltitlesource}{title}
-      \field{title}{{MFRC522}: Standard Performance {MIFARE} and {NTAG} Frontend, Product Data Sheet}
-      \field{version}{Rev. 3.9}
-      \verb{urlraw}
-      \verb https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf
-      \endverb
-      \verb{url}
-      \verb https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf
-      \endverb
-      \warn{\item manual entry 'mfrc522ds' (references.bib): Invalid format '2016-04-27' of date field 'date' - ignoring}
+      \field{number}{ISO 13857:2019}
+      \field{title}{Safety of Machinery -- Safety Distances to Prevent Hazard Zones Being Reached by Upper and Lower Limbs}
+      \warn{\item standard entry 'iso13857' (references.bib): Invalid format '2019' of date field 'date' - ignoring}
     \endentry
-    \entry{neom8ds}{manual}{}{}
-      \list{organization}{1}{%
-        {u-blox}%
+    \entry{iso13854}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
       }
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \list{organization}{1}{%
+        {International Organization for Standardization}%
+      }
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labeltitlesource}{title}
-      \field{title}{{NEO-M8}: u-blox {M8} Concurrent {GNSS} Modules, Product Summary}
-      \field{version}{UBX-16000345, R10}
+      \field{number}{ISO 13854:2017}
+      \field{title}{Safety of Machinery -- Minimum Gaps to Avoid Crushing of Parts of the Human Body}
+      \warn{\item standard entry 'iso13854' (references.bib): Invalid format '2017' of date field 'date' - ignoring}
+    \endentry
+    \entry{ul2272}{standard}{}{}
+      \list{location}{1}{%
+        {Northbrook, IL, USA}%
+      }
+      \list{organization}{1}{%
+        {UL Standards \& Engagement}%
+      }
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{number}{UL 2272}
+      \field{title}{Standard for Electrical Systems for Personal E-Mobility Devices}
+      \warn{\item standard entry 'ul2272' (references.bib): Invalid format '2016' of date field 'date' - ignoring}
+    \endentry
+    \entry{iec62133-2}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Electrotechnical Commission}%
+      }
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{number}{IEC 62133-2:2017+AMD1:2021}
+      \field{title}{Secondary Cells and Batteries Containing Alkaline or Other Non-Acid Electrolytes -- Safety Requirements for Portable Sealed Secondary Lithium Cells, and for Batteries Made from Them, for Use in Portable Applications -- Part 2: Lithium Systems}
+      \warn{\item standard entry 'iec62133-2' (references.bib): Invalid format '2021' of date field 'date' - ignoring}
+    \endentry
+    \entry{iec60529}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Electrotechnical Commission}%
+      }
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{number}{IEC 60529:1989+AMD1:1999+AMD2:2013}
+      \field{title}{Degrees of Protection Provided by Enclosures (IP Code)}
+      \warn{\item standard entry 'iec60529' (references.bib): Invalid format '2013' of date field 'date' - ignoring}
     \endentry
     \entry{hall2025golfGps}{article}{}{}
       \name{author}{5}{}{%
@@ -477,8 +367,8 @@
       \strng{authornamehash}{37a61383aa0c6ba32e0800335654d669}
       \strng{authorfullhash}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
       \strng{authorfullhashraw}{6c16380d4209a5eb9f7a79b7c9bf1dbc}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Journal of Golf Science}
@@ -494,76 +384,6 @@
       \verb https://www.golfsciencejournal.org/article/144587
       \endverb
       \warn{\item article entry 'hall2025golfGps' (references.bib): Invalid format '2025' of date field 'date' - ignoring}
-    \endentry
-    \entry{iso13857}{standard}{}{}
-      \list{location}{1}{%
-        {Geneva, Switzerland}%
-      }
-      \list{organization}{1}{%
-        {International Organization for Standardization}%
-      }
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labeltitlesource}{title}
-      \field{number}{ISO 13857:2019}
-      \field{title}{Safety of Machinery -- Safety Distances to Prevent Hazard Zones Being Reached by Upper and Lower Limbs}
-      \warn{\item standard entry 'iso13857' (references.bib): Invalid format '2019' of date field 'date' - ignoring}
-    \endentry
-    \entry{iso13854}{standard}{}{}
-      \list{location}{1}{%
-        {Geneva, Switzerland}%
-      }
-      \list{organization}{1}{%
-        {International Organization for Standardization}%
-      }
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labeltitlesource}{title}
-      \field{number}{ISO 13854:2017}
-      \field{title}{Safety of Machinery -- Minimum Gaps to Avoid Crushing of Parts of the Human Body}
-      \warn{\item standard entry 'iso13854' (references.bib): Invalid format '2017' of date field 'date' - ignoring}
-    \endentry
-    \entry{ul2272}{standard}{}{}
-      \list{location}{1}{%
-        {Northbrook, IL, USA}%
-      }
-      \list{organization}{1}{%
-        {UL Standards \& Engagement}%
-      }
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labeltitlesource}{title}
-      \field{number}{ANSI/CAN/UL 2272:2026}
-      \field{title}{Standard for Electrical Systems for Personal E-Mobility Devices}
-      \warn{\item standard entry 'ul2272' (references.bib): Invalid format '2026' of date field 'date' - ignoring}
-    \endentry
-    \entry{iec62133-2}{standard}{}{}
-      \list{location}{1}{%
-        {Geneva, Switzerland}%
-      }
-      \list{organization}{1}{%
-        {International Electrotechnical Commission}%
-      }
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labeltitlesource}{title}
-      \field{number}{IEC 62133-2:2017+AMD1:2021}
-      \field{title}{Secondary Cells and Batteries Containing Alkaline or Other Non-Acid Electrolytes -- Safety Requirements for Portable Sealed Secondary Lithium Cells, and for Batteries Made from Them, for Use in Portable Applications -- Part 2: Lithium Systems}
-      \warn{\item standard entry 'iec62133-2' (references.bib): Invalid format '2021' of date field 'date' - ignoring}
-    \endentry
-    \entry{iec60529}{standard}{}{}
-      \list{location}{1}{%
-        {Geneva, Switzerland}%
-      }
-      \list{organization}{1}{%
-        {International Electrotechnical Commission}%
-      }
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labeltitlesource}{title}
-      \field{number}{IEC 60529:1989+AMD1:1999+AMD2:2013}
-      \field{title}{Degrees of Protection Provided by Enclosures (IP Code)}
-      \warn{\item standard entry 'iec60529' (references.bib): Invalid format '2013' of date field 'date' - ignoring}
     \endentry
     \entry{bu2023trash}{inproceedings}{}{}
       \name{author}{4}{}{%
@@ -636,6 +456,98 @@
       \endverb
       \warn{\item online entry 'cornellHoverboard' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring}
     \endentry
+    \entry{zhang2024stroller}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=329575ca5ed7cf3e119d772ab522f980}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiaoxi},
+           giveni={X\bibinitperiod}}}%
+        {{hash=f532a47a63f16b583c4455dea6a8018e}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=63e4c5d73a87decab4099a1413e056bb}{%
+           family={Hassan},
+           familyi={H\bibinitperiod},
+           given={Modar},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bfefbf3b827bbdebc3f660587233b2e8}{%
+           family={Suzuki},
+           familyi={S\bibinitperiod},
+           given={Kenji},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{274b871a4b44e1fd3105f17c3ebbd4bf}
+      \strng{fullhash}{bd179a4b4a8138fdee11bea0f1266b94}
+      \strng{fullhashraw}{bd179a4b4a8138fdee11bea0f1266b94}
+      \strng{bibnamehash}{bd179a4b4a8138fdee11bea0f1266b94}
+      \strng{authorbibnamehash}{bd179a4b4a8138fdee11bea0f1266b94}
+      \strng{authornamehash}{274b871a4b44e1fd3105f17c3ebbd4bf}
+      \strng{authorfullhash}{bd179a4b4a8138fdee11bea0f1266b94}
+      \strng{authorfullhashraw}{bd179a4b4a8138fdee11bea0f1266b94}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{15}
+      \field{title}{Peer-to-Peer Ultra-Wideband Localization for Hands-Free Control of a Human-Guided Smart Stroller}
+      \field{volume}{24}
+      \field{pages}{4828}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s24154828
+      \endverb
+      \warn{\item article entry 'zhang2024stroller' (references.bib): Invalid format '2024-07' of date field 'date' - ignoring}
+    \endentry
+    \entry{bae2022uwb}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=9db3652e7b3b518ef88a124d875b6d49}{%
+           family={Bae},
+           familyi={B\bibinitperiod},
+           given={Kyungbin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=d92d5864732ccff3481970f19dabd63d}{%
+           family={Son},
+           familyi={S\bibinitperiod},
+           given={Yooha},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=873191523ad7954e26546f160b63b625}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Young-Eun},
+           giveni={Y\bibinithyphendelim E\bibinitperiod}}}%
+        {{hash=f53364c2f28ccb9b52a6ef267618bee4}{%
+           family={Jung},
+           familyi={J\bibinitperiod},
+           given={Hoeryong},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{99df01e85b15446208a612aefc258d19}
+      \strng{fullhash}{2432e2849a9ef6c6f81fea9adf5c92ce}
+      \strng{fullhashraw}{2432e2849a9ef6c6f81fea9adf5c92ce}
+      \strng{bibnamehash}{2432e2849a9ef6c6f81fea9adf5c92ce}
+      \strng{authorbibnamehash}{2432e2849a9ef6c6f81fea9adf5c92ce}
+      \strng{authornamehash}{99df01e85b15446208a612aefc258d19}
+      \strng{authorfullhash}{2432e2849a9ef6c6f81fea9adf5c92ce}
+      \strng{authorfullhashraw}{2432e2849a9ef6c6f81fea9adf5c92ce}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{3}
+      \field{title}{Component-Wise Error Correction Method for {UWB}-Based Localization in Target-Following Mobile Robot}
+      \field{volume}{22}
+      \field{pages}{1180}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s22031180
+      \endverb
+      \warn{\item article entry 'bae2022uwb' (references.bib): Invalid format '2022-02' of date field 'date' - ignoring}
+    \endentry
     \entry{islam2019personFollowing}{article}{}{}
       \name{author}{3}{}{%
         {{hash=b17f5c28731742963ac153bbd03b6753}{%
@@ -677,6 +589,278 @@
       \endverb
       \warn{\item article entry 'islam2019personFollowing' (references.bib): Invalid format '2019-12' of date field 'date' - ignoring}
     \endentry
+    \entry{stewartQFollow}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=cfabc971ca0260d08ab5e3006493a9fe}{%
+           family={{Stewart Golf}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{fullhash}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{fullhashraw}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{bibnamehash}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{authorbibnamehash}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{authornamehash}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{authorfullhash}{cfabc971ca0260d08ab5e3006493a9fe}
+      \strng{authorfullhashraw}{cfabc971ca0260d08ab5e3006493a9fe}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Q Follow} Electric Golf Trolley}
+      \verb{urlraw}
+      \verb https://www.stewartgolf.co.uk/products/stewart-golf-q-follow
+      \endverb
+      \verb{url}
+      \verb https://www.stewartgolf.co.uk/products/stewart-golf-q-follow
+      \endverb
+      \warn{\item online entry 'stewartQFollow' (references.bib): Invalid format '2025' of date field 'date' - ignoring}
+      \warn{\item online entry 'stewartQFollow' (references.bib): Invalid format '2025-07-15' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{zafari2019survey}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=195ca55bbed6416d65e59307e5283295}{%
+           family={Zafari},
+           familyi={Z\bibinitperiod},
+           given={Faheem},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b41f5b89eddcb048fce2d97d566294ce}{%
+           family={Gkelias},
+           familyi={G\bibinitperiod},
+           given={Athanasios},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5aa48ddf606faa8081c96eaf1efcfebb}{%
+           family={Leung},
+           familyi={L\bibinitperiod},
+           given={Kin\bibnamedelima K.},
+           giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{1fee23b124d7e3569bb190bba971684d}
+      \strng{fullhash}{e9b36037f0adc41d54b0b2ff32a1a99a}
+      \strng{fullhashraw}{e9b36037f0adc41d54b0b2ff32a1a99a}
+      \strng{bibnamehash}{e9b36037f0adc41d54b0b2ff32a1a99a}
+      \strng{authorbibnamehash}{e9b36037f0adc41d54b0b2ff32a1a99a}
+      \strng{authornamehash}{1fee23b124d7e3569bb190bba971684d}
+      \strng{authorfullhash}{e9b36037f0adc41d54b0b2ff32a1a99a}
+      \strng{authorfullhashraw}{e9b36037f0adc41d54b0b2ff32a1a99a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Communications Surveys \& Tutorials}
+      \field{number}{3}
+      \field{title}{A Survey of Indoor Localization Systems and Technologies}
+      \field{volume}{21}
+      \field{pages}{2568\bibrangedash 2599}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.1109/COMST.2019.2911558
+      \endverb
+      \warn{\item article entry 'zafari2019survey' (references.bib): Invalid format '2019' of date field 'date' - ignoring}
+    \endentry
+    \entry{neom8ds}{manual}{}{}
+      \list{organization}{1}{%
+        {u-blox}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{{NEO-M8}: u-blox {M8} Concurrent {GNSS} Modules, Product Summary}
+      \field{version}{UBX-16000345, R10}
+    \endentry
+    \entry{dwm3000ds}{manual}{}{}
+      \list{organization}{1}{%
+        {Qorvo}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{{DWM3000} Data Sheet}
+      \field{version}{Rev. B}
+      \verb{urlraw}
+      \verb https://www.qorvo.com/products/p/DWM3000
+      \endverb
+      \verb{url}
+      \verb https://www.qorvo.com/products/p/DWM3000
+      \endverb
+      \warn{\item manual entry 'dwm3000ds' (references.bib): Invalid format '2021-05' of date field 'date' - ignoring}
+    \endentry
+    \entry{tflunads}{manual}{}{}
+      \list{organization}{1}{%
+        {Benewake}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{{TF-Luna} {LiDAR} Module (Short-Range Distance Sensor), Product Specification}
+      \field{version}{SJ-GU-TF-Luna A05}
+      \verb{urlraw}
+      \verb https://files.waveshare.com/upload/c/c3/SJ-GU-TF-Luna_A05_Datasheet.pdf
+      \endverb
+      \verb{url}
+      \verb https://files.waveshare.com/upload/c/c3/SJ-GU-TF-Luna_A05_Datasheet.pdf
+      \endverb
+    \endentry
+    \entry{barreto2022fusion}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=17f1e3e371d03f7768fbfa37f0335b76}{%
+           family={Barreto-Cubero},
+           familyi={B\bibinithyphendelim C\bibinitperiod},
+           given={Andres\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=2fee832863552d26f123a9d00a291190}{%
+           family={Gómez-Espinosa},
+           familyi={G\bibinithyphendelim E\bibinitperiod},
+           given={Alfonso},
+           giveni={A\bibinitperiod}}}%
+        {{hash=da3edea2a7b4ae70547dfbb12d90d5f6}{%
+           family={Escobedo\bibnamedelima Cabello},
+           familyi={E\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Jesús\bibnamedelima Arturo},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=9b125ae94ab75db4a11677c802978eb3}{%
+           family={Cuan-Urquizo},
+           familyi={C\bibinithyphendelim U\bibinitperiod},
+           given={Enrique},
+           giveni={E\bibinitperiod}}}%
+        {{hash=b85f3fcb32f1c766891ec14f8c2e1a9e}{%
+           family={Cruz-Ramírez},
+           familyi={C\bibinithyphendelim R\bibinitperiod},
+           given={Sergio\bibnamedelima R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{19d975ad2573113e085241fc8889b883}
+      \strng{fullhash}{456a4b7ebeedc04d923f127803b012b0}
+      \strng{fullhashraw}{456a4b7ebeedc04d923f127803b012b0}
+      \strng{bibnamehash}{456a4b7ebeedc04d923f127803b012b0}
+      \strng{authorbibnamehash}{456a4b7ebeedc04d923f127803b012b0}
+      \strng{authornamehash}{19d975ad2573113e085241fc8889b883}
+      \strng{authorfullhash}{456a4b7ebeedc04d923f127803b012b0}
+      \strng{authorfullhashraw}{456a4b7ebeedc04d923f127803b012b0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{1}
+      \field{title}{Sensor Data Fusion for a Mobile Robot Using Neural Networks}
+      \field{volume}{22}
+      \field{pages}{305}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s22010305
+      \endverb
+      \warn{\item article entry 'barreto2022fusion' (references.bib): Invalid format '2022' of date field 'date' - ignoring}
+    \endentry
+    \entry{arccosSmartSensors}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=01b594b4ff40b6bb699e6ff90bfb36f7}{%
+           family={{Arccos Golf}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{fullhash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{fullhashraw}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{bibnamehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authorbibnamehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authornamehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authorfullhash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authorfullhashraw}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Arccos Smart Sensors}}
+      \verb{urlraw}
+      \verb https://arccosgolf.com/products/smart-sensors
+      \endverb
+      \verb{url}
+      \verb https://arccosgolf.com/products/smart-sensors
+      \endverb
+      \warn{\item online entry 'arccosSmartSensors' (references.bib): Invalid format '2025' of date field 'date' - ignoring}
+      \warn{\item online entry 'arccosSmartSensors' (references.bib): Invalid format '2025-02-17' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{dobkin2005rfid}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=37c2c607e519e2f625f641afe09e0cbb}{%
+           family={Dobkin},
+           familyi={D\bibinitperiod},
+           given={Daniel\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=d83f21a838087a7da2f1c3cdb313d771}{%
+           family={Weigand},
+           familyi={W\bibinitperiod},
+           given={Steven\bibnamedelima M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1274f8ddbc8a251545b7c3b8470ad44b}
+      \strng{fullhash}{1274f8ddbc8a251545b7c3b8470ad44b}
+      \strng{fullhashraw}{1274f8ddbc8a251545b7c3b8470ad44b}
+      \strng{bibnamehash}{1274f8ddbc8a251545b7c3b8470ad44b}
+      \strng{authorbibnamehash}{1274f8ddbc8a251545b7c3b8470ad44b}
+      \strng{authornamehash}{1274f8ddbc8a251545b7c3b8470ad44b}
+      \strng{authorfullhash}{1274f8ddbc8a251545b7c3b8470ad44b}
+      \strng{authorfullhashraw}{1274f8ddbc8a251545b7c3b8470ad44b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE MTT-S International Microwave Symposium Digest}
+      \field{title}{Environmental Effects on {RFID} Tag Antennas}
+      \field{pages}{135\bibrangedash 138}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/MWSYM.2005.1516541
+      \endverb
+      \warn{\item inproceedings entry 'dobkin2005rfid' (references.bib): Invalid format '2005-06' of date field 'date' - ignoring}
+    \endentry
+    \entry{mfrc522ds}{manual}{}{}
+      \list{organization}{1}{%
+        {NXP Semiconductors}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{{MFRC522}: Standard Performance {MIFARE} and {NTAG} Frontend, Product Data Sheet}
+      \field{version}{Rev. 3.9}
+      \verb{urlraw}
+      \verb https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf
+      \endverb
+      \warn{\item manual entry 'mfrc522ds' (references.bib): Invalid format '2016-04-27' of date field 'date' - ignoring}
+    \endentry
+    \entry{arccosAppleWatch}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=01b594b4ff40b6bb699e6ff90bfb36f7}{%
+           family={{Arccos Golf}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{fullhash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{fullhashraw}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{bibnamehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authorbibnamehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authornamehash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authorfullhash}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \strng{authorfullhashraw}{01b594b4ff40b6bb699e6ff90bfb36f7}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Arccos} for {Apple Watch}}
+      \verb{urlraw}
+      \verb https://arccosgolf.com/pages/apple-watch
+      \endverb
+      \verb{url}
+      \verb https://arccosgolf.com/pages/apple-watch
+      \endverb
+      \warn{\item online entry 'arccosAppleWatch' (references.bib): Invalid format '2021' of date field 'date' - ignoring}
+      \warn{\item online entry 'arccosAppleWatch' (references.bib): Invalid format '2021-07-27' of date field 'urldate' - ignoring}
+    \endentry
     \entry{rpi5brief}{manual}{}{}
       \list{organization}{1}{%
         {Raspberry Pi Ltd}%
@@ -695,6 +879,7 @@
       \warn{\item manual entry 'rpi5brief' (references.bib): Invalid format '2026-11' of date field 'date' - ignoring}
     \endentry
   \enddatalist
+  \missing{rfidmetal}
 \endrefsection
 \endinput
 
