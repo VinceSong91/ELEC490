@@ -31,8 +31,35 @@
       \field{labeltitlesource}{title}
       \field{number}{ISO 12100:2010}
       \field{title}{Safety of Machinery -- General Principles for Design -- Risk Assessment and Risk Reduction}
-      \field{year}{2010}
-      \field{dateera}{ce}
+      \warn{\item standard entry 'iso12100' (references.bib): Invalid format '2010' of date field 'date' - ignoring}
+    \endentry
+    \entry{ieee802154z}{standard}{}{}
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{number}{IEEE Std 802.15.4z-2020}
+      \field{title}{{IEEE Standard for Low-Rate Wireless Networks -- Amendment 1: Enhanced Ultra Wideband (UWB) Physical Layers and Associated Ranging Techniques}}
+      \verb{doi}
+      \verb 10.1109/IEEESTD.2020.9179124
+      \endverb
+      \warn{\item standard entry 'ieee802154z' (references.bib): Invalid format '2020' of date field 'date' - ignoring}
+    \endentry
+    \entry{iso13850}{standard}{}{}
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Organization for Standardization}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{number}{ISO 13850:2015}
+      \field{title}{Safety of Machinery -- Emergency Stop Function -- Principles for Design}
+      \warn{\item standard entry 'iso13850' (references.bib): Invalid format '2015' of date field 'date' - ignoring}
     \endentry
     \entry{milstd882e}{standard}{}{}
       \list{location}{1}{%
@@ -41,13 +68,12 @@
       \list{organization}{1}{%
         {U.S. Department of Defense}%
       }
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{number}{MIL-STD-882E w/Change 1}
       \field{title}{Department of Defense Standard Practice: System Safety}
-      \field{year}{2023}
-      \field{dateera}{ce}
+      \warn{\item standard entry 'milstd882e' (references.bib): Invalid format '2023' of date field 'date' - ignoring}
     \endentry
     \entry{usgaEquipmentRules}{online}{}{}
       \name{author}{1}{}{%
@@ -63,23 +89,19 @@
       \strng{authornamehash}{2f2778653e2ac12fe8f73982698074df}
       \strng{authorfullhash}{2f2778653e2ac12fe8f73982698074df}
       \strng{authorfullhashraw}{2f2778653e2ac12fe8f73982698074df}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Equipment Rules}
-      \field{urlday}{3}
-      \field{urlmonth}{11}
-      \field{urlyear}{2026}
-      \field{year}{2023}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.usga.org/equipment-standards/equipment-rules-2019.html
       \endverb
       \verb{url}
       \verb https://www.usga.org/equipment-standards/equipment-rules-2019.html
       \endverb
+      \warn{\item online entry 'usgaEquipmentRules' (references.bib): Invalid format '2023' of date field 'date' - ignoring}
+      \warn{\item online entry 'usgaEquipmentRules' (references.bib): Invalid format '2026-11-03' of date field 'urldate' - ignoring}
     \endentry
     \entry{iec60204-1}{standard}{}{}
       \list{location}{1}{%
@@ -88,28 +110,12 @@
       \list{organization}{1}{%
         {International Electrotechnical Commission}%
       }
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{number}{IEC 60204-1:2016+AMD1:2021}
       \field{title}{Safety of Machinery -- Electrical Equipment of Machines -- Part 1: General Requirements}
-      \field{year}{2021}
-      \field{dateera}{ce}
-    \endentry
-    \entry{iso13850}{standard}{}{}
-      \list{location}{1}{%
-        {Geneva, Switzerland}%
-      }
-      \list{organization}{1}{%
-        {International Organization for Standardization}%
-      }
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labeltitlesource}{title}
-      \field{number}{ISO 13850:2015}
-      \field{title}{Safety of Machinery -- Emergency Stop Function -- Principles for Design}
-      \field{year}{2015}
-      \field{dateera}{ce}
+      \warn{\item standard entry 'iec60204-1' (references.bib): Invalid format '2021' of date field 'date' - ignoring}
     \endentry
     \entry{cpsc2016hoverboards}{online}{}{}
       \name{author}{1}{}{%
@@ -125,25 +131,19 @@
       \strng{authornamehash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
       \strng{authorfullhash}{bdb9c7cd10c0de4bb3bf7908067b0c03}
       \strng{authorfullhashraw}{bdb9c7cd10c0de4bb3bf7908067b0c03}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{day}{6}
-      \field{month}{7}
       \field{title}{Self-Balancing Scooters/Hoverboards Recalled by 10 Firms Due to Fire Hazard}
-      \field{urlday}{3}
-      \field{urlmonth}{11}
-      \field{urlyear}{2026}
-      \field{year}{2016}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.cpsc.gov/Recalls/2016/Self-Balancing-Scooters-Hoverboards-Recalled-by-10-Firms
       \endverb
       \verb{url}
       \verb https://www.cpsc.gov/Recalls/2016/Self-Balancing-Scooters-Hoverboards-Recalled-by-10-Firms
       \endverb
+      \warn{\item online entry 'cpsc2016hoverboards' (references.bib): Invalid format '2016-07-06' of date field 'date' - ignoring}
+      \warn{\item online entry 'cpsc2016hoverboards' (references.bib): Invalid format '2026-11-03' of date field 'urldate' - ignoring}
     \endentry
     \entry{nasaHandbook}{manual}{}{}
       \list{location}{1}{%
@@ -153,19 +153,18 @@
         {National Aeronautics}%
         {Space Administration}%
       }
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{title}{{NASA} Systems Engineering Handbook}
       \field{version}{NASA/SP-2016-6105 Rev 2}
-      \field{year}{2017}
-      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://www.nasa.gov/sites/default/files/atoms/files/nasa_systems_engineering_handbook_0.pdf
       \endverb
       \verb{url}
       \verb https://www.nasa.gov/sites/default/files/atoms/files/nasa_systems_engineering_handbook_0.pdf
       \endverb
+      \warn{\item manual entry 'nasaHandbook' (references.bib): Invalid format '2017' of date field 'date' - ignoring}
     \endentry
     \entry{bohannon2011walking}{article}{}{}
       \name{author}{2}{}{%
@@ -193,17 +192,15 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physiotherapy}
-      \field{month}{9}
       \field{number}{3}
       \field{title}{Normal Walking Speed: A Descriptive Meta-Analysis}
       \field{volume}{97}
-      \field{year}{2011}
-      \field{dateera}{ce}
       \field{pages}{182\bibrangedash 189}
       \range{pages}{8}
       \verb{doi}
       \verb 10.1016/j.physio.2010.12.004
       \endverb
+      \warn{\item article entry 'bohannon2011walking' (references.bib): Invalid format '2011-09' of date field 'date' - ignoring}
     \endentry
     \entry{iso3691-4}{standard}{}{}
       \list{location}{1}{%
@@ -217,8 +214,7 @@
       \field{labeltitlesource}{title}
       \field{number}{ISO 3691-4:2023}
       \field{title}{Industrial Trucks -- Safety Requirements and Verification -- Part 4: Driverless Industrial Trucks and Their Systems}
-      \field{year}{2023}
-      \field{dateera}{ce}
+      \warn{\item standard entry 'iso3691-4' (references.bib): Invalid format '2023' of date field 'date' - ignoring}
     \endentry
     \entry{feruFoc}{online}{}{}
       \name{author}{1}{}{%
@@ -240,22 +236,16 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{day}{4}
-      \field{month}{7}
       \field{note}{GitHub repository, GPL-3.0, commit 4f141cbc97; see Inc/config.h and Src/util.c}
       \field{title}{hoverboard-firmware-hack-{FOC}: Field Oriented Control for Hoverboard Mainboards}
-      \field{urlday}{4}
-      \field{urlmonth}{11}
-      \field{urlyear}{2026}
-      \field{year}{2026}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://github.com/EFeru/hoverboard-firmware-hack-FOC
       \endverb
       \verb{url}
       \verb https://github.com/EFeru/hoverboard-firmware-hack-FOC
       \endverb
+      \warn{\item online entry 'feruFoc' (references.bib): Invalid format '2026-07-04' of date field 'date' - ignoring}
+      \warn{\item online entry 'feruFoc' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring}
     \endentry
     \entry{iso13482}{standard}{}{}
       \list{location}{1}{%
@@ -264,13 +254,12 @@
       \list{organization}{1}{%
         {International Organization for Standardization}%
       }
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labeltitlesource}{title}
       \field{number}{ISO 13482:2014}
       \field{title}{Robots and Robotic Devices -- Safety Requirements for Personal Care Robots}
-      \field{year}{2014}
-      \field{dateera}{ce}
+      \warn{\item standard entry 'iso13482' (references.bib): Invalid format '2014' of date field 'date' - ignoring}
     \endentry
     \entry{iso13857}{standard}{}{}
       \list{location}{1}{%
@@ -279,13 +268,12 @@
       \list{organization}{1}{%
         {International Organization for Standardization}%
       }
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labeltitlesource}{title}
       \field{number}{ISO 13857:2019}
       \field{title}{Safety of Machinery -- Safety Distances to Prevent Hazard Zones Being Reached by Upper and Lower Limbs}
-      \field{year}{2019}
-      \field{dateera}{ce}
+      \warn{\item standard entry 'iso13857' (references.bib): Invalid format '2019' of date field 'date' - ignoring}
     \endentry
     \entry{iso13854}{standard}{}{}
       \list{location}{1}{%
@@ -299,8 +287,7 @@
       \field{labeltitlesource}{title}
       \field{number}{ISO 13854:2017}
       \field{title}{Safety of Machinery -- Minimum Gaps to Avoid Crushing of Parts of the Human Body}
-      \field{year}{2017}
-      \field{dateera}{ce}
+      \warn{\item standard entry 'iso13854' (references.bib): Invalid format '2017' of date field 'date' - ignoring}
     \endentry
     \entry{ul2272}{standard}{}{}
       \list{location}{1}{%
@@ -314,8 +301,7 @@
       \field{labeltitlesource}{title}
       \field{number}{UL 2272}
       \field{title}{Standard for Electrical Systems for Personal E-Mobility Devices}
-      \field{year}{2016}
-      \field{dateera}{ce}
+      \warn{\item standard entry 'ul2272' (references.bib): Invalid format '2016' of date field 'date' - ignoring}
     \endentry
     \entry{iec62133-2}{standard}{}{}
       \list{location}{1}{%
@@ -329,8 +315,7 @@
       \field{labeltitlesource}{title}
       \field{number}{IEC 62133-2:2017+AMD1:2021}
       \field{title}{Secondary Cells and Batteries Containing Alkaline or Other Non-Acid Electrolytes -- Safety Requirements for Portable Sealed Secondary Lithium Cells, and for Batteries Made from Them, for Use in Portable Applications -- Part 2: Lithium Systems}
-      \field{year}{2021}
-      \field{dateera}{ce}
+      \warn{\item standard entry 'iec62133-2' (references.bib): Invalid format '2021' of date field 'date' - ignoring}
     \endentry
     \entry{iec60529}{standard}{}{}
       \list{location}{1}{%
@@ -344,8 +329,7 @@
       \field{labeltitlesource}{title}
       \field{number}{IEC 60529:1989+AMD1:1999+AMD2:2013}
       \field{title}{Degrees of Protection Provided by Enclosures (IP Code)}
-      \field{year}{2013}
-      \field{dateera}{ce}
+      \warn{\item standard entry 'iec60529' (references.bib): Invalid format '2013' of date field 'date' - ignoring}
     \endentry
     \entry{hall2025golfGps}{article}{}{}
       \name{author}{5}{}{%
@@ -391,8 +375,6 @@
       \field{number}{1}
       \field{title}{The Validity and Reliability of Two Golf Performance-Tracking {Global Positioning System} ({GPS}) Devices}
       \field{volume}{13}
-      \field{year}{2025}
-      \field{dateera}{ce}
       \field{pages}{103\bibrangedash 121}
       \range{pages}{19}
       \verb{urlraw}
@@ -401,6 +383,7 @@
       \verb{url}
       \verb https://www.golfsciencejournal.org/article/144587
       \endverb
+      \warn{\item article entry 'hall2025golfGps' (references.bib): Invalid format '2025' of date field 'date' - ignoring}
     \endentry
     \entry{bu2023trash}{inproceedings}{}{}
       \name{author}{4}{}{%
@@ -433,20 +416,18 @@
       \strng{authornamehash}{36b5d2e7bbf773da645ed24940a7b17c}
       \strng{authorfullhash}{fa4704bb0be5672bbea52efc18664edf}
       \strng{authorfullhashraw}{fa4704bb0be5672bbea52efc18664edf}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Companion of the 2023 ACM/IEEE International Conference on Human-Robot Interaction}
-      \field{month}{3}
       \field{title}{Trash Barrel Robots in the City}
-      \field{year}{2023}
-      \field{dateera}{ce}
       \field{pages}{875\bibrangedash 877}
       \range{pages}{3}
       \verb{doi}
       \verb 10.1145/3568294.3580206
       \endverb
+      \warn{\item inproceedings entry 'bu2023trash' (references.bib): Invalid format '2023-03' of date field 'date' - ignoring}
     \endentry
     \entry{cornellHoverboard}{online}{}{}
       \name{author}{1}{}{%
@@ -462,21 +443,18 @@
       \strng{authornamehash}{1aae1c09bbf8febd8a933f60d21bc258}
       \strng{authorfullhash}{1aae1c09bbf8febd8a933f60d21bc258}
       \strng{authorfullhashraw}{1aae1c09bbf8febd8a933f60d21bc258}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Drive System -- Mobile Hoverboard Robot Base}
-      \field{urlday}{4}
-      \field{urlmonth}{11}
-      \field{urlyear}{2026}
-      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://irl.tech.cornell.edu/mobile_hoverboard_robot_base/assembly/drive
       \endverb
       \verb{url}
       \verb https://irl.tech.cornell.edu/mobile_hoverboard_robot_base/assembly/drive
       \endverb
+      \warn{\item online entry 'cornellHoverboard' (references.bib): Invalid format '2026-11-04' of date field 'urldate' - ignoring}
     \endentry
     \entry{zhang2024stroller}{article}{}{}
       \name{author}{4}{}{%
@@ -514,17 +492,15 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors}
-      \field{month}{7}
       \field{number}{15}
       \field{title}{Peer-to-Peer Ultra-Wideband Localization for Hands-Free Control of a Human-Guided Smart Stroller}
       \field{volume}{24}
-      \field{year}{2024}
-      \field{dateera}{ce}
       \field{pages}{4828}
       \range{pages}{1}
       \verb{doi}
       \verb 10.3390/s24154828
       \endverb
+      \warn{\item article entry 'zhang2024stroller' (references.bib): Invalid format '2024-07' of date field 'date' - ignoring}
     \endentry
     \entry{bae2022uwb}{article}{}{}
       \name{author}{4}{}{%
@@ -562,17 +538,15 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors}
-      \field{month}{2}
       \field{number}{3}
       \field{title}{Component-Wise Error Correction Method for {UWB}-Based Localization in Target-Following Mobile Robot}
       \field{volume}{22}
-      \field{year}{2022}
-      \field{dateera}{ce}
       \field{pages}{1180}
       \range{pages}{1}
       \verb{doi}
       \verb 10.3390/s22031180
       \endverb
+      \warn{\item article entry 'bae2022uwb' (references.bib): Invalid format '2022-02' of date field 'date' - ignoring}
     \endentry
     \entry{islam2019personFollowing}{article}{}{}
       \name{author}{3}{}{%
@@ -605,17 +579,15 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The International Journal of Robotics Research}
-      \field{month}{12}
       \field{number}{14}
       \field{title}{Person-Following by Autonomous Robots: A Categorical Overview}
       \field{volume}{38}
-      \field{year}{2019}
-      \field{dateera}{ce}
       \field{pages}{1581\bibrangedash 1618}
       \range{pages}{38}
       \verb{doi}
       \verb 10.1177/0278364919881683
       \endverb
+      \warn{\item article entry 'islam2019personFollowing' (references.bib): Invalid format '2019-12' of date field 'date' - ignoring}
     \endentry
     \entry{stewartQFollow}{online}{}{}
       \name{author}{1}{}{%
@@ -636,18 +608,14 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Q Follow} Electric Golf Trolley}
-      \field{urlday}{15}
-      \field{urlmonth}{7}
-      \field{urlyear}{2025}
-      \field{year}{2025}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.stewartgolf.co.uk/products/stewart-golf-q-follow
       \endverb
       \verb{url}
       \verb https://www.stewartgolf.co.uk/products/stewart-golf-q-follow
       \endverb
+      \warn{\item online entry 'stewartQFollow' (references.bib): Invalid format '2025' of date field 'date' - ignoring}
+      \warn{\item online entry 'stewartQFollow' (references.bib): Invalid format '2025-07-15' of date field 'urldate' - ignoring}
     \endentry
     \entry{zafari2019survey}{article}{}{}
       \name{author}{3}{}{%
@@ -683,13 +651,12 @@
       \field{number}{3}
       \field{title}{A Survey of Indoor Localization Systems and Technologies}
       \field{volume}{21}
-      \field{year}{2019}
-      \field{dateera}{ce}
       \field{pages}{2568\bibrangedash 2599}
       \range{pages}{32}
       \verb{doi}
       \verb 10.1109/COMST.2019.2911558
       \endverb
+      \warn{\item article entry 'zafari2019survey' (references.bib): Invalid format '2019' of date field 'date' - ignoring}
     \endentry
     \entry{neom8ds}{manual}{}{}
       \list{organization}{1}{%
@@ -708,17 +675,15 @@
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
-      \field{month}{5}
       \field{title}{{DWM3000} Data Sheet}
       \field{version}{Rev. B}
-      \field{year}{2021}
-      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://www.qorvo.com/products/p/DWM3000
       \endverb
       \verb{url}
       \verb https://www.qorvo.com/products/p/DWM3000
       \endverb
+      \warn{\item manual entry 'dwm3000ds' (references.bib): Invalid format '2021-05' of date field 'date' - ignoring}
     \endentry
     \entry{tflunads}{manual}{}{}
       \list{organization}{1}{%
@@ -780,13 +745,12 @@
       \field{number}{1}
       \field{title}{Sensor Data Fusion for a Mobile Robot Using Neural Networks}
       \field{volume}{22}
-      \field{year}{2022}
-      \field{dateera}{ce}
       \field{pages}{305}
       \range{pages}{1}
       \verb{doi}
       \verb 10.3390/s22010305
       \endverb
+      \warn{\item article entry 'barreto2022fusion' (references.bib): Invalid format '2022' of date field 'date' - ignoring}
     \endentry
     \entry{arccosSmartSensors}{online}{}{}
       \name{author}{1}{}{%
@@ -808,18 +772,14 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Arccos Smart Sensors}}
-      \field{urlday}{17}
-      \field{urlmonth}{2}
-      \field{urlyear}{2025}
-      \field{year}{2025}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://arccosgolf.com/products/smart-sensors
       \endverb
       \verb{url}
       \verb https://arccosgolf.com/products/smart-sensors
       \endverb
+      \warn{\item online entry 'arccosSmartSensors' (references.bib): Invalid format '2025' of date field 'date' - ignoring}
+      \warn{\item online entry 'arccosSmartSensors' (references.bib): Invalid format '2025-02-17' of date field 'urldate' - ignoring}
     \endentry
     \entry{dobkin2005rfid}{inproceedings}{}{}
       \name{author}{2}{}{%
@@ -847,15 +807,13 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{IEEE MTT-S International Microwave Symposium Digest}
-      \field{month}{6}
       \field{title}{Environmental Effects on {RFID} Tag Antennas}
-      \field{year}{2005}
-      \field{dateera}{ce}
       \field{pages}{135\bibrangedash 138}
       \range{pages}{4}
       \verb{doi}
       \verb 10.1109/MWSYM.2005.1516541
       \endverb
+      \warn{\item inproceedings entry 'dobkin2005rfid' (references.bib): Invalid format '2005-06' of date field 'date' - ignoring}
     \endentry
     \entry{mfrc522ds}{manual}{}{}
       \list{organization}{1}{%
@@ -864,18 +822,15 @@
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
-      \field{day}{27}
-      \field{month}{4}
       \field{title}{{MFRC522}: Standard Performance {MIFARE} and {NTAG} Frontend, Product Data Sheet}
       \field{version}{Rev. 3.9}
-      \field{year}{2016}
-      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf
       \endverb
       \verb{url}
       \verb https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf
       \endverb
+      \warn{\item manual entry 'mfrc522ds' (references.bib): Invalid format '2016-04-27' of date field 'date' - ignoring}
     \endentry
     \entry{arccosAppleWatch}{online}{}{}
       \name{author}{1}{}{%
@@ -897,18 +852,14 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Arccos} for {Apple Watch}}
-      \field{urlday}{27}
-      \field{urlmonth}{7}
-      \field{urlyear}{2021}
-      \field{year}{2021}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://arccosgolf.com/pages/apple-watch
       \endverb
       \verb{url}
       \verb https://arccosgolf.com/pages/apple-watch
       \endverb
+      \warn{\item online entry 'arccosAppleWatch' (references.bib): Invalid format '2021' of date field 'date' - ignoring}
+      \warn{\item online entry 'arccosAppleWatch' (references.bib): Invalid format '2021-07-27' of date field 'urldate' - ignoring}
     \endentry
     \entry{rpi5brief}{manual}{}{}
       \list{organization}{1}{%
@@ -917,19 +868,18 @@
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
-      \field{month}{11}
       \field{title}{Raspberry Pi 5 Product Brief}
       \field{version}{RP-008348-DS}
-      \field{year}{2026}
-      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://pip.raspberrypi.com/documents/RP-008348-DS-raspberry-pi-5-product-brief.pdf
       \endverb
       \verb{url}
       \verb https://pip.raspberrypi.com/documents/RP-008348-DS-raspberry-pi-5-product-brief.pdf
       \endverb
+      \warn{\item manual entry 'rpi5brief' (references.bib): Invalid format '2026-11' of date field 'date' - ignoring}
     \endentry
   \enddatalist
+  \missing{rfidmetal}
 \endrefsection
 \endinput
 

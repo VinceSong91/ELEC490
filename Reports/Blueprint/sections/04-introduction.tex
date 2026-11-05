@@ -4,32 +4,23 @@
 
 \CourseSubsection{Motivation and Problem}
 
-Golfers who walk the course must transport their equipment by carrying a bag or operating a push cart. Although electric and autonomous carts reduce this effort, they primarily focus on transportation rather than equipment management. Golfers must also keep track of clubs removed during play, which can be misplaced or left behind.
-
-The Autonomous Smart Caddy Cart (ASCC) aims to address both challenges by combining autonomous golfer following with club identification and tracking. As golfers ourselves, the team understands the need for a solution that addresses both transportation and equipment management. The goal is to reduce manual cart operation while helping golfers manage their equipment throughout a round.
+Walking golfers must transport their equipment while keeping track of clubs used throughout a round. Although electric and autonomous carts reduce transportation effort, they offer limited equipment management capabilities. The Autonomous Smart Caddy Cart (ASCC) addresses both challenges by combining autonomous golfer following with club identification and tracking, reducing manual operation and the risk of forgotten equipment.
 
 \CourseSubsection{Project Objectives}
 
-The ASCC will be developed as a motorized golf push cart capable of following a golfer using a controller-based tracking system rather than computer vision. Distance sensors will support obstacle detection and avoidance, while an emergency-stop mechanism will allow the cart to be stopped when necessary.
+The ASCC aims to develop a motorized golf push cart that follows a golfer using controller-based tracking rather than computer vision. Distance sensors will support obstacle detection and avoidance, while an emergency-stop mechanism provides an additional safety measure.
 
-An RFID-based subsystem will identify tagged golf clubs and monitor their presence in the bag, notifying the golfer when a club is missing. The objective is to integrate these functions into a reliable and safe prototype.
-
-The ASCC will also aim to incorporate golf course data, including hole layouts, distances, and course information, to assist golfers with shot planning. This information helps golfers estimate distances to targets and hazards, supporting more informed club selection and on-course decisions.
+An RFID subsystem will identify tagged clubs, monitor their presence, and alert golfers when equipment is missing. Golf course data, including hole layouts, distances, and hazards, will also support shot planning and club selection.
 
 \CourseSubsection{Project Scope}
 
-The minimum viable prototype will focus on motor control, golfer following, obstacle detection, emergency stopping, RFID-based club tracking, and basic golf course data integration. Additional features, including shot data collection, club recommendations, and speech functionalities, may be implemented if time and resources permit.
+The minimum viable prototype includes motor control, golfer following, obstacle detection, emergency stopping, RFID club tracking, and basic course information. Stretch goals include shot tracking, club recommendations, and speech interaction, subject to available resources.
 
-Testing will begin indoors before progressing to controlled outdoor environments. The prototype is not intended for commercial deployment or operation on public roads, crowded areas, or extreme terrain.
-
-
+Testing will progress from indoor environments to controlled outdoor conditions. The prototype is not intended for commercial deployment or operation in crowded areas, on public roads, or on extreme terrain.
 
 \CourseSubsection{System Overview and Operating Scenario}
 
-Figure~\ref{fig:ascc-system-overview} illustrates the ASCC's main
-subsystems and their interactions with the golfer and surrounding
-environment. The Raspberry Pi coordinates sensor inputs, motor
-control, and club tracking.
+Figure~\ref{fig:ascc-system-overview} illustrates the ASCC's main subsystems and their interactions with the golfer and environment. The Raspberry Pi coordinates sensor inputs, motor control, and club tracking.
 
 \begin{figure}[htbp]
     \centering
@@ -42,9 +33,6 @@ control, and club tracking.
     \label{fig:ascc-system-overview}
 \end{figure}
 
-
 \CourseSubsection{Design Constraints}
 
-The ASCC must be completed within the CAD \$600 budget and capstone development schedule. Existing components, including the Raspberry Pi, ultrasonic sensors, and golf push cart, will be reused to reduce costs.
-
-Key constraints include hardware compatibility, sensor reliability, battery capacity, and safe motor operation. These considerations will guide the system requirements, development approach, and verification procedures.
+Development is limited by the CAD \$600 budget and capstone schedule. Existing hardware, including the Raspberry Pi, ultrasonic sensors, and golf push cart, will be reused where possible. Hardware compatibility, sensor reliability, battery capacity, and safe motor operation will guide design and testing.
