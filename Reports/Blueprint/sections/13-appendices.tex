@@ -271,7 +271,7 @@ Table~\ref{tab:hazards} lists the hazards assessed in Section~\ref{sec:risks-ass
 \caption{Safety hazards on the \acs{ASCC}, the standard that governs each one, the size of the risk, and the risk level before and after mitigation.}
 \label{tab:hazards}
 \footnotesize\renewcommand{\arraystretch}{1.0}
-\begin{tabularx}{\linewidth}{@{}L{0.35in} Y L{0.95in} Y L{0.5in} L{0.5in}@{}}
+\begin{tabularx}{\linewidth}{@{}L{0.35in} Y L{1.02in} Y L{0.5in} L{0.5in}@{}}
 \rowcolor{MidGray}
 \TableHeader{ID} & \TableHeader{Hazard and cause} & \TableHeader{Standard} & \TableHeader{Size of the risk} & \TableHeader{Before} & \TableHeader{After} \\
 \midrule
@@ -440,6 +440,38 @@ STR-4 & Club recommendations from logged distances & SG-02 & STR-3 & Needs enoug
 \end{tabularx}
 \end{table}
 
+\begin{table}[!htbp]
+\centering
+\caption{Contingency plans.}
+\label{tab:contingencies}
+\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}L{0.32in} L{1.6in} Y L{1.25in}@{}}
+\rowcolor{MidGray}
+\TableHeader{ID} & \TableHeader{Trigger} & \TableHeader{Change to the system or plan} & \TableHeader{Milestones} \\
+\midrule
+C-1 & Mainboard unsupported, or flashing fails (DRV-1) & Use the community firmware fork for that board, or buy another used hoverboard for parts with a supported mainboard & DRV-1 up to 2 weeks late; DRV-4 nears snow (C-6) \\
+\addlinespace[2pt]
+C-2 & Under 90\% of clubs read near metal shafts (CT-03, BAG-1) & On-metal \acs{NFC} tags with one antenna per slot on an \acs{SPI} multiplexer. Last resort: per-slot presence sensing, which loses club identity (CT-01) & BAG-2 up to 2 weeks late; BAG-3, GPS-3, INT-1 follow \\
+\addlinespace[2pt]
+C-3 & Bearing error too large to hold 1--3\,m (FL-03, TRK-2) & Switch between two-anchor ranging and an \acs{AoA} module & TRK-3, TRK-4, INT-2 \\
+\addlinespace[2pt]
+C-4 & Distance error above 5\,m (CD-03, GPS-1) & Average readings while the cart is stopped, and add an active antenna on the handle & GPS-2 \\
+\addlinespace[2pt]
+C-5 & Readings fail or the Pi browns out with the motors running (INT-1) & Read the bag only when stopped, give the Pi its own \acs{DC-DC} supply, add ferrites, and move antennas away from the motors & INT-1; INT-2 buffer absorbs 2 weeks \\
+\addlinespace[2pt]
+C-6 & Snow before DRV-4, INT-3, or INT-4 & Grass tests in November; INT-3 and INT-4 on a cleared lot or after snowmelt, reported as a deviation & DRV-4, INT-3, INT-4 \\
+\addlinespace[2pt]
+C-7 & Wheels slip or stall on grass (DRV-4) & Limit operation to short, flat grass, or switch to the larger hub motors from an off-road hoverboard & DRV-4, INT-3 \\
+\addlinespace[2pt]
+C-8 & A track falls 2 or more weeks behind & A member whose track is ahead joins it, and stretch work stops & INT-2, INT-3; buffer absorbs 2 weeks \\
+\addlinespace[2pt]
+C-9 & Braking below 2\,m/s$^2$ (MC-06, DRV-4) & Lower the speed cap and raise the minimum distance until Eq.~\eqref{eq:stopping} holds; revise MC-03 and FL-03 & DRV-4; TRK-3 uses the new limits \\
+\addlinespace[2pt]
+C-10 & E-stop slower than 100\,ms (MC-07), or link drops (SAF-3) & Dedicated industrial e-stop receiver wired directly to the power relay & SAF-3; TRK-3 waits for it \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \CourseSection{Functional Description Details}\label{app:functional}
 
 Table~\ref{tab:design-decisions} supports Section~\ref{sec:func-overview}. Table~\ref{tab:interfaces} traces the interfaces labelled in Figure~\ref{fig:functional} to their requirements. Figures~\ref{fig:logical} and~\ref{fig:physical} support Sections~\ref{sec:func-logical} and~\ref{sec:func-physical}, and Table~\ref{tab:prototype-ids} supports Section~\ref{sec:func-prototypes}.
@@ -555,7 +587,7 @@ Figure~\ref{fig:setups} shows the set-ups for Table~\ref{tab:tests-body} and the
 \addlinespace[2pt]
 \mbox{T-BAG-2} (P-04) & VT-05; CT-01, CT-03 & Full 14-club bag, stationary. Remove and return clubs singly and in groups, 5 cycles per club & $\ge$ 63 of 70 events correct (CT-03); no swapped identity; delay $\le$ \reqTODO{5 s}. Fail: C-2 \\
 \addlinespace[2pt]
-\mbox{T-GPS-2} (P-05) & VT-06; CD-02 & Outdoors at reference points 50--200\,m from stored coordinates, cart stationary. Compare with a laser rangefinder & Displayed distance within \reqTODO{5 m} at every point. Fail: C-4 \\
+\mbox{T-GPS-2} (P-05) & VT-06; CD-02 & Outdoors at reference points 50--200\,m from stored coordinates, cart stationary. Compare with a laser rangefinder & Displayed distance within 5\,m at every point (CD-03). Fail: C-4 \\
 \addlinespace[2pt]
 \mbox{T-INT-3} (P-06) & VT-09; PW-01; all \acs{MVP} & Short grass, loaded bag, from full charge. Follow on continuous laps with pack voltage logged; repeat \mbox{T-SAF-2}, \mbox{T-SAF-3}, and \mbox{T-TRK-3} faults, 10 trials each, with all processes running & $\ge$ 1\,h with no brownout (PW-01); all repeated trials pass. Fail: C-5, C-6 \\
 \bottomrule
@@ -616,38 +648,6 @@ SN-02 No collisions or unintended movement & Soft obstacle placed in the path; o
 SN-03 Missing clubs & A club is deliberately left at the second shot & Display names that club before the third shot \\
 SN-04 Course information & Golfer states the distance at each shot from the display only & Stated distance within 5\,m of the laser reference \\
 SN-05 Reliable operation & All three runs on one charge & No software restart or unscripted reset \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-\begin{table}[!htbp]
-\centering
-\caption{Contingency plans.}
-\label{tab:contingencies}
-\footnotesize\renewcommand{\arraystretch}{1.0}
-\begin{tabularx}{\linewidth}{@{}L{0.32in} L{1.6in} Y L{1.25in}@{}}
-\rowcolor{MidGray}
-\TableHeader{ID} & \TableHeader{Trigger} & \TableHeader{Change to the system or plan} & \TableHeader{Milestones} \\
-\midrule
-C-1 & Mainboard unsupported, or flashing fails (DRV-1) & Use the community firmware fork for that board, or buy another used hoverboard for parts with a supported mainboard & DRV-1 up to 2 weeks late; DRV-4 nears snow (C-6) \\
-\addlinespace[2pt]
-C-2 & Under 90\% of clubs read near metal shafts (CT-03, BAG-1) & On-metal \acs{NFC} tags with one antenna per slot on an \acs{SPI} multiplexer. Last resort: per-slot presence sensing, which loses club identity (CT-01) & BAG-2 up to 2 weeks late; BAG-3, GPS-3, INT-1 follow \\
-\addlinespace[2pt]
-C-3 & Bearing error too large to hold 1--3\,m (FL-03, TRK-2) & Switch between two-anchor ranging and an \acs{AoA} module & TRK-3, TRK-4, INT-2 \\
-\addlinespace[2pt]
-C-4 & Distance error above 5\,m (CD-03, GPS-1) & Average readings while the cart is stopped, and add an active antenna on the handle & GPS-2 \\
-\addlinespace[2pt]
-C-5 & Readings fail or the Pi browns out with the motors running (INT-1) & Read the bag only when stopped, give the Pi its own \acs{DC-DC} supply, add ferrites, and move antennas away from the motors & INT-1; INT-2 buffer absorbs 2 weeks \\
-\addlinespace[2pt]
-C-6 & Snow before DRV-4, INT-3, or INT-4 & Grass tests in November; INT-3 and INT-4 on a cleared lot or after snowmelt, reported as a deviation & DRV-4, INT-3, INT-4 \\
-\addlinespace[2pt]
-C-7 & Wheels slip or stall on grass (DRV-4) & Limit operation to short, flat grass, or switch to the larger hub motors from an off-road hoverboard & DRV-4, INT-3 \\
-\addlinespace[2pt]
-C-8 & A track falls 2 or more weeks behind & A member whose track is ahead joins it, and stretch work stops & INT-2, INT-3; buffer absorbs 2 weeks \\
-\addlinespace[2pt]
-C-9 & Braking below 2\,m/s$^2$ (MC-06, DRV-4) & Lower the speed cap and raise the minimum distance until Eq.~\eqref{eq:stopping} holds; revise MC-03 and FL-03 & DRV-4; TRK-3 uses the new limits \\
-\addlinespace[2pt]
-C-10 & E-stop slower than 100\,ms (MC-07), or link drops (SAF-3) & Dedicated industrial e-stop receiver wired directly to the power relay & SAF-3; TRK-3 waits for it \\
 \bottomrule
 \end{tabularx}
 \end{table}
