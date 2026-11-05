@@ -2,13 +2,12 @@
 % TODO (handoffs from Section 5 to other sections):
 % - Functional Description: introduce prototype IDs P-01 to P-06 (Sec. 2.5) and
 %   justify the hoverboard drive base against the used motorized cart.
-% - Requirements: still missing for braking deceleration, e-stop latency,
-%   GPS distance accuracy, and the club-out interlock (a SHALL NOT). Each is
-%   marked \reqTODO below.
+% - Requirements: MC-06, MC-07, OB-06, CD-03 and tests VT-12, VT-13 were added
+%   to Appendix A as proposals (values from the proposal's PF-05/IF-02 and Eq. 1).
+%   Team to confirm, especially MC-06 (2 m/s^2) against MC-03 (2 m/s).
 % - Requirements/V&V: Appendix A traces MC-02/04/05 (e-stop) to P-01; here the
 %   e-stop is built in P-03 (SAF-3). Align one way or the other.
-% - V&V: no VT test yet covers braking (DRV-4), the chassis (DRV-3), GPS
-%   accuracy (GPS-1), or the club-out interlock (SAF-4).
+% - V&V: no VT test yet covers the chassis (DRV-3).
 % TODO (open questions): confirm final demo date (assumed late March 2027);
 % confirm Vince's track and the DRV-3 owner; confirm an indoor space for winter
 % motion testing; confirm the hoverboard mainboard type (decides C-1).
@@ -40,7 +39,7 @@ Table~\ref{tab:prototypes} defines each prototype. A milestone is complete when 
 \midrule
 \textbf{P-01 Drive base.} Speed-limited motion on Pi commands, stoppable without the Pi. Reflashed mainboard, firmware limits, serial-timeout stop, kill switch, chassis &
 Bench, wheels raised (DRV-1) $\rightarrow$ limits and stops (DRV-2) $\rightarrow$ floor and grass with ballast (DRV-4) $\rightarrow$ chassis (DRV-3) &
-MC-01, MC-03, IR-03, \reqTODO{braking} &
+MC-01, MC-03, MC-06, IR-03 &
 VT-01 \\
 \addlinespace[2pt]
 \textbf{P-02 Tracking and following.} Follows the golfer's \acs{UWB} tag, so it cannot switch to another person. Tag, two anchors or an \acs{AoA} module, following controller &
@@ -50,8 +49,8 @@ VT-02, VT-08 \\
 \addlinespace[2pt]
 \textbf{P-03 Safety layer.} Stops for obstacles, the e-stop, or a club out of the bag. Ultrasonic sensors, \acs{LiDAR}, wireless e-stop, club-out interlock &
 Static detection (SAF-1) $\rightarrow$ e-stop, wheels raised (SAF-3) $\rightarrow$ stops while moving (SAF-2) $\rightarrow$ interlock (SAF-4) &
-OB-01 to OB-05, IR-02, MC-02, MC-04, MC-05, \reqTODO{club-out} &
-VT-03, VT-04, VT-07, VT-11 \\
+OB-01 to OB-06, IR-02, MC-02, MC-04, MC-05, MC-07 &
+VT-03, VT-04, VT-07, VT-11, VT-13 \\
 \addlinespace[2pt]
 \textbf{P-04 Smart bag.} Tracks which clubs are in the bag and warns of one left behind. \acs{RFID} reader, club tags, inventory software &
 One club in the bag (BAG-1) $\rightarrow$ full bag, stationary (BAG-2) $\rightarrow$ warning on cart movement (BAG-3) &
@@ -60,7 +59,7 @@ VT-05 \\
 \addlinespace[2pt]
 \textbf{P-05 Distance display.} Shows the distance to the green. \acs{GPS} module, stored green coordinates, display &
 Surveyed points (GPS-1) $\rightarrow$ reference distances (GPS-2) $\rightarrow$ full display (GPS-3) &
-CD-01, CD-02, IR-05, \reqTODO{GPS accuracy} &
+CD-01 to CD-03, IR-05 &
 VT-06 \\
 \addlinespace[2pt]
 \textbf{P-06 Integrated \acs{ASCC}.} All subsystems on one cart, powered from the 36\,V pack through a \acs{DC-DC} converter &
@@ -80,36 +79,5 @@ Integration is staged so the cart can always be stopped before anything is added
 
 \CourseSubsection{Contingency Plans}\label{sec:approach-contingency}
 
-Table~\ref{tab:contingencies} lists the technical, safety, and schedule contingencies, each with its trigger, the change to the system or plan, and the milestones affected.
+Table~\ref{tab:contingencies} in Appendix~\ref{app:approach} lists the technical, safety, and schedule contingencies, each with its trigger, the change to the system or plan, and the milestones affected. The ones most likely to move the schedule are an unsupported mainboard (C-1), poor \acs{RFID} reads near metal shafts (C-2), and early snow (C-6), which is why DRV-1, BAG-1, and DRV-4 are all due in November.
 
-\begin{table}[!htbp]
-\centering
-\caption{Contingency plans.}
-\label{tab:contingencies}
-\footnotesize\renewcommand{\arraystretch}{1.0}
-\begin{tabularx}{\linewidth}{@{}L{0.32in} L{1.6in} Y L{1.25in}@{}}
-\rowcolor{MidGray}
-\TableHeader{ID} & \TableHeader{Trigger} & \TableHeader{Change to the system or plan} & \TableHeader{Milestones} \\
-\midrule
-C-1 & Mainboard unsupported, or flashing fails (DRV-1) & Use the community firmware fork for that board, or buy another used hoverboard for parts with a supported mainboard & DRV-1 up to 2 weeks late; DRV-4 nears snow (C-6) \\
-\addlinespace[2pt]
-C-2 & Under 90\% of clubs read near metal shafts (CT-03, BAG-1) & On-metal \acs{NFC} tags with one antenna per slot on an \acs{SPI} multiplexer. Last resort: per-slot presence sensing, which loses club identity (CT-01) & BAG-2 up to 2 weeks late; BAG-3, GPS-3, INT-1 follow \\
-\addlinespace[2pt]
-C-3 & Bearing error too large to hold 1--3\,m (FL-03, TRK-2) & Switch between two-anchor ranging and an \acs{AoA} module & TRK-3, TRK-4, INT-2 \\
-\addlinespace[2pt]
-C-4 & Position error above \reqTODO{GPS accuracy} (GPS-1) & Average readings while the cart is stopped, and add an active antenna on the handle & GPS-2 \\
-\addlinespace[2pt]
-C-5 & Readings fail or the Pi browns out with the motors running (INT-1) & Read the bag only when stopped, give the Pi its own \acs{DC-DC} supply, add ferrites, and move antennas away from the motors & INT-1; INT-2 buffer absorbs 2 weeks \\
-\addlinespace[2pt]
-C-6 & Snow before DRV-4, INT-3, or INT-4 & Grass tests in November; INT-3 and INT-4 on a cleared lot or after snowmelt, reported as a deviation & DRV-4, INT-3, INT-4 \\
-\addlinespace[2pt]
-C-7 & Wheels slip or stall on grass (DRV-4) & Limit operation to short, flat grass, or switch to the larger hub motors from an off-road hoverboard & DRV-4, INT-3 \\
-\addlinespace[2pt]
-C-8 & A track falls 2 or more weeks behind & A member whose track is ahead joins it, and stretch work stops & INT-2, INT-3; buffer absorbs 2 weeks \\
-\addlinespace[2pt]
-C-9 & Braking below \reqTODO{braking} (DRV-4, H-01) & Lower the speed cap and raise the minimum distance until Eq.~\eqref{eq:stopping} holds; revise MC-03 and FL-03 & DRV-4; TRK-3 uses the new limits \\
-\addlinespace[2pt]
-C-10 & E-stop slower than \reqTODO{e-stop latency}, or link drops (SAF-3, H-04) & Dedicated industrial e-stop receiver wired directly to the power relay & SAF-3; TRK-3 waits for it \\
-\bottomrule
-\end{tabularx}
-\end{table}

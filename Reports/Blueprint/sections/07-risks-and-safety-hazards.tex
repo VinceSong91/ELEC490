@@ -1,7 +1,6 @@
 \CourseSection{Risks and Safety Hazards}\label{sec:risks}
 % TODO (handoffs from Section 4):
-% - Requirements: still missing for braking deceleration, e-stop latency,
-%   the club-out interlock (SHALL NOT), fuse rating, IP rating, and slope limit.
+% - Requirements: still missing for the speed cap, fuse rating, IP rating, and slope limit.
 % - CHECK with team: MC-03 (2 m/s) with FL-03 (1 m) needs ~5 m/s^2 braking
 %   (Eq. 1). Either cap the speed near walking pace when following closely, or
 %   raise the minimum following distance.
@@ -23,7 +22,7 @@ The motion hazards depend mostly on speed. To stop within a gap $d_{\min}$ after
 a_{\text{req}} = \frac{v^2}{2\,(d_{\min} - v\,t_r)} .
 \label{eq:stopping}
 \end{equation}
-With $t_r = 0.3$\,s, stopping from 2\,m/s (MC-03) within 1\,m (FL-03) needs 5\,m/s$^2$, which the cart's hub motors are unlikely to reach on grass, while walking pace (1.4\,m/s) needs 1.7\,m/s$^2$. The firmware speed cap is therefore the first safety measure, and DRV-4 measures the actual braking (C-9).
+With $t_r = 0.3$\,s, stopping from 2\,m/s (MC-03) within 1\,m (FL-03) needs 5\,m/s$^2$, which the cart's hub motors are unlikely to reach on grass, while walking pace (1.4\,m/s) needs 1.7\,m/s$^2$. The firmware speed cap is therefore the first safety measure, and DRV-4 checks the actual braking against MC-06 (C-9).
 
 For H-09, a golfer only removes a club to swing it, and the swing reaches roughly arm length (about 0.7\,m) plus club length (up to 1.22\,m~\cite{usgaEquipmentRules}), so a cart at the following distance can be inside it.
 
