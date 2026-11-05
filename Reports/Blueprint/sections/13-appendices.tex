@@ -90,6 +90,8 @@ CD-03 & The course-data subsystem shall display the distance to the green within
 \end{tabular}
 \end{table}
 
+FL-03 sits well above the \acs{UWB} errors measured on following robots~\cite{bae2022uwb,zhang2024stroller}. MC-03 exceeds mean adult walking speeds of 0.94 to 1.43\,m/s~\cite{bohannon2011walking}. OB-03 is within the TF-Luna range, even at 10\% reflectivity~\cite{tflunads}. CT-03 allows for metal detuning and short reader range~\cite{dobkin2005rfid,mfrc522ds}. CD-03 is wider than the receiver accuracy~\cite{neom8ds} and the error of commercial golf \acs{GPS} devices~\cite{hall2025golfGps}. MC-06 covers Eq.~\eqref{eq:stopping} at walking pace.
+
 
 \CourseSubsection{Interface Requirements}
 
@@ -137,6 +139,8 @@ PW-03 & The electronics enclosure shall meet IP54. & SYS-06 \\
 \hline
 \end{tabular}
 \end{table}
+
+MC-04, MC-05, and MC-07 implement the emergency-stop function of ISO~13850~\cite{iso13850} and the stop categories of IEC~60204-1~\cite{iec60204-1}. FL-04, OB-04, and OB-05 address the motion hazards treated in ISO~13482. OB-06 follows from the swing reach in H-09.
 
 
 \CourseSubsection{Complete Requirements Traceability Matrix}
@@ -284,7 +288,7 @@ Table~\ref{tab:hazards} lists the hazards assessed in Section~\ref{sec:risks-ass
 \rowcolor{MidGray}
 \TableHeader{ID} & \TableHeader{Hazard and cause} & \TableHeader{Standard} & \TableHeader{Size of the risk} & \TableHeader{Before} & \TableHeader{After} \\
 \midrule
-H-01 & \textbf{Cart hits the golfer.} The golfer stops suddenly, or walks back to the bag for a club and ends up closer than the following distance & ISO~13482~\cite{iso13482}, ISO~3691-4~\cite{iso3691-4} & Stopping from 2\,m/s within 1\,m needs about 5\,m/s$^2$ of braking (Eq.~\ref{eq:stopping}); about 60\,J at impact & 3C Medium & 3E Medium \\
+H-01 & \textbf{Cart hits the golfer.} The golfer stops suddenly, or walks back to the bag for a club and ends up closer than the following distance & ISO~13482, ISO~3691-4 & Stopping from 2\,m/s within 1\,m needs about 5\,m/s$^2$ of braking (Eq.~\ref{eq:stopping}); about 60\,J at impact & 3C Medium & 3E Medium \\
 \addlinespace[2pt]
 H-02 & \textbf{Cart hits something it did not detect.} The ultrasonic beams can miss low objects such as sprinkler heads and curbs, and grass can cause false readings & ISO~13482 & Objects must be detected beyond the stopping distance; OB-03 requires 1\,m. Blind zone below the sensor height, mapped at T-SAF-1 & 3C Medium & 3D Medium \\
 \addlinespace[2pt]
@@ -294,13 +298,16 @@ H-04 & \textbf{E-stop fails or is too slow.} The radio link drops, the stop is r
 \addlinespace[2pt]
 H-05 & \textbf{Cart rolls away or tips over.} Power is cut on a slope and the hub motors freewheel, or the cart turns across a slope with a tall, loaded bag & ISO~13482 & Tips at $\arctan(w/2h)$ for track width $w$ and centre-of-gravity height $h$ measured at T-DRV-3, compared with the site slope & 3C Medium & 3D Medium \\
 \addlinespace[2pt]
+H-06 & \textbf{Fingers or straps caught.} The exposed hub wheels sit close to the frame and caster & ISO~13857, ISO~13854 & Measured gaps \measTODO{gaps} compared with the minimum gaps for fingers and hands & 3D Medium & 4D Low \\
 H-06 & \textbf{Fingers or straps caught.} The exposed hub wheels sit close to the frame and caster & ISO~13857~\cite{iso13857}, ISO~13854~\cite{iso13854} & Guard gaps measured at T-INS-1 and compared with the minimum gaps for fingers and hands & 3D Medium & 4D Low \\
 \addlinespace[2pt]
+H-07 & \textbf{Battery fire, burn, or shock.} The 36\,V lithium-ion pack, new wiring to the \acs{DC-DC} converter, short circuits, and charging & UL~2272, IEC~62133-2 & About 158\,Wh stored in a typical 36\,V, 4.4\,Ah pack \measTODO{pack label} & 1E Medium & 1E Medium \\
 H-07 & \textbf{Battery fire, burn, or shock.} The 25.2\,V lithium-ion pack, new wiring to the \acs{DC-DC} converter, short circuits, and charging & UL~2272~\cite{ul2272}, IEC~62133-2~\cite{iec62133-2} & About 66\,Wh stored (25.2\,V $\times$ 2.6\,Ah, from the GOTRAX pack label) & 1E Medium & 1E Medium \\
 \addlinespace[2pt]
+H-08 & \textbf{Water reaches the electronics.} Dew on the grass or rain during an outdoor test & IEC~60529 & Enclosure \acs{IP} rating compared with \reqTODO{IP rating} & 3D Medium & 3E Medium \\
 H-08 & \textbf{Water reaches the electronics.} Dew on the grass or rain during an outdoor test & IEC~60529~\cite{iec60529} & Enclosure rating compared with IP54 (PW-03) & 3D Medium & 3E Medium \\
 \addlinespace[2pt]
-H-09 & \textbf{Golfer's swing and the cart.} The golfer swings at a cart within reach, or the cart moves into the golfer mid-swing & Equipment Rules~\cite{usgaEquipmentRules} & A swing reaches about 1.9\,m, which covers most of the 1--3\,m following distance in FL-03 & 3C Medium & 3E Medium \\
+H-09 & \textbf{Golfer's swing and the cart.} The golfer swings at a cart within reach, or the cart moves into the golfer mid-swing & USGA Equipment Rules & A swing reaches about 1.9\,m, which covers most of the 1--3\,m following distance in FL-03 & 3C Medium & 3E Medium \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -458,11 +465,11 @@ STR-4 & Club recommendations from logged distances & SG-02 & STR-3 & Needs enoug
 \rowcolor{MidGray}
 \TableHeader{ID} & \TableHeader{Trigger} & \TableHeader{Change to the system or plan} & \TableHeader{Milestones} \\
 \midrule
-C-1 & Mainboard unsupported, or flashing fails (DRV-1) & Use the community firmware fork for that board, or buy another used hoverboard for parts with a supported mainboard & DRV-1 up to 2 weeks late; DRV-4 nears snow (C-6) \\
+C-1 & Mainboard unsupported~\cite{feruFoc}, or flashing fails (DRV-1) & Use the community firmware fork for that board, or buy another used hoverboard for parts with a supported mainboard & DRV-1 up to 2 weeks late; DRV-4 nears snow (C-6) \\
 \addlinespace[2pt]
-C-2 & Under 90\% of clubs read near metal shafts (CT-03, BAG-1) & On-metal \acs{NFC} tags with one antenna per slot on an \acs{SPI} multiplexer. Last resort: per-slot presence sensing, which loses club identity (CT-01) & BAG-2 up to 2 weeks late; BAG-3, GPS-3, INT-1 follow \\
+C-2 & Under 90\% of clubs read near metal shafts~\cite{dobkin2005rfid,mfrc522ds} (CT-03, BAG-1) & On-metal \acs{NFC} tags with one antenna per slot on an \acs{SPI} multiplexer. Last resort: per-slot presence sensing, which loses club identity (CT-01) & BAG-2 up to 2 weeks late; BAG-3, GPS-3, INT-1 follow \\
 \addlinespace[2pt]
-C-3 & Bearing error too large to hold 1--3\,m (FL-03, TRK-2) & Switch between two-anchor ranging and an \acs{AoA} module & TRK-3, TRK-4, INT-2 \\
+C-3 & Bearing error too large to hold 1--3\,m (FL-03, TRK-2) & Switch between two-anchor ranging~\cite{bae2022uwb} and an \acs{AoA} module~\cite{zhang2024stroller} & TRK-3, TRK-4, INT-2 \\
 \addlinespace[2pt]
 C-4 & Distance error above 5\,m (CD-03, GPS-1) & Average readings while the cart is stopped, and add an active antenna on the handle & GPS-2 \\
 \addlinespace[2pt]
@@ -476,7 +483,7 @@ C-8 & A track falls 2 or more weeks behind & A member whose track is ahead joins
 \addlinespace[2pt]
 C-9 & Braking below 2\,m/s$^2$ (MC-06, DRV-4) & Lower the speed cap and raise the minimum distance until Eq.~\eqref{eq:stopping} holds; revise MC-03 and FL-03 & DRV-4; TRK-3 uses the new limits \\
 \addlinespace[2pt]
-C-10 & E-stop slower than 100\,ms (MC-07), or link drops (SAF-3) & Dedicated industrial e-stop receiver wired directly to the power relay & SAF-3; TRK-3 waits for it \\
+C-10 & E-stop slower than 100\,ms (MC-07), or link drops (SAF-3) & Dedicated industrial e-stop receiver wired directly to the power relay~\cite{iso13850} & SAF-3; TRK-3 waits for it \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -495,22 +502,23 @@ Table~\ref{tab:design-decisions} supports Section~\ref{sec:func-overview}. Table
 \TableHeader{Decision and drivers} & \TableHeader{Why, and why not the alternatives} \\
 \midrule
 \textbf{DD-1} Used hoverboard, mainboard reflashed with open-source \acs{FOC} firmware~\cite{feruFoc} \newline \emph{\mbox{SN-01}, \mbox{SN-05}; \mbox{MC-01}, \mbox{MC-03}; budget} &
+One unit supplies two Hall-sensed hub motors for differential steering, the inverter, and a 36\,V pack with \acs{BMS}. Closed-loop speed mode holds speed under load, and speed and current limits run on the mainboard rather than the Pi (H-03). \emph{Used motorized golf cart:} the proposal's \$375 for cart, controller, and battery takes 63\% of the budget. \emph{Separate motors and controller:} adds the wheels, mounts, and control tuning that the hoverboard includes. Accepted cost: small wheels on grass (C-7). \\
 One unit supplies two Hall-sensed hub motors for differential steering, the inverter, and a 25.2\,V, 2.6\,Ah pack with \acs{BMS} (GOTRAX label). Closed-loop speed mode holds speed under load, and speed and current limits run on the mainboard rather than the Pi (H-03). Hoverboard parts have carried robots outdoors in public~\cite{bu2023trash}, on an ODrive controller rather than the stock board~\cite{cornellHoverboard}. \emph{Used motorized golf cart:} the proposal's \$375 for cart, controller, and battery takes 63\% of the budget. \emph{Separate motors and controller:} adds the wheels, mounts, and control tuning that the hoverboard includes. Accepted cost: small wheels on grass (C-7). \\
 \addlinespace[3pt]
 \textbf{DD-2} \acs{UWB} tag on the golfer, anchors on the cart \newline \emph{\mbox{SN-01}; \mbox{FL-01} to \mbox{FL-04}} &
-Ranges to one identified tag and is minimally affected by light~\cite{zhang2024stroller}. Anchors on a robot reached 162\,mm mean position error after correction (703\,mm before)~\cite{bae2022uwb}, and one \acs{AoA} anchor on a stroller reached 15\,cm and 5$^\circ$ at 2\,m~\cite{zhang2024stroller}. Both were indoors, so grass and a tag blocked by the golfer's body are tested at \mbox{T-TRK-2}. \emph{Camera following}~\cite{islam2019personFollowing}: must re-identify the golfer when a second person is near, and competes with the stop loops for the Pi. \emph{Bluetooth handset}~\cite{stewartQFollow}: signal-strength ranging suffers from multipath~\cite{zafari2019survey}. \emph{\acs{GPS}:} 2.5\,m \acs{CEP}~\cite{neom8ds} is as large as the 1--3\,m following band. Two-anchor ranging or \acs{AoA} is decided at \mbox{T-TRK-2}: error falls with anchor spacing~\cite{bae2022uwb}, so $\pm$10\,cm ranging~\cite{dwm3000ds} over a 0.5\,m baseline $b$ gives about $\sqrt{2}\sigma_r/b \approx 16^\circ$. \\
+Ranges to one identified tag and is minimally affected by light~\cite{zhang2024stroller}. Anchors on a robot reached 162\,mm mean position error after correction (703\,mm before)~\cite{bae2022uwb}, and one \acs{AoA} anchor on a stroller reached 15\,cm and 5$^\circ$ at 2\,m~\cite{zhang2024stroller}. Both were indoors, so grass and a tag blocked by the golfer's body are tested at \mbox{T-TRK-2}. \emph{Camera following}~\cite{islam2019personFollowing}: must re-identify the golfer when a second person is near, and competes with the stop loops for the Pi. \emph{Bluetooth handset}: signal-strength ranging suffers from multipath. \emph{\acs{GPS}:} 2.5\,m \acs{CEP}~\cite{neom8ds} is as large as the 1--3\,m following band. Two-anchor ranging or \acs{AoA} is decided at \mbox{T-TRK-2}: error falls with anchor spacing~\cite{bae2022uwb}, so $\pm$10\,cm ranging on a Qorvo DWM3000 over a 0.5\,m baseline $b$ gives about $\sqrt{2}\sigma_r/b \approx 16^\circ$. \\
 \addlinespace[3pt]
 \textbf{DD-3} Category~1 e-stop with a hardware path that bypasses the Pi \newline \emph{\mbox{SN-02}; \mbox{SYS-03}; \mbox{MC-02}, \mbox{MC-05}; \mbox{H-03}, \mbox{H-04}} &
-Section~\ref{sec:risks-mitigation} sets the sequence of brake, then relay. \emph{Firmware-only stop:} a hung Pi defeats it, and the firmware's own serial timeout only removes motor power, so the wheels coast~\cite{feruFoc}. \emph{Category~0 stop:} hub motors freewheel. \emph{Voice stop:} ISO~13850 expects a manually actuated device~\cite{iso13850}. \\
+Section~\ref{sec:risks-mitigation} sets the sequence of brake, then relay. \emph{Firmware-only stop:} a hung Pi defeats it, and the firmware's own serial timeout only removes motor power, so the wheels coast~\cite{feruFoc}. \emph{Category~0 stop~\cite{iec60204-1}:} hub motors freewheel. \emph{Voice stop:} ISO~13850 expects a manually actuated device~\cite{iso13850}. \\
 \addlinespace[3pt]
 \textbf{DD-4} Ultrasonic array plus TF-Luna \acs{LiDAR} \newline \emph{\mbox{SN-02}; \mbox{OB-01} to \mbox{OB-05}; \mbox{H-02}} &
-The \acs{MVP} stops rather than steers, so it needs distance in the forward path, not a map. The TF-Luna ranges 0.2--8\,m at 90\% reflectivity and 0.2--2.5\,m at 10\%, but its 2$^\circ$ beam sees one point~\cite{tflunads}; the existing ultrasonic sensors cover the cart's width and low objects. Combining sonar with \acs{LiDAR} has detected obstacles such as glass that \acs{LiDAR} alone misses~\cite{barreto2022fusion}, indoors and with a 360$^\circ$ \acs{LiDAR}. \emph{One sensor type:} narrow coverage, or false returns from grass. \emph{Camera:} as in DD-2. \emph{Scanning \acs{LiDAR}:} free-space shape is needed only for STR-8. \\
+The \acs{MVP} stops rather than steers, so it needs distance in the forward path, not a map. The TF-Luna ranges 0.2--8\,m at 90\% reflectivity and 0.2--2.5\,m at 10\%, but its 2$^\circ$ beam sees one point~\cite{tflunads}; the existing ultrasonic sensors cover the cart's width and low objects. \emph{One sensor type:} narrow coverage, or false returns from grass. \emph{Camera:} as in DD-2. \emph{Scanning \acs{LiDAR}:} free-space shape is needed only for STR-8. \\
 \addlinespace[3pt]
 \textbf{DD-5} Passive \acs{RFID} tags on clubs, reader in the bag \newline \emph{\mbox{SN-03}; \mbox{CT-01} to \mbox{CT-03}} &
-Identifies each club with no battery or golfer input. \emph{Per-slot presence sensors:} lose club identity (C-2). \emph{Club-mounted trackers}~\cite{arccosSmartSensors}: need a phone and can miss shots~\cite{hall2025golfGps}. Known weakness: nearby metal detunes tag antennas, as shown at \acs{UHF}~\cite{dobkin2005rfid}, and a low-cost \acs{HF} reader typically operates only up to 50\,mm~\cite{mfrc522ds}, so tag position and antenna layout are set by \mbox{T-BAG-1}, not assumed. \\
+Identifies each club with no battery or golfer input. \emph{Per-slot presence sensors:} lose club identity (C-2). \emph{Club-mounted trackers}: need a phone and can miss shots~\cite{hall2025golfGps}. Known weakness: nearby metal detunes tag antennas, as shown at \acs{UHF}~\cite{dobkin2005rfid}, and a low-cost \acs{HF} reader typically operates only up to 50\,mm~\cite{mfrc522ds}, so tag position and antenna layout are set by \mbox{T-BAG-1}, not assumed. \\
 \addlinespace[3pt]
 \textbf{DD-6} \acs{GPS} on the cart, green coordinates stored \newline \emph{\mbox{SN-04}; \mbox{CD-01}, \mbox{CD-02}} &
-Receiver accuracy of 2.5\,m \acs{CEP}~\cite{neom8ds} and golf devices at about three yards~\cite{hall2025golfGps} support a 5\,m target. \emph{Watch or phone}~\cite{arccosAppleWatch}: the dependence the \acs{ASCC} removes. \emph{\acs{RTK}:} cost not justified at this accuracy. Accepted cost: distance is measured from the cart, not the ball. \\
+Receiver accuracy of 2.5\,m \acs{CEP}~\cite{neom8ds} and golf devices at about three yards~\cite{hall2025golfGps} support a 5\,m target. \emph{Watch or phone}: the dependence the \acs{ASCC} removes. \emph{\acs{RTK}:} cost not justified at this accuracy. Accepted cost: distance is measured from the cart, not the ball. \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -524,13 +532,15 @@ Receiver accuracy of 2.5\,m \acs{CEP}~\cite{neom8ds} and golf devices at about t
 \toprule
 \TableHeader{Label} & \TableHeader{From $\rightarrow$ to} & \TableHeader{Specification} & \TableHeader{Req.} \\
 \midrule
-S5, I9 & F2.1 $\rightarrow$ F2.3 & \acs{UWB} channel 5 (6.5\,GHz) or 9 (8\,GHz); ranges to the host over \acs{SPI}~\cite{dwm3000ds} & IR-01 \\
+S5, I9 & F2.1 $\rightarrow$ F2.3 & \acs{UWB} channel 5 (6.5\,GHz) or 9 (8\,GHz); ranges to the host over \acs{SPI} (Qorvo DWM3000) & IR-01 \\
 I12 & F3.1 $\rightarrow$ F3.2 & TF-Luna: \acs{UART} at 115200 baud or \acs{I2C}, 3.3\,V logic, 100\,Hz default~\cite{tflunads}; ultrasonic trigger and echo on \acs{GPIO} & IR-02 \\
 I15--I17 & F3.6 $\rightarrow$ F3.4, F3.8 & Fail-safe stop line: high is run; low, a broken wire, or link loss is stop. Reaches the relay without passing through the Pi & MC-07 \\
 I18 & F3.4 $\rightarrow$ F1.1 & \leavevmode\acs{UART} at 115200 baud, 3.3\,V logic; the 15\,V wire in the same cable stays unconnected~\cite{feruFoc} & IR-03 \\
 I5 & F4.1 $\rightarrow$ F4.2 & Tag \acsp{UID} over \acs{SPI}, up to 10\,Mbit/s~\cite{mfrc522ds} & IR-04 \\
 I1 & F5.1 $\rightarrow$ F5.2 & \leavevmode\acs{NMEA} position over \acs{UART}, at least 1\,Hz~\cite{neom8ds} & \reqTODO{add ID} \\
 I3, I7 & F5.3, F4.3 $\rightarrow$ F5.4 & Distance, inventory, and alerts on a display of at least 5\,in diagonal & IR-05 \\
+E1, E2 & F6.1 $\rightarrow$ F1.2 & 36\,V nominal, 10-cell pack (42\,V full); 15\,A per motor default limit~\cite{feruFoc} & IR-06 \\
+E6 & F6.2 $\rightarrow$ electronics & 5\,V; the Pi~5 alone draws up to 5\,A & IR-06 \\
 E1, E2 & F6.1 $\rightarrow$ F1.2 & 25.2\,V nominal, 29.4\,V at full charge, 2.6\,Ah (GOTRAX pack label); 15\,A per motor default limit~\cite{feruFoc} & IR-06 \\
 E6 & F6.2 $\rightarrow$ electronics & 5\,V; the Pi~5 alone draws up to 5\,A~\cite{rpi5brief} & IR-06 \\
 \bottomrule
@@ -634,10 +644,11 @@ Figure~\ref{fig:setups} shows the set-ups for Table~\ref{tab:tests-body} and the
 \addlinespace[2pt]
 \mbox{T-INT-2} (P-06) & All \acs{MVP} & Flat indoor course with following, an obstacle stop, an e-stop, and a club removal, all processes running & Correct response to every event; no watchdog reset \\
 \addlinespace[2pt]
-\mbox{T-INS-1} (P-01) & H-06 & Measure guard gaps with calipers & Gaps meet ISO~13857~\cite{iso13857} \\
+\mbox{T-INS-1} (P-01) & H-06 & Measure guard gaps with calipers & Gaps meet ISO~13857 \\
 \addlinespace[2pt]
 \mbox{T-INS-2} (P-06) & H-07 & Inspect fuse, wiring, and strain relief; measure accessory current at INT-1 & Fuse rating below wire ampacity and above measured current \\
 \addlinespace[2pt]
+\mbox{T-INS-3} (P-06) & H-08 & Inspect enclosure and cable entries & Meets \reqTODO{IP rating: IP54} \\
 \mbox{T-INS-3} (P-06) & H-08 & Inspect enclosure and cable entries & Meets IP54 (PW-03)~\cite{iec60529} \\
 \bottomrule
 \end{tabularx}

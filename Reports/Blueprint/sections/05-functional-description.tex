@@ -23,7 +23,7 @@ The \ac{ASCC} converts stored battery energy into motion toward one tagged golfe
 
 \CourseSubsection{Functional Decomposition}\label{sec:func-decomp}
 
-Figure~\ref{fig:functional} decomposes the system into six first-level functions: F1 move, F2 locate the golfer, F3 stop safely, F4 track clubs, F5 show distance, and F6 supply power. Each box performs one conversion of energy or information, and the labelled flows only carry its inputs and outputs. The separation of F3.4 from F3.7 and F3.8 is the central result. F3.4 runs on the Pi and brakes through I18, whereas F3.7 and F3.8 act on the energy path directly, so a hung Pi loses the brake but not the power cut. Table~\ref{tab:interfaces} (Appendix~\ref{app:functional}) specifies the flows that cross a hardware boundary and traces them to the interface requirements.
+Figure~\ref{fig:functional} decomposes the system into six first-level functions: F1 move, F2 locate the golfer, F3 stop safely, F4 track clubs, F5 show distance, and F6 supply power, following the logical decomposition process in~\cite[\S 4.3]{nasaHandbook}. Each box performs one conversion of energy or information, and the labelled flows only carry its inputs and outputs. The separation of F3.4 from F3.7 and F3.8 is the central result. F3.4 runs on the Pi and brakes through I18, whereas F3.7 and F3.8 act on the energy path directly, so a hung Pi loses the brake but not the power cut. Table~\ref{tab:interfaces} (Appendix~\ref{app:functional}) specifies the flows that cross a hardware boundary and traces them to the interface requirements.
 
 \begin{figure}[!htbp]
 \centering

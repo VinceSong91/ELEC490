@@ -9,8 +9,9 @@
 % - Functional Description: e-stop architecture (Category 1 stop, Sec. 4.2).
 % - Resources: relay, e-stop receiver, inline fuse, wheel guards, rated enclosure.
 % - Team: agree on the proposed initial/residual ratings.
-% - TODO: cite an anthropometric source for the 0.7 m arm length.
 % - TODO: verify the matrix cell mapping against MIL-STD-882E Table III.
+% - TODO: the 0.7 m arm length is an uncited estimate. gordon2014ansur (ANSUR II) is in
+%   references.bib if a slot opens, but confirm the value first.
 
 \CourseSubsection{Hazard Identification and Risk Assessment}\label{sec:risks-assessment}
 
@@ -24,10 +25,10 @@ a_{\text{req}} = \frac{v^2}{2\,(d_{\min} - v\,t_r)} .
 \end{equation}
 With $t_r = 0.3$\,s, stopping from 2\,m/s (MC-03) within 1\,m (FL-03) needs 5\,m/s$^2$, which the cart's hub motors are unlikely to reach on grass, while walking pace (1.4\,m/s) needs 1.7\,m/s$^2$. The firmware speed cap is therefore the first safety measure, and DRV-4 checks the actual braking against MC-06 (C-9).
 
-For H-09, a golfer only removes a club to swing it, and the swing reaches roughly arm length (about 0.7\,m) plus club length (up to 1.22\,m~\cite{usgaEquipmentRules}), so a cart at the following distance can be inside it.
+For H-09, a golfer only removes a club to swing it, and the swing reaches roughly arm length (about 0.7\,m) plus club length (up to 1.22\,m under the USGA Equipment Rules), so a cart at the following distance can be inside it.
 
 \CourseSubsection{Risk Mitigation and Residual Risk}\label{sec:risks-mitigation}
 
 Table~\ref{tab:mitigations} and Figure~\ref{fig:bowtie} in Appendix~\ref{app:hazards} give the mitigation, derived requirement, and verification for each hazard. The key design choice is where the stops live. Speed and current limits and the serial-timeout stop run in the mainboard firmware, so they hold if the Pi crashes. The e-stop is a Category~1 stop~\cite{iec60204-1}: it commands the firmware brake, then a relay cuts motor power without going through the Pi, since cutting power alone lets the hub motors freewheel. The cart does not restart until manually reset (MC-05)~\cite{iso13850}.
 
-The remaining medium risks are accepted because a safety operator holds the e-stop during every moving test, on flat ground in dry weather. Those that become limitations in Section~\ref{sec:conclusion} are rollaway on a slope after power is cut (H-05), very thin or low objects the sensors miss (H-02), a battery fire, which stays catastrophic in severity~\cite{cpsc2016hoverboards} (H-07), and a golfer swinging near a parked cart (H-09).
+The remaining medium risks are accepted because a safety operator holds the e-stop during every moving test, on flat ground in dry weather. Those that become limitations in Section~\ref{sec:conclusion} are rollaway on a slope after power is cut (H-05), very thin or low objects the sensors miss (H-02), a battery fire, which stays catastrophic in severity (H-07), and a golfer swinging near a parked cart (H-09).
